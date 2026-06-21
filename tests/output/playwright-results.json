@@ -1,0 +1,1391 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\playwright.config.ts",
+    "rootDir": "C:/Users/Alfatech.uz.DESKTOP-VCS0PJE/OneDrive/Desktop/Cursor AI/cowork-restaurant-reviews/web-app/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Alfatech.uz.DESKTOP-VCS0PJE/OneDrive/Desktop/Cursor AI/cowork-restaurant-reviews/web-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/Alfatech.uz.DESKTOP-VCS0PJE/OneDrive/Desktop/Cursor AI/cowork-restaurant-reviews/web-app/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "tests/output/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev",
+      "url": "http://127.0.0.1:3000",
+      "reuseExistingServer": true,
+      "timeout": 120000,
+      "env": {
+        "ACSetupSvcPort": "23210",
+        "ACSvcPort": "17532",
+        "AGENT_TRANSCRIPTS": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\.cursor\\projects\\c-Users-Alfatech-uz-DESKTOP-VCS0PJE-OneDrive-Desktop-Cursor-AI\\agent-transcripts",
+        "ALLUSERSPROFILE": "C:\\ProgramData",
+        "APPDATA": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\AppData\\Roaming",
+        "BASE_URL": "http://localhost:3000",
+        "BUNDLE_PATH": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\bundle",
+        "BUN_INSTALL_CACHE_DIR": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\bun",
+        "CARGO_TARGET_DIR": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\cargo-target",
+        "CCACHE_DIR": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\ccache",
+        "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_23256_JPFUZIWEVBMXGEMW",
+        "COLOR": "0",
+        "CommonProgramFiles": "C:\\Program Files\\Common Files",
+        "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+        "CommonProgramW6432": "C:\\Program Files\\Common Files",
+        "COMPOSER_HOME": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\composer",
+        "COMPUTERNAME": "DESKTOP-VCS0PJE",
+        "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe",
+        "CONDA_PKGS_DIRS": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\conda",
+        "CP_HOME_DIR": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\cocoapods",
+        "CURSOR_AGENT": "1",
+        "CURSOR_CONVERSATION_ID": "8c821ca1-d926-4b13-8807-5851485ba4b6",
+        "CURSOR_EXTENSION_HOST_ROLE": "agent-exec",
+        "CURSOR_LAYOUT": "unifiedAgent",
+        "CURSOR_RIPGREP_PATH": "c:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\AppData\\Local\\Programs\\cursor\\resources\\app\\node_modules\\@vscode\\ripgrep\\bin\\rg.exe",
+        "CURSOR_WORKSPACE_LABEL": "Cursor AI",
+        "CYPRESS_CACHE_FOLDER": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\cypress",
+        "DATABASE_URL": "postgresql://postgres:postgres@127.0.0.1:5432/cowork_restaurants?schema=public",
+        "DIRECT_URL": "postgresql://postgres:postgres@127.0.0.1:5432/cowork_restaurants?schema=public",
+        "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+        "EDITOR": "C:\\WINDOWS\\notepad.exe",
+        "EFC_10676_1262719628": "1",
+        "EFC_10676_1592913036": "1",
+        "EFC_10676_2283032206": "1",
+        "EFC_10676_2775293581": "1",
+        "EFC_10676_3789132940": "1",
+        "EFC_10676_4126798990": "1",
+        "FORCE_COLOR": "0",
+        "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+        "FPS_BROWSER_USER_PROFILE_STRING": "Default",
+        "GEM_SPEC_CACHE": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\gem-specs",
+        "GOCACHE": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\go-build",
+        "GOMODCACHE": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\go-mod",
+        "GRADLE_USER_HOME": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\gradle",
+        "HOME": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE",
+        "HOMEBREW_CACHE": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\homebrew",
+        "HOMEDRIVE": "C:",
+        "HOMEPATH": "\\Users\\Alfatech.uz.DESKTOP-VCS0PJE",
+        "INIT_CWD": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app",
+        "INTEL_DEV_REDIST": "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\",
+        "LOCALAPPDATA": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\AppData\\Local",
+        "LOGONSERVER": "\\\\DESKTOP-VCS0PJE",
+        "MIC_LD_LIBRARY_PATH": "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\compiler\\lib\\mic",
+        "NODE": "C:\\Program Files\\nodejs\\node.exe",
+        "NO_COLOR": "1",
+        "npm_command": "run",
+        "NPM_CONFIG_CACHE": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\npm",
+        "npm_config_devdir": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\node-gyp",
+        "npm_config_globalconfig": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\AppData\\Roaming\\npm\\etc\\npmrc",
+        "npm_config_global_prefix": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\AppData\\Roaming\\npm",
+        "npm_config_init_module": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\.npm-init.js",
+        "npm_config_local_prefix": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app",
+        "npm_config_node_gyp": "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\node-gyp\\bin\\node-gyp.js",
+        "npm_config_noproxy": "",
+        "npm_config_npm_version": "11.11.0",
+        "npm_config_prefix": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\AppData\\Roaming\\npm",
+        "npm_config_userconfig": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\.npmrc",
+        "npm_config_user_agent": "npm/11.11.0 node/v24.14.1 win32 x64 workspaces/false",
+        "npm_execpath": "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js",
+        "npm_lifecycle_event": "test:e2e",
+        "npm_lifecycle_script": "playwright test",
+        "npm_node_execpath": "C:\\Program Files\\nodejs\\node.exe",
+        "npm_package_json": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\package.json",
+        "npm_package_name": "cowork-restaurant-reviews",
+        "npm_package_version": "0.1.0",
+        "NUGET_PACKAGES": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\nuget",
+        "NUMBER_OF_PROCESSORS": "16",
+        "NX_CACHE_DIRECTORY": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\nx",
+        "OneDrive": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive",
+        "OS": "Windows_NT",
+        "PAI_MODEL_DIR": "C:\\ProgramData\\Topaz Labs LLC\\Topaz Gigapixel AI\\models",
+        "Path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\node_modules\\.bin;C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\node_modules\\.bin;C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\node_modules\\.bin;C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\node_modules\\.bin;C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\node_modules\\.bin;C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\node_modules\\.bin;C:\\Users\\node_modules\\.bin;C:\\node_modules\\.bin;C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\@npmcli\\run-script\\lib\\node-gyp-bin;c:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\AppData\\Local\\Programs\\cursor\\resources\\app\\node_modules\\@vscode\\ripgrep\\bin;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;c:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\AppData\\Local\\Programs\\cursor\\resources\\app\\codeBin;C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin;C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\AppData\\Roaming\\npm",
+        "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL",
+        "PIP_CACHE_DIR": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\pip",
+        "PLAYWRIGHT_BASE_URL": "http://127.0.0.1:3000",
+        "PLAYWRIGHT_BROWSERS_PATH": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\playwright",
+        "PNPM_STORE_PATH": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\pnpm-store",
+        "POETRY_CACHE_DIR": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\poetry",
+        "PROCESSOR_ARCHITECTURE": "AMD64",
+        "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 167 Stepping 1, GenuineIntel",
+        "PROCESSOR_LEVEL": "6",
+        "PROCESSOR_REVISION": "a701",
+        "ProgramData": "C:\\ProgramData",
+        "ProgramFiles": "C:\\Program Files",
+        "ProgramFiles(x86)": "C:\\Program Files (x86)",
+        "ProgramW6432": "C:\\Program Files",
+        "PROMPT": "$P$G",
+        "PSExecutionPolicyPreference": "Bypass",
+        "PSModulePath": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\المستندات\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules",
+        "PUBLIC": "C:\\Users\\Public",
+        "PUPPETEER_CACHE_DIR": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\puppeteer",
+        "RlsSvcPort": "22112",
+        "SESSIONNAME": "Console",
+        "SystemDrive": "C:",
+        "SystemRoot": "C:\\WINDOWS",
+        "TEMP": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp",
+        "TERM": "dumb",
+        "TMP": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp",
+        "TURBO_CACHE_DIR": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\turbo",
+        "USERDOMAIN": "DESKTOP-VCS0PJE",
+        "USERDOMAIN_ROAMINGPROFILE": "DESKTOP-VCS0PJE",
+        "USERNAME": "Alfatech.uz",
+        "USERPROFILE": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE",
+        "UV_CACHE_DIR": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\uv",
+        "VSCODE_CODE_CACHE_PATH": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\AppData\\Roaming\\Cursor\\CachedData\\e56ad3440df06d22ca7501e65fd518e905486ef0",
+        "VSCODE_CRASH_REPORTER_PROCESS_TYPE": "extensionHost",
+        "VSCODE_CWD": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\AppData\\Local\\Programs\\cursor",
+        "VSCODE_ESM_ENTRYPOINT": "vs/workbench/api/node/extensionHostProcess",
+        "VSCODE_HANDLES_UNCAUGHT_ERRORS": "true",
+        "VSCODE_IPC_HOOK": "\\\\.\\pipe\\01859433-3.8.11-main-sock",
+        "VSCODE_NLS_CONFIG": "{\"userLocale\":\"en-us\",\"osLocale\":\"en-us\",\"resolvedLanguage\":\"en\",\"defaultMessagesFile\":\"C:\\\\Users\\\\Alfatech.uz.DESKTOP-VCS0PJE\\\\AppData\\\\Local\\\\Programs\\\\cursor\\\\resources\\\\app\\\\out\\\\nls.messages.json\",\"locale\":\"en-us\",\"availableLanguages\":{}}",
+        "VSCODE_PID": "23256",
+        "VSCODE_PROCESS_TITLE": "extension-host (agent-exec) Cursor AI [1-4]",
+        "windir": "C:\\WINDOWS",
+        "YARN_CACHE_FOLDER": "C:\\Users\\ALFATE~1.DES\\AppData\\Local\\Temp\\cursor-sandbox-cache\\cfd81bf04187fa80f22173eee73b14e2\\yarn",
+        "_ZO_DOCTOR": "0",
+        "TEST_LOCALE": "en"
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "admin-access.spec.ts",
+      "file": "admin-access.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Admin access",
+          "file": "admin-access.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "T005 admin route is protected from guests and normal users",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7430,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:47:38.248Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "82a6600412bcbe95763d-b1f2b6875e9315b1d144",
+              "file": "admin-access.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "T005 admin user can open the admin dashboard",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5971,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: /restaurants/i })\nExpected: visible\nError: strict mode violation: getByRole('link', { name: /restaurants/i }) resolved to 2 elements:\n    1) <a href=\"/en/admin/restaurants\" class=\"flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors text-muted-foreground hover:bg-muted hover:text-foreground\">…</a> aka getByLabel('Admin navigation').getByRole('link', { name: 'Restaurants' })\n    2) <a href=\"/en/restaurants\" class=\"text-muted-foreground underline-offset-4 hover:text-foreground hover:underline\">Restaurants</a> aka getByLabel('Explore links').getByRole('link', { name: 'Restaurants' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: /restaurants/i })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: /restaurants/i })\nExpected: visible\nError: strict mode violation: getByRole('link', { name: /restaurants/i }) resolved to 2 elements:\n    1) <a href=\"/en/admin/restaurants\" class=\"flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors text-muted-foreground hover:bg-muted hover:text-foreground\">…</a> aka getByLabel('Admin navigation').getByRole('link', { name: 'Restaurants' })\n    2) <a href=\"/en/restaurants\" class=\"text-muted-foreground underline-offset-4 hover:text-foreground hover:underline\">Restaurants</a> aka getByLabel('Explore links').getByRole('link', { name: 'Restaurants' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: /restaurants/i })\u001b[22m\n\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\admin-access.spec.ts:19:68",
+                        "location": {
+                          "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\admin-access.spec.ts",
+                          "column": 68,
+                          "line": 19
+                        },
+                        "snippet": "  17 |     await page.goto(\"/en/admin\");\n  18 |     await expect(page).toHaveURL(/\\/en\\/admin/);\n> 19 |     await expect(page.getByRole(\"link\", { name: /restaurants/i })).toBeVisible();\n     |                                                                    ^\n  20 |   });\n  21 | });\n  22 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\admin-access.spec.ts",
+                            "column": 68,
+                            "line": 19
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: /restaurants/i })\nExpected: visible\nError: strict mode violation: getByRole('link', { name: /restaurants/i }) resolved to 2 elements:\n    1) <a href=\"/en/admin/restaurants\" class=\"flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors text-muted-foreground hover:bg-muted hover:text-foreground\">…</a> aka getByLabel('Admin navigation').getByRole('link', { name: 'Restaurants' })\n    2) <a href=\"/en/restaurants\" class=\"text-muted-foreground underline-offset-4 hover:text-foreground hover:underline\">Restaurants</a> aka getByLabel('Explore links').getByRole('link', { name: 'Restaurants' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: /restaurants/i })\u001b[22m\n\n\n  17 |     await page.goto(\"/en/admin\");\n  18 |     await expect(page).toHaveURL(/\\/en\\/admin/);\n> 19 |     await expect(page.getByRole(\"link\", { name: /restaurants/i })).toBeVisible();\n     |                                                                    ^\n  20 |   });\n  21 | });\n  22 |\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\admin-access.spec.ts:19:68"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:47:45.771Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\admin-access-Admin-access--817aa-an-open-the-admin-dashboard-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\admin-access.spec.ts",
+                        "column": 68,
+                        "line": 19
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "82a6600412bcbe95763d-79ca357b4b607a0cea53",
+              "file": "admin-access.spec.ts",
+              "line": 15,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "admin-restaurants.spec.ts",
+      "file": "admin-restaurants.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Admin restaurant management",
+          "file": "admin-restaurants.spec.ts",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "T014 admin can create a restaurant",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30031,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\helpers\\playwright-auth.ts",
+                            "column": 42,
+                            "line": 94
+                          },
+                          "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('option').first()\u001b[22m\n\n\n   at ..\\helpers\\playwright-auth.ts:94\n\n  92 |   await page.locator(\"#description\").fill(\"Automated test restaurant description.\");\n  93 |   await page.getByRole(\"combobox\").first().click();\n> 94 |   await page.getByRole(\"option\").first().click();\n     |                                          ^\n  95 | }\n  96 |\n  97 | export async function createAdminRestaurant(page: Page, name: string, slug: string) {\n    at fillRequiredRestaurantFields (C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\helpers\\playwright-auth.ts:94:42)\n    at createAdminRestaurant (C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\helpers\\playwright-auth.ts:99:3)\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\admin-restaurants.spec.ts:16:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:47:52.150Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\admin-restaurants-Admin-re-25468-min-can-create-a-restaurant-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "82a86159849548bd783a-b3756f0c562231ca4690",
+              "file": "admin-restaurants.spec.ts",
+              "line": 11,
+              "column": 7
+            },
+            {
+              "title": "T015 admin can edit a restaurant",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30033,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\helpers\\playwright-auth.ts",
+                            "column": 42,
+                            "line": 94
+                          },
+                          "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('option').first()\u001b[22m\n\n\n   at ..\\helpers\\playwright-auth.ts:94\n\n  92 |   await page.locator(\"#description\").fill(\"Automated test restaurant description.\");\n  93 |   await page.getByRole(\"combobox\").first().click();\n> 94 |   await page.getByRole(\"option\").first().click();\n     |                                          ^\n  95 | }\n  96 |\n  97 | export async function createAdminRestaurant(page: Page, name: string, slug: string) {\n    at fillRequiredRestaurantFields (C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\helpers\\playwright-auth.ts:94:42)\n    at createAdminRestaurant (C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\helpers\\playwright-auth.ts:99:3)\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\admin-restaurants.spec.ts:24:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:48:22.658Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\admin-restaurants-Admin-re-2fb49-admin-can-edit-a-restaurant-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "82a86159849548bd783a-bd578eaa92891d7f172b",
+              "file": "admin-restaurants.spec.ts",
+              "line": 19,
+              "column": 7
+            },
+            {
+              "title": "T016 admin can delete a restaurant",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30034,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\helpers\\playwright-auth.ts",
+                            "column": 42,
+                            "line": 94
+                          },
+                          "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('option').first()\u001b[22m\n\n\n   at ..\\helpers\\playwright-auth.ts:94\n\n  92 |   await page.locator(\"#description\").fill(\"Automated test restaurant description.\");\n  93 |   await page.getByRole(\"combobox\").first().click();\n> 94 |   await page.getByRole(\"option\").first().click();\n     |                                          ^\n  95 | }\n  96 |\n  97 | export async function createAdminRestaurant(page: Page, name: string, slug: string) {\n    at fillRequiredRestaurantFields (C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\helpers\\playwright-auth.ts:94:42)\n    at createAdminRestaurant (C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\helpers\\playwright-auth.ts:99:3)\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\admin-restaurants.spec.ts:35:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:48:53.203Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\admin-restaurants-Admin-re-633cd-min-can-delete-a-restaurant-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "82a86159849548bd783a-edc302c139e7c6833537",
+              "file": "admin-restaurants.spec.ts",
+              "line": 30,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "auth.spec.ts",
+      "file": "auth.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Authentication",
+          "file": "auth.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "T001 registration creates a new account",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 23547,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/en\\/profile/\u001b[39m\nReceived string:  \u001b[31m\"http://127.0.0.1:3000/en/register?fullName=E2E+Register+User&email=e2e-register-1782031764333%40example.com&password=Test1234%21&confirmPassword=Test1234%21&preferredLanguage=EN\"\u001b[39m\nTimeout: 20000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 20000ms\u001b[22m\n\u001b[2m    43 × unexpected value \"http://127.0.0.1:3000/en/register?fullName=E2E+Register+User&email=e2e-register-1782031764333%40example.com&password=Test1234%21&confirmPassword=Test1234%21&preferredLanguage=EN\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/en\\/profile/\u001b[39m\nReceived string:  \u001b[31m\"http://127.0.0.1:3000/en/register?fullName=E2E+Register+User&email=e2e-register-1782031764333%40example.com&password=Test1234%21&confirmPassword=Test1234%21&preferredLanguage=EN\"\u001b[39m\nTimeout: 20000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 20000ms\u001b[22m\n\u001b[2m    43 × unexpected value \"http://127.0.0.1:3000/en/register?fullName=E2E+Register+User&email=e2e-register-1782031764333%40example.com&password=Test1234%21&confirmPassword=Test1234%21&preferredLanguage=EN\"\u001b[22m\n\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\auth.spec.ts:17:24",
+                        "location": {
+                          "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\auth.spec.ts",
+                          "column": 24,
+                          "line": 17
+                        },
+                        "snippet": "  15 |     await page.getByRole(\"button\", { name: /create account/i }).click();\n  16 |\n> 17 |     await expect(page).toHaveURL(/\\/en\\/profile/, { timeout: 20_000 });\n     |                        ^\n  18 |     await expect(page.getByText(\"E2E Register User\")).toBeVisible();\n  19 |   });\n  20 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\auth.spec.ts",
+                            "column": 24,
+                            "line": 17
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/en\\/profile/\u001b[39m\nReceived string:  \u001b[31m\"http://127.0.0.1:3000/en/register?fullName=E2E+Register+User&email=e2e-register-1782031764333%40example.com&password=Test1234%21&confirmPassword=Test1234%21&preferredLanguage=EN\"\u001b[39m\nTimeout: 20000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 20000ms\u001b[22m\n\u001b[2m    43 × unexpected value \"http://127.0.0.1:3000/en/register?fullName=E2E+Register+User&email=e2e-register-1782031764333%40example.com&password=Test1234%21&confirmPassword=Test1234%21&preferredLanguage=EN\"\u001b[22m\n\n\n  15 |     await page.getByRole(\"button\", { name: /create account/i }).click();\n  16 |\n> 17 |     await expect(page).toHaveURL(/\\/en\\/profile/, { timeout: 20_000 });\n     |                        ^\n  18 |     await expect(page.getByText(\"E2E Register User\")).toBeVisible();\n  19 |   });\n  20 |\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\auth.spec.ts:17:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:49:23.757Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\auth-Authentication-T001-registration-creates-a-new-account-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\auth.spec.ts",
+                        "column": 24,
+                        "line": 17
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-98873933750bd0f14653",
+              "file": "auth.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "T002 login allows access with valid credentials",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30035,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\helpers\\playwright-auth.ts",
+                            "column": 10,
+                            "line": 53
+                          },
+                          "message": "Error: page.waitForResponse: Test timeout of 30000ms exceeded.\n\n   at ..\\helpers\\playwright-auth.ts:53\n\n  51 |\n  52 |   await Promise.all([\n> 53 |     page.waitForResponse(\n     |          ^\n  54 |       (response) =>\n  55 |         response.url().includes(\"/api/auth/callback/credentials\") &&\n  56 |         response.request().method() === \"POST\",\n    at loginViaUi (C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\helpers\\playwright-auth.ts:53:10)\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\auth.spec.ts:22:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:49:48.206Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\auth-Authentication-T002-l-07580-cess-with-valid-credentials-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-2970b27aadddc61a5310",
+              "file": "auth.spec.ts",
+              "line": 21,
+              "column": 7
+            },
+            {
+              "title": "T003 logout ends the authenticated session",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30040,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\helpers\\playwright-auth.ts",
+                            "column": 10,
+                            "line": 53
+                          },
+                          "message": "Error: page.waitForResponse: Test timeout of 30000ms exceeded.\n\n   at ..\\helpers\\playwright-auth.ts:53\n\n  51 |\n  52 |   await Promise.all([\n> 53 |     page.waitForResponse(\n     |          ^\n  54 |       (response) =>\n  55 |         response.url().includes(\"/api/auth/callback/credentials\") &&\n  56 |         response.request().method() === \"POST\",\n    at loginViaUi (C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\helpers\\playwright-auth.ts:53:10)\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\auth.spec.ts:28:5"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:50:19.140Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\auth-Authentication-T003-l-449e2-s-the-authenticated-session-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-c8209c206168aa3f6427",
+              "file": "auth.spec.ts",
+              "line": 27,
+              "column": 7
+            },
+            {
+              "title": "T004 profile route is protected from guests",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1707,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:50:50.224Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-3cb6e40b637e4d6fec42",
+              "file": "auth.spec.ts",
+              "line": 34,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "locale.spec.ts",
+      "file": "locale.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Locale switching",
+          "file": "locale.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "T006 language switcher changes the URL locale",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30029,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\locale.spec.ts",
+                            "column": 8,
+                            "line": 10
+                          },
+                          "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-slot=\"dropdown-menu-content\"] [data-slot=\"dropdown-menu-radio-item\"]').filter({ hasText: /zbek/i })\u001b[22m\n\n\n   8 |       .locator('[data-slot=\"dropdown-menu-content\"] [data-slot=\"dropdown-menu-radio-item\"]')\n   9 |       .filter({ hasText: /zbek/i })\n> 10 |       .click();\n     |        ^\n  11 |     await expect(page).toHaveURL(/\\/uz\\/restaurants/, { timeout: 10_000 });\n  12 |   });\n  13 | });\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\locale.spec.ts:10:8"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:50:52.492Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\locale-Locale-switching-T0-73133-cher-changes-the-URL-locale-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "521615c42917fec406e0-142c8ac06ba52a0c3aed",
+              "file": "locale.spec.ts",
+              "line": 4,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "restaurants.spec.ts",
+      "file": "restaurants.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Restaurant discovery",
+          "file": "restaurants.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "T007 restaurant search finds matching restaurants",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 12177,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/q=Trattoria/i\u001b[39m\nReceived string:  \u001b[31m\"http://127.0.0.1:3000/en/restaurants?\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 10000ms\u001b[22m\n\u001b[2m    23 × unexpected value \"http://127.0.0.1:3000/en/restaurants?\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/q=Trattoria/i\u001b[39m\nReceived string:  \u001b[31m\"http://127.0.0.1:3000/en/restaurants?\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 10000ms\u001b[22m\n\u001b[2m    23 × unexpected value \"http://127.0.0.1:3000/en/restaurants?\"\u001b[22m\n\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts:13:24",
+                        "location": {
+                          "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts",
+                          "column": 24,
+                          "line": 13
+                        },
+                        "snippet": "  11 |     await searchInput.fill(\"Trattoria\");\n  12 |     await searchInput.press(\"Enter\");\n> 13 |     await expect(page).toHaveURL(/q=Trattoria/i, { timeout: 10_000 });\n     |                        ^\n  14 |     await expect(page.getByRole(\"link\", { name: /Trattoria Amici/i })).toBeVisible();\n  15 |   });\n  16 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts",
+                            "column": 24,
+                            "line": 13
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/q=Trattoria/i\u001b[39m\nReceived string:  \u001b[31m\"http://127.0.0.1:3000/en/restaurants?\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 10000ms\u001b[22m\n\u001b[2m    23 × unexpected value \"http://127.0.0.1:3000/en/restaurants?\"\u001b[22m\n\n\n  11 |     await searchInput.fill(\"Trattoria\");\n  12 |     await searchInput.press(\"Enter\");\n> 13 |     await expect(page).toHaveURL(/q=Trattoria/i, { timeout: 10_000 });\n     |                        ^\n  14 |     await expect(page.getByRole(\"link\", { name: /Trattoria Amici/i })).toBeVisible();\n  15 |   });\n  16 |\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts:13:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:51:22.939Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\restaurants-Restaurant-dis-b1c39--finds-matching-restaurants-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts",
+                        "column": 24,
+                        "line": 13
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "627e0f4f99d9dd175176-9de187fbdfea20295bc5",
+              "file": "restaurants.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "T008 restaurant filtering applies category filters",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11967,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/category=european-cuisine/\u001b[39m\nReceived string:  \u001b[31m\"http://127.0.0.1:3000/en/restaurants\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 10000ms\u001b[22m\n\u001b[2m    23 × unexpected value \"http://127.0.0.1:3000/en/restaurants\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/category=european-cuisine/\u001b[39m\nReceived string:  \u001b[31m\"http://127.0.0.1:3000/en/restaurants\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 10000ms\u001b[22m\n\u001b[2m    23 × unexpected value \"http://127.0.0.1:3000/en/restaurants\"\u001b[22m\n\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts:20:24",
+                        "location": {
+                          "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts",
+                          "column": 24,
+                          "line": 20
+                        },
+                        "snippet": "  18 |     await page.goto(\"/en/restaurants\", { waitUntil: \"networkidle\" });\n  19 |     await page.getByRole(\"combobox\", { name: /^category$/i }).selectOption(\"european-cuisine\");\n> 20 |     await expect(page).toHaveURL(/category=european-cuisine/, { timeout: 10_000 });\n     |                        ^\n  21 |     await expect(page.getByRole(\"link\", { name: /Trattoria Amici/i })).toBeVisible();\n  22 |   });\n  23 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts",
+                            "column": 24,
+                            "line": 20
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/category=european-cuisine/\u001b[39m\nReceived string:  \u001b[31m\"http://127.0.0.1:3000/en/restaurants\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 10000ms\u001b[22m\n\u001b[2m    23 × unexpected value \"http://127.0.0.1:3000/en/restaurants\"\u001b[22m\n\n\n  18 |     await page.goto(\"/en/restaurants\", { waitUntil: \"networkidle\" });\n  19 |     await page.getByRole(\"combobox\", { name: /^category$/i }).selectOption(\"european-cuisine\");\n> 20 |     await expect(page).toHaveURL(/category=european-cuisine/, { timeout: 10_000 });\n     |                        ^\n  21 |     await expect(page.getByRole(\"link\", { name: /Trattoria Amici/i })).toBeVisible();\n  22 |   });\n  23 |\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts:20:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:51:36.088Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\restaurants-Restaurant-dis-420ea-ng-applies-category-filters-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts",
+                        "column": 24,
+                        "line": 20
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "627e0f4f99d9dd175176-1dd26b368f7c1101c0bf",
+              "file": "restaurants.spec.ts",
+              "line": 17,
+              "column": 7
+            },
+            {
+              "title": "T009 restaurant detail page loads published restaurant data",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2265,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/tashkent/i)\nExpected: visible\nError: strict mode violation: getByText(/tashkent/i) resolved to 2 elements:\n    1) <span class=\"font-medium\">Tashkent</span> aka getByText('Tashkent', { exact: true })\n    2) <span>…</span> aka getByText('Sayilgoh Street, Tashkent')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/tashkent/i)\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/tashkent/i)\nExpected: visible\nError: strict mode violation: getByText(/tashkent/i) resolved to 2 elements:\n    1) <span class=\"font-medium\">Tashkent</span> aka getByText('Tashkent', { exact: true })\n    2) <span>…</span> aka getByText('Sayilgoh Street, Tashkent')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/tashkent/i)\u001b[22m\n\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts:27:47",
+                        "location": {
+                          "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts",
+                          "column": 47,
+                          "line": 27
+                        },
+                        "snippet": "  25 |     await page.goto(`/en/restaurants/${SEED_RESTAURANT_SLUG}`);\n  26 |     await expect(page.getByRole(\"heading\", { name: SEED_RESTAURANT_NAME })).toBeVisible();\n> 27 |     await expect(page.getByText(/tashkent/i)).toBeVisible();\n     |                                               ^\n  28 |   });\n  29 |\n  30 |   test(\"T019 map rendering fallback shows address text without embedded map\", async ({ page }) => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts",
+                            "column": 47,
+                            "line": 27
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/tashkent/i)\nExpected: visible\nError: strict mode violation: getByText(/tashkent/i) resolved to 2 elements:\n    1) <span class=\"font-medium\">Tashkent</span> aka getByText('Tashkent', { exact: true })\n    2) <span>…</span> aka getByText('Sayilgoh Street, Tashkent')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/tashkent/i)\u001b[22m\n\n\n  25 |     await page.goto(`/en/restaurants/${SEED_RESTAURANT_SLUG}`);\n  26 |     await expect(page.getByRole(\"heading\", { name: SEED_RESTAURANT_NAME })).toBeVisible();\n> 27 |     await expect(page.getByText(/tashkent/i)).toBeVisible();\n     |                                               ^\n  28 |   });\n  29 |\n  30 |   test(\"T019 map rendering fallback shows address text without embedded map\", async ({ page }) => {\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts:27:47"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:51:48.954Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\restaurants-Restaurant-dis-49253-s-published-restaurant-data-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts",
+                        "column": 47,
+                        "line": 27
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "627e0f4f99d9dd175176-5213fe1ec08ed45f4f49",
+              "file": "restaurants.spec.ts",
+              "line": 24,
+              "column": 7
+            },
+            {
+              "title": "T019 map rendering fallback shows address text without embedded map",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1962,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:51:52.244Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "627e0f4f99d9dd175176-52479599c5a0e11ccec8",
+              "file": "restaurants.spec.ts",
+              "line": 30,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Mobile navigation",
+          "file": "restaurants.spec.ts",
+          "line": 37,
+          "column": 6,
+          "specs": [
+            {
+              "title": "T020 mobile navigation keeps register visible and hides desktop nav",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6920,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('banner').getByRole('link', { name: /^register$/i })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('banner').getByRole('link', { name: /^register$/i })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('banner').getByRole('link', { name: /^register$/i })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('banner').getByRole('link', { name: /^register$/i })\u001b[22m\n\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts:43:87",
+                        "location": {
+                          "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts",
+                          "column": 87,
+                          "line": 43
+                        },
+                        "snippet": "  41 |     await page.goto(\"/en\");\n  42 |     await expect(page.getByRole(\"navigation\", { name: \"Main navigation\" })).toBeHidden();\n> 43 |     await expect(page.getByRole(\"banner\").getByRole(\"link\", { name: /^register$/i })).toBeVisible();\n     |                                                                                       ^\n  44 |   });\n  45 | });\n  46 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts",
+                            "column": 87,
+                            "line": 43
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('banner').getByRole('link', { name: /^register$/i })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('banner').getByRole('link', { name: /^register$/i })\u001b[22m\n\n\n  41 |     await page.goto(\"/en\");\n  42 |     await expect(page.getByRole(\"navigation\", { name: \"Main navigation\" })).toBeHidden();\n> 43 |     await expect(page.getByRole(\"banner\").getByRole(\"link\", { name: /^register$/i })).toBeVisible();\n     |                                                                                       ^\n  44 |   });\n  45 | });\n  46 |\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts:43:87"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:51:54.753Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\restaurants-Mobile-navigat-10105-sible-and-hides-desktop-nav-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\restaurants.spec.ts",
+                        "column": 87,
+                        "line": 43
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "627e0f4f99d9dd175176-93ebc7de3b7349991d32",
+              "file": "restaurants.spec.ts",
+              "line": 40,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "reviews.spec.ts",
+      "file": "reviews.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Reviews",
+          "file": "reviews.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "T010 authenticated user can create a review",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 20067,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'E2E Review 1782031922672' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'E2E Review 1782031922672' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'E2E Review 1782031922672' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'E2E Review 1782031922672' })\u001b[22m\n\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts:17:62",
+                        "location": {
+                          "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts",
+                          "column": 62,
+                          "line": 17
+                        },
+                        "snippet": "  15 |     await page.getByRole(\"button\", { name: /submit review/i }).click();\n  16 |\n> 17 |     await expect(page.getByRole(\"heading\", { name: title })).toBeVisible({ timeout: 15_000 });\n     |                                                              ^\n  18 |   });\n  19 |\n  20 |   test(\"T011 authenticated user can edit their review\", async ({ page }) => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts",
+                            "column": 62,
+                            "line": 17
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'E2E Review 1782031922672' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'E2E Review 1782031922672' })\u001b[22m\n\n\n  15 |     await page.getByRole(\"button\", { name: /submit review/i }).click();\n  16 |\n> 17 |     await expect(page.getByRole(\"heading\", { name: title })).toBeVisible({ timeout: 15_000 });\n     |                                                              ^\n  18 |   });\n  19 |\n  20 |   test(\"T011 authenticated user can edit their review\", async ({ page }) => {\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts:17:62"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:52:02.089Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\reviews-Reviews-T010-authenticated-user-can-create-a-review-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts",
+                        "column": 62,
+                        "line": 17
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "e1198ca194b02ae20e2d-6ece59860333d2665fa9",
+              "file": "reviews.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "T011 authenticated user can edit their review",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30036,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts",
+                            "column": 47,
+                            "line": 26
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[id^=\"edit-title-\"]')\u001b[22m\n\n\n  24 |     await page.goto(`/en/restaurants/${SEED_RESTAURANT_SLUG}`);\n  25 |     await page.getByRole(\"button\", { name: /^edit$/i }).first().click();\n> 26 |     await page.locator('[id^=\"edit-title-\"]').fill(updatedTitle);\n     |                                               ^\n  27 |     await page.getByRole(\"button\", { name: /save changes/i }).click();\n  28 |\n  29 |     await expect(page.getByRole(\"heading\", { name: updatedTitle })).toBeVisible({ timeout: 15_000 });\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts:26:47"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:52:23.072Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\reviews-Reviews-T011-authe-46d45--user-can-edit-their-review-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "e1198ca194b02ae20e2d-aa24ec15f2d27657d34a",
+              "file": "reviews.spec.ts",
+              "line": 20,
+              "column": 7
+            },
+            {
+              "title": "T012 authenticated user can delete their review",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 19875,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Delete Me 1782031974661' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Delete Me 1782031974661' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Delete Me 1782031974661' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Delete Me 1782031974661' })\u001b[22m\n\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts:42:62",
+                        "location": {
+                          "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts",
+                          "column": 62,
+                          "line": 42
+                        },
+                        "snippet": "  40 |     await page.getByRole(\"radio\", { name: \"4 stars\" }).click();\n  41 |     await page.getByRole(\"button\", { name: /submit review/i }).click();\n> 42 |     await expect(page.getByRole(\"heading\", { name: title })).toBeVisible({ timeout: 15_000 });\n     |                                                              ^\n  43 |\n  44 |     const reviewCard = page.locator(\"div\").filter({ has: page.getByRole(\"heading\", { name: title }) });\n  45 |     await reviewCard.getByRole(\"button\", { name: /^delete$/i }).click();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts",
+                            "column": 62,
+                            "line": 42
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Delete Me 1782031974661' })\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Delete Me 1782031974661' })\u001b[22m\n\n\n  40 |     await page.getByRole(\"radio\", { name: \"4 stars\" }).click();\n  41 |     await page.getByRole(\"button\", { name: /submit review/i }).click();\n> 42 |     await expect(page.getByRole(\"heading\", { name: title })).toBeVisible({ timeout: 15_000 });\n     |                                                              ^\n  43 |\n  44 |     const reviewCard = page.locator(\"div\").filter({ has: page.getByRole(\"heading\", { name: title }) });\n  45 |     await reviewCard.getByRole(\"button\", { name: /^delete$/i }).click();\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts:42:62"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:52:54.071Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\reviews-Reviews-T012-authe-59044-ser-can-delete-their-review-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts",
+                        "column": 62,
+                        "line": 42
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "e1198ca194b02ae20e2d-49e755d1e9ea667a0187",
+              "file": "reviews.spec.ts",
+              "line": 32,
+              "column": 7
+            },
+            {
+              "title": "T013 other users cannot edit someone else's review",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9769,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('article, div').filter({ has: getByRole('heading', { name: 'Excellent pasta' }) }).getByRole('button', { name: /^edit$/i })\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('article, div').filter({ has: getByRole('heading', { name: 'Excellent pasta' }) }).getByRole('button', { name: /^edit$/i })\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('article, div').filter({ has: getByRole('heading', { name: 'Excellent pasta' }) }).getByRole('button', { name: /^edit$/i })\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('article, div').filter({ has: getByRole('heading', { name: 'Excellent pasta' }) }).getByRole('button', { name: /^edit$/i })\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts:58:76",
+                        "location": {
+                          "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts",
+                          "column": 76,
+                          "line": 58
+                        },
+                        "snippet": "  56 |       .locator(\"article, div\")\n  57 |       .filter({ has: page.getByRole(\"heading\", { name: \"Excellent pasta\" }) });\n> 58 |     await expect(otherUserReview.getByRole(\"button\", { name: /^edit$/i })).toHaveCount(0);\n     |                                                                            ^\n  59 |   });\n  60 | });\n  61 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts",
+                            "column": 76,
+                            "line": 58
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('article, div').filter({ has: getByRole('heading', { name: 'Excellent pasta' }) }).getByRole('button', { name: /^edit$/i })\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('article, div').filter({ has: getByRole('heading', { name: 'Excellent pasta' }) }).getByRole('button', { name: /^edit$/i })\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n  56 |       .locator(\"article, div\")\n  57 |       .filter({ has: page.getByRole(\"heading\", { name: \"Excellent pasta\" }) });\n> 58 |     await expect(otherUserReview.getByRole(\"button\", { name: /^edit$/i })).toHaveCount(0);\n     |                                                                            ^\n  59 |   });\n  60 | });\n  61 |\n    at C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts:58:76"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-21T08:53:14.887Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\test-results\\reviews-Reviews-T013-other-b4535--edit-someone-else-s-review-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Alfatech.uz.DESKTOP-VCS0PJE\\OneDrive\\Desktop\\Cursor AI\\cowork-restaurant-reviews\\web-app\\tests\\e2e\\reviews.spec.ts",
+                        "column": 76,
+                        "line": 58
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "e1198ca194b02ae20e2d-afd2316a236aba00284d",
+              "file": "reviews.spec.ts",
+              "line": 51,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-06-21T08:47:37.293Z",
+    "duration": 347968.793,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 16,
+    "flaky": 0
+  }
+}

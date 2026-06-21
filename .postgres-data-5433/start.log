@@ -1,0 +1,138 @@
+2026-06-21 01:15:33.122 +05 [25024] LOG:  starting PostgreSQL 18.0 on x86_64-windows, compiled by msvc-19.44.35215, 64-bit
+2026-06-21 01:15:33.126 +05 [25024] LOG:  listening on IPv6 address "::1", port 5433
+2026-06-21 01:15:33.126 +05 [25024] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2026-06-21 01:15:33.169 +05 [23712] LOG:  database system was shut down at 2026-06-21 01:15:29 +05
+2026-06-21 01:15:33.187 +05 [25024] LOG:  database system is ready to accept connections
+2026-06-21 01:16:23.118 +05 [6328] ERROR:  relation "public.users" does not exist at character 13
+2026-06-21 01:16:23.118 +05 [6328] STATEMENT:  INSERT INTO "public"."users" ("id","fullName","email","passwordHash","role","preferredLanguage","isActive","createdAt","updatedAt") VALUES ($1,$2,$3,$4,CAST($5::text AS "public"."Role"),CAST($6::text AS "public"."Language"),$7,$8,$9) ON CONFLICT ("email") DO UPDATE SET "fullName" = $10, "passwordHash" = $11, "role" = CAST($12::text AS "public"."Role"), "preferredLanguage" = CAST($13::text AS "public"."Language"), "isActive" = $14, "updatedAt" = $15 WHERE ("public"."users"."email" = $16 AND 1=1) RETURNING "public"."users"."id", "public"."users"."fullName", "public"."users"."email", "public"."users"."passwordHash", "public"."users"."role"::text, "public"."users"."preferredLanguage"::text, "public"."users"."avatarUrl", "public"."users"."profileHeadline", "public"."users"."isActive", "public"."users"."createdAt", "public"."users"."updatedAt"
+2026-06-21 01:16:23.138 +05 [6328] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:16:37.656 +05 [29304] ERROR:  relation "restaurants" does not exist
+2026-06-21 01:16:37.656 +05 [29304] STATEMENT:  -- AlterTable
+	ALTER TABLE "restaurants" ADD COLUMN IF NOT EXISTS "mainImagePublicId" TEXT;
+	
+	-- AlterTable
+	ALTER TABLE "restaurant_images" ADD COLUMN IF NOT EXISTS "publicId" TEXT;
+	
+	-- AlterTable
+	ALTER TABLE "review_images" ADD COLUMN IF NOT EXISTS "publicId" TEXT;
+	
+2026-06-21 01:16:38.420 +05 [32504] ERROR:  relation "public.users" does not exist at character 13
+2026-06-21 01:16:38.420 +05 [32504] STATEMENT:  INSERT INTO "public"."users" ("id","fullName","email","passwordHash","role","preferredLanguage","isActive","createdAt","updatedAt") VALUES ($1,$2,$3,$4,CAST($5::text AS "public"."Role"),CAST($6::text AS "public"."Language"),$7,$8,$9) ON CONFLICT ("email") DO UPDATE SET "fullName" = $10, "passwordHash" = $11, "role" = CAST($12::text AS "public"."Role"), "preferredLanguage" = CAST($13::text AS "public"."Language"), "isActive" = $14, "updatedAt" = $15 WHERE ("public"."users"."email" = $16 AND 1=1) RETURNING "public"."users"."id", "public"."users"."fullName", "public"."users"."email", "public"."users"."passwordHash", "public"."users"."role"::text, "public"."users"."preferredLanguage"::text, "public"."users"."avatarUrl", "public"."users"."profileHeadline", "public"."users"."isActive", "public"."users"."createdAt", "public"."users"."updatedAt"
+2026-06-21 01:16:38.437 +05 [32504] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:20:33.283 +05 [34720] LOG:  checkpoint starting: time
+2026-06-21 01:22:35.068 +05 [34720] LOG:  checkpoint complete: wrote 1120 buffers (6.8%), wrote 3 SLRU buffers; 1 WAL file(s) added, 0 removed, 0 recycled; write=121.747 s, sync=0.001 s, total=121.785 s; sync files=0, longest=0.000 s, average=0.000 s; distance=5327 kB, estimate=5327 kB; lsn=0/1D25670, redo lsn=0/1D255E0
+2026-06-21 01:54:43.644 +05 [12384] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.644 +05 [23348] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.646 +05 [28848] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.646 +05 [22240] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.647 +05 [38376] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [28632] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [25300] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [29968] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [1840] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [20332] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [30872] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [30964] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [26884] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [31280] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [11332] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [26952] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [30788] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [27712] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [30992] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [37288] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [39012] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [27816] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [27016] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [29852] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [23512] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.651 +05 [20680] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.651 +05 [12396] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [37336] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [32516] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.651 +05 [31140] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [31220] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.651 +05 [32180] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [20368] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 01:54:43.650 +05 [38148] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-06-21 02:00:33.154 +05 [34720] LOG:  checkpoint starting: time
+2026-06-21 02:00:33.265 +05 [34720] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.103 s, sync=0.001 s, total=0.111 s; sync files=0, longest=0.000 s, average=0.000 s; distance=1 kB, estimate=4795 kB; lsn=0/1D25D00, redo lsn=0/1D25CA8
+2026-06-21 02:10:33.281 +05 [34720] LOG:  checkpoint starting: time
+2026-06-21 02:10:35.356 +05 [34720] LOG:  checkpoint complete: wrote 19 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=2.072 s, sync=0.001 s, total=2.076 s; sync files=0, longest=0.000 s, average=0.000 s; distance=42 kB, estimate=4319 kB; lsn=0/1D306C8, redo lsn=0/1D30670
+2026-06-21 02:15:33.358 +05 [34720] LOG:  checkpoint starting: time
+2026-06-21 02:15:33.468 +05 [34720] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.106 s, sync=0.001 s, total=0.110 s; sync files=0, longest=0.000 s, average=0.000 s; distance=1 kB, estimate=3888 kB; lsn=0/1D30E60, redo lsn=0/1D30E08
+2026-06-21 02:15:49.553 +05 [5764] FATAL:  terminating connection due to unexpected postmaster exit
+2026-06-21 02:15:49.553 +05 [32776] FATAL:  terminating connection due to unexpected postmaster exit
+2026-06-21 02:15:49.553 +05 [29368] FATAL:  terminating connection due to unexpected postmaster exit
+2026-06-21 02:15:49.553 +05 [36992] FATAL:  terminating connection due to unexpected postmaster exit
+2026-06-21 02:15:49.553 +05 [11108] FATAL:  terminating connection due to unexpected postmaster exit
+2026-06-21 13:34:25.633 +05 [2268] LOG:  starting PostgreSQL 18.0 on x86_64-windows, compiled by msvc-19.44.35215, 64-bit
+2026-06-21 13:34:25.637 +05 [2268] LOG:  listening on IPv6 address "::1", port 5433
+2026-06-21 13:34:25.637 +05 [2268] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2026-06-21 13:34:25.677 +05 [22356] LOG:  database system was interrupted; last known up at 2026-06-21 02:15:33 +05
+2026-06-21 13:34:25.678 +05 [22356] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-06-21 13:34:25.680 +05 [22356] LOG:  redo starts at 0/1D30E08
+2026-06-21 13:34:25.680 +05 [22356] LOG:  invalid record length at 0/1D30F10: expected at least 24, got 0
+2026-06-21 13:34:25.680 +05 [22356] LOG:  redo done at 0/1D30ED8 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2026-06-21 13:34:25.684 +05 [15896] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-06-21 13:34:25.691 +05 [15896] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.010 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1D30F10, redo lsn=0/1D30F10
+2026-06-21 13:34:25.718 +05 [2268] LOG:  database system is ready to accept connections
+2026-06-21 13:34:25.794 +05 [19388] ERROR:  database "cowork_restaurants" already exists
+2026-06-21 13:34:25.794 +05 [19388] STATEMENT:  CREATE DATABASE "cowork_restaurants"
+2026-06-21 13:34:25.828 +05 [2268] LOG:  received fast shutdown request
+2026-06-21 13:34:25.828 +05 [2268] LOG:  aborting any active transactions
+2026-06-21 13:34:25.868 +05 [2268] LOG:  background worker "logical replication launcher" (PID 4544) exited with exit code 1
+2026-06-21 13:34:25.868 +05 [15896] LOG:  shutting down
+2026-06-21 13:34:25.869 +05 [15896] LOG:  checkpoint starting: shutdown immediate
+2026-06-21 13:34:25.874 +05 [15896] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.006 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1D30F88, redo lsn=0/1D30F88
+2026-06-21 13:34:25.922 +05 [2268] LOG:  database system is shut down
+2026-06-21 13:36:58.103 +05 [23988] LOG:  starting PostgreSQL 18.0 on x86_64-windows, compiled by msvc-19.44.35215, 64-bit
+2026-06-21 13:36:58.106 +05 [23988] LOG:  listening on IPv6 address "::1", port 5433
+2026-06-21 13:36:58.106 +05 [23988] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2026-06-21 13:36:58.146 +05 [12740] LOG:  database system was shut down at 2026-06-21 13:34:25 +05
+2026-06-21 13:36:58.152 +05 [23988] LOG:  database system is ready to accept connections
+2026-06-21 13:36:58.257 +05 [5720] ERROR:  database "cowork_restaurants" already exists
+2026-06-21 13:36:58.257 +05 [5720] STATEMENT:  CREATE DATABASE "cowork_restaurants"
+2026-06-21 13:36:58.291 +05 [23988] LOG:  received fast shutdown request
+2026-06-21 13:36:58.291 +05 [23988] LOG:  aborting any active transactions
+2026-06-21 13:36:58.304 +05 [23988] LOG:  background worker "logical replication launcher" (PID 4944) exited with exit code 1
+2026-06-21 13:36:58.317 +05 [22720] LOG:  shutting down
+2026-06-21 13:36:58.317 +05 [22720] LOG:  checkpoint starting: shutdown immediate
+2026-06-21 13:36:58.322 +05 [22720] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.006 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1D31000, redo lsn=0/1D31000
+2026-06-21 13:36:58.359 +05 [23988] LOG:  database system is shut down

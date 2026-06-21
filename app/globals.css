@@ -1,0 +1,152 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-airbnb-rausch: #ff385c;
+  --color-airbnb-hof: #222222;
+  --color-airbnb-foggy: #717171;
+  --color-airbnb-border: #dddddd;
+  --color-airbnb-surface: #f7f7f7;
+  --color-accent-gold: #ffb400;
+  --radius-sm: calc(var(--radius) * 0.67);
+  --radius-md: calc(var(--radius) * 0.83);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.17);
+  --radius-2xl: calc(var(--radius) * 1.33);
+  --radius-3xl: calc(var(--radius) * 1.67);
+  --radius-4xl: calc(var(--radius) * 2);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #222222;
+  --card: #ffffff;
+  --card-foreground: #222222;
+  --popover: #ffffff;
+  --popover-foreground: #222222;
+  --primary: #ff385c;
+  --primary-foreground: #ffffff;
+  --secondary: #f7f7f7;
+  --secondary-foreground: #222222;
+  --muted: #f7f7f7;
+  --muted-foreground: #717171;
+  --accent: #f7f7f7;
+  --accent-foreground: #222222;
+  --destructive: #c13515;
+  --border: #dddddd;
+  --input: #dddddd;
+  --ring: #222222;
+  --chart-1: #ff385c;
+  --chart-2: #00a699;
+  --chart-3: #fc642d;
+  --chart-4: #484848;
+  --chart-5: #767676;
+  --radius: 0.75rem;
+  --sidebar: #f7f7f7;
+  --sidebar-foreground: #222222;
+  --sidebar-primary: #ff385c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f7f7f7;
+  --sidebar-accent-foreground: #222222;
+  --sidebar-border: #dddddd;
+  --sidebar-ring: #222222;
+}
+
+.dark {
+  --background: #111111;
+  --foreground: #f7f7f7;
+  --card: #1a1a1a;
+  --card-foreground: #f7f7f7;
+  --popover: #1a1a1a;
+  --popover-foreground: #f7f7f7;
+  --primary: #ff385c;
+  --primary-foreground: #ffffff;
+  --secondary: #262626;
+  --secondary-foreground: #f7f7f7;
+  --muted: #262626;
+  --muted-foreground: #b0b0b0;
+  --accent: #262626;
+  --accent-foreground: #f7f7f7;
+  --destructive: #ff5a5f;
+  --border: #3a3a3a;
+  --input: #3a3a3a;
+  --ring: #f7f7f7;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #f7f7f7;
+  --sidebar-primary: #ff385c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #262626;
+  --sidebar-accent-foreground: #f7f7f7;
+  --sidebar-border: #3a3a3a;
+  --sidebar-ring: #f7f7f7;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply overflow-x-hidden font-sans;
+  }
+  body {
+    @apply min-h-dvh overflow-x-hidden bg-background text-[15px] leading-6 text-foreground antialiased;
+  }
+  h1 {
+    @apply text-[32px] font-semibold leading-[1.15] tracking-[-0.02em] text-foreground sm:text-[36px];
+  }
+  h2 {
+    @apply text-[22px] font-semibold leading-snug tracking-[-0.01em] text-foreground;
+  }
+  h3 {
+    @apply text-base font-semibold leading-snug text-foreground;
+  }
+  p {
+    @apply text-[15px] leading-6 text-muted-foreground;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-foreground/80 ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer utilities {
+  .surface-card {
+    @apply rounded-xl border border-border bg-background;
+  }
+}
