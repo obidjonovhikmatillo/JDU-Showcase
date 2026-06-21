@@ -1,13 +1,15 @@
 import createIntlMiddleware from "next-intl/middleware";
+import NextAuth from "next-auth";
 import { NextResponse } from "next/server";
 
-import { auth } from "@/auth";
+import { authConfig } from "@/auth.config";
 import { routing } from "@/i18n/routing";
-import { getLocaleFromPathname, stripLocaleFromPathname } from "@/lib/i18n";
+import { getLocaleFromPathname, stripLocaleFromPathname } from "@/lib/i18n-path";
 
 const intlMiddleware = createIntlMiddleware(routing);
+const { auth } = NextAuth(authConfig);
 
-export default auth((request) => {
+export const proxy = auth((request) => {
   const { pathname } = request.nextUrl;
   const session = request.auth;
   const pathWithoutLocale = stripLocaleFromPathname(pathname);
@@ -34,6 +36,10 @@ export default auth((request) => {
   return intlMiddleware(request);
 });
 
+export default proxy;
+
 export const config = {
-  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+  matcher: [
+    "/((?!api|_next/static|_next/image|_vercel|favicon.ico|icon|apple-icon|.*\\..*).*)",
+  ],
 };

@@ -1,6 +1,12 @@
 import type { Language } from "@prisma/client";
 
 import { routing } from "@/i18n/routing";
+import {
+  getLocaleFromPathname,
+  stripLocaleFromPathname,
+} from "@/lib/i18n-path";
+
+export { getLocaleFromPathname, stripLocaleFromPathname };
 
 export const locales = routing.locales;
 export type Locale = (typeof locales)[number];
@@ -37,17 +43,3 @@ export const languageToLocale: Record<Language, Locale> = {
   RU: "ru",
   JA: "ja",
 };
-
-export function stripLocaleFromPathname(pathname: string): string {
-  const match = pathname.match(/^\/(en|uz|ru|ja)(\/.*)?$/);
-  if (!match) {
-    return pathname;
-  }
-
-  return match[2] || "/";
-}
-
-export function getLocaleFromPathname(pathname: string): Locale {
-  const match = pathname.match(/^\/(en|uz|ru|ja)(\/|$)/);
-  return (match?.[1] as Locale | undefined) ?? defaultLocale;
-}
