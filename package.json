@@ -18,6 +18,7 @@
     "db:validate": "prisma validate",
     "db:migrate": "prisma migrate dev",
     "db:migrate:deploy": "prisma migrate deploy",
+    "db:migrate:production": "node scripts/migrate-production.mjs",
     "db:push": "prisma db push",
     "db:sync": "prisma db push && prisma generate",
     "db:studio": "prisma studio",

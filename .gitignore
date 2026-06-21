@@ -18,6 +18,7 @@ test-results
 /test-results
 playwright-report
 /playwright-report
+tests/output
 
 # next.js
 .next
@@ -53,6 +54,7 @@ next-env.d.ts
 
 # local embedded postgres data
 .postgres-data
+.postgres-data-*
 .postgres-pid.json
 
 # user-uploaded images (local dev storage)
