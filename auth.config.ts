@@ -1,5 +1,7 @@
 import type { NextAuthConfig } from "next-auth";
 
+import { applySessionUpdate } from "@/lib/auth/apply-session-update";
+
 /**
  * Edge/proxy-safe Auth.js configuration.
  * Database providers and credentials validation live in auth.ts only.
@@ -19,33 +21,13 @@ export const authConfig = {
         token.role = user.role;
         token.preferredLanguage = user.preferredLanguage;
         token.fullName = user.name ?? "";
+        token.name = user.name ?? "";
         token.avatarUrl = user.avatarUrl ?? null;
         token.profileHeadline = user.profileHeadline ?? null;
       }
 
       if (trigger === "update" && session) {
-        const updateSession = session as {
-          fullName?: string;
-          preferredLanguage?: string;
-          avatarUrl?: string | null;
-          profileHeadline?: string | null;
-        };
-
-        if (updateSession.fullName) {
-          token.fullName = updateSession.fullName;
-        }
-
-        if (updateSession.preferredLanguage) {
-          token.preferredLanguage = updateSession.preferredLanguage;
-        }
-
-        if (updateSession.avatarUrl !== undefined) {
-          token.avatarUrl = updateSession.avatarUrl;
-        }
-
-        if (updateSession.profileHeadline !== undefined) {
-          token.profileHeadline = updateSession.profileHeadline;
-        }
+        applySessionUpdate(token as Record<string, unknown>, session);
       }
 
       return token;

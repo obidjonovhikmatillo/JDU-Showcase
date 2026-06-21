@@ -81,9 +81,10 @@ function formatAverageRating(value: number | null) {
 
 export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelProps) {
   const router = useRouter();
-  const { data: session, update } = useSession();
+  const { update } = useSession();
   const [editOpen, setEditOpen] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
+  const [displayUser, setDisplayUser] = useState(user);
   const t = useTranslations("ProfilePanel");
   const tCommon = useTranslations("Common");
   const tValidation = useTranslations("Validation");
@@ -107,6 +108,7 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
   });
 
   useEffect(() => {
+    setDisplayUser(user);
     form.reset({
       fullName: user.fullName,
       profileHeadline: user.profileHeadline ?? "",
@@ -120,10 +122,10 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
   function handleEditOpenChange(nextOpen: boolean) {
     if (!nextOpen) {
       form.reset({
-        fullName: user.fullName,
-        profileHeadline: user.profileHeadline ?? "",
-        preferredLanguage: user.preferredLanguage,
-        avatarUrl: user.avatarUrl ?? "",
+        fullName: displayUser.fullName,
+        profileHeadline: displayUser.profileHeadline ?? "",
+        preferredLanguage: displayUser.preferredLanguage,
+        avatarUrl: displayUser.avatarUrl ?? "",
       });
       setServerError(null);
     }
@@ -158,36 +160,34 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
       return;
     }
 
-    await update({
+    const nextProfile = {
       fullName: result.fullName ?? values.fullName,
       profileHeadline:
         result.profileHeadline ??
         (values.profileHeadline?.trim() || null),
-      preferredLanguage: result.preferredLanguage ?? values.preferredLanguage,
+      preferredLanguage:
+        (result.preferredLanguage ?? values.preferredLanguage) as Language,
       avatarUrl: result.avatarUrl ?? (values.avatarUrl?.trim() || null),
-    });
+    };
+
+    setDisplayUser((current) => ({
+      ...current,
+      ...nextProfile,
+    }));
+
+    await update(nextProfile);
 
     toast.success(tToast("profileUpdated"));
     handleEditOpenChange(false);
     router.refresh();
   }
 
-  const resolvedUser = {
-    ...user,
-    fullName: session?.user?.fullName ?? session?.user?.name ?? user.fullName,
-    profileHeadline:
-      session?.user?.profileHeadline ?? user.profileHeadline ?? null,
-    avatarUrl: session?.user?.avatarUrl ?? user.avatarUrl ?? null,
-    preferredLanguage:
-      session?.user?.preferredLanguage ?? user.preferredLanguage,
-  };
-
-  const displayAvatar = resolvedUser.avatarUrl
-    ? normalizeImageSrcForDisplay(resolvedUser.avatarUrl)
+  const displayAvatar = displayUser.avatarUrl
+    ? normalizeImageSrcForDisplay(displayUser.avatarUrl)
     : "";
   const { primary, secondary } = splitDisplayName(
-    resolvedUser.fullName,
-    resolvedUser.profileHeadline,
+    displayUser.fullName,
+    displayUser.profileHeadline,
   );
 
   return (
@@ -215,14 +215,14 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
               {displayAvatar ? (
                 <UploadImage
                   src={displayAvatar}
-                  alt={t("avatarAlt", { name: resolvedUser.fullName })}
+                  alt={t("avatarAlt", { name: displayUser.fullName })}
                   fill
                   className="object-cover"
                   sizes="80px"
                 />
               ) : (
                 <span className="text-lg font-semibold text-foreground">
-                  {initialsFromName(resolvedUser.fullName)}
+                  {initialsFromName(displayUser.fullName)}
                 </span>
               )}
             </div>
@@ -231,7 +231,7 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
               {secondary ? (
                 <p className="text-sm text-muted-foreground">{secondary}</p>
               ) : (
-                <p className="text-sm text-muted-foreground">{resolvedUser.email}</p>
+                <p className="text-sm text-muted-foreground">{displayUser.email}</p>
               )}
             </div>
           </div>
@@ -260,7 +260,9 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
             </div>
             <div className="flex items-start justify-between gap-4 border-b border-border/60 pb-3">
               <span className="text-muted-foreground">{t("preferredLanguage")}</span>
-              <span className="font-medium text-foreground">{tLang(resolvedUser.preferredLanguage)}</span>
+              <span className="font-medium text-foreground">
+                {tLang(displayUser.preferredLanguage)}
+              </span>
             </div>
             <div className="flex items-start justify-between gap-4">
               <span className="text-muted-foreground">{t("registered")}</span>
@@ -296,7 +298,7 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
                       <ProfileAvatarField
                         value={field.value ?? ""}
                         onChange={field.onChange}
-                        fullName={resolvedUser.fullName}
+                        fullName={displayUser.fullName}
                         disabled={isSubmitting}
                         invalid={!!form.formState.errors.avatarUrl}
                       />

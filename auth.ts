@@ -6,7 +6,7 @@ import { authConfig } from "@/auth.config";
 import { findUserWithPasswordByEmail } from "@/lib/prisma-auth";
 import { loginSchema } from "@/lib/validations/auth";
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
+export const { handlers, signIn, signOut, auth, unstable_update } = NextAuth({
   ...authConfig,
   providers: [
     Credentials({

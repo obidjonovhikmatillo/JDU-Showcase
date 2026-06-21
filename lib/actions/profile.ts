@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { getLocale, getTranslations } from "next-intl/server";
 
-import { auth } from "@/auth";
+import { auth, unstable_update } from "@/auth";
 import prisma from "@/lib/prisma";
 import { normalizeUploadedImageUrlForStorage } from "@/lib/uploads/uploaded-image-url";
 import { createProfileUpdateSchema } from "@/lib/validations/create-auth-schemas";
@@ -75,6 +75,17 @@ export async function updateProfile(
     return { error: tErrors("userNotFound") };
   }
 
+  const profileHeadline = parsed.data.profileHeadline?.trim() || null;
+
+  await unstable_update({
+    user: {
+      fullName: parsed.data.fullName,
+      profileHeadline,
+      preferredLanguage: parsed.data.preferredLanguage,
+      avatarUrl,
+    },
+  });
+
   const locale = await getLocale();
   revalidatePath(`/${locale}`, "layout");
   revalidatePath(`/${locale}/profile`);
@@ -82,7 +93,7 @@ export async function updateProfile(
   return {
     success: true,
     fullName: parsed.data.fullName,
-    profileHeadline: parsed.data.profileHeadline?.trim() || null,
+    profileHeadline,
     preferredLanguage: parsed.data.preferredLanguage,
     avatarUrl,
   };
