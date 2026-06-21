@@ -18,7 +18,7 @@ This repository includes **Phase 1** (UI shell), **Phase 2** (PostgreSQL + Prism
 | Auth | Auth.js (credentials) |
 | Forms | React Hook Form + Zod |
 | Maps (planned) | Leaflet + OpenStreetMap |
-| Images (planned) | Cloudinary |
+| Images | Vercel Blob (production) / local `public/uploads/` (dev) |
 
 ## Prerequisites
 
@@ -42,6 +42,8 @@ cp .env.example .env
 ```
 
 Edit `.env` and set a valid `DATABASE_URL` for your PostgreSQL instance.
+
+For **production image uploads**, set `BLOB_READ_WRITE_TOKEN` (Vercel Blob). Local dev works without it — uploads are stored in `public/uploads/`.
 
 ### 3. Database setup (Prisma)
 

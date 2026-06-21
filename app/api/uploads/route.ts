@@ -8,7 +8,6 @@ import {
   uploadImageBuffer,
 } from "@/lib/uploads/image-storage.server";
 import {
-  UPLOAD_FOLDERS,
   type UploadFolderKey,
 } from "@/lib/uploads/image-upload-constants";
 import { validateImageBuffer } from "@/lib/uploads/validate-image-buffer.server";
@@ -59,7 +58,7 @@ export async function POST(request: Request) {
   }
 
   if (!isUploadStorageAvailable()) {
-    return NextResponse.json({ error: "CLOUDINARY_NOT_CONFIGURED" }, { status: 503 });
+    return NextResponse.json({ error: "BLOB_NOT_CONFIGURED" }, { status: 503 });
   }
 
   if (!(file instanceof File)) {
@@ -76,7 +75,7 @@ export async function POST(request: Request) {
   try {
     const uploaded = await uploadImageBuffer(buffer, folderKey, validated.mime);
 
-    if (!uploaded.publicId.startsWith(UPLOAD_FOLDERS[folderKey])) {
+    if (!isManagedUploadPublicId(uploaded.publicId, folderKey)) {
       await deleteUploadedImages([uploaded.publicId]);
       return NextResponse.json({ error: "UPLOAD_FAILED" }, { status: 500 });
     }

@@ -8,7 +8,7 @@ Deploy **TasteGuide** (`cowork-restaurant-reviews`) to Vercel with a hosted Post
 
 - [Vercel](https://vercel.com) account
 - [Neon](https://neon.tech) or [Supabase](https://supabase.com) PostgreSQL project
-- [Cloudinary](https://cloudinary.com) account (required for image uploads in production)
+- [Vercel Blob](https://vercel.com/docs/storage/vercel-blob) store linked to the project (required for image uploads in production)
 - Git repository connected to Vercel
 
 ---
@@ -29,10 +29,14 @@ Deploy **TasteGuide** (`cowork-restaurant-reviews`) to Vercel with a hosted Post
 
 ---
 
-## 2. Cloudinary
+## 2. Vercel Blob
 
-1. Cloudinary Console → copy **Cloud name**, **API Key**, **API Secret**.
-2. Optional: create upload presets/folders — the app uses server-side signed uploads.
+1. Vercel dashboard → **Storage** → **Create Database** → **Blob**.
+2. Connect the Blob store to your project.
+3. Copy **BLOB_READ_WRITE_TOKEN** (or rely on Vercel auto-injection when the store is linked).
+4. Uploads go through `/api/uploads` (server-side, authenticated) and store public URLs in Postgres.
+
+Local development works without a token — files are saved under `public/uploads/`.
 
 ---
 
@@ -57,11 +61,9 @@ In **Vercel → Project → Settings → Environment Variables**, set for **Prod
 | `AUTH_SECRET` | Yes | Output of `openssl rand -base64 32` |
 | `AUTH_URL` | Yes | `https://your-app.vercel.app` (no trailing slash) |
 | `NEXT_PUBLIC_APP_URL` | Yes | Same as `AUTH_URL` |
-| `CLOUDINARY_CLOUD_NAME` | Yes* | Cloudinary cloud name |
-| `CLOUDINARY_API_KEY` | Yes* | Cloudinary API key |
-| `CLOUDINARY_API_SECRET` | Yes* | Cloudinary API secret |
+| `BLOB_READ_WRITE_TOKEN` | Yes* | Vercel Blob read-write token |
 
-\*Required for uploads (reviews, avatars, admin images). Without Cloudinary, uploads fail in production.
+\*Required for uploads in production (reviews, avatars, admin images). Without it, uploads fail outside local dev.
 
 **Do not set** `ALLOW_PRODUCTION_SEED` on Vercel.
 
@@ -162,7 +164,7 @@ After deploy, verify:
 - [ ] `https://your-app.vercel.app/en` loads home page
 - [ ] `/uz`, `/ru`, `/ja` locale prefixes work (language switcher)
 - [ ] `/en/restaurants` lists seeded restaurants
-- [ ] Restaurant detail page loads images from `/images/restaurants/` or Cloudinary
+- [ ] Restaurant detail page loads images from `/images/restaurants/`, `/uploads/`, or Vercel Blob URLs
 - [ ] Custom 404: open `/en/does-not-exist`
 
 ### Auth
@@ -172,7 +174,7 @@ After deploy, verify:
 - [ ] `/en/admin` — guest → login; user → redirect; admin → dashboard
 - [ ] Logout works
 
-### Uploads (Cloudinary)
+### Uploads (Vercel Blob)
 
 - [ ] Upload avatar on profile edit
 - [ ] Create review with image on restaurant page
@@ -223,7 +225,7 @@ E2E tests require a running dev server and seeded DB (`npm run test:e2e`).
 | Build fails: `DIRECT_URL` not found | Add `DIRECT_URL` to Vercel env and local `.env` |
 | Auth redirect loop | Ensure `AUTH_URL` and `NEXT_PUBLIC_APP_URL` match deployed HTTPS URL |
 | Images 404 on cards | Run `npm run images:download` and redeploy, or re-run `db:seed` |
-| Upload fails | Configure all three `CLOUDINARY_*` variables |
+| Upload fails | Set `BLOB_READ_WRITE_TOKEN` or link a Vercel Blob store to the project |
 | Migrations fail on Neon | Use `DIRECT_URL` (non-pooled) for `prisma migrate deploy` |
 | Prisma pool timeouts | Use pooled `DATABASE_URL` for the app; direct only for migrations |
 

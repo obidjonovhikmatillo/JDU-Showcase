@@ -36,15 +36,13 @@ export function getProductionEnvIssues(): EnvIssue[] {
     });
   }
 
-  const cloudName = process.env.CLOUDINARY_CLOUD_NAME?.trim();
-  const cloudKey = process.env.CLOUDINARY_API_KEY?.trim();
-  const cloudSecret = process.env.CLOUDINARY_API_SECRET?.trim();
-  const cloudinaryConfigured = Boolean(cloudName && cloudKey && cloudSecret);
+  const blobToken = process.env.BLOB_READ_WRITE_TOKEN?.trim();
+  const blobConfigured = Boolean(blobToken);
 
-  if (process.env.NODE_ENV === "production" && !cloudinaryConfigured) {
+  if (process.env.NODE_ENV === "production" && !blobConfigured) {
     issues.push({
-      key: "CLOUDINARY_*",
-      message: "Cloudinary is required in production for image uploads.",
+      key: "BLOB_READ_WRITE_TOKEN",
+      message: "Vercel Blob token is required in production for image uploads.",
       severity: "warning",
     });
   }

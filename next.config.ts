@@ -35,7 +35,8 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "res.cloudinary.com",
+        hostname: "*.public.blob.vercel-storage.com",
+        pathname: "/**",
       },
       ...(productionHostname
         ? [

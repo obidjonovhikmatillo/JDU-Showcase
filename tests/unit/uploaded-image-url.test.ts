@@ -8,7 +8,7 @@ import {
 describe("uploaded image URL helpers", () => {
   it("accepts local upload paths and cloud URLs", () => {
     expect(isValidUploadedImageUrl("/uploads/tasteguide/reviews/abc.jpg")).toBe(true);
-    expect(isValidUploadedImageUrl("https://res.cloudinary.com/demo/image.jpg")).toBe(true);
+    expect(isValidUploadedImageUrl("https://abc123.public.blob.vercel-storage.com/demo.jpg")).toBe(true);
     expect(isValidUploadedImageUrl("not-a-url")).toBe(false);
   });
 

@@ -49,17 +49,17 @@ function main() {
   assert(
     "Allow up to 4 review images",
     reviewSchema.safeParse([
-      { url: "https://res.cloudinary.com/demo/image/upload/a.jpg", publicId: "a" },
-      { url: "https://res.cloudinary.com/demo/image/upload/b.jpg", publicId: "b" },
-      { url: "https://res.cloudinary.com/demo/image/upload/c.jpg", publicId: "c" },
-      { url: "https://res.cloudinary.com/demo/image/upload/d.jpg", publicId: "d" },
+      { url: "https://abc123.public.blob.vercel-storage.com/tasteguide/reviews/a.jpg", publicId: "tasteguide/reviews/a.jpg" },
+      { url: "https://abc123.public.blob.vercel-storage.com/tasteguide/reviews/b.jpg", publicId: "tasteguide/reviews/b.jpg" },
+      { url: "https://abc123.public.blob.vercel-storage.com/tasteguide/reviews/c.jpg", publicId: "tasteguide/reviews/c.jpg" },
+      { url: "https://abc123.public.blob.vercel-storage.com/tasteguide/reviews/d.jpg", publicId: "tasteguide/reviews/d.jpg" },
     ]).success,
   );
   assert(
     "Reject more than 4 review images",
     !reviewSchema.safeParse(
       Array.from({ length: 5 }, (_, index) => ({
-        url: `https://res.cloudinary.com/demo/image/upload/${index}.jpg`,
+        url: `https://abc123.public.blob.vercel-storage.com/tasteguide/reviews/${index}.jpg`,
         publicId: String(index),
       })),
     ).success,

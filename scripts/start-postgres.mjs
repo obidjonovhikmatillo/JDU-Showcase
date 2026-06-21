@@ -47,10 +47,8 @@ DIRECT_URL="${databaseUrl}"
 AUTH_SECRET="replace-with-openssl-rand-base64-32"
 AUTH_URL=http://localhost:3000
 
-# Cloudinary (optional in local dev)
-CLOUDINARY_CLOUD_NAME=
-CLOUDINARY_API_KEY=
-CLOUDINARY_API_SECRET=
+# Vercel Blob (optional in local dev — uses public/uploads/ without a token)
+BLOB_READ_WRITE_TOKEN=
 `,
     "utf8",
   );

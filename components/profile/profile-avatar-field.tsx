@@ -75,8 +75,8 @@ export function ProfileAvatarField({
     } catch (error) {
       const code = error instanceof Error ? error.message : "UPLOAD_FAILED";
       const message =
-        code === "CLOUDINARY_NOT_CONFIGURED"
-          ? tImage("cloudinaryNotConfigured")
+        code === "BLOB_NOT_CONFIGURED"
+          ? tImage("blobNotConfigured")
           : code === "UNAUTHORIZED"
             ? tImage("uploadUnauthorized")
             : code === "FORBIDDEN"

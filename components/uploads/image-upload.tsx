@@ -53,8 +53,8 @@ function uploadErrorMessage(
   code: string,
 ) {
   switch (code) {
-    case "CLOUDINARY_NOT_CONFIGURED":
-      return t("cloudinaryNotConfigured");
+    case "BLOB_NOT_CONFIGURED":
+      return t("blobNotConfigured");
     case "INVALID_FILE":
       return tValidation("imageInvalidType");
     case "UNAUTHORIZED":

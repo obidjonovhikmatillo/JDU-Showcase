@@ -1,28 +1,27 @@
 import "server-only";
 
 import {
-  deleteCloudinaryImages,
-  generateSafePublicId,
-  isCloudinaryConfigured,
-  isManagedCloudinaryPublicId,
-  isManagedCloudinaryUrl,
-  uploadCloudinaryImageBuffer,
-} from "@/lib/cloudinary/server";
+  deleteBlobImages,
+  isBlobConfigured,
+  isBlobPublicId,
+  isManagedBlobUrl,
+  uploadBlobImageBuffer,
+} from "@/lib/blob/server";
 import type { UploadFolderKey } from "@/lib/uploads/image-upload-constants";
 import type { UploadedImage } from "@/lib/uploads/image-upload-types";
+import { generateLocalPublicId, isFolderScopedPublicId } from "@/lib/uploads/upload-ids";
 import {
   deleteLocalImages,
-  isLocalUploadPublicId,
   isLocalUploadUrl,
   uploadImageBufferLocally,
 } from "@/lib/uploads/local-storage.server";
 
 export function isUploadStorageAvailable() {
-  return isCloudinaryConfigured() || process.env.NODE_ENV === "development";
+  return isBlobConfigured() || process.env.NODE_ENV === "development";
 }
 
 export function isManagedUploadPublicId(publicId: string, folderKey: UploadFolderKey) {
-  return isManagedCloudinaryPublicId(publicId, folderKey) || isLocalUploadPublicId(publicId);
+  return isFolderScopedPublicId(publicId, folderKey);
 }
 
 export function isManagedUploadUrl(url: string) {
@@ -30,11 +29,11 @@ export function isManagedUploadUrl(url: string) {
     return true;
   }
 
-  if (!isCloudinaryConfigured()) {
-    return false;
+  if (isBlobConfigured()) {
+    return isManagedBlobUrl(url);
   }
 
-  return isManagedCloudinaryUrl(url);
+  return false;
 }
 
 export async function uploadImageBuffer(
@@ -42,14 +41,12 @@ export async function uploadImageBuffer(
   folderKey: UploadFolderKey,
   mime: string,
 ): Promise<UploadedImage> {
-  const publicId = generateSafePublicId(folderKey);
-
-  if (isCloudinaryConfigured()) {
-    return uploadCloudinaryImageBuffer(buffer, folderKey, publicId);
+  if (isBlobConfigured()) {
+    return uploadBlobImageBuffer(buffer, folderKey, mime);
   }
 
   if (process.env.NODE_ENV === "development") {
-    return uploadImageBufferLocally(buffer, folderKey, publicId, mime);
+    return uploadImageBufferLocally(buffer, folderKey, generateLocalPublicId(folderKey), mime);
   }
 
   throw new Error("Upload storage is not configured.");
@@ -60,9 +57,12 @@ export async function deleteUploadedImages(publicIds: string[]) {
     return;
   }
 
-  await deleteLocalImages(publicIds);
+  const blobIds = publicIds.filter((publicId) => isBlobPublicId(publicId));
+  const localIds = publicIds.filter((publicId) => !isBlobPublicId(publicId));
 
-  if (isCloudinaryConfigured()) {
-    await deleteCloudinaryImages(publicIds);
+  await deleteLocalImages(localIds);
+
+  if (blobIds.length > 0 && isBlobConfigured()) {
+    await deleteBlobImages(blobIds);
   }
 }
