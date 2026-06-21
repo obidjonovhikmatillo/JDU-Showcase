@@ -227,7 +227,7 @@
     "limits": "До {max} изображений · JPG, PNG, WebP · макс. {sizeMb} МБ каждое",
     "uploading": "Загрузка...",
     "uploadFailed": "Не удалось загрузить изображение. Попробуйте снова.",
-    "blobNotConfigured": "Загрузка изображений не настроена. Добавьте BLOB_READ_WRITE_TOKEN в .env (или включите Vercel Blob при деплое) и перезапустите dev server.",
+    "blobNotConfigured": "Локальная загрузка изображений не настроена. Добавьте BLOB_READ_WRITE_TOKEN в .env для локального теста или разверните на Vercel с подключённым Blob store.",
     "uploadUnauthorized": "Войдите, чтобы загружать изображения.",
     "uploadForbidden": "У вас нет прав для загрузки изображений сюда.",
     "deleteFailed": "Не удалось удалить изображение. Попробуйте снова.",

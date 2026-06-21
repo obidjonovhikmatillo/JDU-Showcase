@@ -227,7 +227,7 @@
     "limits": "Maksimum {max} ta rasm · JPG, PNG, WebP · har biri {sizeMb} MB gacha",
     "uploading": "Yuklanmoqda...",
     "uploadFailed": "Rasm yuklanmadi. Qayta urinib ko'ring.",
-    "blobNotConfigured": "Rasm yuklash hali sozlanmagan. .env fayliga BLOB_READ_WRITE_TOKEN qo'shing (yoki Vercel Blob bilan deploy qiling) va dev serverni qayta ishga tushiring.",
+    "blobNotConfigured": "Mahalliy rasm yuklash sozlanmagan. Lokal test uchun .env ga BLOB_READ_WRITE_TOKEN qo'shing yoki Vercel Blob ulangan holda deploy qiling.",
     "uploadUnauthorized": "Rasm yuklash uchun tizimga kiring.",
     "uploadForbidden": "Bu yerda rasm yuklash uchun ruxsatingiz yo'q.",
     "deleteFailed": "Rasmni o'chirib bo'lmadi. Qayta urinib ko'ring.",

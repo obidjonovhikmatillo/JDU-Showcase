@@ -1,5 +1,6 @@
 import "server-only";
 
+import { isBlobConfigured } from "@/lib/blob/availability";
 import { getSiteUrl } from "@/lib/site-url";
 
 type EnvIssue = {
@@ -36,13 +37,11 @@ export function getProductionEnvIssues(): EnvIssue[] {
     });
   }
 
-  const blobToken = process.env.BLOB_READ_WRITE_TOKEN?.trim();
-  const blobConfigured = Boolean(blobToken);
-
-  if (process.env.NODE_ENV === "production" && !blobConfigured) {
+  if (process.env.NODE_ENV === "production" && !isBlobConfigured()) {
     issues.push({
-      key: "BLOB_READ_WRITE_TOKEN",
-      message: "Vercel Blob token is required in production for image uploads.",
+      key: "BLOB_STORE_ID",
+      message:
+        "Link a Vercel Blob store to the project (OIDC) or set BLOB_READ_WRITE_TOKEN for uploads.",
       severity: "warning",
     });
   }

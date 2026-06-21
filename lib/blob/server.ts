@@ -11,20 +11,7 @@ import {
 
 const BLOB_HOST_SUFFIX = ".public.blob.vercel-storage.com";
 
-export function isBlobConfigured() {
-  const token = process.env.BLOB_READ_WRITE_TOKEN?.trim();
-  return Boolean(token && !token.includes("replace-with"));
-}
-
-function getBlobToken() {
-  const token = process.env.BLOB_READ_WRITE_TOKEN?.trim();
-
-  if (!token) {
-    throw new Error("BLOB_READ_WRITE_TOKEN is not configured.");
-  }
-
-  return token;
-}
+export { isBlobConfigured } from "@/lib/blob/availability";
 
 export function isManagedBlobUrl(url: string): boolean {
   try {
@@ -51,12 +38,10 @@ export async function uploadBlobImageBuffer(
   mime: string,
 ): Promise<UploadedImage> {
   const pathname = generateUploadPathname(folderKey, mime);
-  const token = getBlobToken();
 
   const result = await put(pathname, buffer, {
     access: "public",
     contentType: mime,
-    token,
     addRandomSuffix: false,
   });
 
@@ -71,6 +56,5 @@ export async function deleteBlobImages(pathnamesOrUrls: string[]) {
     return;
   }
 
-  const token = getBlobToken();
-  await del(pathnamesOrUrls, { token });
+  await del(pathnamesOrUrls);
 }

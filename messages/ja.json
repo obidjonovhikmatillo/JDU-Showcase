@@ -227,7 +227,7 @@
     "limits": "最大 {max} 枚 · JPG、PNG、WebP · 各 {sizeMb} MB まで",
     "uploading": "アップロード中...",
     "uploadFailed": "画像のアップロードに失敗しました。もう一度お試しください。",
-    "blobNotConfigured": "画像アップロードが未設定です。.env に BLOB_READ_WRITE_TOKEN を追加するか、Vercel Blob を有効にして dev server を再起動してください。",
+    "blobNotConfigured": "ローカル環境で画像アップロードが未設定です。ローカルテスト用に .env に BLOB_READ_WRITE_TOKEN を追加するか、Vercel Blob をリンクしてデプロイしてください。",
     "uploadUnauthorized": "画像をアップロードするにはログインしてください。",
     "uploadForbidden": "ここに画像をアップロードする権限がありません。",
     "deleteFailed": "画像を削除できませんでした。もう一度お試しください。",
