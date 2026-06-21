@@ -12,6 +12,10 @@ export type ProfileUpdateActionState = {
   success?: boolean;
   error?: string;
   fieldErrors?: Record<string, string[]>;
+  fullName?: string;
+  profileHeadline?: string | null;
+  preferredLanguage?: string;
+  avatarUrl?: string | null;
 };
 
 export async function updateProfile(
@@ -72,7 +76,14 @@ export async function updateProfile(
   }
 
   const locale = await getLocale();
+  revalidatePath(`/${locale}`, "layout");
   revalidatePath(`/${locale}/profile`);
 
-  return { success: true };
+  return {
+    success: true,
+    fullName: parsed.data.fullName,
+    profileHeadline: parsed.data.profileHeadline?.trim() || null,
+    preferredLanguage: parsed.data.preferredLanguage,
+    avatarUrl,
+  };
 }

@@ -81,7 +81,7 @@ function formatAverageRating(value: number | null) {
 
 export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelProps) {
   const router = useRouter();
-  const { update } = useSession();
+  const { data: session, update } = useSession();
   const [editOpen, setEditOpen] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
   const t = useTranslations("ProfilePanel");
@@ -159,10 +159,12 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
     }
 
     await update({
-      fullName: values.fullName,
-      profileHeadline: values.profileHeadline?.trim() || null,
-      preferredLanguage: values.preferredLanguage,
-      avatarUrl: values.avatarUrl?.trim() || null,
+      fullName: result.fullName ?? values.fullName,
+      profileHeadline:
+        result.profileHeadline ??
+        (values.profileHeadline?.trim() || null),
+      preferredLanguage: result.preferredLanguage ?? values.preferredLanguage,
+      avatarUrl: result.avatarUrl ?? (values.avatarUrl?.trim() || null),
     });
 
     toast.success(tToast("profileUpdated"));
@@ -170,10 +172,23 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
     router.refresh();
   }
 
-  const displayAvatar = user.avatarUrl
-    ? normalizeImageSrcForDisplay(user.avatarUrl)
+  const resolvedUser = {
+    ...user,
+    fullName: session?.user?.fullName ?? session?.user?.name ?? user.fullName,
+    profileHeadline:
+      session?.user?.profileHeadline ?? user.profileHeadline ?? null,
+    avatarUrl: session?.user?.avatarUrl ?? user.avatarUrl ?? null,
+    preferredLanguage:
+      session?.user?.preferredLanguage ?? user.preferredLanguage,
+  };
+
+  const displayAvatar = resolvedUser.avatarUrl
+    ? normalizeImageSrcForDisplay(resolvedUser.avatarUrl)
     : "";
-  const { primary, secondary } = splitDisplayName(user.fullName, user.profileHeadline);
+  const { primary, secondary } = splitDisplayName(
+    resolvedUser.fullName,
+    resolvedUser.profileHeadline,
+  );
 
   return (
     <>
@@ -200,14 +215,14 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
               {displayAvatar ? (
                 <UploadImage
                   src={displayAvatar}
-                  alt={t("avatarAlt", { name: user.fullName })}
+                  alt={t("avatarAlt", { name: resolvedUser.fullName })}
                   fill
                   className="object-cover"
                   sizes="80px"
                 />
               ) : (
                 <span className="text-lg font-semibold text-foreground">
-                  {initialsFromName(user.fullName)}
+                  {initialsFromName(resolvedUser.fullName)}
                 </span>
               )}
             </div>
@@ -216,7 +231,7 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
               {secondary ? (
                 <p className="text-sm text-muted-foreground">{secondary}</p>
               ) : (
-                <p className="text-sm text-muted-foreground">{user.email}</p>
+                <p className="text-sm text-muted-foreground">{resolvedUser.email}</p>
               )}
             </div>
           </div>
@@ -245,9 +260,7 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
             </div>
             <div className="flex items-start justify-between gap-4 border-b border-border/60 pb-3">
               <span className="text-muted-foreground">{t("preferredLanguage")}</span>
-              <span className="font-medium text-foreground">
-                {tLang(user.preferredLanguage)}
-              </span>
+              <span className="font-medium text-foreground">{tLang(resolvedUser.preferredLanguage)}</span>
             </div>
             <div className="flex items-start justify-between gap-4">
               <span className="text-muted-foreground">{t("registered")}</span>
@@ -283,7 +296,7 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
                       <ProfileAvatarField
                         value={field.value ?? ""}
                         onChange={field.onChange}
-                        fullName={user.fullName}
+                        fullName={resolvedUser.fullName}
                         disabled={isSubmitting}
                         invalid={!!form.formState.errors.avatarUrl}
                       />

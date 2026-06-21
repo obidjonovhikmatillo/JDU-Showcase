@@ -2,6 +2,7 @@
 
 import { MenuIcon, XIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useSession } from "next-auth/react";
 import { useState } from "react";
 
 import { LogoutButton } from "@/components/auth/logout-button";
@@ -43,8 +44,14 @@ export function MobileNav({
   profileHeadline,
 }: MobileNavProps) {
   const [open, setOpen] = useState(false);
+  const { data: session } = useSession();
   const t = useTranslations("Nav");
   const tCommon = useTranslations("Common");
+  const resolvedFullName =
+    session?.user?.fullName ?? session?.user?.name ?? fullName ?? "";
+  const resolvedHeadline =
+    session?.user?.profileHeadline ?? profileHeadline ?? null;
+  const resolvedAvatar = session?.user?.avatarUrl ?? avatarUrl ?? null;
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -110,11 +117,11 @@ export function MobileNav({
             <LanguageSwitcher />
             {isAuthenticated ? (
               <div className="space-y-3">
-                {fullName ? (
+                {resolvedFullName ? (
                   <HeaderUserMenu
-                    fullName={fullName}
-                    avatarUrl={avatarUrl}
-                    profileHeadline={profileHeadline}
+                    fullName={resolvedFullName}
+                    avatarUrl={resolvedAvatar}
+                    profileHeadline={resolvedHeadline}
                     showTextAlways
                     className="max-w-none px-0 hover:bg-transparent"
                   />

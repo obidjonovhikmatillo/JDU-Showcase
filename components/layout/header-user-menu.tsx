@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useSession } from "next-auth/react";
 
 import { Link } from "@/i18n/navigation";
 import { initialsFromName, splitDisplayName } from "@/lib/display-name";
@@ -24,9 +25,20 @@ export function HeaderUserMenu({
   showTextAlways = false,
 }: HeaderUserMenuProps) {
   const t = useTranslations("Nav");
-  const { primary, secondary } = splitDisplayName(fullName, profileHeadline);
-  const displayAvatar = avatarUrl ? normalizeImageSrcForDisplay(avatarUrl) : null;
-  const initials = initialsFromName(fullName);
+  const { data: session } = useSession();
+  const resolvedFullName =
+    session?.user?.fullName ?? session?.user?.name ?? fullName;
+  const resolvedHeadline =
+    session?.user?.profileHeadline ?? profileHeadline ?? null;
+  const resolvedAvatar = session?.user?.avatarUrl ?? avatarUrl ?? null;
+  const { primary, secondary } = splitDisplayName(
+    resolvedFullName,
+    resolvedHeadline,
+  );
+  const displayAvatar = resolvedAvatar
+    ? normalizeImageSrcForDisplay(resolvedAvatar)
+    : null;
+  const initials = initialsFromName(resolvedFullName);
 
   return (
     <Link
@@ -41,7 +53,7 @@ export function HeaderUserMenu({
         {displayAvatar ? (
           <Image
             src={displayAvatar}
-            alt={t("profileAvatarAlt", { name: fullName })}
+            alt={t("profileAvatarAlt", { name: resolvedFullName })}
             fill
             sizes="36px"
             className="object-cover"
