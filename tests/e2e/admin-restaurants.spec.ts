@@ -1,43 +1,43 @@
 import { expect, test } from "@playwright/test";
 
 import {
-  createAdminRestaurant,
+  createAdminProject,
   login,
   TEST_USERS,
   uniqueSlug,
 } from "../helpers/playwright-auth";
 
-test.describe("Admin restaurant management", () => {
-  test("T014 admin can create a restaurant", async ({ page }) => {
-    const slug = uniqueSlug("e2e-restaurant");
-    const name = `E2E Restaurant ${Date.now()}`;
+test.describe("Admin project management", () => {
+  test("T014 admin can create a project", async ({ page }) => {
+    const slug = uniqueSlug("e2e-project");
+    const title = `E2E Project ${Date.now()}`;
 
     await login(page, TEST_USERS.admin.email, TEST_USERS.admin.password);
-    await createAdminRestaurant(page, name, slug);
+    await createAdminProject(page, title, slug);
   });
 
-  test("T015 admin can edit a restaurant", async ({ page }) => {
+  test("T015 admin can edit a project", async ({ page }) => {
     const slug = uniqueSlug("e2e-edit");
-    const updatedName = `Edited ${Date.now()}`;
+    const updatedTitle = `Edited ${Date.now()}`;
 
     await login(page, TEST_USERS.admin.email, TEST_USERS.admin.password);
-    await createAdminRestaurant(page, `Create ${slug}`, slug);
-    await page.locator("#name").fill(updatedName);
+    await createAdminProject(page, `Create ${slug}`, slug);
+    await page.locator("#title").fill(updatedTitle);
     await page.getByRole("button", { name: /save changes/i }).click();
-    await expect(page.getByText(updatedName)).toBeVisible({ timeout: 10_000 });
+    await expect(page.getByText(updatedTitle)).toBeVisible({ timeout: 10_000 });
   });
 
-  test("T016 admin can delete a restaurant", async ({ page }) => {
+  test("T016 admin can delete a project", async ({ page }) => {
     const slug = uniqueSlug("e2e-delete");
-    const name = `Delete ${Date.now()}`;
+    const title = `Delete ${Date.now()}`;
 
     await login(page, TEST_USERS.admin.email, TEST_USERS.admin.password);
-    await createAdminRestaurant(page, name, slug);
-    await page.goto("/en/admin/restaurants");
+    await createAdminProject(page, title, slug);
+    await page.goto("/en/admin/projects");
     await page.locator("#admin-search-q").fill(slug);
     await page.getByRole("button", { name: /apply filters/i }).click();
     await page.getByRole("button", { name: /^delete$/i }).click();
-    await page.getByRole("button", { name: /delete restaurant/i }).click();
-    await expect(page.getByText(name)).toHaveCount(0, { timeout: 15_000 });
+    await page.getByRole("button", { name: /delete project/i }).click();
+    await expect(page.getByText(title)).toHaveCount(0, { timeout: 15_000 });
   });
 });

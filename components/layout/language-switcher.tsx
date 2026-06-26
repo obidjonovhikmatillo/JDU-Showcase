@@ -48,7 +48,7 @@ export function LanguageSwitcher() {
         aria-label={t("ariaLabel")}
         className={cn(
           buttonVariants({ variant: "outline", size: "sm" }),
-          "min-w-14 gap-1 rounded-full border-border px-2.5 font-medium",
+          "min-w-14 gap-1 rounded-full border-white/20 bg-transparent px-2.5 font-medium text-white/80 hover:bg-white/10 hover:text-white",
         )}
       >
         <Globe className="size-3.5 shrink-0" aria-hidden />

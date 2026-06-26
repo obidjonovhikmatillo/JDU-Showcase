@@ -13,7 +13,7 @@ type UserItem = {
   email: string;
   role: "USER" | "ADMIN";
   isActive: boolean;
-  _count: { reviews: number };
+  _count: { comments: number };
 };
 
 type UserAdminActionsProps = {

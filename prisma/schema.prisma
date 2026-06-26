@@ -33,7 +33,10 @@ model User {
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
 
-  reviews Review[]
+  comments     Comment[]
+  projects     Project[]     @relation("ProjectAuthor")
+  likes        ProjectLike[]
+  saves        ProjectSave[]
 
   @@index([role])
   @@index([isActive])
@@ -50,99 +53,129 @@ model Category {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  restaurants Restaurant[]
+  projects Project[]
 
   @@index([slug])
   @@map("categories")
 }
 
-model Restaurant {
+model Project {
   id            String   @id @default(cuid())
-  name          String
+  title         String
   slug          String   @unique
   descriptionUz String   @db.Text
   descriptionEn String   @db.Text
   descriptionRu String   @db.Text
   descriptionJa String   @db.Text
-  address       String
-  city          String
-  phone         String?
-  website       String?
-  openingHours  String?
-  latitude      Float
-  longitude     Float
+  authorName    String
+  department    String
+  techStack     String?
+  demoUrl       String?
+  githubUrl     String?
   mainImageUrl  String?
   mainImagePublicId String?
-  priceLevel    Int?
-  cuisineType   String?
+  difficulty    String?
   isPublished   Boolean  @default(false)
   categoryId    String
+  authorId      String?
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
-  category Category          @relation(fields: [categoryId], references: [id], onDelete: Restrict)
-  images   RestaurantImage[]
-  reviews  Review[]
+  category Category        @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  author   User?           @relation("ProjectAuthor", fields: [authorId], references: [id], onDelete: SetNull)
+  images   ProjectImage[]
+  comments Comment[]
+  likes    ProjectLike[]
+  saves    ProjectSave[]
 
-  @@index([name])
-  @@index([city])
+  @@index([title])
+  @@index([department])
   @@index([slug])
   @@index([categoryId])
   @@index([isPublished])
-  @@index([cuisineType])
-  @@index([city, isPublished])
+  @@index([techStack])
+  @@index([department, isPublished])
   @@index([categoryId, isPublished])
-  @@index([name, city])
-  @@map("restaurants")
+  @@index([title, department])
+  @@index([authorId])
+  @@map("projects")
 }
 
-model RestaurantImage {
-  id           String   @id @default(cuid())
-  restaurantId String
-  imageUrl     String
-  publicId     String?
-  createdAt    DateTime @default(now())
-
-  restaurant Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
-
-  @@index([restaurantId])
-  @@map("restaurant_images")
-}
-
-/// rating is validated in application code (integer 1–5)
-model Review {
-  id           String    @id @default(cuid())
-  userId       String
-  restaurantId String
-  rating       Int
-  title        String
-  content      String    @db.Text
-  visitDate    DateTime?
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
-
-  user       User          @relation(fields: [userId], references: [id], onDelete: Cascade)
-  restaurant Restaurant    @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
-  images     ReviewImage[]
-
-  @@index([userId])
-  @@index([restaurantId])
-  @@index([rating])
-  @@index([userId, createdAt])
-  @@index([restaurantId, createdAt])
-  @@index([restaurantId, rating])
-  @@map("reviews")
-}
-
-model ReviewImage {
+model ProjectImage {
   id        String   @id @default(cuid())
-  reviewId  String
+  projectId String
   imageUrl  String
   publicId  String?
   createdAt DateTime @default(now())
 
-  review Review @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
 
-  @@index([reviewId])
-  @@map("review_images")
+  @@index([projectId])
+  @@map("project_images")
+}
+
+model Comment {
+  id        String    @id @default(cuid())
+  userId    String
+  projectId String
+  rating    Int
+  title     String
+  content   String    @db.Text
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  user    User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  project Project        @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  images  CommentImage[]
+
+  @@index([userId])
+  @@index([projectId])
+  @@index([rating])
+  @@index([userId, createdAt])
+  @@index([projectId, createdAt])
+  @@index([projectId, rating])
+  @@map("comments")
+}
+
+model CommentImage {
+  id        String   @id @default(cuid())
+  commentId String
+  imageUrl  String
+  publicId  String?
+  createdAt DateTime @default(now())
+
+  comment Comment @relation(fields: [commentId], references: [id], onDelete: Cascade)
+
+  @@index([commentId])
+  @@map("comment_images")
+}
+
+model ProjectLike {
+  id        String   @id @default(cuid())
+  userId    String
+  projectId String
+  createdAt DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, projectId])
+  @@index([projectId])
+  @@index([userId])
+  @@map("project_likes")
+}
+
+model ProjectSave {
+  id        String   @id @default(cuid())
+  userId    String
+  projectId String
+  createdAt DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, projectId])
+  @@index([projectId])
+  @@index([userId])
+  @@map("project_saves")
 }

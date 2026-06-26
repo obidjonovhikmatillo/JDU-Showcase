@@ -4,14 +4,14 @@ const prisma = new PrismaClient();
 
 async function main() {
   try {
-    await prisma.restaurant.findFirst({
-      where: { slug: "trattoria-amici", isPublished: true },
+    await prisma.project.findFirst({
+      where: { slug: "campus-connect-portal", isPublished: true },
       include: {
         category: true,
-      images: {
-        orderBy: { createdAt: "asc" },
-      },
-        reviews: {
+        images: {
+          orderBy: { createdAt: "asc" },
+        },
+        comments: {
           orderBy: { createdAt: "desc" },
           include: {
             user: {

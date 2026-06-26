@@ -16,6 +16,6 @@ test.describe("Admin access", () => {
     await login(page, TEST_USERS.admin.email, TEST_USERS.admin.password);
     await page.goto("/en/admin");
     await expect(page).toHaveURL(/\/en\/admin/);
-    await expect(page.getByRole("link", { name: /restaurants/i })).toBeVisible();
+    await expect(page.getByRole("link", { name: /projects/i })).toBeVisible();
   });
 });

@@ -27,7 +27,7 @@ type CategoryItem = {
   nameEn: string;
   nameRu: string;
   nameJa: string;
-  _count: { restaurants: number };
+  _count: { projects: number };
 };
 
 type CategoryAdminPanelProps = {
@@ -181,7 +181,7 @@ export function CategoryAdminPanel({ categories }: CategoryAdminPanelProps) {
                   <p className="text-sm text-muted-foreground">
                     {t("meta", {
                       slug: category.slug,
-                      count: category._count.restaurants,
+                      count: category._count.projects,
                     })}
                   </p>
                 </div>
@@ -195,7 +195,7 @@ export function CategoryAdminPanel({ categories }: CategoryAdminPanelProps) {
                     description={t("deleteDescription")}
                     confirmLabel={t("deleteConfirm")}
                     triggerLabel={t("delete")}
-                    disabled={category._count.restaurants > 0}
+                    disabled={category._count.projects > 0}
                     onConfirm={() => handleDelete(category.id)}
                   />
                 </div>

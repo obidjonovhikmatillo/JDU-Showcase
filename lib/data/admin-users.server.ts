@@ -40,7 +40,7 @@ export async function listAdminUsersPaginated(filters: AdminUserListFilters) {
         isActive: true,
         preferredLanguage: true,
         createdAt: true,
-        _count: { select: { reviews: true } },
+        _count: { select: { comments: true } },
       },
     }),
     prisma.user.count({ where }),

@@ -6,35 +6,31 @@ export type CategorySeed = {
   nameJa: string;
 };
 
-export type RestaurantSeed = {
+export type ProjectSeed = {
   slug: string;
-  name: string;
+  title: string;
   descriptionUz: string;
   descriptionEn: string;
   descriptionRu: string;
   descriptionJa: string;
-  address: string;
-  city: string;
-  phone: string;
-  website?: string;
-  openingHours: string;
-  latitude: number;
-  longitude: number;
+  authorName: string;
+  department: string;
+  techStack?: string;
+  demoUrl?: string;
+  githubUrl?: string;
   mainImageUrl: string;
   galleryImageUrls: string[];
   categorySlug: string;
-  priceLevel: number;
-  cuisineType: string;
+  difficulty?: string;
   isPublished: boolean;
 };
 
-export type ReviewSeed = {
+export type CommentSeed = {
   userEmail: string;
-  restaurantSlug: string;
+  projectSlug: string;
   rating: number;
   title: string;
   content: string;
-  visitDate?: string;
   imageUrls?: string[];
 };
 
@@ -47,10 +43,10 @@ export type UserSeed = {
 };
 
 import {
-  getRestaurantGallery,
-  getRestaurantMainImage,
-  getReviewImage,
-} from "../lib/restaurant-images";
+  getProjectMainImage,
+  getProjectGallery,
+  getCommentImage,
+} from "../lib/project-images";
 
 export const users: UserSeed[] = [
   {
@@ -85,544 +81,451 @@ export const users: UserSeed[] = [
 
 export const categories: CategorySeed[] = [
   {
-    slug: "uzbek-cuisine",
-    nameUz: "O'zbek taomlari",
-    nameEn: "Uzbek cuisine",
-    nameRu: "Узбекская кухня",
-    nameJa: "ウズベク料理",
+    slug: "web-development",
+    nameUz: "Veb dasturlash",
+    nameEn: "Web Development",
+    nameRu: "Веб-разработка",
+    nameJa: "ウェブ開発",
   },
   {
-    slug: "japanese-cuisine",
-    nameUz: "Yapon taomlari",
-    nameEn: "Japanese cuisine",
-    nameRu: "Японская кухня",
-    nameJa: "日本料理",
+    slug: "mobile-app",
+    nameUz: "Mobil ilova",
+    nameEn: "Mobile App",
+    nameRu: "Мобильное приложение",
+    nameJa: "モバイルアプリ",
   },
   {
-    slug: "korean-cuisine",
-    nameUz: "Koreys taomlari",
-    nameEn: "Korean cuisine",
-    nameRu: "Корейская кухня",
-    nameJa: "韓国料理",
+    slug: "ui-ux-design",
+    nameUz: "UI/UX dizayn",
+    nameEn: "UI/UX Design",
+    nameRu: "UI/UX дизайн",
+    nameJa: "UI/UXデザイン",
   },
   {
-    slug: "turkish-cuisine",
-    nameUz: "Turk taomlari",
-    nameEn: "Turkish cuisine",
-    nameRu: "Турецкая кухня",
-    nameJa: "トルコ料理",
+    slug: "ai-ml",
+    nameUz: "Sun'iy intellekt",
+    nameEn: "AI/ML",
+    nameRu: "ИИ/МО",
+    nameJa: "AI/ML",
   },
   {
-    slug: "european-cuisine",
-    nameUz: "Yevropa taomlari",
-    nameEn: "European cuisine",
-    nameRu: "Европейская кухня",
-    nameJa: "ヨーロッパ料理",
-  },
-  {
-    slug: "fast-food",
-    nameUz: "Tez tayyor taomlar",
-    nameEn: "Fast food",
-    nameRu: "Фастфуд",
-    nameJa: "ファストフード",
-  },
-  {
-    slug: "coffee-shop",
-    nameUz: "Kofe uyi",
-    nameEn: "Coffee shop",
-    nameRu: "Кофейня",
-    nameJa: "カフェ",
-  },
-  {
-    slug: "dessert",
-    nameUz: "Shirinliklar",
-    nameEn: "Dessert",
-    nameRu: "Десерты",
-    nameJa: "デザート",
+    slug: "game-development",
+    nameUz: "O'yin yaratish",
+    nameEn: "Game Development",
+    nameRu: "Разработка игр",
+    nameJa: "ゲーム開発",
   },
 ];
 
-export const restaurants: RestaurantSeed[] = [
+export const projects: ProjectSeed[] = [
   {
-    slug: "plov-markazi-chorsu",
-    name: "Plov Markazi Chorsu",
+    slug: "spendwise-finance",
+    title: "SpendWise Finance Landing",
     descriptionUz:
-      "Chorsu bozoridagi afsonaviy osh markazi. Toshkent uslubidagi qizil va sariq osh, nozik qovurma va issiq non har kuni ertalab tayyorlanadi.",
+      "Zamonaviy kredit karta va moliyaviy xizmatlar uchun landing sahifa dizayni. Elegant gradient ranglar va aniq tipografiya bilan foydalanuvchilarga moliyaviy erkinlikni taqdim etadi.",
     descriptionEn:
-      "Legendary plov house near Chorsu Bazaar serving classic Tashkent-style red and yellow rice with tender meat and fresh tandoor bread baked every morning.",
+      "An elegant credit card and finance landing page design featuring smooth gradients, clean typography, and a premium feel. The layout guides users through key financial features with a sophisticated visual hierarchy.",
     descriptionRu:
-      "Легендарная пловная у базара Чорсу с классическим ташкентским пловом, нежным мясом и свежим лепёшками из тандыра каждое утро.",
+      "Элегантный дизайн лендинга для кредитных карт и финансовых услуг. Плавные градиенты, чистая типографика и премиальное оформление создают ощущение надёжности и современности.",
     descriptionJa:
-      "チャルスバザール近くの名物プラウ店。タシケント風の赤と黄のピラフ、柔らかい肉、毎朝焼きたてのナンが人気です。",
-    address: "Chorsu Bazaar, 9 Beruni Avenue",
-    city: "Tashkent",
-    phone: "+998 71 244 12 34",
-    openingHours: "Mon–Sun 08:00–22:00",
-    latitude: 41.3264,
-    longitude: 69.2341,
-    mainImageUrl: getRestaurantMainImage("plov-markazi-chorsu"),
-    galleryImageUrls: getRestaurantGallery("plov-markazi-chorsu"),
-    categorySlug: "uzbek-cuisine",
-    priceLevel: 2,
-    cuisineType: "Uzbek",
+      "クレジットカードと金融サービスのためのエレガントなランディングページデザイン。滑らかなグラデーション、クリーンなタイポグラフィ、プレミアムな雰囲気が特徴です。",
+    authorName: "Aleksandr Petrov",
+    department: "FinTech",
+    techStack: "Figma, React, Tailwind CSS, Framer Motion",
+    mainImageUrl: getProjectMainImage("spendwise-finance"),
+    galleryImageUrls: getProjectGallery("spendwise-finance"),
+    categorySlug: "ui-ux-design",
+    difficulty: "Advanced",
     isPublished: true,
   },
   {
-    slug: "afsona-restaurant",
-    name: "Afsona Restaurant",
+    slug: "ora-wellness",
+    title: "ORA Wellness Experience",
     descriptionUz:
-      "Milliy taomlar va zamonaviy interyer uyg'unligi. Manti, somsa va shirinliklar oilaviy kechalar uchun juda mos.",
+      "ORA wellness va teri parvarishi brendi uchun landing sahifa. Tabiat rasmlari kolaji va yumshoq ranglar palitrasidan foydalanib, tinchlik va salomatlik hissini uyg'otadi.",
     descriptionEn:
-      "A refined blend of national dishes and modern interiors. Manti, samsa, and desserts make it ideal for family evenings in central Tashkent.",
+      "A wellness and skincare app landing page for the ORA brand, featuring a beautiful photo collage of natural elements. The design evokes calm and self-care through earthy tones, soft shadows, and flowing layouts.",
     descriptionRu:
-      "Изысканное сочетание национальных блюд и современного интерьера. Манты, самса и десерты отлично подходят для семейных вечеров.",
+      "Лендинг для бренда ORA в сфере wellness и ухода за кожей. Коллаж из фотографий природы, мягкая цветовая палитра и плавная компоновка создают атмосферу спокойствия и заботы о себе.",
     descriptionJa:
-      "民族料理とモダンな内装が調和したレストラン。マンティ、サムサ、デザートが家族での夕食に最適です。",
-    address: "28 Navoi Street",
-    city: "Tashkent",
-    phone: "+998 71 233 45 67",
-    website: "https://example.com/afsona",
-    openingHours: "Mon–Sun 11:00–23:00",
-    latitude: 41.3118,
-    longitude: 69.2794,
-    mainImageUrl: getRestaurantMainImage("afsona-restaurant"),
-    galleryImageUrls: getRestaurantGallery("afsona-restaurant"),
-    categorySlug: "uzbek-cuisine",
-    priceLevel: 3,
-    cuisineType: "Uzbek",
+      "ORAブランドのウェルネス・スキンケアアプリのランディングページ。自然素材のフォトコラージュとアースカラーで、穏やかなセルフケアの世界観を表現しています。",
+    authorName: "Yuliya Sokolova",
+    department: "UI/UX Design",
+    techStack: "Figma, Next.js, GSAP, Tailwind CSS",
+    mainImageUrl: getProjectMainImage("ora-wellness"),
+    galleryImageUrls: getProjectGallery("ora-wellness"),
+    categorySlug: "ui-ux-design",
+    difficulty: "Intermediate",
     isPublished: true,
   },
   {
-    slug: "yapona-mama",
-    name: "Yapona Mama",
+    slug: "ideahub-platform",
+    title: "IdeaHub Creative Platform",
     descriptionUz:
-      "Toshkentdagi mashhur yapon restorani. Rollar, ramen va tempura katta tanlov bilan taqdim etiladi.",
+      "\"Buyuk g'oyalar shu yerda yashaydi\" shiori bilan qorong'u temada ishlangan karta asosidagi platforma. Ijodkorlar uchun loyihalarni ulashish va hamkorlik qilish imkonini beradi.",
     descriptionEn:
-      "Popular Japanese restaurant in Tashkent known for sushi rolls, ramen, and crispy tempura served in a lively downtown setting.",
+      "A dark-themed card-based platform built around the motto 'Great ideas live here.' The UI features rich card layouts with hover interactions, enabling creatives to share projects and collaborate seamlessly.",
     descriptionRu:
-      "Популярный японский ресторан в Ташкенте с суши-роллами, раменом и хрустящим темпура в оживлённом центре города.",
+      "Тёмная карточная платформа с девизом «Великие идеи живут здесь». Богатые карточные макеты с hover-анимациями позволяют креативщикам делиться проектами и сотрудничать.",
     descriptionJa:
-      "タシケントで人気の日本食レストラン。巻き寿司、ラーメン、サクサクの天ぷらが楽しめます。",
-    address: "45 Amir Temur Avenue",
-    city: "Tashkent",
-    phone: "+998 71 255 88 11",
-    openingHours: "Mon–Sun 12:00–00:00",
-    latitude: 41.3193,
-    longitude: 69.2517,
-    mainImageUrl: getRestaurantMainImage("yapona-mama"),
-    galleryImageUrls: getRestaurantGallery("yapona-mama"),
-    categorySlug: "japanese-cuisine",
-    priceLevel: 3,
-    cuisineType: "Japanese",
+      "「素晴らしいアイデアはここに生まれる」をモットーにしたダークテーマのカードベースプラットフォーム。ホバーインタラクション付きのリッチなカードレイアウトが特徴です。",
+    authorName: "Dmitriy Volkov",
+    department: "Frontend Development",
+    techStack: "Next.js, TypeScript, Tailwind CSS, Prisma",
+    mainImageUrl: getProjectMainImage("ideahub-platform"),
+    galleryImageUrls: getProjectGallery("ideahub-platform"),
+    categorySlug: "web-development",
+    difficulty: "Advanced",
     isPublished: true,
   },
   {
-    slug: "sakura-sushi-bar",
-    name: "Sakura Sushi Bar",
+    slug: "healthtrack-monitor",
+    title: "HealthTrack Vital Monitor",
     descriptionUz:
-      "Yengil yapon taomlari va premium sushi setlar. Ishdan keyin tinch kechki ovqat uchun qulay joy.",
+      "Qon bosimi, yurak urish tezligi va boshqa vital ko'rsatkichlarni real vaqtda ko'rsatuvchi sog'liqni kuzatish dashboardi. Grafiklar va widgetlar orqali aniq ma'lumotlarni taqdim etadi.",
     descriptionEn:
-      "Light Japanese fare and premium sushi sets in a calm atmosphere, perfect for relaxed dinners after work near Yunusabad.",
+      "A health monitoring dashboard displaying blood pressure, heart rate, and other vital signs in real time. Clean data visualizations with interactive charts and widget cards provide actionable health insights.",
     descriptionRu:
-      "Лёгкие японские блюда и премиальные суши-сеты в спокойной атмосфере — отличный выбор для ужина после работы.",
+      "Дашборд мониторинга здоровья, отображающий давление, пульс и другие жизненные показатели в реальном времени. Чёткие визуализации данных с интерактивными графиками и виджетами.",
     descriptionJa:
-      "ユンサバード近くの落ち着いた寿司バー。仕事帰りのディナーに最適な軽めの日本料理とプレミアム寿司セット。",
-    address: "12 Babur Street, Yunusabad",
-    city: "Tashkent",
-    phone: "+998 71 266 33 22",
-    openingHours: "Mon–Sun 11:00–23:00",
-    latitude: 41.3349,
-    longitude: 69.2885,
-    mainImageUrl: getRestaurantMainImage("sakura-sushi-bar"),
-    galleryImageUrls: getRestaurantGallery("sakura-sushi-bar"),
-    categorySlug: "japanese-cuisine",
-    priceLevel: 4,
-    cuisineType: "Japanese",
+      "血圧、心拍数などのバイタルサインをリアルタイムで表示する健康モニタリングダッシュボード。インタラクティブなチャートとウィジェットで健康データを可視化します。",
+    authorName: "Anvar Tursunov",
+    department: "UI/UX Design",
+    techStack: "React, D3.js, TypeScript, Tailwind CSS",
+    mainImageUrl: getProjectMainImage("healthtrack-monitor"),
+    galleryImageUrls: getProjectGallery("healthtrack-monitor"),
+    categorySlug: "mobile-app",
+    difficulty: "Advanced",
     isPublished: true,
   },
   {
-    slug: "korean-house-tashkent",
-    name: "Korean House Tashkent",
+    slug: "abcbank-digital",
+    title: "ABCBank Digital Banking",
     descriptionUz:
-      "Koreys barbekyu va kimchi bilan boy stollar. Guruh uchun BBQ kechasi va qiziqarli xizmat.",
+      "\"Erkinlikni kashf eting\" sarlavhasi bilan zamonaviy raqamli bank landing sahifasi. Ishonchli va professional dizayn orqali bank xizmatlarini foydalanuvchilarga yaqinlashtiradi.",
     descriptionEn:
-      "Korean BBQ with generous banchan side dishes and kimchi. A fun group dining spot for grilled meat and shared plates.",
+      "A digital banking landing page with the headline 'Discover freedom,' showcasing modern financial services. The trustworthy design uses bold typography, clean sections, and a professional color palette to convey reliability.",
     descriptionRu:
-      "Корейское барбекю с щедрыми гарнирами и кимчи. Отличное место для компании с жареным мясом и общими блюдами.",
+      "Лендинг цифрового банка с заголовком «Откройте свободу», демонстрирующий современные финансовые услуги. Внушающий доверие дизайн с крупной типографикой и профессиональной цветовой палитрой.",
     descriptionJa:
-      "キムチと豊富なおかず付きの韓国焼肉店。グループで楽しめるBBQディナーにぴったりです。",
-    address: "7 Shahrisabz Street",
-    city: "Tashkent",
-    phone: "+998 71 277 19 90",
-    openingHours: "Mon–Sun 12:00–23:30",
-    latitude: 41.3089,
-    longitude: 69.2654,
-    mainImageUrl: getRestaurantMainImage("korean-house-tashkent"),
-    galleryImageUrls: getRestaurantGallery("korean-house-tashkent"),
-    categorySlug: "korean-cuisine",
-    priceLevel: 3,
-    cuisineType: "Korean",
+      "「自由を発見しよう」をヘッドラインとしたデジタルバンキングのランディングページ。モダンな金融サービスを信頼感のあるデザインで表現しています。",
+    authorName: "Kamola Rashidova",
+    department: "FinTech",
+    techStack: "Figma, React, Tailwind CSS, Stripe API",
+    mainImageUrl: getProjectMainImage("abcbank-digital"),
+    galleryImageUrls: getProjectGallery("abcbank-digital"),
+    categorySlug: "web-development",
+    difficulty: "Intermediate",
     isPublished: true,
   },
   {
-    slug: "istanbul-kebab-palace",
-    name: "Istanbul Kebab Palace",
+    slug: "urbangreen-tech",
+    title: "UrbanGreen Eco-Tech Landing",
     descriptionUz:
-      "Doner, lavash va turkcha nonushta taomlari. Tez, to'yimli va oilaviy narxlar bilan mashhur.",
+      "UrbanGreen ekologik texnologiyalar brendi uchun landing sahifa. Tabiat va mox tasvirlari bilan uyg'unlashgan zamonaviy dizayn barqaror kelajak g'oyasini ifodalaydi.",
     descriptionEn:
-      "Doner, lavash wraps, and Turkish breakfast plates. Known for fast service, hearty portions, and family-friendly prices.",
+      "An eco-tech landing page for the UrbanGreen brand, blending nature imagery with modern web design. Lush moss textures and green tones create a compelling narrative around sustainable technology and environmental responsibility.",
     descriptionRu:
-      "Донер, лаваш и турецкий завтрак. Славится быстрым обслуживанием, сытными порциями и доступными ценами.",
+      "Лендинг для эко-бренда UrbanGreen, сочетающий природные образы с современным веб-дизайном. Текстуры мха и зелёные тона создают убедительную историю об устойчивых технологиях.",
     descriptionJa:
-      "ドネルケバブ、ラヴァシュ、トルコ式朝食が楽しめるお店。早いサービスとボリューム満点の料理が人気です。",
-    address: "33 Farabi Street",
-    city: "Tashkent",
-    phone: "+998 71 288 44 55",
-    openingHours: "Mon–Sun 09:00–23:00",
-    latitude: 41.2956,
-    longitude: 69.2788,
-    mainImageUrl: getRestaurantMainImage("istanbul-kebab-palace"),
-    galleryImageUrls: getRestaurantGallery("istanbul-kebab-palace"),
-    categorySlug: "turkish-cuisine",
-    priceLevel: 2,
-    cuisineType: "Turkish",
+      "UrbanGreenエコテックブランドのランディングページ。自然のイメージとモダンなウェブデザインを融合し、苔のテクスチャとグリーントーンでサステナビリティを表現しています。",
+    authorName: "Lev Mikhailov",
+    department: "Frontend Development",
+    techStack: "Next.js, Three.js, Tailwind CSS, GSAP",
+    mainImageUrl: getProjectMainImage("urbangreen-tech"),
+    galleryImageUrls: getProjectGallery("urbangreen-tech"),
+    categorySlug: "web-development",
+    difficulty: "Advanced",
     isPublished: true,
   },
   {
-    slug: "trattoria-amici",
-    name: "Trattoria Amici",
+    slug: "niceatnoon-studio",
+    title: "NiceAtNoon Design Studio Portfolio",
     descriptionUz:
-      "Italyan makaron, pizza va tiramisu. Romantik kechalar va biznes tushliklari uchun qulay atmosfera.",
+      "NiceAtNoon dizayn studiyasining portfolio sayti. Brending ishlari, logotip dizayni va vizual identifikatsiya loyihalarini chiroyli grid layoutda namoyish etadi.",
     descriptionEn:
-      "Italian pasta, wood-fired pizza, and tiramisu in an elegant setting suited for romantic dinners and business lunches.",
+      "A portfolio website for the NiceAtNoon design studio, showcasing branding work, logo design, and visual identity projects. The clean grid layout and bold imagery highlight the studio's creative range and attention to detail.",
     descriptionRu:
-      "Итальянская паста, пицца и тирамisu в элегантной обстановке — подходит для романтических ужинов и деловых ланчей.",
+      "Портфолио дизайн-студии NiceAtNoon с работами по брендингу, дизайну логотипов и визуальной идентичности. Чистый grid-макет и выразительные изображения подчёркивают творческий диапазон студии.",
     descriptionJa:
-      "パスタ、薪窯ピッツァ、ティラミスが楽しめるイタリアンレストラン。デートやビジネスランチに最適です。",
-    address: "5 Sayilgoh Street",
-    city: "Tashkent",
-    phone: "+998 71 299 11 77",
-    openingHours: "Mon–Sun 11:30–23:00",
-    latitude: 41.3127,
-    longitude: 69.2721,
-    mainImageUrl: getRestaurantMainImage("trattoria-amici"),
-    galleryImageUrls: getRestaurantGallery("trattoria-amici"),
-    categorySlug: "european-cuisine",
-    priceLevel: 4,
-    cuisineType: "Italian",
+      "NiceAtNoonデザインスタジオのポートフォリオサイト。ブランディング、ロゴデザイン、ビジュアルアイデンティティの作品をクリーンなグリッドレイアウトで紹介しています。",
+    authorName: "Sabina Nazarova",
+    department: "Brand Design",
+    techStack: "Figma, Webflow, After Effects",
+    mainImageUrl: getProjectMainImage("niceatnoon-studio"),
+    galleryImageUrls: getProjectGallery("niceatnoon-studio"),
+    categorySlug: "ui-ux-design",
+    difficulty: "Intermediate",
     isPublished: true,
   },
   {
-    slug: "bon-european-bistro",
-    name: "Bon! European Bistro",
+    slug: "panora-wellness",
+    title: "Panora Stress Tracker",
     descriptionUz:
-      "Yevropa bistro taomlari, steak va yengil salatlar. Mirzo Ulug'bek hududidagi zamonaviy restoran.",
+      "Panora stress darajasini kuzatuvchi ilova. Aylana shaklidagi soat vidjeti va kundalik kayfiyat jurnali orqali foydalanuvchilarga ruhiy salomatliklarini boshqarishda yordam beradi.",
     descriptionEn:
-      "European bistro classics, steaks, and fresh salads in a contemporary venue in the Mirzo Ulugbek district.",
+      "A stress tracking wellness app featuring a circular watch widget layout for daily mood journaling. Panora helps users monitor mental well-being through elegant data visualization, calming color schemes, and mindfulness reminders.",
     descriptionRu:
-      "Европейские блюда бistro, стейки и свежие салаты в современном ресторане района Мирzo Ulugbek.",
+      "Приложение Panora для отслеживания стресса с круглым виджетом-часами и дневником настроения. Элегантная визуализация данных и спокойная цветовая гамма помогают пользователям следить за ментальным здоровьем.",
     descriptionJa:
-      "ミルズォ・ウルグベク地区のモダンなビストロ。欧風料理、ステーキ、新鮮なサラダが楽しめます。",
-    address: "18 Buyuk Ipak Yoli, Mirzo Ulugbek",
-    city: "Tashkent",
-    phone: "+998 71 244 90 01",
-    openingHours: "Mon–Sun 10:00–22:30",
-    latitude: 41.3412,
-    longitude: 69.3348,
-    mainImageUrl: getRestaurantMainImage("bon-european-bistro"),
-    galleryImageUrls: getRestaurantGallery("bon-european-bistro"),
-    categorySlug: "european-cuisine",
-    priceLevel: 3,
-    cuisineType: "European",
+      "円形ウォッチウィジェットを備えたストレストラッカーアプリ「Panora」。日々の気分ジャーナリングとエレガントなデータ可視化で、メンタルヘルスの管理をサポートします。",
+    authorName: "Iroda Karimova",
+    department: "UI/UX Design",
+    techStack: "Swift, SwiftUI, HealthKit, Core Data",
+    mainImageUrl: getProjectMainImage("panora-wellness"),
+    galleryImageUrls: getProjectGallery("panora-wellness"),
+    categorySlug: "mobile-app",
+    difficulty: "Advanced",
     isPublished: true,
   },
   {
-    slug: "evos-fast-food",
-    name: "Evos Tashkent",
+    slug: "fashion-ecommerce",
+    title: "Fashion E-Commerce Showcase",
     descriptionUz:
-      "Mahalliy fast food zanjiri. Lavash, burger va kartoshka fri tez va barqaror sifat bilan tayyorlanadi.",
+      "Model rasmlar bilan bezatilgan zamonaviy moda e-tijorat mahsulot kartalari. Har bir karta soya effektlari va yumshoq animatsiyalar bilan premium xarid tajribasini taqdim etadi.",
     descriptionEn:
-      "Well-known local fast food chain offering lavash, burgers, and fries with consistent quality and quick takeaway service.",
+      "A modern fashion e-commerce design featuring product cards with model photography. Each card uses subtle shadow effects and smooth hover animations to deliver a premium shopping experience with visual elegance.",
     descriptionRu:
-      "Известная местная сеть фастфуда с лавашом, бургерами и картофелем фри — быстро и стабильно по качеству.",
+      "Современный дизайн fashion e-commerce с карточками товаров и фотографиями моделей. Тонкие тени и плавные hover-анимации создают премиальный опыт онлайн-шопинга.",
     descriptionJa:
-      "地元で有名なファストフードチェーン。ラヴァシュ、バーガー、フライドポテトを素早く提供します。",
-    address: "102 Bunyodkor Avenue",
-    city: "Tashkent",
-    phone: "+998 71 200 33 44",
-    openingHours: "Mon–Sun 09:00–23:00",
-    latitude: 41.2867,
-    longitude: 69.2034,
-    mainImageUrl: getRestaurantMainImage("evos-fast-food"),
-    galleryImageUrls: getRestaurantGallery("evos-fast-food"),
-    categorySlug: "fast-food",
-    priceLevel: 1,
-    cuisineType: "Fast food",
+      "モデル写真を使用したファッションECの商品カードデザイン。繊細なシャドウ効果とスムーズなホバーアニメーションで、プレミアムなショッピング体験を提供します。",
+    authorName: "Madina Usmanova",
+    department: "Frontend Development",
+    techStack: "Next.js, TypeScript, Tailwind CSS, Shopify API",
+    mainImageUrl: getProjectMainImage("fashion-ecommerce"),
+    galleryImageUrls: getProjectGallery("fashion-ecommerce"),
+    categorySlug: "web-development",
+    difficulty: "Intermediate",
     isPublished: true,
   },
   {
-    slug: "lavash-city",
-    name: "Lavash City",
+    slug: "misso-collab",
+    title: "Misso Collaboration Tool",
     descriptionUz:
-      "Katta lavashlar, shaurma va combo menyu. Talabalar va ofis xodimlari orasida mashhur.",
+      "\"Rivojlanishni boshlang\" shiori bilan qorong'u temada ishlangan hamkorlik vositasi. Jamoaviy loyihalarni boshqarish, vazifalarni taqsimlash va real vaqtda muloqot qilish imkonini beradi.",
     descriptionEn:
-      "Oversized lavash wraps, shawarma, and combo menus popular with students and office workers near Tashkent State University.",
+      "A collaboration tool with a 'Start thriving' dark-themed interface designed for team productivity. Misso combines project management, task distribution, and real-time communication in a sleek, focused workspace.",
     descriptionRu:
-      "Большие лаваши, шаурма и комбо-меню — популярно среди студентов и офисных работников рядом с ТГУ.",
+      "Инструмент для совместной работы Misso с тёмным интерфейсом и девизом «Начните процветать». Сочетает управление проектами, распределение задач и коммуникацию в едином рабочем пространстве.",
     descriptionJa:
-      "タシケント国立大学近くで学生や会社員に人気。大きなラヴァシュ、シャワルマ、コンボメニューが評判です。",
-    address: "14 University Street",
-    city: "Tashkent",
-    phone: "+998 71 211 55 66",
-    openingHours: "Mon–Sun 08:30–22:00",
-    latitude: 41.3381,
-    longitude: 69.2402,
-    mainImageUrl: getRestaurantMainImage("lavash-city"),
-    galleryImageUrls: getRestaurantGallery("lavash-city"),
-    categorySlug: "fast-food",
-    priceLevel: 1,
-    cuisineType: "Fast food",
+      "「Start thriving」をテーマにしたダークUIのコラボレーションツール「Misso」。プロジェクト管理、タスク配分、リアルタイムコミュニケーションを洗練されたワークスペースに統合しています。",
+    authorName: "Timur Sadykov",
+    department: "Frontend Development",
+    techStack: "React, TypeScript, Socket.io, PostgreSQL",
+    mainImageUrl: getProjectMainImage("misso-collab"),
+    galleryImageUrls: getProjectGallery("misso-collab"),
+    categorySlug: "web-development",
+    difficulty: "Advanced",
     isPublished: true,
   },
   {
-    slug: "coffee-talk-yunusabad",
-    name: "Coffee & Talk",
+    slug: "brite-payments",
+    title: "Brite Payments Brand Identity",
     descriptionUz:
-      "Specialty kofe, kold brew va yengil brunch. Wi-Fi va tinch muhit bilan ishlaydiganlar uchun ideal.",
+      "Brite* to'lov tizimi uchun brend identifikatsiya loyihasi. Binafsha va to'q sariq ranglar kombinatsiyasi bilan zamonaviy, xotiraga muhrlanadigan vizual tizim yaratilgan.",
     descriptionEn:
-      "Specialty coffee, cold brew, and light brunch in a quiet Wi-Fi friendly space ideal for remote work in Yunusabad.",
+      "A brand identity project for Brite* payments, built around a striking purple and orange color palette. The design system includes logo variations, typography rules, and visual assets that communicate trust and innovation in fintech.",
     descriptionRu:
-      "Авторский кофе, cold brew и лёгкий бранч в тихом пространстве с Wi-Fi — идеально для удалённой работы.",
+      "Проект бренд-айдентики для платёжной системы Brite*. Яркое сочетание фиолетового и оранжевого, вариации логотипа, типографические правила и визуальные активы передают доверие и инновации.",
     descriptionJa:
-      "ユンサバードの静かなカフェ。スペシャルティコーヒー、コールドブリュー、軽いブランチとWi-Fi完備。",
-    address: "3 Shahrisabz Passage, Yunusabad",
-    city: "Tashkent",
-    phone: "+998 71 222 77 88",
-    openingHours: "Mon–Sun 08:00–21:00",
-    latitude: 41.3375,
-    longitude: 69.2912,
-    mainImageUrl: getRestaurantMainImage("coffee-talk-yunusabad"),
-    galleryImageUrls: getRestaurantGallery("coffee-talk-yunusabad"),
-    categorySlug: "coffee-shop",
-    priceLevel: 2,
-    cuisineType: "Coffee",
+      "Brite*決済システムのブランドアイデンティティプロジェクト。パープルとオレンジの印象的なカラーパレットで、ロゴバリエーション、タイポグラフィルール、ビジュアルアセットを設計しています。",
+    authorName: "Viktor Lebedev",
+    department: "Brand Design",
+    techStack: "Figma, Illustrator, After Effects",
+    mainImageUrl: getProjectMainImage("brite-payments"),
+    galleryImageUrls: getProjectGallery("brite-payments"),
+    categorySlug: "ui-ux-design",
+    difficulty: "Intermediate",
     isPublished: true,
   },
   {
-    slug: "cinnamon-bakery",
-    name: "Cinnamon Bakery",
+    slug: "gradient-icon-pack",
+    title: "Gradient 3D Icon Collection",
     descriptionUz:
-      "Yangi pishirilgan kek, kruasan va medovik. Kofe bilan nonushta yoki kechki choy uchun shirin tanlov.",
+      "Qorong'u fonda joylashgan rang-barang gradient 3D ikonalar to'plami. Har bir ikona chuqurlik va yorqinlik bilan ishlab chiqilgan bo'lib, zamonaviy UI loyihalar uchun ideal.",
     descriptionEn:
-      "Freshly baked cakes, croissants, and honey cake medovik — a sweet stop for breakfast pastries or afternoon tea with coffee.",
+      "A vibrant collection of gradient 3D icons set against a dark background. Each icon is crafted with depth, bold colors, and smooth shading, making them ideal for modern UI projects, presentations, and app interfaces.",
     descriptionRu:
-      "Свежая выпечка, круассаны и медовик — сладкая остановка для завтрака или послеобеденного чая с кофе.",
+      "Яркая коллекция градиентных 3D-иконок на тёмном фоне. Каждая иконка проработана с глубиной, насыщенными цветами и плавной тенировкой — идеально для современных UI-проектов и презентаций.",
     descriptionJa:
-      "焼きたてのケーキ、クロワッサン、メドヴィーク。朝食やアフタヌーンティーにぴったりのスイーツ店。",
-    address: "21 Nukus Street",
-    city: "Tashkent",
-    phone: "+998 71 233 66 99",
-    openingHours: "Mon–Sun 07:30–20:00",
-    latitude: 41.3184,
-    longitude: 69.2689,
-    mainImageUrl: getRestaurantMainImage("cinnamon-bakery"),
-    galleryImageUrls: getRestaurantGallery("cinnamon-bakery"),
-    categorySlug: "dessert",
-    priceLevel: 2,
-    cuisineType: "Dessert",
+      "ダークバックグラウンドに映えるカラフルなグラデーション3Dアイコンコレクション。深み、鮮やかな色彩、滑らかなシェーディングで、モダンなUIプロジェクトに最適です。",
+    authorName: "Oleg Marchenko",
+    department: "UI/UX Design",
+    techStack: "Blender, Figma, Cinema 4D",
+    mainImageUrl: getProjectMainImage("gradient-icon-pack"),
+    galleryImageUrls: getProjectGallery("gradient-icon-pack"),
+    categorySlug: "ui-ux-design",
+    difficulty: "Beginner",
     isPublished: true,
   },
 ];
 
-export const reviews: ReviewSeed[] = [
+export const comments: CommentSeed[] = [
   {
     userEmail: "user@example.com",
-    restaurantSlug: "plov-markazi-chorsu",
+    projectSlug: "spendwise-finance",
     rating: 5,
-    title: "Best plov near Chorsu",
+    title: "Stunning finance design",
     content:
-      "The yellow plov was fragrant and perfectly cooked. Generous meat portions and warm bread straight from the tandoor. A must-visit when exploring the old city.",
-    visitDate: "2025-11-12",
-    imageUrls: [getReviewImage("review-plov-1"), getReviewImage("review-plov-2")],
+      "The gradient work on the credit card visuals is top-notch. Layout feels premium and the typography choices are spot on. Very polished landing page.",
+    imageUrls: [getCommentImage("comment-spendwise-1")],
   },
   {
     userEmail: "aziza@example.com",
-    restaurantSlug: "plov-markazi-chorsu",
+    projectSlug: "spendwise-finance",
     rating: 4,
-    title: "Authentic atmosphere",
+    title: "Clean and professional",
     content:
-      "Busy but authentic. Service is fast even at lunch peak. The qazi side dish was excellent, though seating can be tight on weekends.",
-    visitDate: "2025-10-03",
+      "Love the visual hierarchy and how smoothly sections flow into each other. Would be great to see a dark mode variant as well.",
   },
   {
     userEmail: "user@example.com",
-    restaurantSlug: "afsona-restaurant",
+    projectSlug: "ora-wellness",
     rating: 5,
-    title: "Perfect family dinner",
+    title: "Beautiful wellness aesthetic",
     content:
-      "Manti and pumpkin samsa were highlights. Staff helped us choose dishes for kids. Clean interior and fair prices for the location.",
-    visitDate: "2025-12-01",
-    imageUrls: [getReviewImage("review-afsona-1")],
+      "The photo collage layout is gorgeous and the earthy color palette perfectly captures the wellness vibe. One of the best skincare brand designs I have seen.",
+    imageUrls: [getCommentImage("comment-ora-1")],
   },
   {
     userEmail: "kenji@example.com",
-    restaurantSlug: "yapona-mama",
+    projectSlug: "ora-wellness",
     rating: 4,
-    title: "Solid sushi in Tashkent",
+    title: "Calming and elegant",
     content:
-      "Salmon rolls were fresh and the miso soup tasted homemade. Ramen broth was rich, though slightly salty for my preference.",
-    visitDate: "2025-09-18",
-    imageUrls: [getReviewImage("review-yapona-1")],
+      "The design evokes a genuine sense of tranquility. Soft shadows and flowing layouts work beautifully together. Typography could be slightly bolder for accessibility.",
   },
   {
     userEmail: "aziza@example.com",
-    restaurantSlug: "yapona-mama",
+    projectSlug: "ideahub-platform",
     rating: 5,
-    title: "Lively and delicious",
+    title: "Love the dark theme",
     content:
-      "Great energy on Friday night. Tempura platter was crispy and the green tea service felt thoughtful. Will return with friends.",
-    visitDate: "2025-11-25",
+      "Card-based layout is intuitive and the dark theme gives it a modern, professional feel. Hover interactions add a nice layer of polish to the whole experience.",
   },
   {
     userEmail: "kenji@example.com",
-    restaurantSlug: "sakura-sushi-bar",
+    projectSlug: "healthtrack-monitor",
     rating: 5,
-    title: "Premium sushi sets",
+    title: "Excellent data visualization",
     content:
-      "Chef's omakase-style set was beautifully presented. Quiet ambiance compared to downtown spots — ideal for a date.",
-    visitDate: "2025-10-30",
-    imageUrls: [getReviewImage("review-sakura-1"), getReviewImage("review-sakura-2")],
+      "The blood pressure and heart rate widgets are beautifully designed. Charts are easy to read and the color coding for vital ranges is very intuitive.",
+    imageUrls: [getCommentImage("comment-healthtrack-1")],
   },
   {
     userEmail: "user@example.com",
-    restaurantSlug: "korean-house-tashkent",
+    projectSlug: "healthtrack-monitor",
     rating: 4,
-    title: "Fun BBQ night",
+    title: "Very practical health dashboard",
     content:
-      "Marinated beef and pork belly were flavorful. Kimchi refills were generous. Ventilation could be better but overall a great group meal.",
-    visitDate: "2025-08-22",
+      "Clean layout and the real-time data display feels responsive. Would love to see integration with wearable devices in a future iteration.",
   },
   {
     userEmail: "aziza@example.com",
-    restaurantSlug: "istanbul-kebab-palace",
+    projectSlug: "abcbank-digital",
     rating: 4,
-    title: "Hearty doner wraps",
+    title: "Trustworthy banking design",
     content:
-      "Large portions and friendly staff. Turkish breakfast plate on Saturday morning was surprisingly complete with olives, cheese, and eggs.",
-    visitDate: "2025-11-08",
-    imageUrls: [getReviewImage("review-istanbul-1")],
+      "Bold headline draws you in and the section layout builds confidence. Professional color palette communicates reliability. A solid fintech landing page.",
   },
   {
     userEmail: "user@example.com",
-    restaurantSlug: "trattoria-amici",
+    projectSlug: "urbangreen-tech",
     rating: 5,
-    title: "Excellent pasta",
+    title: "Nature meets technology",
     content:
-      "Tagliatelle with mushroom cream sauce was outstanding. Tiramisu felt authentic. Reservations recommended on weekends.",
-    visitDate: "2025-12-15",
-    imageUrls: [getReviewImage("review-trattoria-1")],
+      "The moss textures and green tones are incredibly immersive. This is how eco-tech branding should look. Three.js integration adds a wow factor.",
+    imageUrls: [getCommentImage("comment-urbangreen-1")],
   },
   {
     userEmail: "kenji@example.com",
-    restaurantSlug: "bon-european-bistro",
+    projectSlug: "urbangreen-tech",
     rating: 4,
-    title: "Good steak and salads",
+    title: "Impressive eco-design",
     content:
-      "Medium-rare ribeye was cooked well. Caesar salad fresh. Wine list is small but reasonably priced for Tashkent.",
-    visitDate: "2025-09-05",
+      "Great blend of sustainability messaging and modern web aesthetics. GSAP animations are smooth and the overall experience feels premium.",
   },
   {
     userEmail: "aziza@example.com",
-    restaurantSlug: "evos-fast-food",
-    rating: 3,
-    title: "Quick and consistent",
+    projectSlug: "niceatnoon-studio",
+    rating: 5,
+    title: "Portfolio done right",
     content:
-      "Standard fast food experience. Lavash combo is filling and affordable. Good option when you need something fast near the metro.",
-    visitDate: "2025-10-12",
-  },
-  {
-    userEmail: "user@example.com",
-    restaurantSlug: "lavash-city",
-    rating: 4,
-    title: "Student favorite",
-    content:
-      "Huge shawarma for the price. Queue moves quickly at lunchtime. Not fancy, but reliable after classes.",
-    visitDate: "2025-11-19",
+      "The grid layout showcases branding work beautifully. Each project card tells a visual story. Clean, minimal, and highly effective as a studio portfolio.",
   },
   {
     userEmail: "kenji@example.com",
-    restaurantSlug: "coffee-talk-yunusabad",
-    rating: 5,
-    title: "Great workspace cafe",
-    content:
-      "Flat white was balanced and the cold brew smooth. Plenty of outlets and calm music. Spent three hours working here comfortably.",
-    visitDate: "2025-12-02",
-    imageUrls: [getReviewImage("review-coffee-1")],
-  },
-  {
-    userEmail: "aziza@example.com",
-    restaurantSlug: "coffee-talk-yunusabad",
+    projectSlug: "panora-wellness",
     rating: 4,
-    title: "Nice brunch spot",
+    title: "Clever stress tracking UI",
     content:
-      "Avocado toast and cappuccino were well prepared. Pastries sell out early — come before noon on Saturdays.",
-    visitDate: "2025-11-03",
+      "The circular watch widget is a creative way to display mood data. Calming color scheme and smooth transitions make daily journaling feel effortless.",
+    imageUrls: [getCommentImage("comment-panora-1")],
   },
   {
     userEmail: "user@example.com",
-    restaurantSlug: "cinnamon-bakery",
+    projectSlug: "panora-wellness",
     rating: 5,
-    title: "Medovik heaven",
+    title: "Mindfulness in an app",
     content:
-      "Honey cake slices are generous and not overly sweet. Croissants flaky and buttery. Perfect with morning coffee.",
-    visitDate: "2025-10-28",
-    imageUrls: [getReviewImage("review-cinnamon-1")],
-  },
-  {
-    userEmail: "kenji@example.com",
-    restaurantSlug: "cinnamon-bakery",
-    rating: 4,
-    title: "Sweet stop",
-    content:
-      "Cheesecake and eclairs were fresh. Small seating area fills up quickly but takeaway packaging is neat.",
-    visitDate: "2025-09-14",
+      "The design really encourages daily use. Data visualization is elegant and never overwhelming. SwiftUI implementation feels native and polished.",
   },
   {
     userEmail: "aziza@example.com",
-    restaurantSlug: "afsona-restaurant",
+    projectSlug: "fashion-ecommerce",
     rating: 4,
-    title: "Elegant national cuisine",
+    title: "Stylish product cards",
     content:
-      "Lagman was rich and the bread basket kept coming. Slightly slow service during a wedding party nearby, but food quality stayed high.",
-    visitDate: "2025-08-30",
+      "Model photography combined with subtle shadow effects creates a premium feel. Hover animations on the cards are smooth and the layout is very shoppable.",
   },
   {
     userEmail: "user@example.com",
-    restaurantSlug: "sakura-sushi-bar",
+    projectSlug: "misso-collab",
     rating: 4,
-    title: "Fresh fish",
+    title: "Great collaboration interface",
     content:
-      "Nigiri selection tasted clean and light. Miso eggplant side was a pleasant surprise. Prices higher than average but justified.",
-    visitDate: "2025-11-11",
-  },
-  {
-    userEmail: "aziza@example.com",
-    restaurantSlug: "trattoria-amici",
-    rating: 5,
-    title: "Anniversary dinner",
-    content:
-      "Staff arranged a small dessert surprise. Pizza crust had a nice char and the burrata appetizer was creamy and fresh.",
-    visitDate: "2025-12-20",
-    imageUrls: [getReviewImage("review-trattoria-2")],
+      "Dark theme is easy on the eyes for long work sessions. Task management layout is intuitive and the real-time features feel responsive.",
   },
   {
     userEmail: "kenji@example.com",
-    restaurantSlug: "korean-house-tashkent",
+    projectSlug: "misso-collab",
     rating: 5,
-    title: "Best galbi in town",
+    title: "Perfect team workspace",
     content:
-      "Galbi marinated overnight — tender and smoky from the grill. Banchan variety impressed our group of six. Loud but festive.",
-    visitDate: "2025-10-07",
-    imageUrls: [getReviewImage("review-korean-1")],
+      "The dark UI is sleek and the 'Start thriving' messaging sets the right tone. Socket.io integration makes real-time collaboration seamless.",
+    imageUrls: [getCommentImage("comment-misso-1")],
+  },
+  {
+    userEmail: "aziza@example.com",
+    projectSlug: "brite-payments",
+    rating: 4,
+    title: "Bold brand identity",
+    content:
+      "Purple and orange is a daring palette choice that really works. Logo variations are well thought out and the typography rules are comprehensive.",
+  },
+  {
+    userEmail: "user@example.com",
+    projectSlug: "brite-payments",
+    rating: 5,
+    title: "Memorable fintech branding",
+    content:
+      "The color system is striking and instantly memorable. Visual assets are versatile and the brand guidelines document is thorough. Excellent identity work.",
+  },
+  {
+    userEmail: "kenji@example.com",
+    projectSlug: "gradient-icon-pack",
+    rating: 5,
+    title: "Gorgeous icon collection",
+    content:
+      "Each icon has incredible depth and the gradient work is masterful. Dark background really makes the colors pop. Perfect for modern app interfaces.",
+    imageUrls: [getCommentImage("comment-gradient-1")],
+  },
+  {
+    userEmail: "aziza@example.com",
+    projectSlug: "gradient-icon-pack",
+    rating: 4,
+    title: "Versatile and vibrant",
+    content:
+      "3D rendering quality is impressive and the icons look great at various sizes. Would love to see an expanded set with more categories.",
   },
 ];

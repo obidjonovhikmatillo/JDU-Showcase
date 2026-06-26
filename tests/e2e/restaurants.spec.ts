@@ -1,36 +1,36 @@
 import { expect, test } from "@playwright/test";
 
-import { SEED_RESTAURANT_NAME, SEED_RESTAURANT_SLUG } from "../helpers/playwright-auth";
+import { SEED_PROJECT_TITLE, SEED_PROJECT_SLUG } from "../helpers/playwright-auth";
 
-test.describe("Restaurant discovery", () => {
-  test("T007 restaurant search finds matching restaurants", async ({ page }) => {
-    await page.goto("/en/restaurants", { waitUntil: "networkidle" });
+test.describe("Project discovery", () => {
+  test("T007 project search finds matching projects", async ({ page }) => {
+    await page.goto("/en/projects", { waitUntil: "networkidle" });
     const searchInput = page.getByRole("searchbox", {
-      name: /search by name, address, city, cuisine/i,
+      name: /search by title, author, department/i,
     });
-    await searchInput.fill("Trattoria");
+    await searchInput.fill("Campus");
     await searchInput.press("Enter");
-    await expect(page).toHaveURL(/q=Trattoria/i, { timeout: 10_000 });
-    await expect(page.getByRole("link", { name: /Trattoria Amici/i })).toBeVisible();
+    await expect(page).toHaveURL(/q=Campus/i, { timeout: 10_000 });
+    await expect(page.getByRole("link", { name: /Campus Connect Portal/i })).toBeVisible();
   });
 
-  test("T008 restaurant filtering applies category filters", async ({ page }) => {
-    await page.goto("/en/restaurants", { waitUntil: "networkidle" });
-    await page.getByRole("combobox", { name: /^category$/i }).selectOption("european-cuisine");
-    await expect(page).toHaveURL(/category=european-cuisine/, { timeout: 10_000 });
-    await expect(page.getByRole("link", { name: /Trattoria Amici/i })).toBeVisible();
+  test("T008 project filtering applies category filters", async ({ page }) => {
+    await page.goto("/en/projects", { waitUntil: "networkidle" });
+    await page.getByRole("combobox", { name: /^category$/i }).selectOption("web-development");
+    await expect(page).toHaveURL(/category=web-development/, { timeout: 10_000 });
+    await expect(page.getByRole("link", { name: /Campus Connect Portal/i })).toBeVisible();
   });
 
-  test("T009 restaurant detail page loads published restaurant data", async ({ page }) => {
-    await page.goto(`/en/restaurants/${SEED_RESTAURANT_SLUG}`);
-    await expect(page.getByRole("heading", { name: SEED_RESTAURANT_NAME })).toBeVisible();
-    await expect(page.getByText(/tashkent/i)).toBeVisible();
+  test("T009 project detail page loads published project data", async ({ page }) => {
+    await page.goto(`/en/projects/${SEED_PROJECT_SLUG}`);
+    await expect(page.getByRole("heading", { name: SEED_PROJECT_TITLE })).toBeVisible();
+    await expect(page.getByText(/Computer Science/i)).toBeVisible();
   });
 
-  test("T019 map rendering fallback shows address text without embedded map", async ({ page }) => {
-    await page.goto(`/en/restaurants/${SEED_RESTAURANT_SLUG}`);
+  test("T019 author info fallback shows text without embedded map", async ({ page }) => {
+    await page.goto(`/en/projects/${SEED_PROJECT_SLUG}`);
     await expect(page.locator("iframe")).toHaveCount(0);
-    await expect(page.getByText("5 Sayilgoh Street, Tashkent")).toBeVisible();
+    await expect(page.getByText("Bobur Toshmatov")).toBeVisible();
   });
 });
 

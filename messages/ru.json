@@ -1,7 +1,7 @@
 {
   "Common": {
-    "brand": "Taomchi",
-    "tagline": "Находите и оценивайте рестораны рядом с вами",
+    "brand": "JDU Showcase",
+    "tagline": "Откройте для себя студенческие проекты и работы JDU",
     "loading": "Загрузка...",
     "close": "Закрыть"
   },
@@ -11,20 +11,20 @@
     "retry": "Повторить",
     "backHome": "На главную",
     "mustBeSignedIn": "Для обновления профиля необходимо войти в систему.",
-    "mustBeSignedInToReview": "Для отправки отзыва необходимо войти в систему.",
-    "restaurantNotFound": "Ресторан не найден.",
-    "reviewNotFound": "Отзыв не найден.",
-    "reviewForbidden": "У вас нет прав для управления этим отзывом.",
+    "mustBeSignedInToComment": "Для отправки комментария необходимо войти в систему.",
+    "projectNotFound": "Проект не найден.",
+    "commentNotFound": "Комментарий не найден.",
+    "commentForbidden": "У вас нет прав для управления этим комментарием.",
     "adminRequired": "Требуются права администратора.",
     "categoryNotFound": "Категория не найдена.",
-    "categoryInUse": "Эта категория используется ресторанами и не может быть удалена.",
+    "categoryInUse": "Эта категория используется проектами и не может быть удалена.",
     "userNotFound": "Пользователь не найден.",
     "cannotDeactivateSelf": "Вы не можете деактивировать свой администраторский аккаунт.",
     "cannotDemoteSelf": "Вы не можете снять с себя роль администратора."
   },
   "Nav": {
     "home": "Главная",
-    "restaurants": "Рестораны",
+    "projects": "Проекты",
     "login": "Войти",
     "register": "Регистрация",
     "profile": "Профиль",
@@ -34,19 +34,19 @@
     "openMenu": "Открыть меню",
     "closeMenu": "Закрыть меню",
     "mobileNavLabel": "Мобильное меню",
-    "shareReview": "Оставить отзыв",
-    "postReview": "Написать отзыв",
+    "shareComment": "Оставить комментарий",
+    "postComment": "Написать комментарий",
     "profileAvatarAlt": "Фото профиля {name}",
-    "addHeadlineHint": "Гость или профессия"
+    "addHeadlineHint": "Студент или специальность"
   },
   "NotFound": {
     "title": "Страница не найдена",
     "description": "Запрашиваемая страница не существует или была перемещена.",
     "backHome": "На главную",
-    "browseRestaurants": "Смотреть рестораны"
+    "browseProjects": "Смотреть проекты"
   },
   "Footer": {
-    "description": "Многоязычная платформа отзывов о ресторанах для университетского проекта Cowork.",
+    "description": "Многоязычная платформа студенческих проектов для университета JDU.",
     "rights": "Все права защищены.",
     "navLabel": "Нижнее меню",
     "explore": "Обзор",
@@ -58,95 +58,96 @@
     "noCategories": "Категории скоро появятся"
   },
   "Home": {
-    "title": "Найдите свой любимый ресторан",
-    "subtitle": "Просматривайте рестораны, читайте отзывы и делитесь опытом на четырёх языках.",
+    "title": "Откройте студенческие проекты и творческие работы",
+    "subtitle": "Просматривайте проекты, читайте комментарии и делитесь отзывами на четырёх языках.",
     "hero": {
-      "eyebrow": "Гид по ресторанам Ташкента",
-      "headline": "Откройте лучшие места для еды в Ташкенте",
-      "description": "Ищите рестораны, изучайте кухни и читайте надёжные отзывы на узбекском, английском, русском и японском.",
-      "searchPlaceholder": "Поиск по названию, кухне или району...",
+      "eyebrow": "Витрина студентов JDU",
+      "headline": "Откройте для себя студенческие проекты и работы JDU",
+      "description": "Исследуйте студенческие портфолио, открывайте инновационные проекты и читайте отзывы сообщества JDU на узбекском, английском, русском и японском.",
+      "searchPlaceholder": "Поиск по названию, технологии или категории...",
       "searchButton": "Искать",
-      "searchAriaLabel": "Поиск ресторанов",
+      "searchAriaLabel": "Поиск проектов",
       "searchWhereLabel": "Где",
-      "searchCategoryLabel": "Кухня",
-      "searchCategoryValue": "Любая кухня",
-      "cta": "Все рестораны",
-      "imageAlt": "Стол в ресторане с блюдами в Ташкенте"
+      "searchCategoryLabel": "Категория",
+      "searchCategoryValue": "Любая категория",
+      "cta": "Все проекты",
+      "ctaRegister": "Создать бесплатный аккаунт",
+      "imageAlt": "Витрина студенческих проектов JDU"
     },
     "categories": {
       "title": "Популярные категории",
-      "subtitle": "Изучайте рестораны Ташкента по типу кухни и формату.",
-      "restaurantCount": "{count, plural, one {# ресторан} few {# ресторана} many {# ресторанов} other {# ресторана}}",
+      "subtitle": "Изучайте проекты JDU по направлению и типу.",
+      "projectCount": "{count, plural, one {# проект} few {# проекта} many {# проектов} other {# проекта}}",
       "viewAll": "Смотреть все",
       "empty": "Категории пока недоступны."
     },
     "topRated": {
       "title": "Лучшие по рейтингу",
-      "subtitle": "Самые высоко оценённые места по отзывам сообщества.",
-      "viewAll": "Все рестораны",
-      "empty": "Пока нет ресторанов с отзывами."
+      "subtitle": "Самые высоко оценённые проекты по отзывам сообщества.",
+      "viewAll": "Все проекты",
+      "empty": "Пока нет проектов с комментариями."
     },
     "recent": {
       "title": "Недавно добавленные",
-      "subtitle": "Свежие рестораны, недавно добавленные в Taomchi.",
-      "viewAll": "Смотреть список",
-      "empty": "Рестораны ещё не добавлены."
+      "subtitle": "Свежие проекты, недавно добавленные в JDU Showcase.",
+      "viewAll": "Смотреть проекты",
+      "empty": "Проекты ещё не добавлены."
     },
     "benefits": {
-      "title": "Почему Taomchi?",
-      "subtitle": "Всё необходимое, чтобы найти отличную еду и поделиться мнением.",
+      "title": "Почему JDU Showcase?",
+      "subtitle": "Всё необходимое, чтобы открыть студенческие таланты и поделиться мнением.",
       "discover": {
-        "title": "Находите рестораны",
-        "description": "Просматривайте категории и ищите по районам Ташкента."
+        "title": "Находите проекты",
+        "description": "Просматривайте категории и ищите среди студенческих портфолио."
       },
       "reviews": {
         "title": "Читайте отзывы",
-        "description": "Смотрите рейтинги, количество отзывов и подробные мнения."
+        "description": "Смотрите рейтинги, количество комментариев и подробные мнения."
       },
       "share": {
-        "title": "Делитесь опытом",
-        "description": "Создайте аккаунт, чтобы писать отзывы и помогать другим."
+        "title": "Делитесь мнением",
+        "description": "Создайте аккаунт, чтобы писать комментарии и помогать другим студентам."
       },
       "locations": {
-        "title": "Смотрите локации",
-        "description": "Адреса, карты и часы работы для каждого ресторана."
+        "title": "Подробности проектов",
+        "description": "Описания, технологии и ссылки для каждого проекта."
       }
     },
     "cta": {
-      "title": "Присоединяйтесь к Taomchi",
-      "description": "Создайте бесплатный аккаунт, сохраняйте избранное и пишите отзывы на своём языке.",
+      "title": "Присоединяйтесь к JDU Showcase",
+      "description": "Создайте бесплатный аккаунт, сохраняйте избранное и пишите комментарии на своём языке.",
       "button": "Создать аккаунт",
       "login": "Уже есть аккаунт? Войти"
     },
-    "restaurantCard": {
-      "reviews": "{count, plural, one {# отзыв} few {# отзыва} many {# отзывов} other {# отзыва}}",
-      "noReviews": "Пока нет отзывов"
+    "projectCard": {
+      "comments": "{count, plural, one {# комментарий} few {# комментария} many {# комментариев} other {# комментария}}",
+      "noComments": "Пока нет комментариев"
     },
     "error": {
       "title": "Не удалось загрузить главную страницу",
-      "description": "Сейчас не удалось получить данные о ресторанах. Попробуйте позже.",
+      "description": "Сейчас не удалось получить данные о проектах. Попробуйте позже.",
       "retry": "Повторить"
     }
   },
-  "Restaurants": {
-    "title": "Рестораны",
-    "subtitle": "Ищите и изучайте места для еды по всему Ташкенту.",
-    "filteredTitle": "Отфильтрованные рестораны",
+  "Projects": {
+    "title": "Проекты",
+    "subtitle": "Ищите и изучайте студенческие проекты JDU.",
+    "filteredTitle": "Отфильтрованные проекты",
     "searchTitle": "Поиск: {query}",
-    "filteredSubtitle": "Рестораны в категории «{category}».",
+    "filteredSubtitle": "Проекты в категории «{category}».",
     "searchSubtitle": "Результаты по запросу «{query}».",
-    "citySubtitle": "Рестораны в городе {city}.",
-    "searchPlaceholder": "Поиск по названию, адресу, городу, кухне...",
+    "citySubtitle": "Проекты в городе {city}.",
+    "searchPlaceholder": "Поиск по названию, технологии, категории...",
     "searchButton": "Искать",
-    "searchAriaLabel": "Поиск ресторанов",
+    "searchAriaLabel": "Поиск проектов",
     "allCategories": "Все",
     "activeFilters": "Активные фильтры:",
     "searchFilter": "Поиск: {query}",
     "clearFilters": "Сбросить фильтры",
-    "emptyTitle": "Рестораны не найдены",
+    "emptyTitle": "Проекты не найдены",
     "emptyDescription": "Попробуйте другой запрос или измените фильтры.",
     "backHome": "На главную",
-    "resultsCount": "{count, plural, one {Найден # ресторан} few {Найдено # ресторана} many {Найдено # ресторанов} other {Найдено # ресторана}}",
+    "resultsCount": "{count, plural, one {Найден # проект} few {Найдено # проекта} many {Найдено # проектов} other {Найдено # проекта}}",
     "loadMore": "Загрузить ещё",
     "showingCount": "Показано {shown} из {total}",
     "filters": {
@@ -154,20 +155,18 @@
       "category": "Категория",
       "city": "Город",
       "minRating": "Минимальный рейтинг",
-      "priceLevel": "Уровень цен",
       "sort": "Сортировка",
       "allCategories": "Все категории",
       "allCities": "Все города",
       "anyRating": "Любой рейтинг",
-      "anyPrice": "Любая цена",
       "ratingOption": "{rating}+ звёзд",
       "ratingChip": "{rating}+ звёзд"
     },
     "sort": {
       "rating": "По рейтингу",
-      "reviews": "По отзывам",
+      "comments": "По комментариям",
       "newest": "Новые",
-      "name": "По названию А–Я"
+      "name": "По названию А-Я"
     },
     "view": {
       "ariaLabel": "Режим отображения",
@@ -175,28 +174,33 @@
       "list": "Список"
     },
     "card": {
-      "reviews": "{count, plural, one {# отзыв} few {# отзыва} many {# отзывов} other {# отзыва}}",
-      "noReviews": "Пока нет отзывов",
+      "comments": "{count, plural, one {# комментарий} few {# комментария} many {# комментариев} other {# комментария}}",
+      "noComments": "Пока нет комментариев",
       "viewDetails": "Подробнее",
-      "perVisit": "средний чек",
-      "guestFavorite": "Избранное гостей"
+      "guestFavorite": "Фаворит сообщества"
     },
     "error": {
-      "title": "Не удалось загрузить рестораны",
-      "description": "Произошла ошибка при загрузке ресторанов. Попробуйте снова.",
+      "title": "Не удалось загрузить проекты",
+      "description": "Произошла ошибка при загрузке проектов. Попробуйте снова.",
       "retry": "Повторить"
     }
   },
-  "RestaurantDetail": {
-    "title": "О ресторане",
-    "subtitle": "Отзывы, карта и фото будут добавлены в следующих фазах.",
+  "ProjectDetail": {
+    "title": "О проекте",
+    "subtitle": "Комментарии, детали и фото будут добавлены в следующих фазах.",
     "placeholder": "Подробности:",
-    "notFoundTitle": "Ресторан не найден",
-    "aboutTitle": "Об этом ресторане",
-    "reviewsTitle": "Отзывы",
-    "reviewCount": "{count, plural, one {# отзыв} few {# отзыва} many {# отзывов} other {# отзыва}}",
-    "hours": "Часы работы",
-    "phone": "Телефон",
+    "notFoundTitle": "Проект не найден",
+    "techStack": "Технологии",
+    "difficulty": "Сложность",
+    "liveDemo": "Демо",
+    "sourceCode": "Исходный код",
+    "author": "Автор",
+    "department": "Отделение",
+    "aboutTitle": "Об этом проекте",
+    "commentsTitle": "Комментарии",
+    "commentCount": "{count, plural, one {# комментарий} few {# комментария} many {# комментариев} other {# комментария}}",
+    "hours": "Доступность",
+    "phone": "Контакт",
     "website": "Перейти на сайт",
     "galleryTitle": "Фотогалерея",
     "galleryPrevious": "Предыдущее фото",
@@ -204,21 +208,24 @@
     "galleryDotsLabel": "Фотографии галереи",
     "galleryDotLabel": "Фото {index} из {total}",
     "galleryImageAlt": "{name} — фото {index} из {total}",
-    "priceHint": "средний чек",
-    "browseMore": "Смотреть другие рестораны",
+    "browseMore": "Смотреть другие проекты",
+    "moreByAuthor": "Другие проекты от {author}",
+    "closeModal": "Закрыть",
+    "loadingProject": "Загрузка проекта...",
+    "errorLoading": "Не удалось загрузить данные проекта.",
     "ratingShowcase": {
-      "guestFavorite": "Избранное гостей",
-      "guestFavoriteDescription": "Этот ресторан входит в топ 10% заведений по рейтингу, отзывам и надёжности.",
-      "basedOnReviews": "На основе {count, plural, one {# отзыва} few {# отзывов} many {# отзывов} other {# отзыва}}",
+      "guestFavorite": "Фаворит сообщества",
+      "guestFavoriteDescription": "Этот проект входит в топ 10% по рейтингу, комментариям и качеству.",
+      "basedOnComments": "На основе {count, plural, one {# комментария} few {# комментариев} many {# комментариев} other {# комментария}}",
       "overall": "Общий рейтинг",
-      "food": "Еда",
-      "service": "Сервис",
-      "location": "Расположение",
-      "value": "Цена",
+      "creativity": "Креативность",
+      "technical": "Техническое качество",
+      "presentation": "Презентация",
+      "innovation": "Инновационность",
       "checkIn": "Заезд",
       "accuracy": "Точность",
-      "tagAtmosphere": "Атмосфера",
-      "tagFood": "Качество еды"
+      "tagCreativity": "Креативность",
+      "tagTechnical": "Техническое качество"
     }
   },
   "ImageUpload": {
@@ -236,22 +243,22 @@
     "noImages": "Изображения ещё не выбраны.",
     "maxReached": "Достигнут лимит в {max} изображений."
   },
-  "AdminRestaurants": {
-    "title": "Управление ресторанами",
-    "subtitle": "Создавайте, редактируйте, публикуйте и управляйте ресторанами.",
-    "addRestaurant": "Добавить ресторан",
+  "AdminProjects": {
+    "title": "Управление проектами",
+    "subtitle": "Создавайте, редактируйте, публикуйте и управляйте проектами.",
+    "addProject": "Добавить проект",
     "edit": "Редактировать",
     "publish": "Опубликовать",
     "unpublish": "Снять с публикации",
-    "publishTitle": "Опубликовать ресторан?",
-    "publishDescription": "Этот ресторан появится на публичном сайте.",
-    "unpublishTitle": "Снять ресторан с публикации?",
-    "unpublishDescription": "Этот ресторан будет скрыт с публичных страниц.",
+    "publishTitle": "Опубликовать проект?",
+    "publishDescription": "Этот проект появится на публичном сайте.",
+    "unpublishTitle": "Снять проект с публикации?",
+    "unpublishDescription": "Этот проект будет скрыт с публичных страниц.",
     "delete": "Удалить",
-    "deleteTitle": "Удалить ресторан?",
-    "deleteDescription": "Ресторан, его галерея и все отзывы будут удалены навсегда.",
-    "deleteConfirm": "Удалить ресторан",
-    "searchLabel": "Поиск ресторанов",
+    "deleteTitle": "Удалить проект?",
+    "deleteDescription": "Проект, его галерея и все комментарии будут удалены навсегда.",
+    "deleteConfirm": "Удалить проект",
+    "searchLabel": "Поиск проектов",
     "searchPlaceholder": "Поиск по названию, городу или slug...",
     "statusFilter": "Статус",
     "categoryFilter": "Категория",
@@ -259,110 +266,110 @@
     "allCategories": "Все категории",
     "published": "Опубликован",
     "draft": "Черновик",
-    "empty": "Нет ресторанов по вашим фильтрам.",
-    "meta": "{city} · {galleryCount, plural, one {# изображение в галерее} few {# изображения в галерее} many {# изображений в галерее} other {# изображения в галерее}} · {reviewCount, plural, one {# отзыв} few {# отзыва} many {# отзывов} other {# отзыва}} · {status}"
+    "empty": "Нет проектов по вашим фильтрам.",
+    "meta": "{city} · {galleryCount, plural, one {# изображение в галерее} few {# изображения в галерее} many {# изображений в галерее} other {# изображения в галерее}} · {commentCount, plural, one {# комментарий} few {# комментария} many {# комментариев} other {# комментария}} · {status}"
   },
-  "AdminRestaurantForm": {
-    "createPageTitle": "Добавить ресторан",
-    "createPageSubtitle": "Создайте новую карточку ресторана.",
+  "AdminProjectForm": {
+    "createPageTitle": "Добавить проект",
+    "createPageSubtitle": "Создайте новую карточку проекта.",
     "editPageTitle": "Редактировать {name}",
-    "editPageSubtitle": "Обновите данные, описания и изображения ресторана.",
-    "notFound": "Ресторан не найден",
+    "editPageSubtitle": "Обновите данные, описания и изображения проекта.",
+    "notFound": "Проект не найден",
     "basicsTitle": "Основная информация",
-    "basicsDescription": "Данные для карточек и страницы ресторана.",
+    "basicsDescription": "Данные для карточек и страницы проекта.",
     "descriptionsTitle": "Описания",
     "descriptionsDescription": "Напишите описание один раз. Тот же текст сохранится для узбекского, английского, русского и японского.",
     "imagesTitle": "Изображения",
     "imagesDescription": "Загрузите обложку и фото для галереи.",
-    "imagesAfterCreate": "Сначала сохраните ресторан, затем загрузите изображения на странице редактирования.",
+    "imagesAfterCreate": "Сначала сохраните проект, затем загрузите изображения на странице редактирования.",
     "name": "Название",
     "slug": "Slug",
     "category": "Категория",
     "categoryPlaceholder": "Выберите категорию",
     "city": "Город",
-    "cuisineType": "Тип кухни",
+    "cuisineType": "Тип проекта",
     "address": "Адрес",
-    "phone": "Телефон",
+    "phone": "Контакт",
     "website": "Сайт",
-    "openingHours": "Часы работы",
+    "openingHours": "Доступность",
     "latitude": "Широта",
     "longitude": "Долгота",
-    "priceLevel": "Уровень цен (1–4)",
+    "priceLevel": "Уровень сложности (1-4)",
     "published": "Опубликован",
     "description": "Описание",
     "mainImage": "Основное изображение",
     "galleryImages": "Галерея",
-    "create": "Создать ресторан",
+    "create": "Создать проект",
     "save": "Сохранить изменения",
     "saving": "Сохранение..."
   },
-  "AdminRestaurantImages": {
-    "title": "Изображения ресторана",
-    "description": "Загрузите обложку и фото для галереи этого ресторана.",
+  "AdminProjectImages": {
+    "title": "Изображения проекта",
+    "description": "Загрузите обложку и фото для галереи этого проекта.",
     "pageTitle": "Изображения: {name}",
     "pageSubtitle": "Изменения появятся на публичной странице после сохранения.",
-    "notFound": "Ресторан не найден",
-    "backToList": "Назад к списку ресторанов",
+    "notFound": "Проект не найден",
+    "backToList": "Назад к списку проектов",
     "mainImageLabel": "Основное изображение",
-    "mainImageDescription": "Это изображение отображается на карточках и вверху страницы ресторана.",
+    "mainImageDescription": "Это изображение отображается на карточках и вверху страницы проекта.",
     "galleryLabel": "Галерея",
-    "galleryDescription": "Загрузите до 8 дополнительных фото для галереи ресторана.",
+    "galleryDescription": "Загрузите до 8 дополнительных фото для галереи проекта.",
     "save": "Сохранить изображения",
     "saving": "Сохранение..."
   },
-  "ReviewForm": {
-    "title": "Написать отзыв",
-    "description": "Поделитесь впечатлениями, чтобы помочь другим с выбором.",
+  "CommentForm": {
+    "title": "Написать комментарий",
+    "description": "Поделитесь мнением, чтобы помочь другим студентам.",
     "ratingLabel": "Ваша оценка",
     "ratingOption": "{rating} звёзд",
-    "titleLabel": "Заголовок отзыва",
-    "contentLabel": "Текст отзыва",
-    "visitDateLabel": "Дата посещения",
+    "titleLabel": "Заголовок комментария",
+    "contentLabel": "Текст комментария",
+    "visitDateLabel": "Дата",
     "imagesLabel": "Фото (необязательно)",
-    "imagesDescription": "Загрузите до 4 фото с вашего визита. JPG, PNG или WebP, до 5 МБ каждое.",
-    "submit": "Отправить отзыв",
+    "imagesDescription": "Загрузите до 4 фото. JPG, PNG или WebP, до 5 МБ каждое.",
+    "submit": "Отправить комментарий",
     "submitting": "Отправка...",
-    "signInTitle": "Войдите, чтобы написать отзыв",
-    "signInDescription": "Только зарегистрированные пользователи могут оставлять отзывы.",
+    "signInTitle": "Войдите, чтобы написать комментарий",
+    "signInDescription": "Только зарегистрированные пользователи могут оставлять комментарии.",
     "signInButton": "Войти для продолжения"
   },
-  "ReviewList": {
-    "title": "{count, plural, one {# отзыв} few {# отзыва} many {# отзывов} other {# отзыва}}",
-    "emptyTitle": "Пока нет отзывов",
-    "emptyDescription": "Станьте первым, кто поделится впечатлениями об этом ресторане.",
-    "visitedOn": "Посещение: {date}"
+  "CommentList": {
+    "title": "{count, plural, one {# комментарий} few {# комментария} many {# комментариев} other {# комментария}}",
+    "emptyTitle": "Пока нет комментариев",
+    "emptyDescription": "Станьте первым, кто поделится мнением об этом проекте.",
+    "visitedOn": "Опубликовано: {date}"
   },
-  "ReviewActions": {
+  "CommentActions": {
     "edit": "Редактировать",
     "delete": "Удалить"
   },
-  "ReviewEdit": {
-    "title": "Редактировать отзыв",
-    "description": "Обновите оценку и текст отзыва.",
+  "CommentEdit": {
+    "title": "Редактировать комментарий",
+    "description": "Обновите оценку и текст комментария.",
     "ratingLabel": "Ваша оценка",
-    "titleLabel": "Заголовок отзыва",
-    "contentLabel": "Текст отзыва",
-    "visitDateLabel": "Дата посещения",
+    "titleLabel": "Заголовок комментария",
+    "contentLabel": "Текст комментария",
+    "visitDateLabel": "Дата",
     "imagesLabel": "Фото",
-    "imagesDescription": "Добавьте или удалите до 4 фото с вашего визита.",
+    "imagesDescription": "Добавьте или удалите до 4 фото.",
     "cancel": "Отмена",
     "save": "Сохранить изменения",
     "saving": "Сохранение..."
   },
-  "ReviewDelete": {
-    "title": "Удалить отзыв?",
-    "description": "Это действие нельзя отменить. Отзыв и его изображения будут удалены навсегда.",
+  "CommentDelete": {
+    "title": "Удалить комментарий?",
+    "description": "Это действие нельзя отменить. Комментарий и его изображения будут удалены навсегда.",
     "cancel": "Отмена",
-    "confirm": "Удалить отзыв",
+    "confirm": "Удалить комментарий",
     "deleting": "Удаление..."
   },
   "LoginPage": {
     "title": "Вход",
-    "subtitle": "Войдите, чтобы управлять профилем и писать отзывы о ресторанах."
+    "subtitle": "Войдите, чтобы управлять профилем и комментировать проекты."
   },
   "RegisterPage": {
     "title": "Регистрация",
-    "subtitle": "Присоединяйтесь к Taomchi, чтобы сохранять рестораны и делиться впечатлениями."
+    "subtitle": "Присоединяйтесь к JDU Showcase, чтобы изучать проекты и делиться мнением."
   },
   "LoginForm": {
     "title": "Вход",
@@ -378,7 +385,7 @@
   },
   "RegisterForm": {
     "title": "Создать аккаунт",
-    "description": "Присоединяйтесь к Taomchi, чтобы сохранять рестораны и писать отзывы.",
+    "description": "Присоединяйтесь к JDU Showcase, чтобы изучать проекты и писать комментарии.",
     "fullName": "Полное имя",
     "email": "Email",
     "password": "Пароль",
@@ -400,7 +407,7 @@
   },
   "ProfilePanel": {
     "overviewTitle": "Обзор аккаунта",
-    "overviewDescription": "Краткая информация об аккаунте и вашей активности в отзывах.",
+    "overviewDescription": "Краткая информация об аккаунте и вашей активности в комментариях.",
     "editTitle": "Редактировать профиль",
     "editDescription": "Обновите имя, язык или фото профиля.",
     "editButton": "Редактировать",
@@ -409,7 +416,7 @@
     "role": "Роль",
     "preferredLanguage": "Предпочитаемый язык",
     "registered": "Дата регистрации",
-    "totalReviews": "Всего отзывов",
+    "totalComments": "Всего комментариев",
     "averageRatingGiven": "Средняя поставленная оценка",
     "avatarTitle": "Фото профиля",
     "avatarDescription": "Загрузите JPG, PNG или WebP до 5 МБ.",
@@ -417,31 +424,31 @@
     "uploadAvatar": "Загрузить фото",
     "changeAvatar": "Изменить фото",
     "removeAvatar": "Удалить фото",
-    "profileHeadline": "Гость или профессия",
-    "profileHeadlinePlaceholder": "Например: Гость, Повар, Студент",
+    "profileHeadline": "Студент или специальность",
+    "profileHeadlinePlaceholder": "Например: Студент, Разработчик, Дизайнер",
     "save": "Сохранить изменения",
     "saving": "Сохранение..."
   },
-  "ProfileReviews": {
-    "title": "Ваши отзывы",
+  "ProfileComments": {
+    "title": "Ваши комментарии",
     "submittedOn": "Отправлено {date}",
-    "emptyTitle": "Пока нет отзывов",
-    "emptyDescription": "Вы ещё не поделились впечатлениями о ресторанах. Перейдите на страницу ресторана и напишите первый отзыв.",
-    "browseRestaurants": "Смотреть рестораны",
+    "emptyTitle": "Пока нет комментариев",
+    "emptyDescription": "Вы ещё не поделились мнением о проектах. Перейдите на страницу проекта и напишите первый комментарий.",
+    "browseProjects": "Смотреть проекты",
     "previous": "Назад",
     "next": "Далее",
     "pageOf": "Страница {page} из {totalPages}"
   },
   "Admin": {
     "title": "Панель администратора",
-    "subtitle": "Управление ресторанами, пользователями, отзывами и категориями."
+    "subtitle": "Управление проектами, пользователями, комментариями и категориями."
   },
   "AdminNav": {
     "label": "Навигация админки",
     "dashboard": "Панель",
-    "restaurants": "Рестораны",
+    "projects": "Проекты",
     "categories": "Категории",
-    "reviews": "Отзывы",
+    "comments": "Комментарии",
     "users": "Пользователи"
   },
   "AdminCommon": {
@@ -453,20 +460,20 @@
     "pageOf": "Страница {page} из {totalPages}"
   },
   "AdminDashboard": {
-    "totalRestaurants": "Всего ресторанов",
-    "publishedRestaurants": "Опубликовано ресторанов",
+    "totalProjects": "Всего проектов",
+    "publishedProjects": "Опубликовано проектов",
     "totalUsers": "Всего пользователей",
-    "totalReviews": "Всего отзывов",
+    "totalComments": "Всего комментариев",
     "averageRating": "Средний рейтинг платформы",
     "recentUsers": "Новые пользователи",
-    "recentReviews": "Недавние отзывы",
-    "topRestaurants": "Самые обсуждаемые рестораны",
-    "reviewCount": "{count, plural, one {# отзыв} few {# отзыва} many {# отзывов} other {# отзыва}}",
+    "recentComments": "Недавние комментарии",
+    "topProjects": "Самые обсуждаемые проекты",
+    "commentCount": "{count, plural, one {# комментарий} few {# комментария} many {# комментариев} other {# комментария}}",
     "empty": "Пока нечего показать."
   },
   "AdminCategories": {
     "title": "Управление категориями",
-    "subtitle": "Добавляйте и редактируйте категории ресторанов на всех языках.",
+    "subtitle": "Добавляйте и редактируйте категории проектов на всех языках.",
     "createTitle": "Добавить категорию",
     "editTitle": "Редактировать категорию",
     "nameUz": "Название (узбекский)",
@@ -486,22 +493,22 @@
     "searchLabel": "Поиск категорий",
     "searchPlaceholder": "Поиск по названию или slug...",
     "empty": "Категории не найдены.",
-    "meta": "{slug} · {count, plural, one {# ресторан} few {# ресторана} many {# ресторанов} other {# ресторана}}"
+    "meta": "{slug} · {count, plural, one {# проект} few {# проекта} many {# проектов} other {# проекта}}"
   },
-  "AdminReviews": {
-    "title": "Управление отзывами",
-    "subtitle": "Поиск, редактирование и удаление отзывов по всем ресторанам.",
-    "searchLabel": "Поиск отзывов",
-    "searchPlaceholder": "Поиск по заголовку, автору или ресторану...",
-    "restaurantFilter": "Ресторан",
+  "AdminComments": {
+    "title": "Управление комментариями",
+    "subtitle": "Поиск, редактирование и удаление комментариев по всем проектам.",
+    "searchLabel": "Поиск комментариев",
+    "searchPlaceholder": "Поиск по заголовку, автору или проекту...",
+    "projectFilter": "Проект",
     "ratingFilter": "Оценка",
-    "allRestaurants": "Все рестораны",
+    "allProjects": "Все проекты",
     "allRatings": "Все оценки",
     "ratingOption": "{rating} звёзд",
     "edit": "Редактировать",
     "delete": "Удалить",
-    "empty": "Нет отзывов по вашим фильтрам.",
-    "meta": "{author} · {restaurant} · {rating}/5 · {images, plural, one {# фото} few {# фото} many {# фото} other {# фото}}"
+    "empty": "Нет комментариев по вашим фильтрам.",
+    "meta": "{author} · {project} · {rating}/5 · {images, plural, one {# фото} few {# фото} many {# фото} other {# фото}}"
   },
   "AdminUsers": {
     "title": "Управление пользователями",
@@ -519,7 +526,7 @@
     "makeAdmin": "Сделать админом",
     "makeUser": "Сделать пользователем",
     "empty": "Нет пользователей по вашим фильтрам.",
-    "meta": "{role} · {status} · {reviews, plural, one {# отзыв} few {# отзыва} many {# отзывов} other {# отзыва}}"
+    "meta": "{role} · {status} · {comments, plural, one {# комментарий} few {# комментария} many {# комментариев} other {# комментария}}"
   },
   "Roles": {
     "USER": "Пользователь",
@@ -549,17 +556,17 @@
     "emailExists": "Аккаунт с таким email уже существует",
     "ratingRequired": "Оценка обязательна",
     "ratingInvalid": "Оценка должна быть от 1 до 5",
-    "reviewTitleRequired": "Заголовок отзыва обязателен",
-    "reviewContentRequired": "Текст отзыва обязателен",
-    "visitDateRequired": "Дата посещения обязательна",
-    "visitDateFuture": "Дата посещения не может быть в будущем",
-    "restaurantRequired": "Ресторан обязателен",
-    "reviewRequired": "Отзыв обязателен",
+    "commentTitleRequired": "Заголовок комментария обязателен",
+    "commentContentRequired": "Текст комментария обязателен",
+    "visitDateRequired": "Дата обязательна",
+    "visitDateFuture": "Дата не может быть в будущем",
+    "projectRequired": "Проект обязателен",
+    "commentRequired": "Комментарий обязателен",
     "imageRequired": "Выберите файл изображения",
     "imageTooLarge": "Каждое изображение должно быть не более 5 МБ",
     "imageInvalidType": "Разрешены только JPG, JPEG, PNG и WebP",
-    "reviewImagesMax": "Можно загрузить до 4 фото к отзыву",
-    "reviewImagesInvalid": "Одно или несколько изображений отзыва недействительны",
+    "commentImagesMax": "Можно загрузить до 4 фото к комментарию",
+    "commentImagesInvalid": "Одно или несколько изображений комментария недействительны",
     "galleryImagesMax": "Можно загрузить до 8 фото в галерею",
     "galleryImagesInvalid": "Одно или несколько изображений галереи недействительны",
     "mainImageInvalid": "Основное изображение недействительно",
@@ -569,16 +576,16 @@
     "categorySlugInvalid": "Используйте только строчные буквы, цифры и дефисы",
     "categorySlugExists": "Этот slug категории уже используется",
     "categoryRequired": "Категория обязательна",
-    "restaurantNameRequired": "Название ресторана обязательно",
-    "restaurantSlugRequired": "Slug ресторана обязателен",
-    "restaurantSlugInvalid": "Используйте только строчные буквы, цифры и дефисы",
-    "restaurantSlugExists": "Этот slug ресторана уже используется",
+    "projectNameRequired": "Название проекта обязательно",
+    "projectSlugRequired": "Slug проекта обязателен",
+    "projectSlugInvalid": "Используйте только строчные буквы, цифры и дефисы",
+    "projectSlugExists": "Этот slug проекта уже используется",
     "descriptionRequired": "Описание обязательно",
     "addressRequired": "Адрес обязателен",
     "cityRequired": "Город обязателен",
     "latitudeInvalid": "Широта должна быть от -90 до 90",
     "longitudeInvalid": "Долгота должна быть от -180 до 180",
-    "priceLevelInvalid": "Уровень цен должен быть от 1 до 4",
+    "priceLevelInvalid": "Уровень сложности должен быть от 1 до 4",
     "userRequired": "Пользователь обязателен",
     "roleInvalid": "Некорректная роль"
   },
@@ -591,16 +598,16 @@
     "profileUpdated": "Профиль обновлён",
     "signedOut": "Вы успешно вышли",
     "signOutFailed": "Не удалось выйти. Попробуйте снова.",
-    "reviewCreated": "Ваш отзыв успешно отправлен",
-    "reviewUpdated": "Отзыв успешно обновлён",
-    "reviewDeleted": "Отзыв успешно удалён",
-    "reviewForbidden": "У вас нет прав для управления этим отзывом",
-    "restaurantImagesUpdated": "Изображения ресторана успешно обновлены",
-    "restaurantCreated": "Ресторан успешно создан",
-    "restaurantUpdated": "Ресторан успешно обновлён",
-    "restaurantDeleted": "Ресторан успешно удалён",
-    "restaurantPublished": "Ресторан опубликован",
-    "restaurantUnpublished": "Ресторан снят с публикации",
+    "commentCreated": "Ваш комментарий успешно отправлен",
+    "commentUpdated": "Комментарий успешно обновлён",
+    "commentDeleted": "Комментарий успешно удалён",
+    "commentForbidden": "У вас нет прав для управления этим комментарием",
+    "projectImagesUpdated": "Изображения проекта успешно обновлены",
+    "projectCreated": "Проект успешно создан",
+    "projectUpdated": "Проект успешно обновлён",
+    "projectDeleted": "Проект успешно удалён",
+    "projectPublished": "Проект опубликован",
+    "projectUnpublished": "Проект снят с публикации",
     "categoryCreated": "Категория успешно создана",
     "categoryUpdated": "Категория успешно обновлена",
     "categoryDeleted": "Категория успешно удалена",
@@ -610,5 +617,23 @@
   },
   "LoginFormShell": {
     "loading": "Загрузка формы входа..."
+  },
+  "Upload": {
+    "pageTitle": "Над чем вы работали?",
+    "dropTitle": "Перетащите изображение или выберите файл",
+    "dropHint": "Изображения высокого разрешения (png, jpg, webp) - Макс. 5МБ",
+    "titlePlaceholder": "Дайте название",
+    "descriptionPlaceholder": "Расскажите о вашем проекте...",
+    "category": "Категория",
+    "techStack": "Используемые технологии",
+    "department": "Отделение",
+    "difficulty": "Уровень сложности",
+    "cancel": "Отмена",
+    "saveDraft": "Сохранить как черновик",
+    "publish": "Опубликовать",
+    "continue": "Продолжить",
+    "publishing": "Публикация...",
+    "saving": "Сохранение...",
+    "uploadButton": "Загрузить"
   }
 }

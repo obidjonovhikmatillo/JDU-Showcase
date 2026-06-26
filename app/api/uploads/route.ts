@@ -13,9 +13,9 @@ import {
 import { validateImageBuffer } from "@/lib/uploads/validate-image-buffer.server";
 
 const FOLDER_FIELD_MAP: Record<string, UploadFolderKey> = {
-  review: "review",
-  "restaurant-main": "restaurantMain",
-  "restaurant-gallery": "restaurantGallery",
+  comment: "comment",
+  "project-main": "projectMain",
+  "project-gallery": "projectGallery",
   avatar: "avatar",
 };
 
@@ -23,7 +23,7 @@ function canUploadFolder(
   folderKey: UploadFolderKey,
   role: string | undefined,
 ): boolean {
-  if (folderKey === "review" || folderKey === "avatar") {
+  if (folderKey === "comment" || folderKey === "avatar") {
     return Boolean(role);
   }
 

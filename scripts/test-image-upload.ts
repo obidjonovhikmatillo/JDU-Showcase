@@ -1,7 +1,7 @@
 import { validateImageFile } from "../lib/uploads/validate-image-file";
 import { detectImageType } from "../lib/uploads/detect-image-type";
 import { MAX_IMAGE_SIZE_BYTES } from "../lib/uploads/image-upload-constants";
-import { createReviewImagesSchema } from "../lib/validations/uploaded-images-schema";
+import { createCommentImagesSchema } from "../lib/validations/uploaded-images-schema";
 
 const checks: { name: string; ok: boolean }[] = [];
 
@@ -45,40 +45,40 @@ function main() {
     ).ok,
   );
 
-  const reviewSchema = createReviewImagesSchema((key) => key);
+  const commentSchema = createCommentImagesSchema((key) => key);
   assert(
-    "Allow up to 4 review images",
-    reviewSchema.safeParse([
-      { url: "https://abc123.public.blob.vercel-storage.com/tasteguide/reviews/a.jpg", publicId: "tasteguide/reviews/a.jpg" },
-      { url: "https://abc123.public.blob.vercel-storage.com/tasteguide/reviews/b.jpg", publicId: "tasteguide/reviews/b.jpg" },
-      { url: "https://abc123.public.blob.vercel-storage.com/tasteguide/reviews/c.jpg", publicId: "tasteguide/reviews/c.jpg" },
-      { url: "https://abc123.public.blob.vercel-storage.com/tasteguide/reviews/d.jpg", publicId: "tasteguide/reviews/d.jpg" },
+    "Allow up to 4 comment images",
+    commentSchema.safeParse([
+      { url: "https://abc123.public.blob.vercel-storage.com/jdu-showcase/comments/a.jpg", publicId: "jdu-showcase/comments/a.jpg" },
+      { url: "https://abc123.public.blob.vercel-storage.com/jdu-showcase/comments/b.jpg", publicId: "jdu-showcase/comments/b.jpg" },
+      { url: "https://abc123.public.blob.vercel-storage.com/jdu-showcase/comments/c.jpg", publicId: "jdu-showcase/comments/c.jpg" },
+      { url: "https://abc123.public.blob.vercel-storage.com/jdu-showcase/comments/d.jpg", publicId: "jdu-showcase/comments/d.jpg" },
     ]).success,
   );
   assert(
-    "Reject more than 4 review images",
-    !reviewSchema.safeParse(
+    "Reject more than 4 comment images",
+    !commentSchema.safeParse(
       Array.from({ length: 5 }, (_, index) => ({
-        url: `https://abc123.public.blob.vercel-storage.com/tasteguide/reviews/${index}.jpg`,
+        url: `https://abc123.public.blob.vercel-storage.com/jdu-showcase/comments/${index}.jpg`,
         publicId: String(index),
       })),
     ).success,
   );
   assert(
     "Accept local dev upload URLs",
-    reviewSchema.safeParse([
+    commentSchema.safeParse([
       {
-        url: "/uploads/tasteguide/reviews/example.jpg",
-        publicId: "tasteguide/reviews/example",
+        url: "/uploads/jdu-showcase/comments/example.jpg",
+        publicId: "jdu-showcase/comments/example",
       },
     ]).success,
   );
   assert(
     "Accept absolute localhost upload URLs",
-    reviewSchema.safeParse([
+    commentSchema.safeParse([
       {
-        url: "http://localhost:3000/uploads/tasteguide/reviews/example.jpg",
-        publicId: "tasteguide/reviews/example",
+        url: "http://localhost:3000/uploads/jdu-showcase/comments/example.jpg",
+        publicId: "jdu-showcase/comments/example",
       },
     ]).success,
   );

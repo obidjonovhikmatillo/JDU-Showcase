@@ -1,9 +1,9 @@
-# TasteGuide — Cowork Restaurant Reviews
+# JDU Showcase — Student Project Portfolio
 
-Multilingual restaurant review platform built for the Cowork university project.  
+Multilingual student project showcase platform built for JDU university.  
 Supported languages: **English**, **Uzbek**, **Russian**, and **Japanese**.
 
-This repository includes **Phase 1** (UI shell), **Phase 2** (PostgreSQL + Prisma), and **Phase 3** (Auth.js authentication). Restaurant CRUD, maps, and image uploads are planned for later phases.
+This repository includes **Phase 1** (UI shell), **Phase 2** (PostgreSQL + Prisma), and **Phase 3** (Auth.js authentication). Project CRUD, maps, and image uploads are planned for later phases.
 
 ## Tech stack
 
@@ -31,7 +31,7 @@ This repository includes **Phase 1** (UI shell), **Phase 2** (PostgreSQL + Prism
 ### 1. Clone and install
 
 ```bash
-cd cowork-restaurant-reviews/web-app
+cd web-app
 npm install
 ```
 
@@ -125,18 +125,18 @@ i18n/                # next-intl request configuration
 lib/                 # Utilities and shared helpers
 messages/            # Translation JSON (en, uz, ru, ja)
 prisma/              # Prisma schema and migrations
-  schema.prisma      # User, Category, Restaurant, Review models
+  schema.prisma      # User, Category, Project, Comment models
 public/              # Static assets
 types/               # Shared TypeScript types
 ```
 
-## Routes (Phase 1 placeholders)
+## Routes
 
 | Route | Description |
 | --- | --- |
 | `/` | Home |
-| `/restaurants` | Restaurant listing |
-| `/restaurants/[slug]` | Restaurant detail |
+| `/projects` | Project listing |
+| `/projects/[slug]` | Project detail |
 | `/login` | Login |
 | `/register` | Registration |
 | `/profile` | User profile |
@@ -165,7 +165,7 @@ Locale is stored in a `locale` cookie (`en`, `uz`, `ru`, `ja`). Use the language
 | `npm run db:migrate:deploy` | Apply migrations (production) |
 | `npm run db:push` | Push schema without migrations |
 | `npm run db:studio` | Open Prisma Studio |
-| `npm run db:seed` | Seed demo users, categories, restaurants, reviews, and images |
+| `npm run db:seed` | Seed demo users, categories, projects, comments, and images |
 | `npm run db:seed:verify` | Verify seeded record counts |
 
 ## Authentication (Phase 3)
@@ -194,7 +194,7 @@ npm run db:studio
 | **USER** | `aziza@example.com` | `User123!` |
 | **USER** | `kenji@example.com` | `User123!` |
 
-The seed is **safe to rerun** — it upserts users, categories, and restaurants by unique keys and refreshes gallery/review images without creating duplicates.
+The seed is **safe to rerun** — it upserts users, categories, and projects by unique keys and refreshes gallery/comment images without creating duplicates.
 
 ### Protected routes
 
@@ -220,30 +220,30 @@ openssl rand -base64 32
 
 ## Database seed data
 
-`npm run db:seed` loads realistic Tashkent demo content:
+`npm run db:seed` loads realistic demo content:
 
 - 1 administrator and 3 users
 - 8 multilingual categories
-- 12 restaurants with geo coordinates, opening hours, and gallery images
-- 20 reviews with optional review photos
+- 12 projects with geo coordinates, details, and gallery images
+- 20 comments with optional photos
 
 Rerun the command any time to refresh demo content without duplicating records.
 
 | Model | Purpose |
 | --- | --- |
 | `User` | Accounts with `USER` / `ADMIN` roles and language preference |
-| `Category` | Multilingual restaurant categories |
-| `Restaurant` | Restaurant listings with geo coordinates and descriptions |
-| `RestaurantImage` | Gallery images for a restaurant |
-| `Review` | User reviews (rating 1–5 validated in app code) |
-| `ReviewImage` | Images attached to reviews |
+| `Category` | Multilingual project categories |
+| `Project` | Project listings with descriptions and details |
+| `ProjectImage` | Gallery images for a project |
+| `Comment` | User comments (rating 1-5 validated in app code) |
+| `CommentImage` | Images attached to comments |
 
 **Cascade rules**
 
-- Deleting a **restaurant** cascades to its images and reviews (and review images).
-- Deleting a **review** cascades to its review images.
-- Deleting a **user** cascades to their reviews.
-- Deleting a **category** is blocked while restaurants reference it (`Restrict`).
+- Deleting a **project** cascades to its images and comments (and comment images).
+- Deleting a **comment** cascades to its comment images.
+- Deleting a **user** cascades to their comments.
+- Deleting a **category** is blocked while projects reference it (`Restrict`).
 
 **Security**
 
@@ -252,7 +252,7 @@ Rerun the command any time to refresh demo content without duplicating records.
 
 ## Next phases
 
-- Restaurant CRUD, reviews, and image uploads
+- Project CRUD, comments, and image uploads
 - Leaflet maps and admin panel
 - Production deployment configuration
 

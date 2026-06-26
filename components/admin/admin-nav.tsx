@@ -13,15 +13,15 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 const links: Array<{
-  href: "/admin" | "/admin/restaurants" | "/admin/categories" | "/admin/reviews" | "/admin/users";
-  labelKey: "dashboard" | "restaurants" | "categories" | "reviews" | "users";
+  href: "/admin" | "/admin/projects" | "/admin/categories" | "/admin/comments" | "/admin/users";
+  labelKey: "dashboard" | "projects" | "categories" | "comments" | "users";
   icon: typeof LayoutDashboardIcon;
   exact?: boolean;
 }> = [
   { href: "/admin", labelKey: "dashboard", icon: LayoutDashboardIcon, exact: true },
-  { href: "/admin/restaurants", labelKey: "restaurants", icon: StoreIcon },
+  { href: "/admin/projects", labelKey: "projects", icon: StoreIcon },
   { href: "/admin/categories", labelKey: "categories", icon: FolderTreeIcon },
-  { href: "/admin/reviews", labelKey: "reviews", icon: MessageSquareTextIcon },
+  { href: "/admin/comments", labelKey: "comments", icon: MessageSquareTextIcon },
   { href: "/admin/users", labelKey: "users", icon: UsersIcon },
 ];
 

@@ -85,7 +85,7 @@ export default async function AdminUsersPage({ searchParams }: AdminUsersPagePro
                     {t("meta", {
                       role: tRoles(user.role),
                       status: user.isActive ? t("active") : t("inactive"),
-                      reviews: user._count.reviews,
+                      comments: user._count.comments,
                     })}
                   </p>
                 </div>

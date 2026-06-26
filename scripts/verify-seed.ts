@@ -4,31 +4,31 @@ const prisma = new PrismaClient();
 
 const expected = {
   usersMin: 4,
-  categories: 8,
-  restaurants: 12,
-  reviewsMin: 20,
-  restaurantImagesMin: 20,
-  reviewImagesMin: 8,
+  categories: 5,
+  projects: 12,
+  commentsMin: 20,
+  projectImagesMin: 10,
+  commentImagesMin: 6,
 };
 
 async function main() {
-  const [users, categories, restaurants, reviews, restaurantImages, reviewImages] =
+  const [users, categories, projects, comments, projectImages, commentImages] =
     await Promise.all([
       prisma.user.count(),
       prisma.category.count(),
-      prisma.restaurant.count(),
-      prisma.review.count(),
-      prisma.restaurantImage.count(),
-      prisma.reviewImage.count(),
+      prisma.project.count(),
+      prisma.comment.count(),
+      prisma.projectImage.count(),
+      prisma.commentImage.count(),
     ]);
 
   const checks = [
     ["users", users, expected.usersMin, "gte"],
     ["categories", categories, expected.categories, "eq"],
-    ["restaurants", restaurants, expected.restaurants, "eq"],
-    ["reviews", reviews, expected.reviewsMin, "gte"],
-    ["restaurantImages", restaurantImages, expected.restaurantImagesMin, "gte"],
-    ["reviewImages", reviewImages, expected.reviewImagesMin, "gte"],
+    ["projects", projects, expected.projects, "eq"],
+    ["comments", comments, expected.commentsMin, "gte"],
+    ["projectImages", projectImages, expected.projectImagesMin, "gte"],
+    ["commentImages", commentImages, expected.commentImagesMin, "gte"],
   ] as const;
 
   let failed = false;
@@ -52,24 +52,24 @@ async function main() {
     select: { email: true, role: true },
   });
 
-  const sampleRestaurant = await prisma.restaurant.findUnique({
-    where: { slug: "plov-markazi-chorsu" },
+  const sampleProject = await prisma.project.findUnique({
+    where: { slug: "campus-connect-portal" },
     include: {
       category: true,
       images: true,
-      reviews: { include: { images: true }, take: 1 },
+      comments: { include: { images: true }, take: 1 },
     },
   });
 
   console.log("\nSample admin:", admin);
   console.log(
-    "Sample restaurant:",
-    sampleRestaurant
+    "Sample project:",
+    sampleProject
       ? {
-          name: sampleRestaurant.name,
-          category: sampleRestaurant.category.slug,
-          galleryCount: sampleRestaurant.images.length,
-          reviewSampleImages: sampleRestaurant.reviews[0]?.images.length ?? 0,
+          title: sampleProject.title,
+          category: sampleProject.category.slug,
+          galleryCount: sampleProject.images.length,
+          commentSampleImages: sampleProject.comments[0]?.images.length ?? 0,
         }
       : null,
   );

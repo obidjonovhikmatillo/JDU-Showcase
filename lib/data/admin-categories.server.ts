@@ -33,7 +33,7 @@ export async function listAdminCategoriesPaginated(filters: AdminCategoryListFil
         nameEn: true,
         nameRu: true,
         nameJa: true,
-        _count: { select: { restaurants: true } },
+        _count: { select: { projects: true } },
       },
     }),
     prisma.category.count({ where }),

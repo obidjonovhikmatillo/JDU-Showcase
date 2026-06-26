@@ -5,12 +5,15 @@ import { notFound } from "next/navigation";
 import { LogoutButton } from "@/components/auth/logout-button";
 import { PageHeader } from "@/components/layout/page-shell";
 import { ProfilePanel } from "@/components/profile/profile-panel";
-import { ProfileReviewsSection } from "@/components/profile/profile-reviews-section";
+import { ProfileCommentsSection } from "@/components/profile/profile-comments-section";
 import { parseOptionalInt } from "@/lib/admin/pagination";
 import {
   getProfileStats,
   getProfileUser,
-  listUserProfileReviews,
+  getUserLikedProjectSummaries,
+  getUserProjects,
+  getUserSavedProjectSummaries,
+  listUserProfileComments,
 } from "@/lib/data/profile.server";
 import { requireAuth } from "@/lib/auth/guards";
 
@@ -33,11 +36,15 @@ export default async function ProfilePage({ searchParams }: ProfilePageProps) {
   const locale = await getLocale();
   const t = await getTranslations("ProfilePage");
 
-  const [user, stats, reviewsResult] = await Promise.all([
-    getProfileUser(session.user.id),
-    getProfileStats(session.user.id),
-    listUserProfileReviews(session.user.id, { page }),
-  ]);
+  const [user, stats, commentsResult, userProjects, likedProjects, savedProjects] =
+    await Promise.all([
+      getProfileUser(session.user.id),
+      getProfileStats(session.user.id),
+      listUserProfileComments(session.user.id, { page }),
+      getUserProjects(session.user.id),
+      getUserLikedProjectSummaries(session.user.id),
+      getUserSavedProjectSummaries(session.user.id),
+    ]);
 
   if (!user) {
     notFound();
@@ -48,18 +55,25 @@ export default async function ProfilePage({ searchParams }: ProfilePageProps) {
   }).format(user.createdAt);
 
   return (
-    <section className="mx-auto w-full max-w-5xl space-y-8">
+    <section className="mx-auto w-full max-w-6xl space-y-8">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <PageHeader title={t("title")} subtitle={t("subtitle")} />
         <LogoutButton />
       </div>
 
-      <ProfilePanel user={user} stats={stats} registeredDateLabel={registeredDateLabel} />
+      <ProfilePanel
+        user={user}
+        stats={stats}
+        registeredDateLabel={registeredDateLabel}
+        userProjects={userProjects}
+        likedProjects={likedProjects}
+        savedProjects={savedProjects}
+      />
 
-      <ProfileReviewsSection
-        reviews={reviewsResult.items}
-        page={reviewsResult.page}
-        totalPages={reviewsResult.totalPages}
+      <ProfileCommentsSection
+        comments={commentsResult.items}
+        page={commentsResult.page}
+        totalPages={commentsResult.totalPages}
       />
     </section>
   );

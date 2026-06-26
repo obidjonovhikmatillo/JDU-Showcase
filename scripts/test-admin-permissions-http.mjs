@@ -115,13 +115,13 @@ async function main() {
   assert("Admin can access admin panel", adminPage.status === 200);
   assert(
     "Admin dashboard shows navigation",
-    adminPage.html.includes("Restaurants") || adminPage.html.includes("restaurants"),
+    adminPage.html.includes("Projects") || adminPage.html.includes("projects"),
   );
   assert(
     "Admin dashboard shows statistics",
-    adminPage.html.includes("Total restaurants") ||
-      adminPage.html.includes("totalRestaurants") ||
-      adminPage.html.includes("reviews"),
+    adminPage.html.includes("Total projects") ||
+      adminPage.html.includes("totalProjects") ||
+      adminPage.html.includes("comments"),
   );
 
   const failed = checks.filter((check) => !check.ok);

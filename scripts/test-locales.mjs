@@ -2,10 +2,10 @@ const baseUrl = process.env.BASE_URL ?? "http://localhost:3000";
 const locales = ["en", "uz", "ru", "ja"];
 
 const localeExpectations = {
-  en: { home: "Find your next favorite restaurant", login: "Sign in" },
-  uz: { home: "Sevimli restoratingizni toping", login: "Kirish" },
-  ru: { home: "Найдите свой любимый ресторан", login: "Войти" },
-  ja: { home: "お気に入りのレストランを見つけよう", login: "ログイン" },
+  en: { home: "Discover student projects", login: "Sign in" },
+  uz: { home: "Talabalar loyihalarini kashf eting", login: "Kirish" },
+  ru: { home: "Откройте студенческие проекты", login: "Войти" },
+  ja: { home: "学生プロジェクトを発見しよう", login: "ログイン" },
 };
 
 let failures = 0;
@@ -44,7 +44,7 @@ async function main() {
     const expectations = localeExpectations[locale];
 
     await testUrl(`${baseUrl}/${locale}`, [expectations.home]);
-    await testUrl(`${baseUrl}/${locale}/restaurants`, [expectations.home.includes("Find") ? "Restaurants" : locale === "uz" ? "Restoranlar" : locale === "ru" ? "Рестораны" : "レストラン"]);
+    await testUrl(`${baseUrl}/${locale}/projects`, [expectations.home.includes("Discover") ? "Projects" : locale === "uz" ? "Loyihalar" : locale === "ru" ? "Проекты" : "プロジェクト"]);
     await testUrl(`${baseUrl}/${locale}/login`, [expectations.login]);
     await testUrl(`${baseUrl}/${locale}/register`, [
       locale === "en"
@@ -55,7 +55,7 @@ async function main() {
             ? "Создать аккаунт"
             : "アカウント作成",
     ]);
-    await testUrl(`${baseUrl}/${locale}/restaurants/demo-cafe`, ["demo-cafe"]);
+    await testUrl(`${baseUrl}/${locale}/projects/demo-project`, ["demo-project"]);
 
     const profile = await fetch(`${baseUrl}/${locale}/profile`, { redirect: "manual" });
     if (profile.status !== 307 && profile.status !== 302) {

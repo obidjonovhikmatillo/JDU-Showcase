@@ -1,6 +1,6 @@
 "use client";
 
-import { TaomchiIcon } from "@/components/layout/taomchi-icon";
+import { ShowcaseIcon } from "@/components/layout/showcase-icon";
 import { cn } from "@/lib/utils";
 
 type BrandLogoProps = {
@@ -12,9 +12,9 @@ type BrandLogoProps = {
 export function BrandLogo({ label, showLabel = true, className }: BrandLogoProps) {
   return (
     <span className={cn("inline-flex min-w-0 items-center gap-2", className)}>
-      <TaomchiIcon />
+      <ShowcaseIcon />
       {showLabel ? (
-        <span className="truncate text-xl font-semibold tracking-tight text-primary">{label}</span>
+        <span className="truncate text-xl font-bold tracking-tight text-white">{label}</span>
       ) : null}
     </span>
   );

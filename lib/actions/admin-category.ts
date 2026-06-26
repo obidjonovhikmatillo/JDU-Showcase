@@ -143,11 +143,11 @@ export async function deleteCategory(
     return { fieldErrors: parsed.error.flatten().fieldErrors };
   }
 
-  const restaurantCount = await prisma.restaurant.count({
+  const projectCount = await prisma.project.count({
     where: { categoryId: parsed.data.categoryId },
   });
 
-  if (restaurantCount > 0) {
+  if (projectCount > 0) {
     return { error: tErrors("categoryInUse") };
   }
 

@@ -44,12 +44,12 @@ export function HeaderUserMenu({
     <Link
       href="/profile"
       className={cn(
-        "flex max-w-[9.5rem] items-center gap-2.5 rounded-full py-1 pr-1 pl-1 transition-colors hover:bg-muted xl:max-w-[11rem]",
+        "flex max-w-[9.5rem] items-center gap-2.5 rounded-full py-1 pr-1 pl-1 transition-colors hover:bg-white/10 xl:max-w-[11rem]",
         className,
       )}
       aria-label={t("profile")}
     >
-      <span className="relative flex size-9 shrink-0 overflow-hidden rounded-full bg-muted ring-1 ring-border">
+      <span className="relative flex size-9 shrink-0 overflow-hidden rounded-full bg-white/20 ring-1 ring-white/20">
         {displayAvatar ? (
           <Image
             src={displayAvatar}
@@ -59,17 +59,17 @@ export function HeaderUserMenu({
             className="object-cover"
           />
         ) : (
-          <span className="flex size-full items-center justify-center text-xs font-medium text-muted-foreground">
+          <span className="flex size-full items-center justify-center text-xs font-medium text-white/70">
             {initials || "?"}
           </span>
         )}
       </span>
       <span className={cn("hidden min-w-0 flex-col leading-tight", showTextAlways ? "flex" : "xl:flex")}>
-        <span className="truncate text-sm text-foreground">{primary}</span>
+        <span className="truncate text-sm text-white">{primary}</span>
         {secondary ? (
-          <span className="truncate text-xs text-muted-foreground">{secondary}</span>
+          <span className="truncate text-xs text-white/50">{secondary}</span>
         ) : (
-          <span className="truncate text-xs text-muted-foreground">{t("addHeadlineHint")}</span>
+          <span className="truncate text-xs text-white/50">{t("addHeadlineHint")}</span>
         )}
       </span>
     </Link>

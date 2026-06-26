@@ -8,15 +8,15 @@ export const ALLOWED_IMAGE_MIME_TYPES = [
   "image/webp",
 ] as const;
 
-export const MAX_REVIEW_IMAGES = 4;
-export const MAX_RESTAURANT_GALLERY_IMAGES = 8;
+export const MAX_COMMENT_IMAGES = 4;
+export const MAX_PROJECT_GALLERY_IMAGES = 8;
 export const MAX_AVATAR_IMAGES = 1;
 
 export const UPLOAD_FOLDERS = {
-  review: "tasteguide/reviews",
-  restaurantMain: "tasteguide/restaurants/main",
-  restaurantGallery: "tasteguide/restaurants/gallery",
-  avatar: "tasteguide/avatars",
+  comment: "jdu-showcase/comments",
+  projectMain: "jdu-showcase/projects/main",
+  projectGallery: "jdu-showcase/projects/gallery",
+  avatar: "jdu-showcase/avatars",
 } as const;
 
 export type UploadFolderKey = keyof typeof UPLOAD_FOLDERS;

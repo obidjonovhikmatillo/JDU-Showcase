@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 
 import { SiteShell } from "@/components/layout/site-shell";
+import { ProjectModalProvider } from "@/components/projects/project-modal-provider";
 import { AuthSessionProvider } from "@/components/providers/session-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { routing } from "@/i18n/routing";
@@ -38,7 +39,9 @@ export default async function LocaleLayout({
       <body className="flex min-h-dvh flex-col bg-background font-sans text-foreground">
         <AuthSessionProvider>
           <NextIntlClientProvider messages={messages}>
-            <SiteShell>{children}</SiteShell>
+            <ProjectModalProvider>
+              <SiteShell>{children}</SiteShell>
+            </ProjectModalProvider>
             <Toaster />
           </NextIntlClientProvider>
         </AuthSessionProvider>

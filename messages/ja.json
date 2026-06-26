@@ -1,7 +1,7 @@
 {
   "Common": {
-    "brand": "Taomchi",
-    "tagline": "近くのレストランを見つけてレビューしよう",
+    "brand": "JDU Showcase",
+    "tagline": "JDUの学生プロジェクトとクリエイティブ作品を発見",
     "loading": "読み込み中...",
     "close": "閉じる"
   },
@@ -11,20 +11,20 @@
     "retry": "再試行",
     "backHome": "ホームへ",
     "mustBeSignedIn": "プロフィールを更新するにはログインが必要です。",
-    "mustBeSignedInToReview": "レビューを送信するにはログインが必要です。",
-    "restaurantNotFound": "レストランが見つかりません。",
-    "reviewNotFound": "レビューが見つかりません。",
-    "reviewForbidden": "このレビューを管理する権限がありません。",
+    "mustBeSignedInToComment": "コメントを送信するにはログインが必要です。",
+    "projectNotFound": "プロジェクトが見つかりません。",
+    "commentNotFound": "コメントが見つかりません。",
+    "commentForbidden": "このコメントを管理する権限がありません。",
     "adminRequired": "管理者権限が必要です。",
     "categoryNotFound": "カテゴリが見つかりません。",
-    "categoryInUse": "このカテゴリはレストランで使用されているため削除できません。",
+    "categoryInUse": "このカテゴリはプロジェクトで使用されているため削除できません。",
     "userNotFound": "ユーザーが見つかりません。",
     "cannotDeactivateSelf": "自分の管理者アカウントを無効化することはできません。",
     "cannotDemoteSelf": "自分の管理者ロールを解除することはできません。"
   },
   "Nav": {
     "home": "ホーム",
-    "restaurants": "レストラン",
+    "projects": "プロジェクト",
     "login": "ログイン",
     "register": "新規登録",
     "profile": "プロフィール",
@@ -34,19 +34,19 @@
     "openMenu": "メニューを開く",
     "closeMenu": "メニューを閉じる",
     "mobileNavLabel": "モバイルメニュー",
-    "shareReview": "レビューを投稿",
-    "postReview": "レビューを書く",
+    "shareComment": "コメントを投稿",
+    "postComment": "コメントを書く",
     "profileAvatarAlt": "{name} のプロフィール写真",
-    "addHeadlineHint": "ゲストまたは職業"
+    "addHeadlineHint": "学生または専攻"
   },
   "NotFound": {
     "title": "ページが見つかりません",
     "description": "お探しのページは存在しないか、移動した可能性があります。",
     "backHome": "ホームに戻る",
-    "browseRestaurants": "レストランを見る"
+    "browseProjects": "プロジェクトを見る"
   },
   "Footer": {
-    "description": "Cowork大学プロジェクト向けの多言語レストランreviewプラットフォーム。",
+    "description": "JDU大学向けの多言語学生プロジェクトショーケースプラットフォーム。",
     "rights": "無断転載を禁じます。",
     "navLabel": "フッターナビゲーション",
     "explore": "探索",
@@ -58,92 +58,93 @@
     "noCategories": "カテゴリは近日追加予定"
   },
   "Home": {
-    "title": "お気に入りのレストランを見つけよう",
-    "subtitle": "レストランを探し、レビューを読み、4言語で体験を共有できます。",
+    "title": "学生プロジェクトとクリエイティブ作品を発見",
+    "subtitle": "プロジェクトを探し、コメントを読み、4言語でフィードバックを共有できます。",
     "hero": {
-      "eyebrow": "タシケントグルメガイド",
-      "headline": "タシケントで最高のレストランを見つけよう",
-      "description": "レストランを検索し、料理の種類を探索し、実際の利用者の信頼できるレビューを読めます。",
-      "searchPlaceholder": "店名、料理、エリアで検索...",
+      "eyebrow": "JDU学生ショーケース",
+      "headline": "JDUの学生プロジェクトとクリエイティブ作品を発見",
+      "description": "学生ポートフォリオを探索し、革新的なプロジェクトを発見し、JDUコミュニティのフィードバックを読めます。",
+      "searchPlaceholder": "名前、技術、カテゴリで検索...",
       "searchButton": "検索",
-      "searchAriaLabel": "レストラン検索",
+      "searchAriaLabel": "プロジェクト検索",
       "searchWhereLabel": "場所",
-      "searchCategoryLabel": "料理",
-      "searchCategoryValue": "すべての料理",
-      "cta": "すべてのレストラン",
-      "imageAlt": "タシケントのレストランで提供される料理"
+      "searchCategoryLabel": "カテゴリ",
+      "searchCategoryValue": "すべてのカテゴリ",
+      "cta": "すべてのプロジェクト",
+      "ctaRegister": "無料アカウントを作成",
+      "imageAlt": "JDU学生プロジェクトショーケース"
     },
     "categories": {
       "title": "人気カテゴリ",
-      "subtitle": "料理の種類やスタイル別にタシケントのレストランを探索。",
-      "restaurantCount": "{count, plural, one {# 件} other {# 件}}",
+      "subtitle": "分野やプロジェクトタイプ別にJDUのプロジェクトを探索。",
+      "projectCount": "{count, plural, one {# 件} other {# 件}}",
       "viewAll": "すべて見る",
       "empty": "カテゴリはまだありません。"
     },
     "topRated": {
-      "title": "高評価レストラン",
-      "subtitle": "コミュニティのレビューに基づく最高評価のお店。",
-      "viewAll": "すべてのレストラン",
-      "empty": "レビューのあるレストランはまだありません。"
+      "title": "高評価プロジェクト",
+      "subtitle": "コミュニティのフィードバックに基づく最高評価のプロジェクト。",
+      "viewAll": "すべてのプロジェクト",
+      "empty": "コメントのあるプロジェクトはまだありません。"
     },
     "recent": {
       "title": "最近追加",
-      "subtitle": "Taomchiに最近追加されたレストラン。",
-      "viewAll": "一覧を見る",
-      "empty": "レストランはまだ追加されていません。"
+      "subtitle": "JDU Showcaseに最近追加されたプロジェクト。",
+      "viewAll": "プロジェクトを見る",
+      "empty": "プロジェクトはまだ追加されていません。"
     },
     "benefits": {
-      "title": "Taomchiの特長",
-      "subtitle": "美味しいお店を見つけ、体験を共有するために必要なすべて。",
+      "title": "JDU Showcaseの特長",
+      "subtitle": "学生の才能を発見し、フィードバックを共有するために必要なすべて。",
       "discover": {
-        "title": "レストランを発見",
-        "description": "カテゴリと検索でタシケント各地のレストランを探索。"
+        "title": "プロジェクトを発見",
+        "description": "カテゴリと検索で学生ポートフォリオを探索。"
       },
       "reviews": {
-        "title": "信頼できるレビュー",
-        "description": "評価、レビュー数、詳細なコメントを確認。"
+        "title": "信頼できるフィードバック",
+        "description": "評価、コメント数、詳細なフィードバックを確認。"
       },
       "share": {
-        "title": "体験を共有",
-        "description": "アカウントを作成してレビューを書き、他の人を助けましょう。"
+        "title": "意見を共有",
+        "description": "アカウントを作成してコメントを書き、他の学生を助けましょう。"
       },
       "locations": {
-        "title": "場所を確認",
-        "description": "各レストランの住所、地図、営業時間をチェック。"
+        "title": "プロジェクト詳細を確認",
+        "description": "各プロジェクトの説明、技術、リンクをチェック。"
       }
     },
     "cta": {
-      "title": "Taomchiコミュニティに参加",
-      "description": "無料アカウントでお気に入り保存、レビュー投稿、母語での探索が可能。",
+      "title": "JDU Showcaseコミュニティに参加",
+      "description": "無料アカウントでお気に入り保存、コメント投稿、母語での探索が可能。",
       "button": "無料アカウント作成",
       "login": "すでにアカウントをお持ちですか？ログイン"
     },
-    "restaurantCard": {
-      "reviews": "{count, plural, one {レビュー # 件} other {レビュー # 件}}",
-      "noReviews": "レビューなし"
+    "projectCard": {
+      "comments": "{count, plural, one {コメント # 件} other {コメント # 件}}",
+      "noComments": "コメントなし"
     },
     "error": {
       "title": "ホームページを読み込めませんでした",
-      "description": "現在レストランデータを取得できません。しばらくしてから再度お試しください。",
+      "description": "現在プロジェクトデータを取得できません。しばらくしてから再度お試しください。",
       "retry": "再試行"
     }
   },
-  "Restaurants": {
-    "title": "レストラン",
-    "subtitle": "タシケントの飲食店を検索・探索。",
+  "Projects": {
+    "title": "プロジェクト",
+    "subtitle": "JDUの学生プロジェクトを検索・探索。",
     "filteredTitle": "絞り込み結果",
     "searchTitle": "検索: {query}",
-    "filteredSubtitle": "{category}カテゴリのレストラン。",
+    "filteredSubtitle": "{category}カテゴリのプロジェクト。",
     "searchSubtitle": "「{query}」の検索結果。",
-    "citySubtitle": "{city}のレストラン。",
-    "searchPlaceholder": "店名、住所、都市、料理で検索...",
+    "citySubtitle": "{city}のプロジェクト。",
+    "searchPlaceholder": "名前、技術、カテゴリで検索...",
     "searchButton": "検索",
-    "searchAriaLabel": "レストラン検索",
+    "searchAriaLabel": "プロジェクト検索",
     "allCategories": "すべて",
     "activeFilters": "適用中のフィルター:",
     "searchFilter": "検索: {query}",
     "clearFilters": "フィルターを解除",
-    "emptyTitle": "レストランが見つかりません",
+    "emptyTitle": "プロジェクトが見つかりません",
     "emptyDescription": "別のキーワードやフィルターをお試しください。",
     "backHome": "ホームに戻る",
     "resultsCount": "{count, plural, one {# 件見つかりました} other {# 件見つかりました}}",
@@ -154,20 +155,18 @@
       "category": "カテゴリ",
       "city": "都市",
       "minRating": "最低評価",
-      "priceLevel": "価格帯",
       "sort": "並び替え",
       "allCategories": "すべてのカテゴリ",
       "allCities": "すべての都市",
       "anyRating": "評価指定なし",
-      "anyPrice": "価格指定なし",
       "ratingOption": "{rating}つ星以上",
       "ratingChip": "{rating}つ星以上"
     },
     "sort": {
       "rating": "評価が高い順",
-      "reviews": "レビューが多い順",
+      "comments": "コメントが多い順",
       "newest": "新着順",
-      "name": "名前順 A–Z"
+      "name": "名前順 A-Z"
     },
     "view": {
       "ariaLabel": "表示モード",
@@ -175,28 +174,33 @@
       "list": "リスト"
     },
     "card": {
-      "reviews": "{count, plural, one {レビュー # 件} other {レビュー # 件}}",
-      "noReviews": "レビューなし",
+      "comments": "{count, plural, one {コメント # 件} other {コメント # 件}}",
+      "noComments": "コメントなし",
       "viewDetails": "詳細を見る",
-      "perVisit": "平均予算",
-      "guestFavorite": "ゲストのお気に入り"
+      "guestFavorite": "コミュニティのお気に入り"
     },
     "error": {
-      "title": "レストランを読み込めませんでした",
-      "description": "レストラン情報の取得中にエラーが発生しました。もう一度お試しください。",
+      "title": "プロジェクトを読み込めませんでした",
+      "description": "プロジェクト情報の取得中にエラーが発生しました。もう一度お試しください。",
       "retry": "再試行"
     }
   },
-  "RestaurantDetail": {
-    "title": "レストラン詳細",
-    "subtitle": "レビュー、地図、写真は今後のフェーズで追加されます。",
+  "ProjectDetail": {
+    "title": "プロジェクト詳細",
+    "subtitle": "コメント、詳細、写真は今後のフェーズで追加されます。",
     "placeholder": "詳細:",
-    "notFoundTitle": "レストランが見つかりません",
-    "aboutTitle": "このレストランについて",
-    "reviewsTitle": "レビュー",
-    "reviewCount": "{count, plural, other {# 件のレビュー}}",
-    "hours": "営業時間",
-    "phone": "電話",
+    "notFoundTitle": "プロジェクトが見つかりません",
+    "techStack": "使用技術",
+    "difficulty": "難易度",
+    "liveDemo": "ライブデモ",
+    "sourceCode": "ソースコード",
+    "author": "制作者",
+    "department": "学部",
+    "aboutTitle": "このプロジェクトについて",
+    "commentsTitle": "コメント",
+    "commentCount": "{count, plural, other {# 件のコメント}}",
+    "hours": "利用可能時間",
+    "phone": "連絡先",
     "website": "ウェブサイトを見る",
     "galleryTitle": "フォトギャラリー",
     "galleryPrevious": "前の写真",
@@ -204,21 +208,24 @@
     "galleryDotsLabel": "ギャラリー写真",
     "galleryDotLabel": "{total}枚中{index}枚目",
     "galleryImageAlt": "{name} — {total}枚中{index}枚目",
-    "priceHint": "平均予算",
-    "browseMore": "他のレストランを見る",
+    "browseMore": "他のプロジェクトを見る",
+    "moreByAuthor": "{author}の他のプロジェクト",
+    "closeModal": "閉じる",
+    "loadingProject": "プロジェクトを読み込み中...",
+    "errorLoading": "プロジェクトの詳細を読み込めませんでした。",
     "ratingShowcase": {
-      "guestFavorite": "ゲストのお気に入り",
-      "guestFavoriteDescription": "このレストランは評価・レビュー・信頼性の面で上位10%に入っています。",
-      "basedOnReviews": "{count, plural, other {# 件のレビュー}}に基づく",
+      "guestFavorite": "コミュニティのお気に入り",
+      "guestFavoriteDescription": "このプロジェクトは評価・コメント・品質の面で上位10%に入っています。",
+      "basedOnComments": "{count, plural, other {# 件のコメント}}に基づく",
       "overall": "総合評価",
-      "food": "料理",
-      "service": "サービス",
-      "location": "立地",
-      "value": "コスパ",
+      "creativity": "創造性",
+      "technical": "技術的品質",
+      "presentation": "プレゼンテーション",
+      "innovation": "革新性",
       "checkIn": "チェックイン",
       "accuracy": "正確さ",
-      "tagAtmosphere": "雰囲気",
-      "tagFood": "料理の質"
+      "tagCreativity": "創造性",
+      "tagTechnical": "技術的品質"
     }
   },
   "ImageUpload": {
@@ -236,22 +243,22 @@
     "noImages": "まだ画像が選択されていません。",
     "maxReached": "最大 {max} 枚に達しました。"
   },
-  "AdminRestaurants": {
-    "title": "レストラン管理",
-    "subtitle": "レストランの作成、編集、公開、一覧管理を行います。",
-    "addRestaurant": "レストランを追加",
+  "AdminProjects": {
+    "title": "プロジェクト管理",
+    "subtitle": "プロジェクトの作成、編集、公開、一覧管理を行います。",
+    "addProject": "プロジェクトを追加",
     "edit": "編集",
     "publish": "公開",
     "unpublish": "非公開",
-    "publishTitle": "レストランを公開しますか？",
-    "publishDescription": "このレストランが公開サイトに表示されます。",
-    "unpublishTitle": "レストランを非公開にしますか？",
-    "unpublishDescription": "このレストランは公開ページから非表示になります。",
+    "publishTitle": "プロジェクトを公開しますか？",
+    "publishDescription": "このプロジェクトが公開サイトに表示されます。",
+    "unpublishTitle": "プロジェクトを非公開にしますか？",
+    "unpublishDescription": "このプロジェクトは公開ページから非表示になります。",
     "delete": "削除",
-    "deleteTitle": "レストランを削除しますか？",
-    "deleteDescription": "レストラン、ギャラリー、すべてのレビューが完全に削除されます。",
-    "deleteConfirm": "レストランを削除",
-    "searchLabel": "レストランを検索",
+    "deleteTitle": "プロジェクトを削除しますか？",
+    "deleteDescription": "プロジェクト、ギャラリー、すべてのコメントが完全に削除されます。",
+    "deleteConfirm": "プロジェクトを削除",
+    "searchLabel": "プロジェクトを検索",
     "searchPlaceholder": "名前、都市、slugで検索...",
     "statusFilter": "ステータス",
     "categoryFilter": "カテゴリ",
@@ -259,110 +266,110 @@
     "allCategories": "すべてのカテゴリ",
     "published": "公開中",
     "draft": "下書き",
-    "empty": "条件に一致するレストランがありません。",
-    "meta": "{city} · ギャラリー {galleryCount} 枚 · レビュー {reviewCount} 件 · {status}"
+    "empty": "条件に一致するプロジェクトがありません。",
+    "meta": "{city} · ギャラリー {galleryCount} 枚 · コメント {commentCount} 件 · {status}"
   },
-  "AdminRestaurantForm": {
-    "createPageTitle": "レストランを追加",
-    "createPageSubtitle": "新しいレストランを作成します。",
+  "AdminProjectForm": {
+    "createPageTitle": "プロジェクトを追加",
+    "createPageSubtitle": "新しいプロジェクトを作成します。",
     "editPageTitle": "{name} を編集",
-    "editPageSubtitle": "レストランの詳細、説明、画像を更新します。",
-    "notFound": "レストランが見つかりません",
+    "editPageSubtitle": "プロジェクトの詳細、説明、画像を更新します。",
+    "notFound": "プロジェクトが見つかりません",
     "basicsTitle": "基本情報",
     "basicsDescription": "カードや詳細ページに表示される基本情報です。",
     "descriptionsTitle": "説明文",
     "descriptionsDescription": "説明は1回だけ入力してください。同じ内容がウズベク語・英語・ロシア語・日本語に保存されます。",
     "imagesTitle": "画像",
     "imagesDescription": "カバー画像とギャラリー写真をアップロードします。",
-    "imagesAfterCreate": "まずレストランを保存し、編集ページで画像をアップロードしてください。",
+    "imagesAfterCreate": "まずプロジェクトを保存し、編集ページで画像をアップロードしてください。",
     "name": "名前",
     "slug": "Slug",
     "category": "カテゴリ",
     "categoryPlaceholder": "カテゴリを選択",
     "city": "都市",
-    "cuisineType": "料理の種類",
+    "cuisineType": "プロジェクトタイプ",
     "address": "住所",
-    "phone": "電話",
+    "phone": "連絡先",
     "website": "ウェブサイト",
-    "openingHours": "営業時間",
+    "openingHours": "利用可能時間",
     "latitude": "緯度",
     "longitude": "経度",
-    "priceLevel": "価格帯 (1–4)",
+    "priceLevel": "難易度 (1-4)",
     "published": "公開",
     "description": "説明",
     "mainImage": "メイン画像",
     "galleryImages": "ギャラリー画像",
-    "create": "レストランを作成",
+    "create": "プロジェクトを作成",
     "save": "変更を保存",
     "saving": "保存中..."
   },
-  "AdminRestaurantImages": {
-    "title": "レストラン画像",
-    "description": "このレストランのカバー画像とギャラリー写真をアップロードします。",
+  "AdminProjectImages": {
+    "title": "プロジェクト画像",
+    "description": "このプロジェクトのカバー画像とギャラリー写真をアップロードします。",
     "pageTitle": "画像: {name}",
     "pageSubtitle": "保存後、公開ページに反映されます。",
-    "notFound": "レストランが見つかりません",
-    "backToList": "レストラン一覧に戻る",
+    "notFound": "プロジェクトが見つかりません",
+    "backToList": "プロジェクト一覧に戻る",
     "mainImageLabel": "メイン画像",
-    "mainImageDescription": "カードやレストラン詳細ページ上部に表示されます。",
+    "mainImageDescription": "カードやプロジェクト詳細ページ上部に表示されます。",
     "galleryLabel": "ギャラリー画像",
     "galleryDescription": "ギャラリー用に追加で最大8枚までアップロードできます。",
     "save": "画像を保存",
     "saving": "保存中..."
   },
-  "ReviewForm": {
-    "title": "レビューを書く",
-    "description": "体験を共有して、他の人の選びを助けましょう。",
+  "CommentForm": {
+    "title": "コメントを書く",
+    "description": "フィードバックを共有して、他の学生を助けましょう。",
     "ratingLabel": "評価",
     "ratingOption": "{rating} つ星",
-    "titleLabel": "レビュータイトル",
-    "contentLabel": "レビュー内容",
-    "visitDateLabel": "訪問日",
+    "titleLabel": "コメントタイトル",
+    "contentLabel": "コメント内容",
+    "visitDateLabel": "日付",
     "imagesLabel": "写真（任意）",
-    "imagesDescription": "訪問時の写真を最大4枚アップロードできます。JPG、PNG、WebP、各5MBまで。",
-    "submit": "レビューを送信",
+    "imagesDescription": "写真を最大4枚アップロードできます。JPG、PNG、WebP、各5MBまで。",
+    "submit": "コメントを送信",
     "submitting": "送信中...",
-    "signInTitle": "レビューを書くにはログイン",
-    "signInDescription": "登録ユーザーのみがこのレストランにレビューを投稿できます。",
+    "signInTitle": "コメントを書くにはログイン",
+    "signInDescription": "登録ユーザーのみがこのプロジェクトにコメントを投稿できます。",
     "signInButton": "ログインして続行"
   },
-  "ReviewList": {
-    "title": "{count, plural, other {# 件のレビュー}}",
-    "emptyTitle": "レビューはまだありません",
-    "emptyDescription": "このレストランの最初のレビューを書いてみましょう。",
-    "visitedOn": "訪問日: {date}"
+  "CommentList": {
+    "title": "{count, plural, other {# 件のコメント}}",
+    "emptyTitle": "コメントはまだありません",
+    "emptyDescription": "このプロジェクトの最初のコメントを書いてみましょう。",
+    "visitedOn": "投稿日: {date}"
   },
-  "ReviewActions": {
+  "CommentActions": {
     "edit": "編集",
     "delete": "削除"
   },
-  "ReviewEdit": {
-    "title": "レビューを編集",
-    "description": "評価とレビュー内容を更新します。",
+  "CommentEdit": {
+    "title": "コメントを編集",
+    "description": "評価とコメント内容を更新します。",
     "ratingLabel": "評価",
-    "titleLabel": "レビュータイトル",
-    "contentLabel": "レビュー内容",
-    "visitDateLabel": "訪問日",
+    "titleLabel": "コメントタイトル",
+    "contentLabel": "コメント内容",
+    "visitDateLabel": "日付",
     "imagesLabel": "写真",
-    "imagesDescription": "訪問時の写真を最大4枚追加または削除できます。",
+    "imagesDescription": "写真を最大4枚追加または削除できます。",
     "cancel": "キャンセル",
     "save": "変更を保存",
     "saving": "保存中..."
   },
-  "ReviewDelete": {
-    "title": "レビューを削除しますか？",
-    "description": "この操作は取り消せません。レビューと画像は完全に削除されます。",
+  "CommentDelete": {
+    "title": "コメントを削除しますか？",
+    "description": "この操作は取り消せません。コメントと画像は完全に削除されます。",
     "cancel": "キャンセル",
-    "confirm": "レビューを削除",
+    "confirm": "コメントを削除",
     "deleting": "削除中..."
   },
   "LoginPage": {
     "title": "ログイン",
-    "subtitle": "プロフィール管理やレビュー投稿のためにサインインしてください。"
+    "subtitle": "プロフィール管理やコメント投稿のためにサインインしてください。"
   },
   "RegisterPage": {
     "title": "新規登録",
-    "subtitle": "Taomchiに参加して、レストランを保存し、食事体験を共有しましょう。"
+    "subtitle": "JDU Showcaseに参加して、プロジェクトを探索し、フィードバックを共有しましょう。"
   },
   "LoginForm": {
     "title": "ログイン",
@@ -378,7 +385,7 @@
   },
   "RegisterForm": {
     "title": "アカウント作成",
-    "description": "Taomchiに参加して、レストランを保存し、レビューを書きましょう。",
+    "description": "JDU Showcaseに参加して、プロジェクトを探索し、コメントを書きましょう。",
     "fullName": "氏名",
     "email": "メールアドレス",
     "password": "パスワード",
@@ -400,7 +407,7 @@
   },
   "ProfilePanel": {
     "overviewTitle": "アカウント概要",
-    "overviewDescription": "アカウント情報とレビュー活動の概要。",
+    "overviewDescription": "アカウント情報とコメント活動の概要。",
     "editTitle": "プロフィール編集",
     "editDescription": "表示名、言語設定、またはプロフィール写真を更新できます。",
     "editButton": "編集",
@@ -409,7 +416,7 @@
     "role": "役割",
     "preferredLanguage": "優先言語",
     "registered": "登録日",
-    "totalReviews": "レビュー総数",
+    "totalComments": "コメント総数",
     "averageRatingGiven": "平均評価",
     "avatarTitle": "プロフィール写真",
     "avatarDescription": "5MB以下の JPG、PNG、WebP 画像をアップロードできます。",
@@ -417,31 +424,31 @@
     "uploadAvatar": "写真をアップロード",
     "changeAvatar": "写真を変更",
     "removeAvatar": "写真を削除",
-    "profileHeadline": "ゲストまたは職業",
-    "profileHeadlinePlaceholder": "例: ゲスト、シェフ、学生",
+    "profileHeadline": "学生または専攻",
+    "profileHeadlinePlaceholder": "例: 学生、開発者、デザイナー",
     "save": "変更を保存",
     "saving": "保存中..."
   },
-  "ProfileReviews": {
-    "title": "あなたのレビュー",
+  "ProfileComments": {
+    "title": "あなたのコメント",
     "submittedOn": "投稿日: {date}",
-    "emptyTitle": "レビューはまだありません",
-    "emptyDescription": "まだレストランの体験を共有していません。レストランのページから最初のレビューを書いてみましょう。",
-    "browseRestaurants": "レストランを見る",
+    "emptyTitle": "コメントはまだありません",
+    "emptyDescription": "まだプロジェクトへのフィードバックを共有していません。プロジェクトのページから最初のコメントを書いてみましょう。",
+    "browseProjects": "プロジェクトを見る",
     "previous": "前へ",
     "next": "次へ",
     "pageOf": "{totalPages} ページ中 {page} ページ"
   },
   "Admin": {
     "title": "管理ダッシュボード",
-    "subtitle": "レストラン、ユーザー、レビュー、カテゴリを管理します。"
+    "subtitle": "プロジェクト、ユーザー、コメント、カテゴリを管理します。"
   },
   "AdminNav": {
     "label": "管理ナビゲーション",
     "dashboard": "ダッシュボード",
-    "restaurants": "レストラン",
+    "projects": "プロジェクト",
     "categories": "カテゴリ",
-    "reviews": "レビュー",
+    "comments": "コメント",
     "users": "ユーザー"
   },
   "AdminCommon": {
@@ -453,20 +460,20 @@
     "pageOf": "{totalPages} ページ中 {page} ページ"
   },
   "AdminDashboard": {
-    "totalRestaurants": "レストラン総数",
-    "publishedRestaurants": "公開中のレストラン",
+    "totalProjects": "プロジェクト総数",
+    "publishedProjects": "公開中のプロジェクト",
     "totalUsers": "ユーザー総数",
-    "totalReviews": "レビュー総数",
+    "totalComments": "コメント総数",
     "averageRating": "プラットフォーム平均評価",
     "recentUsers": "最近のユーザー",
-    "recentReviews": "最近のレビュー",
-    "topRestaurants": "レビュー数の多いレストラン",
-    "reviewCount": "{count, plural, other {# 件のレビュー}}",
+    "recentComments": "最近のコメント",
+    "topProjects": "コメント数の多いプロジェクト",
+    "commentCount": "{count, plural, other {# 件のコメント}}",
     "empty": "表示するデータがありません。"
   },
   "AdminCategories": {
     "title": "カテゴリ管理",
-    "subtitle": "すべての言語でレストランカテゴリを追加・編集します。",
+    "subtitle": "すべての言語でプロジェクトカテゴリを追加・編集します。",
     "createTitle": "カテゴリを追加",
     "editTitle": "カテゴリを編集",
     "nameUz": "名前（ウズベク語）",
@@ -486,22 +493,22 @@
     "searchLabel": "カテゴリを検索",
     "searchPlaceholder": "名前または slug で検索...",
     "empty": "カテゴリが見つかりません。",
-    "meta": "{slug} · レストラン {count} 件"
+    "meta": "{slug} · プロジェクト {count} 件"
   },
-  "AdminReviews": {
-    "title": "レビュー管理",
-    "subtitle": "すべてのレストランのレビューを検索、編集、削除します。",
-    "searchLabel": "レビューを検索",
-    "searchPlaceholder": "タイトル、投稿者、レストランで検索...",
-    "restaurantFilter": "レストラン",
+  "AdminComments": {
+    "title": "コメント管理",
+    "subtitle": "すべてのプロジェクトのコメントを検索、編集、削除します。",
+    "searchLabel": "コメントを検索",
+    "searchPlaceholder": "タイトル、投稿者、プロジェクトで検索...",
+    "projectFilter": "プロジェクト",
     "ratingFilter": "評価",
-    "allRestaurants": "すべてのレストラン",
+    "allProjects": "すべてのプロジェクト",
     "allRatings": "すべての評価",
     "ratingOption": "{rating} つ星",
     "edit": "編集",
     "delete": "削除",
-    "empty": "条件に一致するレビューがありません。",
-    "meta": "{author} · {restaurant} · {rating}/5 · 画像 {images} 枚"
+    "empty": "条件に一致するコメントがありません。",
+    "meta": "{author} · {project} · {rating}/5 · 画像 {images} 枚"
   },
   "AdminUsers": {
     "title": "ユーザー管理",
@@ -519,7 +526,7 @@
     "makeAdmin": "管理者にする",
     "makeUser": "一般ユーザーにする",
     "empty": "条件に一致するユーザーがありません。",
-    "meta": "{role} · {status} · レビュー {reviews} 件"
+    "meta": "{role} · {status} · コメント {comments} 件"
   },
   "Roles": {
     "USER": "ユーザー",
@@ -549,17 +556,17 @@
     "emailExists": "このメールアドレスは既に登録されています",
     "ratingRequired": "評価は必須です",
     "ratingInvalid": "評価は1から5の間である必要があります",
-    "reviewTitleRequired": "レビュータイトルは必須です",
-    "reviewContentRequired": "レビュー内容は必須です",
-    "visitDateRequired": "訪問日は必須です",
-    "visitDateFuture": "訪問日は未来の日付にできません",
-    "restaurantRequired": "レストランは必須です",
-    "reviewRequired": "レビューは必須です",
+    "commentTitleRequired": "コメントタイトルは必須です",
+    "commentContentRequired": "コメント内容は必須です",
+    "visitDateRequired": "日付は必須です",
+    "visitDateFuture": "日付は未来の日付にできません",
+    "projectRequired": "プロジェクトは必須です",
+    "commentRequired": "コメントは必須です",
     "imageRequired": "画像ファイルを選択してください",
     "imageTooLarge": "各画像は5MB以下である必要があります",
     "imageInvalidType": "JPG、JPEG、PNG、WebPのみ許可されています",
-    "reviewImagesMax": "レビュー画像は最大4枚までです",
-    "reviewImagesInvalid": "1枚以上のレビュー画像が無効です",
+    "commentImagesMax": "コメント画像は最大4枚までです",
+    "commentImagesInvalid": "1枚以上のコメント画像が無効です",
     "galleryImagesMax": "ギャラリー画像は最大8枚までです",
     "galleryImagesInvalid": "1枚以上のギャラリー画像が無効です",
     "mainImageInvalid": "メイン画像が無効です",
@@ -569,16 +576,16 @@
     "categorySlugInvalid": "小文字、数字、ハイフンのみ使用できます",
     "categorySlugExists": "このカテゴリ slug は既に使用されています",
     "categoryRequired": "カテゴリは必須です",
-    "restaurantNameRequired": "レストラン名は必須です",
-    "restaurantSlugRequired": "レストラン slug は必須です",
-    "restaurantSlugInvalid": "小文字、数字、ハイフンのみ使用できます",
-    "restaurantSlugExists": "このレストラン slug は既に使用されています",
+    "projectNameRequired": "プロジェクト名は必須です",
+    "projectSlugRequired": "プロジェクト slug は必須です",
+    "projectSlugInvalid": "小文字、数字、ハイフンのみ使用できます",
+    "projectSlugExists": "このプロジェクト slug は既に使用されています",
     "descriptionRequired": "説明は必須です",
     "addressRequired": "住所は必須です",
     "cityRequired": "都市は必須です",
     "latitudeInvalid": "緯度は -90 から 90 の範囲である必要があります",
     "longitudeInvalid": "経度は -180 から 180 の範囲である必要があります",
-    "priceLevelInvalid": "価格帯は 1 から 4 の範囲である必要があります",
+    "priceLevelInvalid": "難易度は 1 から 4 の範囲である必要があります",
     "userRequired": "ユーザーは必須です",
     "roleInvalid": "ロールが無効です"
   },
@@ -591,16 +598,16 @@
     "profileUpdated": "プロフィールを更新しました",
     "signedOut": "ログアウトしました",
     "signOutFailed": "ログアウトできませんでした。もう一度お試しください。",
-    "reviewCreated": "レビューを送信しました",
-    "reviewUpdated": "レビューを更新しました",
-    "reviewDeleted": "レビューを削除しました",
-    "reviewForbidden": "このレビューを管理する権限がありません",
-    "restaurantImagesUpdated": "レストラン画像を更新しました",
-    "restaurantCreated": "レストランを作成しました",
-    "restaurantUpdated": "レストランを更新しました",
-    "restaurantDeleted": "レストランを削除しました",
-    "restaurantPublished": "レストランを公開しました",
-    "restaurantUnpublished": "レストランを非公開にしました",
+    "commentCreated": "コメントを送信しました",
+    "commentUpdated": "コメントを更新しました",
+    "commentDeleted": "コメントを削除しました",
+    "commentForbidden": "このコメントを管理する権限がありません",
+    "projectImagesUpdated": "プロジェクト画像を更新しました",
+    "projectCreated": "プロジェクトを作成しました",
+    "projectUpdated": "プロジェクトを更新しました",
+    "projectDeleted": "プロジェクトを削除しました",
+    "projectPublished": "プロジェクトを公開しました",
+    "projectUnpublished": "プロジェクトを非公開にしました",
     "categoryCreated": "カテゴリを作成しました",
     "categoryUpdated": "カテゴリを更新しました",
     "categoryDeleted": "カテゴリを削除しました",
@@ -610,5 +617,23 @@
   },
   "LoginFormShell": {
     "loading": "ログインフォームを読み込み中..."
+  },
+  "Upload": {
+    "pageTitle": "何に取り組んでいましたか？",
+    "dropTitle": "画像をドラッグ＆ドロップ、またはファイルを選択",
+    "dropHint": "高解像度画像 (png, jpg, webp) - 最大5MB",
+    "titlePlaceholder": "名前をつけてください",
+    "descriptionPlaceholder": "プロジェクトについて教えてください...",
+    "category": "カテゴリ",
+    "techStack": "使用技術",
+    "department": "学部",
+    "difficulty": "難易度",
+    "cancel": "キャンセル",
+    "saveDraft": "下書きとして保存",
+    "publish": "公開する",
+    "continue": "続ける",
+    "publishing": "公開中...",
+    "saving": "保存中...",
+    "uploadButton": "アップロード"
   }
 }

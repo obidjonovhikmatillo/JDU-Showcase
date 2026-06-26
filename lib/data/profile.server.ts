@@ -4,8 +4,10 @@ import type { Language, Role } from "@prisma/client";
 
 import { parsePagination, type PaginationInput } from "@/lib/admin/pagination";
 import prisma from "@/lib/prisma";
-import { serializeReviewForClient } from "@/lib/reviews/review-serialization";
+import { serializeCommentForClient } from "@/lib/comments/comment-serialization";
 import { normalizeImageSrcForDisplay } from "@/lib/uploads/uploaded-image-url";
+import type { ProjectSummary } from "./project-types";
+import { toSummary, publishedProjectInclude } from "./project-summary.server";
 
 export type ProfileUserRecord = {
   id: string;
@@ -19,14 +21,14 @@ export type ProfileUserRecord = {
 };
 
 export type ProfileStats = {
-  totalReviews: number;
+  totalComments: number;
   averageRatingGiven: number | null;
 };
 
-export type ProfileReviewRecord = ReturnType<typeof serializeReviewForClient> & {
-  restaurant: {
+export type ProfileCommentRecord = ReturnType<typeof serializeCommentForClient> & {
+  project: {
     id: string;
-    name: string;
+    title: string;
     slug: string;
   };
 };
@@ -83,19 +85,19 @@ export async function getProfileUser(userId: string): Promise<ProfileUserRecord 
 }
 
 export async function getProfileStats(userId: string): Promise<ProfileStats> {
-  const aggregate = await prisma.review.aggregate({
+  const aggregate = await prisma.comment.aggregate({
     where: { userId },
     _count: { _all: true },
     _avg: { rating: true },
   });
 
   return {
-    totalReviews: aggregate._count._all,
+    totalComments: aggregate._count._all,
     averageRatingGiven: aggregate._avg.rating,
   };
 }
 
-export async function listUserProfileReviews(
+export async function listUserProfileComments(
   userId: string,
   pagination: PaginationInput = {},
 ) {
@@ -103,9 +105,9 @@ export async function listUserProfileReviews(
 
   const where = { userId };
 
-  const [total, reviews] = await Promise.all([
-    prisma.review.count({ where }),
-    prisma.review.findMany({
+  const [total, comments] = await Promise.all([
+    prisma.comment.count({ where }),
+    prisma.comment.findMany({
       where,
       orderBy: { createdAt: "desc" },
       skip,
@@ -115,13 +117,12 @@ export async function listUserProfileReviews(
         rating: true,
         title: true,
         content: true,
-        visitDate: true,
         createdAt: true,
         user: {
           select: { id: true, fullName: true, avatarUrl: true },
         },
-        restaurant: {
-          select: { id: true, name: true, slug: true },
+        project: {
+          select: { id: true, title: true, slug: true },
         },
         images: {
           select: { id: true, imageUrl: true, publicId: true },
@@ -131,9 +132,9 @@ export async function listUserProfileReviews(
     }),
   ]);
 
-  const items: ProfileReviewRecord[] = reviews.map((review) => ({
-    ...serializeReviewForClient(review),
-    restaurant: review.restaurant,
+  const items: ProfileCommentRecord[] = comments.map((comment) => ({
+    ...serializeCommentForClient(comment),
+    project: comment.project,
   }));
 
   return {
@@ -143,4 +144,49 @@ export async function listUserProfileReviews(
     pageSize,
     totalPages: totalPages(total),
   };
+}
+
+/** Get all published projects authored by the given user. */
+export async function getUserProjects(userId: string): Promise<ProjectSummary[]> {
+  const projects = await prisma.project.findMany({
+    where: { authorId: userId, isPublished: true },
+    include: publishedProjectInclude,
+    orderBy: { createdAt: "desc" },
+  });
+
+  return projects.map(toSummary);
+}
+
+/** Get all projects that the user has liked. */
+export async function getUserLikedProjectSummaries(userId: string): Promise<ProjectSummary[]> {
+  const likes = await prisma.projectLike.findMany({
+    where: { userId },
+    include: {
+      project: {
+        include: publishedProjectInclude,
+      },
+    },
+    orderBy: { createdAt: "desc" },
+  });
+
+  return likes
+    .filter((l) => l.project.isPublished)
+    .map((l) => toSummary(l.project));
+}
+
+/** Get all projects that the user has saved. */
+export async function getUserSavedProjectSummaries(userId: string): Promise<ProjectSummary[]> {
+  const saves = await prisma.projectSave.findMany({
+    where: { userId },
+    include: {
+      project: {
+        include: publishedProjectInclude,
+      },
+    },
+    orderBy: { createdAt: "desc" },
+  });
+
+  return saves
+    .filter((s) => s.project.isPublished)
+    .map((s) => toSummary(s.project));
 }

@@ -4,9 +4,9 @@ import type { UploadFolderKey } from "@/lib/uploads/image-upload-constants";
 import type { UploadedImage } from "@/lib/uploads/image-upload-types";
 
 const API_FOLDER: Record<UploadFolderKey, string> = {
-  review: "review",
-  restaurantMain: "restaurant-main",
-  restaurantGallery: "restaurant-gallery",
+  comment: "comment",
+  projectMain: "project-main",
+  projectGallery: "project-gallery",
   avatar: "avatar",
 };
 

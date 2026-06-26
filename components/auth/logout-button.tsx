@@ -39,7 +39,7 @@ export function LogoutButton({ compact = false, className }: LogoutButtonProps) 
       size={compact ? "icon-sm" : "sm"}
       onClick={handleLogout}
       disabled={isLoading}
-      className={cn(compact && "rounded-full text-muted-foreground", className)}
+      className={cn(compact && "rounded-full text-white/60 hover:text-white hover:bg-white/10", className)}
       aria-label={t("signOut")}
     >
       {isLoading ? (

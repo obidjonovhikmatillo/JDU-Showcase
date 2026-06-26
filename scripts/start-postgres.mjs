@@ -22,7 +22,7 @@ const instance = new PostgresInstance({
 await instance.start();
 
 try {
-  await instance.createDatabase("cowork_restaurants");
+  await instance.createDatabase("jdu_showcase");
 } catch (error) {
   const message = error instanceof Error ? error.message : String(error);
   if (!message.toLowerCase().includes("already exists")) {
@@ -31,7 +31,7 @@ try {
 }
 
 const databaseUrl =
-  "postgresql://postgres:postgres@127.0.0.1:5433/cowork_restaurants?schema=public";
+  "postgresql://postgres:postgres@127.0.0.1:5433/jdu_showcase?schema=public";
 
 if (!existsSync(envPath)) {
   writeFileSync(

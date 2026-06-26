@@ -1,7 +1,7 @@
 {
   "Common": {
-    "brand": "Taomchi",
-    "tagline": "Discover and review restaurants near you",
+    "brand": "JDU Showcase",
+    "tagline": "Discover student projects and creative works from JDU",
     "loading": "Loading...",
     "close": "Close"
   },
@@ -11,20 +11,20 @@
     "retry": "Try again",
     "backHome": "Back to home",
     "mustBeSignedIn": "You must be signed in to update your profile.",
-    "mustBeSignedInToReview": "You must be signed in to submit a review.",
-    "restaurantNotFound": "Restaurant not found.",
-    "reviewNotFound": "Review not found.",
-    "reviewForbidden": "You do not have permission to manage this review.",
+    "mustBeSignedInToComment": "You must be signed in to submit a comment.",
+    "projectNotFound": "Project not found.",
+    "commentNotFound": "Comment not found.",
+    "commentForbidden": "You do not have permission to manage this comment.",
     "adminRequired": "Administrator access is required.",
     "categoryNotFound": "Category not found.",
-    "categoryInUse": "This category is used by restaurants and cannot be deleted.",
+    "categoryInUse": "This category is used by projects and cannot be deleted.",
     "userNotFound": "User not found.",
     "cannotDeactivateSelf": "You cannot deactivate your own administrator account.",
     "cannotDemoteSelf": "You cannot remove your own administrator role."
   },
   "Nav": {
     "home": "Home",
-    "restaurants": "Restaurants",
+    "projects": "Projects",
     "login": "Log in",
     "register": "Register",
     "profile": "Profile",
@@ -34,19 +34,19 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "mobileNavLabel": "Mobile navigation",
-    "shareReview": "Share your review",
-    "postReview": "Post review",
+    "shareComment": "Share your comment",
+    "postComment": "Post comment",
     "profileAvatarAlt": "Profile photo of {name}",
-    "addHeadlineHint": "Guest or profession"
+    "addHeadlineHint": "Student or field of study"
   },
   "NotFound": {
     "title": "Page not found",
     "description": "The page you are looking for does not exist or may have been moved.",
     "backHome": "Back to home",
-    "browseRestaurants": "Browse restaurants"
+    "browseProjects": "Browse projects"
   },
   "Footer": {
-    "description": "A multilingual restaurant review platform for the Cowork university project.",
+    "description": "A multilingual student project showcase platform for JDU university.",
     "rights": "All rights reserved.",
     "navLabel": "Footer navigation",
     "explore": "Explore",
@@ -58,95 +58,96 @@
     "noCategories": "Categories coming soon"
   },
   "Home": {
-    "title": "Find your next favorite restaurant",
-    "subtitle": "Browse restaurants, read honest reviews, and share your own experiences in four languages.",
+    "title": "Discover student projects and creative works",
+    "subtitle": "Browse projects, read comments, and share your feedback in four languages.",
     "hero": {
-      "eyebrow": "Tashkent dining guide",
-      "headline": "Discover the best places to eat in Tashkent",
-      "description": "Search restaurants, explore cuisines, and read trusted reviews from real diners in Uzbek, English, Russian, and Japanese.",
-      "searchPlaceholder": "Search by name, cuisine, or neighborhood...",
+      "eyebrow": "JDU student showcase",
+      "headline": "Discover student projects and creative works from JDU",
+      "description": "Explore student portfolios, discover innovative projects, and read feedback from the JDU community in Uzbek, English, Russian, and Japanese.",
+      "searchPlaceholder": "Search by name, technology, or category...",
       "searchButton": "Search",
-      "searchAriaLabel": "Search restaurants",
+      "searchAriaLabel": "Search projects",
       "searchWhereLabel": "Where",
-      "searchCategoryLabel": "Cuisine",
-      "searchCategoryValue": "Any cuisine",
-      "cta": "Browse all restaurants",
-      "imageAlt": "Restaurant table with fresh dishes in Tashkent"
+      "searchCategoryLabel": "Category",
+      "searchCategoryValue": "Any category",
+      "cta": "Browse all projects",
+      "ctaRegister": "Create free account",
+      "imageAlt": "Student project showcase at JDU"
     },
     "categories": {
       "title": "Popular categories",
-      "subtitle": "Explore Tashkent restaurants by cuisine and dining style.",
-      "restaurantCount": "{count, plural, one {# restaurant} other {# restaurants}}",
+      "subtitle": "Explore JDU projects by field of study and project type.",
+      "projectCount": "{count, plural, one {# project} other {# projects}}",
       "viewAll": "View all",
       "empty": "No categories available yet. Check back soon."
     },
     "topRated": {
-      "title": "Top-rated restaurants",
-      "subtitle": "Highest-rated spots based on real reviews from our community.",
-      "viewAll": "See all restaurants",
-      "empty": "No rated restaurants yet. Be the first to leave a review."
+      "title": "Top-rated projects",
+      "subtitle": "Highest-rated projects based on community feedback.",
+      "viewAll": "See all projects",
+      "empty": "No rated projects yet. Be the first to leave a comment."
     },
     "recent": {
       "title": "Recently added",
-      "subtitle": "Fresh listings recently added to Taomchi.",
-      "viewAll": "Browse listings",
-      "empty": "No restaurants have been added yet."
+      "subtitle": "Fresh projects recently added to JDU Showcase.",
+      "viewAll": "Browse projects",
+      "empty": "No projects have been added yet."
     },
     "benefits": {
-      "title": "Why Taomchi?",
-      "subtitle": "Everything you need to find great food and share honest opinions.",
+      "title": "Why JDU Showcase?",
+      "subtitle": "Everything you need to discover student talent and share feedback.",
       "discover": {
-        "title": "Discover restaurants",
-        "description": "Browse curated categories and search across Tashkent neighborhoods."
+        "title": "Discover projects",
+        "description": "Browse curated categories and search across student portfolios."
       },
       "reviews": {
-        "title": "Read trusted reviews",
-        "description": "See ratings, review counts, and detailed feedback from real diners."
+        "title": "Read trusted feedback",
+        "description": "See ratings, comment counts, and detailed feedback from the community."
       },
       "share": {
-        "title": "Share experiences",
-        "description": "Create an account to write reviews and help others choose wisely."
+        "title": "Share your thoughts",
+        "description": "Create an account to write comments and help fellow students improve."
       },
       "locations": {
-        "title": "View locations",
-        "description": "Find addresses, maps, and opening hours for every restaurant."
+        "title": "View project details",
+        "description": "Find descriptions, technologies used, and links for every project."
       }
     },
     "cta": {
-      "title": "Join the Taomchi community",
-      "description": "Create a free account to save favorites, write reviews, and discover new places in your language.",
+      "title": "Join the JDU Showcase community",
+      "description": "Create a free account to save favorites, write comments, and discover new projects in your language.",
       "button": "Create free account",
       "login": "Already have an account? Log in"
     },
-    "restaurantCard": {
-      "reviews": "{count, plural, one {# review} other {# reviews}}",
-      "noReviews": "No reviews yet"
+    "projectCard": {
+      "comments": "{count, plural, one {# comment} other {# comments}}",
+      "noComments": "No comments yet"
     },
     "error": {
       "title": "Unable to load home page content",
-      "description": "We could not fetch restaurants right now. Please try again in a moment.",
+      "description": "We could not fetch projects right now. Please try again in a moment.",
       "retry": "Try again"
     }
   },
-  "Restaurants": {
-    "title": "Restaurants",
-    "subtitle": "Search and explore places to eat across Tashkent.",
-    "filteredTitle": "Filtered restaurants",
+  "Projects": {
+    "title": "Projects",
+    "subtitle": "Search and explore student projects from JDU.",
+    "filteredTitle": "Filtered projects",
     "searchTitle": "Search: {query}",
-    "filteredSubtitle": "Showing restaurants in {category}.",
+    "filteredSubtitle": "Showing projects in {category}.",
     "searchSubtitle": "Results for \"{query}\".",
-    "citySubtitle": "Showing restaurants in {city}.",
-    "searchPlaceholder": "Search by name, address, city, cuisine...",
+    "citySubtitle": "Showing projects in {city}.",
+    "searchPlaceholder": "Search by name, technology, category...",
     "searchButton": "Search",
-    "searchAriaLabel": "Search restaurants",
+    "searchAriaLabel": "Search projects",
     "allCategories": "All",
     "activeFilters": "Active filters:",
     "searchFilter": "Search: {query}",
     "clearFilters": "Clear filters",
-    "emptyTitle": "No restaurants found",
+    "emptyTitle": "No projects found",
     "emptyDescription": "Try a different search term or adjust your filters.",
     "backHome": "Back to home",
-    "resultsCount": "{count, plural, one {# restaurant found} other {# restaurants found}}",
+    "resultsCount": "{count, plural, one {# project found} other {# projects found}}",
     "loadMore": "Load more",
     "showingCount": "Showing {shown} of {total}",
     "filters": {
@@ -154,20 +155,18 @@
       "category": "Category",
       "city": "City",
       "minRating": "Minimum rating",
-      "priceLevel": "Price level",
       "sort": "Sort by",
       "allCategories": "All categories",
       "allCities": "All cities",
       "anyRating": "Any rating",
-      "anyPrice": "Any price",
       "ratingOption": "{rating}+ stars",
       "ratingChip": "{rating}+ stars"
     },
     "sort": {
       "rating": "Highest rated",
-      "reviews": "Most reviewed",
+      "comments": "Most commented",
       "newest": "Newest",
-      "name": "Name A–Z"
+      "name": "Name A-Z"
     },
     "view": {
       "ariaLabel": "Display mode",
@@ -175,28 +174,33 @@
       "list": "List"
     },
     "card": {
-      "reviews": "{count, plural, one {# review} other {# reviews}}",
-      "noReviews": "No reviews yet",
+      "comments": "{count, plural, one {# comment} other {# comments}}",
+      "noComments": "No comments yet",
       "viewDetails": "View details",
-      "perVisit": "typical spend",
-      "guestFavorite": "Guest favorite"
+      "guestFavorite": "Community favorite"
     },
     "error": {
-      "title": "Unable to load restaurants",
-      "description": "Something went wrong while fetching restaurants. Please try again.",
+      "title": "Unable to load projects",
+      "description": "Something went wrong while fetching projects. Please try again.",
       "retry": "Try again"
     }
   },
-  "RestaurantDetail": {
-    "title": "Restaurant details",
-    "subtitle": "Reviews, map location, and photos will be added in upcoming phases.",
+  "ProjectDetail": {
+    "title": "Project details",
+    "subtitle": "Comments, details, and photos will be added in upcoming phases.",
     "placeholder": "Details for",
-    "notFoundTitle": "Restaurant not found",
-    "aboutTitle": "About this restaurant",
-    "reviewsTitle": "Reviews",
-    "reviewCount": "{count, plural, one {# review} other {# reviews}}",
-    "hours": "Opening hours",
-    "phone": "Phone",
+    "notFoundTitle": "Project not found",
+    "techStack": "Technologies",
+    "difficulty": "Difficulty",
+    "liveDemo": "Live Demo",
+    "sourceCode": "Source Code",
+    "author": "Author",
+    "department": "Department",
+    "aboutTitle": "About this project",
+    "commentsTitle": "Comments",
+    "commentCount": "{count, plural, one {# comment} other {# comments}}",
+    "hours": "Availability",
+    "phone": "Contact",
     "website": "Visit website",
     "galleryTitle": "Photo gallery",
     "galleryPrevious": "Previous photo",
@@ -204,21 +208,24 @@
     "galleryDotsLabel": "Gallery photos",
     "galleryDotLabel": "Photo {index} of {total}",
     "galleryImageAlt": "{name} photo {index} of {total}",
-    "priceHint": "average per visit",
-    "browseMore": "Browse more restaurants",
+    "browseMore": "Browse more projects",
+    "moreByAuthor": "More by {author}",
+    "closeModal": "Close",
+    "loadingProject": "Loading project...",
+    "errorLoading": "Could not load project details.",
     "ratingShowcase": {
-      "guestFavorite": "Guest favorite",
-      "guestFavoriteDescription": "This restaurant is in the top 10% of eligible listings based on ratings, reviews, and reliability.",
-      "basedOnReviews": "Based on {count, plural, one {# review} other {# reviews}}",
+      "guestFavorite": "Community favorite",
+      "guestFavoriteDescription": "This project is in the top 10% of eligible listings based on ratings, comments, and quality.",
+      "basedOnComments": "Based on {count, plural, one {# comment} other {# comments}}",
       "overall": "Overall rating",
-      "food": "Food",
-      "service": "Service",
-      "location": "Location",
-      "value": "Value",
+      "creativity": "Creativity",
+      "technical": "Technical quality",
+      "presentation": "Presentation",
+      "innovation": "Innovation",
       "checkIn": "Check-in",
       "accuracy": "Accuracy",
-      "tagAtmosphere": "Atmosphere",
-      "tagFood": "Food quality"
+      "tagCreativity": "Creativity",
+      "tagTechnical": "Technical quality"
     }
   },
   "ImageUpload": {
@@ -236,22 +243,22 @@
     "noImages": "No images selected yet.",
     "maxReached": "Maximum of {max} images reached."
   },
-  "AdminRestaurants": {
-    "title": "Manage restaurants",
-    "subtitle": "Create, edit, publish, and manage restaurant listings.",
-    "addRestaurant": "Add restaurant",
+  "AdminProjects": {
+    "title": "Manage projects",
+    "subtitle": "Create, edit, publish, and manage project listings.",
+    "addProject": "Add project",
     "edit": "Edit",
     "publish": "Publish",
     "unpublish": "Unpublish",
-    "publishTitle": "Publish restaurant?",
-    "publishDescription": "This restaurant will appear on the public site.",
-    "unpublishTitle": "Unpublish restaurant?",
-    "unpublishDescription": "This restaurant will be hidden from public pages.",
+    "publishTitle": "Publish project?",
+    "publishDescription": "This project will appear on the public site.",
+    "unpublishTitle": "Unpublish project?",
+    "unpublishDescription": "This project will be hidden from public pages.",
     "delete": "Delete",
-    "deleteTitle": "Delete restaurant?",
-    "deleteDescription": "This will permanently delete the restaurant, its gallery, and all reviews.",
-    "deleteConfirm": "Delete restaurant",
-    "searchLabel": "Search restaurants",
+    "deleteTitle": "Delete project?",
+    "deleteDescription": "This will permanently delete the project, its gallery, and all comments.",
+    "deleteConfirm": "Delete project",
+    "searchLabel": "Search projects",
     "searchPlaceholder": "Search by name, city, or slug...",
     "statusFilter": "Status",
     "categoryFilter": "Category",
@@ -259,110 +266,110 @@
     "allCategories": "All categories",
     "published": "Published",
     "draft": "Draft",
-    "empty": "No restaurants match your filters.",
-    "meta": "{city} · {galleryCount, plural, one {# gallery image} other {# gallery images}} · {reviewCount, plural, one {# review} other {# reviews}} · {status}"
+    "empty": "No projects match your filters.",
+    "meta": "{city} · {galleryCount, plural, one {# gallery image} other {# gallery images}} · {commentCount, plural, one {# comment} other {# comments}} · {status}"
   },
-  "AdminRestaurantForm": {
-    "createPageTitle": "Add restaurant",
-    "createPageSubtitle": "Create a new restaurant listing.",
+  "AdminProjectForm": {
+    "createPageTitle": "Add project",
+    "createPageSubtitle": "Create a new project listing.",
     "editPageTitle": "Edit {name}",
-    "editPageSubtitle": "Update restaurant details, descriptions, and images.",
-    "notFound": "Restaurant not found",
+    "editPageSubtitle": "Update project details, descriptions, and images.",
+    "notFound": "Project not found",
     "basicsTitle": "Basic information",
-    "basicsDescription": "Core details shown on restaurant cards and detail pages.",
+    "basicsDescription": "Core details shown on project cards and detail pages.",
     "descriptionsTitle": "Descriptions",
     "descriptionsDescription": "Write the description once. The same text is saved for Uzbek, English, Russian, and Japanese.",
     "imagesTitle": "Images",
     "imagesDescription": "Upload a main cover image and gallery photos.",
-    "imagesAfterCreate": "Save the restaurant first, then you can upload images on the edit page.",
+    "imagesAfterCreate": "Save the project first, then you can upload images on the edit page.",
     "name": "Name",
     "slug": "Slug",
     "category": "Category",
     "categoryPlaceholder": "Select a category",
     "city": "City",
-    "cuisineType": "Cuisine type",
+    "cuisineType": "Project type",
     "address": "Address",
-    "phone": "Phone",
+    "phone": "Contact",
     "website": "Website",
-    "openingHours": "Opening hours",
+    "openingHours": "Availability",
     "latitude": "Latitude",
     "longitude": "Longitude",
-    "priceLevel": "Price level (1–4)",
+    "priceLevel": "Difficulty level (1-4)",
     "published": "Published",
     "description": "Description",
     "mainImage": "Main image",
     "galleryImages": "Gallery images",
-    "create": "Create restaurant",
+    "create": "Create project",
     "save": "Save changes",
     "saving": "Saving..."
   },
-  "AdminRestaurantImages": {
-    "title": "Restaurant images",
-    "description": "Upload a main cover image and gallery photos for this restaurant.",
+  "AdminProjectImages": {
+    "title": "Project images",
+    "description": "Upload a main cover image and gallery photos for this project.",
     "pageTitle": "Images: {name}",
-    "pageSubtitle": "Changes appear on the public restaurant page after saving.",
-    "notFound": "Restaurant not found",
-    "backToList": "Back to restaurants",
+    "pageSubtitle": "Changes appear on the public project page after saving.",
+    "notFound": "Project not found",
+    "backToList": "Back to projects",
     "mainImageLabel": "Main image",
-    "mainImageDescription": "This image appears on cards and at the top of the restaurant page.",
+    "mainImageDescription": "This image appears on cards and at the top of the project page.",
     "galleryLabel": "Gallery images",
-    "galleryDescription": "Upload up to 8 additional photos for the restaurant gallery.",
+    "galleryDescription": "Upload up to 8 additional photos for the project gallery.",
     "save": "Save images",
     "saving": "Saving..."
   },
-  "ReviewForm": {
-    "title": "Write a review",
-    "description": "Share your dining experience to help others choose.",
+  "CommentForm": {
+    "title": "Write a comment",
+    "description": "Share your feedback to help fellow students improve.",
     "ratingLabel": "Your rating",
     "ratingOption": "{rating} stars",
-    "titleLabel": "Review title",
-    "contentLabel": "Review content",
-    "visitDateLabel": "Visit date",
+    "titleLabel": "Comment title",
+    "contentLabel": "Comment content",
+    "visitDateLabel": "Date",
     "imagesLabel": "Photos (optional)",
-    "imagesDescription": "Upload up to 4 photos from your visit. JPG, PNG, or WebP up to 5 MB each.",
-    "submit": "Submit review",
+    "imagesDescription": "Upload up to 4 photos. JPG, PNG, or WebP up to 5 MB each.",
+    "submit": "Submit comment",
     "submitting": "Submitting...",
-    "signInTitle": "Sign in to write a review",
-    "signInDescription": "Only registered users can submit reviews for this restaurant.",
+    "signInTitle": "Sign in to write a comment",
+    "signInDescription": "Only registered users can submit comments for this project.",
     "signInButton": "Log in to continue"
   },
-  "ReviewList": {
-    "title": "{count, plural, one {# review} other {# reviews}}",
-    "emptyTitle": "No reviews yet",
-    "emptyDescription": "Be the first to share your experience at this restaurant.",
-    "visitedOn": "Visited on {date}"
+  "CommentList": {
+    "title": "{count, plural, one {# comment} other {# comments}}",
+    "emptyTitle": "No comments yet",
+    "emptyDescription": "Be the first to share your feedback on this project.",
+    "visitedOn": "Posted on {date}"
   },
-  "ReviewActions": {
+  "CommentActions": {
     "edit": "Edit",
     "delete": "Delete"
   },
-  "ReviewEdit": {
-    "title": "Edit review",
-    "description": "Update your rating and review details.",
+  "CommentEdit": {
+    "title": "Edit comment",
+    "description": "Update your rating and comment details.",
     "ratingLabel": "Your rating",
-    "titleLabel": "Review title",
-    "contentLabel": "Review content",
-    "visitDateLabel": "Visit date",
+    "titleLabel": "Comment title",
+    "contentLabel": "Comment content",
+    "visitDateLabel": "Date",
     "imagesLabel": "Photos",
-    "imagesDescription": "Add or remove up to 4 photos from your visit.",
+    "imagesDescription": "Add or remove up to 4 photos.",
     "cancel": "Cancel",
     "save": "Save changes",
     "saving": "Saving..."
   },
-  "ReviewDelete": {
-    "title": "Delete review?",
-    "description": "This action cannot be undone. The review and its images will be permanently removed.",
+  "CommentDelete": {
+    "title": "Delete comment?",
+    "description": "This action cannot be undone. The comment and its images will be permanently removed.",
     "cancel": "Cancel",
-    "confirm": "Delete review",
+    "confirm": "Delete comment",
     "deleting": "Deleting..."
   },
   "LoginPage": {
     "title": "Log in",
-    "subtitle": "Sign in to manage your profile and write restaurant reviews."
+    "subtitle": "Sign in to manage your profile and comment on projects."
   },
   "RegisterPage": {
     "title": "Create account",
-    "subtitle": "Join Taomchi to save restaurants and share your dining experiences."
+    "subtitle": "Join JDU Showcase to explore projects and share your feedback."
   },
   "LoginForm": {
     "title": "Sign in",
@@ -378,7 +385,7 @@
   },
   "RegisterForm": {
     "title": "Create account",
-    "description": "Join Taomchi to save restaurants and write reviews.",
+    "description": "Join JDU Showcase to explore projects and write comments.",
     "fullName": "Full name",
     "email": "Email",
     "password": "Password",
@@ -400,7 +407,7 @@
   },
   "ProfilePanel": {
     "overviewTitle": "Account overview",
-    "overviewDescription": "Your account details and review activity at a glance.",
+    "overviewDescription": "Your account details and comment activity at a glance.",
     "editTitle": "Edit profile",
     "editDescription": "Update your display name, language preference, or avatar.",
     "editButton": "Edit",
@@ -409,7 +416,7 @@
     "role": "Role",
     "preferredLanguage": "Preferred language",
     "registered": "Registered",
-    "totalReviews": "Total reviews",
+    "totalComments": "Total comments",
     "averageRatingGiven": "Average rating given",
     "avatarTitle": "Profile photo",
     "avatarDescription": "Upload a JPG, PNG, or WebP image up to 5 MB.",
@@ -417,31 +424,31 @@
     "uploadAvatar": "Upload photo",
     "changeAvatar": "Change photo",
     "removeAvatar": "Remove photo",
-    "profileHeadline": "Guest or profession",
-    "profileHeadlinePlaceholder": "e.g. Guest, Chef, Student",
+    "profileHeadline": "Student or field of study",
+    "profileHeadlinePlaceholder": "e.g. Student, Developer, Designer",
     "save": "Save changes",
     "saving": "Saving..."
   },
-  "ProfileReviews": {
-    "title": "Your reviews",
+  "ProfileComments": {
+    "title": "Your comments",
     "submittedOn": "Submitted on {date}",
-    "emptyTitle": "No reviews yet",
-    "emptyDescription": "You have not shared any restaurant experiences yet. Visit a restaurant page and write your first review.",
-    "browseRestaurants": "Browse restaurants",
+    "emptyTitle": "No comments yet",
+    "emptyDescription": "You have not shared any project feedback yet. Visit a project page and write your first comment.",
+    "browseProjects": "Browse projects",
     "previous": "Previous",
     "next": "Next",
     "pageOf": "Page {page} of {totalPages}"
   },
   "Admin": {
     "title": "Admin dashboard",
-    "subtitle": "Manage restaurants, users, reviews, and categories."
+    "subtitle": "Manage projects, users, comments, and categories."
   },
   "AdminNav": {
     "label": "Admin navigation",
     "dashboard": "Dashboard",
-    "restaurants": "Restaurants",
+    "projects": "Projects",
     "categories": "Categories",
-    "reviews": "Reviews",
+    "comments": "Comments",
     "users": "Users"
   },
   "AdminCommon": {
@@ -453,20 +460,20 @@
     "pageOf": "Page {page} of {totalPages}"
   },
   "AdminDashboard": {
-    "totalRestaurants": "Total restaurants",
-    "publishedRestaurants": "Published restaurants",
+    "totalProjects": "Total projects",
+    "publishedProjects": "Published projects",
     "totalUsers": "Total users",
-    "totalReviews": "Total reviews",
+    "totalComments": "Total comments",
     "averageRating": "Average platform rating",
     "recentUsers": "Recent users",
-    "recentReviews": "Recent reviews",
-    "topRestaurants": "Most reviewed restaurants",
-    "reviewCount": "{count, plural, one {# review} other {# reviews}}",
+    "recentComments": "Recent comments",
+    "topProjects": "Most commented projects",
+    "commentCount": "{count, plural, one {# comment} other {# comments}}",
     "empty": "Nothing to show yet."
   },
   "AdminCategories": {
     "title": "Manage categories",
-    "subtitle": "Add and edit restaurant categories in all languages.",
+    "subtitle": "Add and edit project categories in all languages.",
     "createTitle": "Add category",
     "editTitle": "Edit category",
     "nameUz": "Name (Uzbek)",
@@ -486,22 +493,22 @@
     "searchLabel": "Search categories",
     "searchPlaceholder": "Search by name or slug...",
     "empty": "No categories found.",
-    "meta": "{slug} · {count, plural, one {# restaurant} other {# restaurants}}"
+    "meta": "{slug} · {count, plural, one {# project} other {# projects}}"
   },
-  "AdminReviews": {
-    "title": "Manage reviews",
-    "subtitle": "Search, edit, and remove reviews across all restaurants.",
-    "searchLabel": "Search reviews",
-    "searchPlaceholder": "Search by title, author, or restaurant...",
-    "restaurantFilter": "Restaurant",
+  "AdminComments": {
+    "title": "Manage comments",
+    "subtitle": "Search, edit, and remove comments across all projects.",
+    "searchLabel": "Search comments",
+    "searchPlaceholder": "Search by title, author, or project...",
+    "projectFilter": "Project",
     "ratingFilter": "Rating",
-    "allRestaurants": "All restaurants",
+    "allProjects": "All projects",
     "allRatings": "All ratings",
     "ratingOption": "{rating} stars",
     "edit": "Edit",
     "delete": "Delete",
-    "empty": "No reviews match your filters.",
-    "meta": "{author} · {restaurant} · {rating}/5 · {images, plural, one {# image} other {# images}}"
+    "empty": "No comments match your filters.",
+    "meta": "{author} · {project} · {rating}/5 · {images, plural, one {# image} other {# images}}"
   },
   "AdminUsers": {
     "title": "Manage users",
@@ -519,7 +526,7 @@
     "makeAdmin": "Make admin",
     "makeUser": "Make user",
     "empty": "No users match your filters.",
-    "meta": "{role} · {status} · {reviews, plural, one {# review} other {# reviews}}"
+    "meta": "{role} · {status} · {comments, plural, one {# comment} other {# comments}}"
   },
   "Roles": {
     "USER": "User",
@@ -549,17 +556,17 @@
     "emailExists": "An account with this email already exists",
     "ratingRequired": "Rating is required",
     "ratingInvalid": "Rating must be between 1 and 5",
-    "reviewTitleRequired": "Review title is required",
-    "reviewContentRequired": "Review content is required",
-    "visitDateRequired": "Visit date is required",
-    "visitDateFuture": "Visit date cannot be in the future",
-    "restaurantRequired": "Restaurant is required",
-    "reviewRequired": "Review is required",
+    "commentTitleRequired": "Comment title is required",
+    "commentContentRequired": "Comment content is required",
+    "visitDateRequired": "Date is required",
+    "visitDateFuture": "Date cannot be in the future",
+    "projectRequired": "Project is required",
+    "commentRequired": "Comment is required",
     "imageRequired": "Please select an image file",
     "imageTooLarge": "Each image must be 5 MB or smaller",
     "imageInvalidType": "Only JPG, JPEG, PNG, and WebP images are allowed",
-    "reviewImagesMax": "You can upload up to 4 review images",
-    "reviewImagesInvalid": "One or more review images are invalid",
+    "commentImagesMax": "You can upload up to 4 comment images",
+    "commentImagesInvalid": "One or more comment images are invalid",
     "galleryImagesMax": "You can upload up to 8 gallery images",
     "galleryImagesInvalid": "One or more gallery images are invalid",
     "mainImageInvalid": "The main image is invalid",
@@ -569,16 +576,16 @@
     "categorySlugInvalid": "Use lowercase letters, numbers, and hyphens only",
     "categorySlugExists": "This category slug is already in use",
     "categoryRequired": "Category is required",
-    "restaurantNameRequired": "Restaurant name is required",
-    "restaurantSlugRequired": "Restaurant slug is required",
-    "restaurantSlugInvalid": "Use lowercase letters, numbers, and hyphens only",
-    "restaurantSlugExists": "This restaurant slug is already in use",
+    "projectNameRequired": "Project name is required",
+    "projectSlugRequired": "Project slug is required",
+    "projectSlugInvalid": "Use lowercase letters, numbers, and hyphens only",
+    "projectSlugExists": "This project slug is already in use",
     "descriptionRequired": "Description is required",
     "addressRequired": "Address is required",
     "cityRequired": "City is required",
     "latitudeInvalid": "Latitude must be between -90 and 90",
     "longitudeInvalid": "Longitude must be between -180 and 180",
-    "priceLevelInvalid": "Price level must be between 1 and 4",
+    "priceLevelInvalid": "Difficulty level must be between 1 and 4",
     "userRequired": "User is required",
     "roleInvalid": "Role is invalid"
   },
@@ -591,16 +598,16 @@
     "profileUpdated": "Profile updated",
     "signedOut": "Signed out successfully",
     "signOutFailed": "Unable to sign out. Please try again.",
-    "reviewCreated": "Your review was submitted successfully",
-    "reviewUpdated": "Review updated successfully",
-    "reviewDeleted": "Review deleted successfully",
-    "reviewForbidden": "You do not have permission to manage this review",
-    "restaurantImagesUpdated": "Restaurant images updated successfully",
-    "restaurantCreated": "Restaurant created successfully",
-    "restaurantUpdated": "Restaurant updated successfully",
-    "restaurantDeleted": "Restaurant deleted successfully",
-    "restaurantPublished": "Restaurant published",
-    "restaurantUnpublished": "Restaurant unpublished",
+    "commentCreated": "Your comment was submitted successfully",
+    "commentUpdated": "Comment updated successfully",
+    "commentDeleted": "Comment deleted successfully",
+    "commentForbidden": "You do not have permission to manage this comment",
+    "projectImagesUpdated": "Project images updated successfully",
+    "projectCreated": "Project created successfully",
+    "projectUpdated": "Project updated successfully",
+    "projectDeleted": "Project deleted successfully",
+    "projectPublished": "Project published",
+    "projectUnpublished": "Project unpublished",
     "categoryCreated": "Category created successfully",
     "categoryUpdated": "Category updated successfully",
     "categoryDeleted": "Category deleted successfully",
@@ -610,5 +617,23 @@
   },
   "LoginFormShell": {
     "loading": "Loading sign-in form..."
+  },
+  "Upload": {
+    "pageTitle": "What have you been working on?",
+    "dropTitle": "Drag and drop an image, or Browse",
+    "dropHint": "High resolution images (png, jpg, webp) - Max 5MB",
+    "titlePlaceholder": "Give me a name",
+    "descriptionPlaceholder": "Tell us about your project...",
+    "category": "Category",
+    "techStack": "Technologies used",
+    "department": "Department",
+    "difficulty": "Difficulty level",
+    "cancel": "Cancel",
+    "saveDraft": "Save as draft",
+    "publish": "Publish now",
+    "continue": "Continue",
+    "publishing": "Publishing...",
+    "saving": "Saving...",
+    "uploadButton": "Upload"
   }
 }

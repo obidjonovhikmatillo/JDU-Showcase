@@ -1,7 +1,7 @@
 const baseUrl = process.env.APP_URL ?? "http://localhost:3000";
 const locale = process.env.TEST_LOCALE ?? "en";
 const prefix = `/${locale}`;
-const restaurantSlug = process.env.TEST_RESTAURANT_SLUG ?? "trattoria-amici";
+const projectSlug = process.env.TEST_PROJECT_SLUG ?? "campus-connect-portal";
 
 const checks = [];
 
@@ -48,7 +48,7 @@ async function signIn(email, password) {
     csrfToken: csrf.csrfToken,
     email,
     password,
-    callbackUrl: `${baseUrl}${prefix}/restaurants/${restaurantSlug}`,
+    callbackUrl: `${baseUrl}${prefix}/projects/${projectSlug}`,
     json: "true",
   });
 
@@ -86,33 +86,33 @@ async function fetchPage(path, cookies = "") {
 }
 
 async function main() {
-  console.log(`Testing review pages at ${baseUrl} (locale: ${locale})\n`);
+  console.log(`Testing comment pages at ${baseUrl} (locale: ${locale})\n`);
 
-  const guestPage = await fetchPage(`${prefix}/restaurants/${restaurantSlug}`);
-  assert("Guest can view restaurant detail page", guestPage.status === 200);
+  const guestPage = await fetchPage(`${prefix}/projects/${projectSlug}`);
+  assert("Guest can view project detail page", guestPage.status === 200);
   assert(
-    "Guest sees sign-in prompt instead of review form",
-    guestPage.html.includes("Sign in to write a review") ||
+    "Guest sees sign-in prompt instead of comment form",
+    guestPage.html.includes("Sign in to write a comment") ||
       guestPage.html.includes("Log in to continue"),
   );
   assert(
-    "Guest page does not expose review form fields",
-    !guestPage.html.includes('id="review-title"') &&
-      !guestPage.html.includes('id="review-content"'),
+    "Guest page does not expose comment form fields",
+    !guestPage.html.includes('id="comment-title"') &&
+      !guestPage.html.includes('id="comment-content"'),
   );
 
   const login = await signIn("user@example.com", "User123!");
   assert("User login succeeds", login.status === 302 || login.status === 200);
 
   const authedPage = await fetchPage(
-    `${prefix}/restaurants/${restaurantSlug}`,
+    `${prefix}/projects/${projectSlug}`,
     login.cookies,
   );
-  assert("Authenticated user can view restaurant detail page", authedPage.status === 200);
+  assert("Authenticated user can view project detail page", authedPage.status === 200);
   assert(
-    "Authenticated user sees review form",
-    authedPage.html.includes("Write a review") &&
-      authedPage.html.includes("Submit review"),
+    "Authenticated user sees comment form",
+    authedPage.html.includes("Write a comment") &&
+      authedPage.html.includes("Submit comment"),
   );
 
   const failed = checks.filter((check) => !check.ok);
@@ -121,7 +121,7 @@ async function main() {
     process.exit(1);
   }
 
-  console.log("\nAll review HTTP checks passed.");
+  console.log("\nAll comment HTTP checks passed.");
 }
 
 main().catch((error) => {

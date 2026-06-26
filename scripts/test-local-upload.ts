@@ -12,7 +12,7 @@ async function main() {
     0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82,
   ]);
 
-  const uploaded = await uploadImageBuffer(pngBytes, "review", "image/png");
+  const uploaded = await uploadImageBuffer(pngBytes, "comment", "image/png");
   const filePath = path.join(process.cwd(), "public", uploaded.url.replace(/^\//, ""));
 
   if (!readFileSync(filePath)) {

@@ -31,6 +31,9 @@ tests/output
 # misc
 .DS_Store
 *.pem
+.postgres-data-*
+university-submission
+*.zip
 
 # debug
 npm-debug.log*

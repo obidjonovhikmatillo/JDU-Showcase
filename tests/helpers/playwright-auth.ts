@@ -6,8 +6,8 @@ export const TEST_USERS = {
   other: { email: "aziza@example.com", password: "User123!" },
 } as const;
 
-export const SEED_RESTAURANT_SLUG = "trattoria-amici";
-export const SEED_RESTAURANT_NAME = "Trattoria Amici";
+export const SEED_PROJECT_SLUG = "campus-connect-portal";
+export const SEED_PROJECT_TITLE = "Campus Connect Portal";
 
 const baseURL = process.env.PLAYWRIGHT_BASE_URL ?? "http://127.0.0.1:3000";
 
@@ -82,23 +82,21 @@ export function uniqueSlug(prefix: string) {
   return `${prefix}-${Date.now()}`;
 }
 
-async function fillRequiredRestaurantFields(page: Page, name: string, slug: string) {
-  await page.locator("#name").fill(name);
+async function fillRequiredProjectFields(page: Page, title: string, slug: string) {
+  await page.locator("#title").fill(title);
   await page.locator("#slug").fill(slug);
-  await page.locator("#city").fill("Tashkent");
-  await page.locator("#address").fill("1 Test Street");
-  await page.locator("#latitude").fill("41.31");
-  await page.locator("#longitude").fill("69.24");
-  await page.locator("#description").fill("Automated test restaurant description.");
+  await page.locator("#authorName").fill("Test Author");
+  await page.locator("#department").fill("Computer Science");
+  await page.locator("#description").fill("Automated test project description.");
   await page.getByRole("combobox").first().click();
   await page.getByRole("option").first().click();
 }
 
-export async function createAdminRestaurant(page: Page, name: string, slug: string) {
-  await page.goto("/en/admin/restaurants/new");
-  await fillRequiredRestaurantFields(page, name, slug);
-  await page.getByRole("button", { name: /create restaurant/i }).click();
+export async function createAdminProject(page: Page, title: string, slug: string) {
+  await page.goto("/en/admin/projects/new");
+  await fillRequiredProjectFields(page, title, slug);
+  await page.getByRole("button", { name: /create project/i }).click();
   await expect(page).toHaveURL(new RegExp(`${slug}/edit`), { timeout: 20_000 });
 }
 
-export { fillRequiredRestaurantFields };
+export { fillRequiredProjectFields };

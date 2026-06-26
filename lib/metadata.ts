@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { absoluteUrl, getSiteUrl } from "@/lib/site-url";
 
-export const SITE_NAME = "Taomchi";
+export const SITE_NAME = "JDU Showcase";
 
 type BuildPageMetadataOptions = {
   title: string;
@@ -28,7 +28,7 @@ export function buildPageMetadata({
       ? imageUrl
       : imageUrl
         ? absoluteUrl(imageUrl)
-        : absoluteUrl("/images/restaurants/restaurant-interior-1.jpg");
+        : absoluteUrl("/images/projects/project-screenshot-1.jpg");
 
   return {
     title,
@@ -68,23 +68,23 @@ export function getDefaultSiteMetadata(): Metadata {
   return {
     metadataBase: new URL(siteUrl),
     title: {
-      default: `${SITE_NAME} — Restaurant Reviews`,
+      default: `${SITE_NAME} — Student Project Portfolio`,
       template: `%s | ${SITE_NAME}`,
     },
     description:
-      "Discover restaurants, read reviews, and share your dining experiences in Uzbek, English, Russian, and Japanese.",
+      "Discover student projects, read comments, and share your portfolio work in Uzbek, English, Russian, and Japanese.",
     applicationName: SITE_NAME,
     openGraph: {
       type: "website",
       siteName: SITE_NAME,
       locale: "en",
       url: siteUrl,
-      title: `${SITE_NAME} — Restaurant Reviews`,
+      title: `${SITE_NAME} — Student Project Portfolio`,
       description:
-        "Discover restaurants, read reviews, and share your dining experiences in Uzbek, English, Russian, and Japanese.",
+        "Discover student projects, read comments, and share your portfolio work in Uzbek, English, Russian, and Japanese.",
       images: [
         {
-          url: absoluteUrl("/images/restaurants/restaurant-interior-1.jpg"),
+          url: absoluteUrl("/images/projects/project-screenshot-1.jpg"),
           width: 1200,
           height: 630,
           alt: SITE_NAME,
@@ -93,10 +93,10 @@ export function getDefaultSiteMetadata(): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${SITE_NAME} — Restaurant Reviews`,
+      title: `${SITE_NAME} — Student Project Portfolio`,
       description:
-        "Discover restaurants, read reviews, and share your dining experiences.",
-      images: [absoluteUrl("/images/restaurants/restaurant-interior-1.jpg")],
+        "Discover student projects, read comments, and share your portfolio work.",
+      images: [absoluteUrl("/images/projects/project-screenshot-1.jpg")],
     },
   };
 }

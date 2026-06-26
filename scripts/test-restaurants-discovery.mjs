@@ -2,25 +2,24 @@ const baseUrl = process.env.BASE_URL ?? "http://localhost:3000";
 const locale = "en";
 
 const testCases = [
-  { name: "all restaurants", path: "/restaurants" },
-  { name: "search by name", path: "/restaurants?q=plov" },
-  { name: "search address", path: "/restaurants?q=Chorsu" },
-  { name: "category filter", path: "/restaurants?category=uzbek-cuisine" },
-  { name: "city filter", path: "/restaurants?city=Tashkent" },
-  { name: "min rating", path: "/restaurants?minRating=4" },
-  { name: "price filter", path: "/restaurants?price=2" },
-  { name: "sort reviews", path: "/restaurants?sort=reviews" },
-  { name: "sort newest", path: "/restaurants?sort=newest" },
-  { name: "sort name", path: "/restaurants?sort=name" },
-  { name: "list view", path: "/restaurants?view=list" },
-  { name: "pagination page 2", path: "/restaurants?page=2" },
+  { name: "all projects", path: "/projects" },
+  { name: "search by title", path: "/projects?q=campus" },
+  { name: "search author", path: "/projects?q=Bobur" },
+  { name: "category filter", path: "/projects?category=web-development" },
+  { name: "department filter", path: "/projects?department=Computer+Science" },
+  { name: "min rating", path: "/projects?minRating=4" },
+  { name: "sort comments", path: "/projects?sort=comments" },
+  { name: "sort newest", path: "/projects?sort=newest" },
+  { name: "sort title", path: "/projects?sort=title" },
+  { name: "list view", path: "/projects?view=list" },
+  { name: "pagination page 2", path: "/projects?page=2" },
   {
     name: "combined filters",
-    path: "/restaurants?q=tashkent&category=fast-food&minRating=3&sort=rating&view=grid",
+    path: "/projects?q=app&category=mobile-app&minRating=3&sort=rating&view=grid",
   },
   {
     name: "empty result",
-    path: "/restaurants?q=nonexistent-restaurant-xyz",
+    path: "/projects?q=nonexistent-project-xyz",
   },
 ];
 
@@ -37,9 +36,9 @@ async function testCase({ name, path }) {
   }
 
   const html = await response.text();
-  const hasResults = html.includes("restaurants found") || html.includes("restaurant found");
+  const hasResults = html.includes("projects found") || html.includes("project found");
   const hasCards = html.includes("View details") || html.includes("viewDetails");
-  const hasEmpty = html.includes("No restaurants found");
+  const hasEmpty = html.includes("No projects found");
 
   if (path.includes("nonexistent")) {
     if (!hasEmpty) {
@@ -52,7 +51,7 @@ async function testCase({ name, path }) {
   }
 
   if (!hasResults && !hasCards) {
-    console.error(`FAIL ${name} -> no restaurant listing rendered`);
+    console.error(`FAIL ${name} -> no project listing rendered`);
     failures += 1;
     return;
   }
@@ -61,7 +60,7 @@ async function testCase({ name, path }) {
 }
 
 async function main() {
-  console.log(`Testing restaurant discovery at ${baseUrl}/${locale}\n`);
+  console.log(`Testing project discovery at ${baseUrl}/${locale}\n`);
 
   for (const test of testCases) {
     await testCase(test);

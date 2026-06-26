@@ -2,7 +2,13 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { Language, Role } from "@prisma/client";
-import { Loader2Icon, PencilIcon } from "lucide-react";
+import {
+  BookmarkIcon,
+  HeartIcon,
+  Loader2Icon,
+  PencilIcon,
+  UploadIcon,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
 import { useEffect, useMemo, useState } from "react";
@@ -10,15 +16,9 @@ import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 import { ProfileAvatarField } from "@/components/profile/profile-avatar-field";
+import { ProjectCard } from "@/components/projects/project-card";
 import { UploadImage } from "@/components/uploads/upload-image";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import {
   Dialog,
   DialogBackdrop,
@@ -34,9 +34,10 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import { useRouter } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import { updateProfile } from "@/lib/actions/profile";
 import type { ProfileStats } from "@/lib/data/profile.server";
+import type { ProjectSummary } from "@/lib/data/project-types";
 import { languageValues } from "@/lib/constants/languages";
 import {
   createProfileUpdateSchema,
@@ -44,8 +45,7 @@ import {
 } from "@/lib/validations/create-auth-schemas";
 import { cn } from "@/lib/utils";
 import { normalizeImageSrcForDisplay } from "@/lib/uploads/uploaded-image-url";
-
-import { splitDisplayName } from "@/lib/display-name";
+import { initialsFromName } from "@/lib/display-name";
 
 type ProfilePanelProps = {
   user: {
@@ -60,35 +60,72 @@ type ProfilePanelProps = {
   };
   stats: ProfileStats;
   registeredDateLabel: string;
+  userProjects: ProjectSummary[];
+  likedProjects: ProjectSummary[];
+  savedProjects: ProjectSummary[];
 };
 
-function initialsFromName(fullName: string) {
-  return fullName
-    .trim()
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase() ?? "")
-    .join("");
+type TabKey = "work" | "liked" | "saved";
+
+function EmptyState({
+  icon: Icon,
+  title,
+  description,
+  actionLabel,
+  actionHref,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  description: string;
+  actionLabel?: string;
+  actionHref?: string;
+}) {
+  return (
+    <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-border bg-muted/10 px-6 py-16 text-center">
+      <div className="flex size-14 items-center justify-center rounded-full bg-muted">
+        <Icon className="size-6 text-muted-foreground" />
+      </div>
+      <h3 className="mt-4 text-base font-semibold text-foreground">{title}</h3>
+      <p className="mt-2 max-w-sm text-sm text-muted-foreground">{description}</p>
+      {actionLabel && actionHref && (
+        <Link
+          href={actionHref}
+          className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#0057ff] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#0046cc]"
+        >
+          {actionLabel}
+        </Link>
+      )}
+    </div>
+  );
 }
 
-function formatAverageRating(value: number | null) {
-  if (value === null) {
-    return "—";
-  }
-
-  return value.toFixed(1);
+function ProjectGrid({ projects }: { projects: ProjectSummary[] }) {
+  return (
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {projects.map((project) => (
+        <ProjectCard key={project.id} project={project} />
+      ))}
+    </div>
+  );
 }
 
-export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelProps) {
+export function ProfilePanel({
+  user,
+  stats,
+  registeredDateLabel,
+  userProjects,
+  likedProjects,
+  savedProjects,
+}: ProfilePanelProps) {
   const router = useRouter();
   const { update } = useSession();
   const [editOpen, setEditOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<TabKey>("work");
   const [serverError, setServerError] = useState<string | null>(null);
   const t = useTranslations("ProfilePanel");
   const tCommon = useTranslations("Common");
   const tValidation = useTranslations("Validation");
   const tToast = useTranslations("Toast");
-  const tRoles = useTranslations("Roles");
   const tLang = useTranslations("LanguageNames");
 
   const profileUpdateSchema = useMemo(
@@ -127,7 +164,6 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
       });
       setServerError(null);
     }
-
     setEditOpen(nextOpen);
   }
 
@@ -145,7 +181,9 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
     if (result.fieldErrors) {
       for (const [field, messages] of Object.entries(result.fieldErrors)) {
         if (messages?.[0]) {
-          form.setError(field as keyof ProfileUpdateInput, { message: messages[0] });
+          form.setError(field as keyof ProfileUpdateInput, {
+            message: messages[0],
+          });
         }
       }
       toast.error(tToast("fixFields"));
@@ -161,8 +199,7 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
     const nextProfile = {
       fullName: result.fullName ?? values.fullName,
       profileHeadline:
-        result.profileHeadline ??
-        (values.profileHeadline?.trim() || null),
+        result.profileHeadline ?? (values.profileHeadline?.trim() || null),
       preferredLanguage:
         (result.preferredLanguage ?? values.preferredLanguage) as Language,
       avatarUrl: result.avatarUrl ?? (values.avatarUrl?.trim() || null),
@@ -178,98 +215,173 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
   const displayAvatar = user.avatarUrl
     ? normalizeImageSrcForDisplay(user.avatarUrl)
     : "";
-  const { primary, secondary } = splitDisplayName(user.fullName, user.profileHeadline);
+
+  const tabs: { key: TabKey; label: string; count: number }[] = [
+    { key: "work", label: "Work", count: userProjects.length },
+    { key: "liked", label: "Liked", count: likedProjects.length },
+    { key: "saved", label: "Saved", count: savedProjects.length },
+  ];
 
   return (
     <>
-      <Card className="mx-auto w-full max-w-2xl">
-        <CardHeader className="flex flex-row items-start justify-between gap-4 space-y-0">
-          <div className="space-y-1.5">
-            <CardTitle>{t("overviewTitle")}</CardTitle>
-            <CardDescription>{t("overviewDescription")}</CardDescription>
-          </div>
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            className="shrink-0 gap-1.5"
-            onClick={() => setEditOpen(true)}
-          >
-            <PencilIcon className="size-3.5" aria-hidden />
-            {t("editButton")}
-          </Button>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="flex items-center gap-4">
-            <div className="relative flex size-20 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border/60 bg-muted">
-              {displayAvatar ? (
-                <UploadImage
-                  src={displayAvatar}
-                  alt={t("avatarAlt", { name: user.fullName })}
-                  fill
-                  className="object-cover"
-                  sizes="80px"
-                />
-              ) : (
-                <span className="text-lg font-semibold text-foreground">
-                  {initialsFromName(user.fullName)}
-                </span>
-              )}
-            </div>
-            <div className="min-w-0">
-              <p className="text-lg font-semibold text-foreground">{primary}</p>
-              {secondary ? (
-                <p className="text-sm text-muted-foreground">{secondary}</p>
-              ) : (
-                <p className="text-sm text-muted-foreground">{user.email}</p>
-              )}
-            </div>
-          </div>
+      {/* ---- Profile Header (Dribbble style) ---- */}
+      <div className="flex flex-col items-center pb-8 pt-4">
+        {/* Avatar */}
+        <div className="relative flex size-24 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-border/40 bg-muted shadow-sm">
+          {displayAvatar ? (
+            <UploadImage
+              src={displayAvatar}
+              alt={user.fullName}
+              fill
+              className="object-cover"
+              sizes="96px"
+            />
+          ) : (
+            <span className="text-2xl font-bold text-foreground">
+              {initialsFromName(user.fullName)}
+            </span>
+          )}
+        </div>
 
-          <div className="grid gap-3 sm:grid-cols-2">
-            <div className="rounded-lg border border-border/60 bg-muted/20 px-4 py-3">
-              <p className="text-xs text-muted-foreground">{t("totalReviews")}</p>
-              <p className="mt-1 text-2xl font-semibold text-foreground">{stats.totalReviews}</p>
-            </div>
-            <div className="rounded-lg border border-border/60 bg-muted/20 px-4 py-3">
-              <p className="text-xs text-muted-foreground">{t("averageRatingGiven")}</p>
-              <p className="mt-1 text-2xl font-semibold text-foreground">
-                {formatAverageRating(stats.averageRatingGiven)}
-              </p>
-            </div>
-          </div>
+        {/* Name */}
+        <h1 className="mt-4 text-2xl font-bold text-foreground">
+          {user.fullName}
+        </h1>
 
-          <div className="space-y-3 text-sm">
-            <div className="flex items-start justify-between gap-4 border-b border-border/60 pb-3">
-              <span className="text-muted-foreground">{t("email")}</span>
-              <span className="font-medium text-foreground">{user.email}</span>
-            </div>
-            <div className="flex items-start justify-between gap-4 border-b border-border/60 pb-3">
-              <span className="text-muted-foreground">{t("role")}</span>
-              <span className="font-medium text-foreground">{tRoles(user.role)}</span>
-            </div>
-            <div className="flex items-start justify-between gap-4 border-b border-border/60 pb-3">
-              <span className="text-muted-foreground">{t("preferredLanguage")}</span>
-              <span className="font-medium text-foreground">
-                {tLang(user.preferredLanguage)}
+        {/* Headline / location */}
+        {user.profileHeadline && (
+          <p className="mt-1 text-sm text-muted-foreground">
+            {user.profileHeadline}
+          </p>
+        )}
+
+        {/* Stats row */}
+        <div className="mt-3 flex items-center gap-6 text-sm text-muted-foreground">
+          <span>
+            <span className="font-semibold text-foreground">
+              {stats.totalComments}
+            </span>{" "}
+            Reviews
+          </span>
+          <span>
+            <span className="font-semibold text-foreground">
+              {likedProjects.length}
+            </span>{" "}
+            Likes
+          </span>
+          <span>
+            <span className="font-semibold text-foreground">
+              {savedProjects.length}
+            </span>{" "}
+            Saved
+          </span>
+        </div>
+
+        {/* Edit Profile button */}
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          className="mt-4 gap-1.5 rounded-full px-5"
+          onClick={() => setEditOpen(true)}
+        >
+          <PencilIcon className="size-3.5" aria-hidden />
+          {t("editButton")}
+        </Button>
+      </div>
+
+      {/* ---- Tab Bar ---- */}
+      <div className="border-b border-border">
+        <nav className="mx-auto flex max-w-3xl justify-center gap-8">
+          {tabs.map((tab) => (
+            <button
+              key={tab.key}
+              type="button"
+              className={cn(
+                "relative pb-3 text-sm font-medium transition-colors",
+                activeTab === tab.key
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:text-foreground",
+              )}
+              onClick={() => setActiveTab(tab.key)}
+            >
+              {tab.label}
+              <span className="ml-1.5 text-xs text-muted-foreground">
+                {tab.count}
               </span>
-            </div>
-            <div className="flex items-start justify-between gap-4">
-              <span className="text-muted-foreground">{t("registered")}</span>
-              <span className="font-medium text-foreground">{registeredDateLabel}</span>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+              {activeTab === tab.key && (
+                <span className="absolute inset-x-0 -bottom-px h-0.5 rounded-full bg-[#0057ff]" />
+              )}
+            </button>
+          ))}
+        </nav>
+      </div>
 
+      {/* ---- Tab Content ---- */}
+      <div className="pt-8">
+        {activeTab === "work" && (
+          <>
+            {userProjects.length > 0 ? (
+              <ProjectGrid projects={userProjects} />
+            ) : (
+              <EmptyState
+                icon={UploadIcon}
+                title="Upload your first project"
+                description="Show off your work to the JDU community. Your published projects will appear here."
+                actionLabel="Upload Project"
+                actionHref="/upload"
+              />
+            )}
+          </>
+        )}
+
+        {activeTab === "liked" && (
+          <>
+            {likedProjects.length > 0 ? (
+              <ProjectGrid projects={likedProjects} />
+            ) : (
+              <EmptyState
+                icon={HeartIcon}
+                title="No liked projects yet"
+                description="Projects you like will show up here. Explore and discover work that inspires you."
+                actionLabel="Browse Projects"
+                actionHref="/projects"
+              />
+            )}
+          </>
+        )}
+
+        {activeTab === "saved" && (
+          <>
+            {savedProjects.length > 0 ? (
+              <ProjectGrid projects={savedProjects} />
+            ) : (
+              <EmptyState
+                icon={BookmarkIcon}
+                title="No saved projects yet"
+                description="Save projects to revisit later. Your bookmarks will appear here."
+                actionLabel="Browse Projects"
+                actionHref="/projects"
+              />
+            )}
+          </>
+        )}
+      </div>
+
+      {/* ---- Edit Profile Dialog ---- */}
       <Dialog open={editOpen} onOpenChange={handleEditOpenChange}>
         <DialogPortal>
           <DialogBackdrop />
           <DialogPopup className="max-w-lg">
             <DialogTitle>{t("editTitle")}</DialogTitle>
-            <DialogDescription className="mt-2">{t("editDescription")}</DialogDescription>
+            <DialogDescription className="mt-2">
+              {t("editDescription")}
+            </DialogDescription>
 
-            <form onSubmit={form.handleSubmit(onSubmit)} className="mt-6 space-y-5">
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="mt-6 space-y-5"
+            >
               {serverError ? (
                 <div
                   role="alert"
@@ -298,7 +410,9 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
                 </Field>
 
                 <Field data-invalid={!!form.formState.errors.fullName}>
-                  <FieldLabel htmlFor="profile-fullName">{t("fullName")}</FieldLabel>
+                  <FieldLabel htmlFor="profile-fullName">
+                    {t("fullName")}
+                  </FieldLabel>
                   <Input
                     id="profile-fullName"
                     autoComplete="name"
@@ -310,7 +424,9 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
                 </Field>
 
                 <Field data-invalid={!!form.formState.errors.profileHeadline}>
-                  <FieldLabel htmlFor="profile-headline">{t("profileHeadline")}</FieldLabel>
+                  <FieldLabel htmlFor="profile-headline">
+                    {t("profileHeadline")}
+                  </FieldLabel>
                   <Input
                     id="profile-headline"
                     placeholder={t("profileHeadlinePlaceholder")}
@@ -318,11 +434,17 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
                     disabled={isSubmitting}
                     {...form.register("profileHeadline")}
                   />
-                  <FieldError errors={[form.formState.errors.profileHeadline]} />
+                  <FieldError
+                    errors={[form.formState.errors.profileHeadline]}
+                  />
                 </Field>
 
-                <Field data-invalid={!!form.formState.errors.preferredLanguage}>
-                  <FieldLabel htmlFor="profile-language">{t("preferredLanguage")}</FieldLabel>
+                <Field
+                  data-invalid={!!form.formState.errors.preferredLanguage}
+                >
+                  <FieldLabel htmlFor="profile-language">
+                    {t("preferredLanguage")}
+                  </FieldLabel>
                   <select
                     id="profile-language"
                     className={cn(
@@ -338,7 +460,9 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
                       </option>
                     ))}
                   </select>
-                  <FieldError errors={[form.formState.errors.preferredLanguage]} />
+                  <FieldError
+                    errors={[form.formState.errors.preferredLanguage]}
+                  />
                 </Field>
               </FieldGroup>
 
@@ -354,7 +478,10 @@ export function ProfilePanel({ user, stats, registeredDateLabel }: ProfilePanelP
                 <Button type="submit" disabled={isSubmitting}>
                   {isSubmitting ? (
                     <>
-                      <Loader2Icon className="size-4 animate-spin" aria-hidden />
+                      <Loader2Icon
+                        className="size-4 animate-spin"
+                        aria-hidden
+                      />
                       {t("saving")}
                     </>
                   ) : (

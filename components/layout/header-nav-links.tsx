@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 export type HeaderNavItemConfig = {
   href: string;
-  labelKey: "home" | "postReview" | "profile" | "login" | "admin";
+  labelKey: "home" | "postReview" | "projects" | "profile" | "login" | "admin";
   exact?: boolean;
   highlight?: boolean;
 };
@@ -33,8 +33,8 @@ export function HeaderNavLinks({ items, className }: HeaderNavLinksProps) {
             key={item.labelKey}
             href={item.href}
             className={cn(
-              "rounded-full px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
-              isActive && "bg-muted text-foreground",
+              "rounded-md px-3 py-1.5 text-sm font-medium text-white/70 transition-colors hover:text-white",
+              isActive && "text-white",
             )}
           >
             {t(item.labelKey)}

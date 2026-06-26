@@ -1,15 +1,13 @@
 import { ChevronRight } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 
-import { BenefitsSection, CtaSection } from "@/components/home/benefits-section";
+import { auth } from "@/auth";
+import { CtaSection } from "@/components/home/benefits-section";
+import { HeroSection } from "@/components/home/hero-section";
 import { HomeErrorState } from "@/components/home/home-error-state";
-import {
-  CategoryCard,
-  RestaurantCard,
-} from "@/components/restaurants/restaurant-card";
+import { ProjectCard } from "@/components/projects/project-card";
 import { EmptyState } from "@/components/ui/empty-state";
-import { getHomePageData } from "@/lib/data/restaurants";
-import { getCategoryLabel } from "@/lib/categories";
+import { getHomePageData } from "@/lib/data/projects";
 import { Link } from "@/i18n/navigation";
 
 function SectionHeader({
@@ -38,6 +36,8 @@ function SectionHeader({
 export async function HomePageContent() {
   const t = await getTranslations("Home");
   const locale = await getLocale();
+  const session = await auth();
+  const isAuthenticated = Boolean(session?.user?.id);
 
   let categories;
   let topRated;
@@ -54,65 +54,44 @@ export async function HomePageContent() {
   }
 
   return (
-    <div className="space-y-14 md:space-y-16">
-      <section aria-labelledby="categories-heading">
-        <SectionHeader
-          title={t("categories.title")}
-          href="/restaurants"
-          linkLabel={t("categories.viewAll")}
-        />
-        {categories.length > 0 ? (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {categories.map((category) => (
-              <CategoryCard
-                key={category.id}
-                slug={category.slug}
-                name={getCategoryLabel(category, locale)}
-                restaurantCount={category.restaurantCount}
-              />
-            ))}
-          </div>
-        ) : (
-          <EmptyState className="mt-2" title={t("categories.empty")} />
-        )}
-      </section>
+    <div>
+      <HeroSection categories={categories} isAuthenticated={isAuthenticated} />
 
-      <section aria-labelledby="top-rated-heading">
-        <SectionHeader
-          title={t("topRated.title")}
-          href="/restaurants"
-          linkLabel={t("topRated.viewAll")}
-        />
-        {topRated.length > 0 ? (
-          <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-            {topRated.map((restaurant) => (
-              <RestaurantCard key={restaurant.id} restaurant={restaurant} />
-            ))}
-          </div>
-        ) : (
-          <EmptyState className="mt-2" title={t("topRated.empty")} />
+      <div className="space-y-14 md:space-y-16">
+        {topRated.length > 0 && (
+          <section aria-labelledby="top-rated-heading">
+            <SectionHeader
+              title={t("topRated.title")}
+              href="/projects"
+              linkLabel={t("topRated.viewAll")}
+            />
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {topRated.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+          </section>
         )}
-      </section>
 
-      <section aria-labelledby="recent-heading">
-        <SectionHeader
-          title={t("recent.title")}
-          href="/restaurants"
-          linkLabel={t("recent.viewAll")}
-        />
-        {recent.length > 0 ? (
-          <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-            {recent.map((restaurant) => (
-              <RestaurantCard key={restaurant.id} restaurant={restaurant} />
-            ))}
-          </div>
-        ) : (
-          <EmptyState className="mt-2" title={t("recent.empty")} />
-        )}
-      </section>
+        <section aria-labelledby="recent-heading">
+          <SectionHeader
+            title={t("recent.title")}
+            href="/projects"
+            linkLabel={t("recent.viewAll")}
+          />
+          {recent.length > 0 ? (
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {recent.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+          ) : (
+            <EmptyState className="mt-2" title={t("recent.empty")} />
+          )}
+        </section>
 
-      <BenefitsSection />
-      <CtaSection />
+        <CtaSection />
+      </div>
     </div>
   );
 }

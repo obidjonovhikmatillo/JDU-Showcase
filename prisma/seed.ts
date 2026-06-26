@@ -3,12 +3,23 @@ import bcrypt from "bcryptjs";
 
 import {
   categories,
-  restaurants,
-  reviews,
+  projects,
+  comments,
   users,
 } from "./seed-data";
 
 const prisma = new PrismaClient();
+
+async function cleanDatabase() {
+  await prisma.commentImage.deleteMany();
+  await prisma.comment.deleteMany();
+  await prisma.projectImage.deleteMany();
+  await prisma.projectLike.deleteMany();
+  await prisma.projectSave.deleteMany();
+  await prisma.project.deleteMany();
+  await prisma.category.deleteMany();
+  await prisma.user.deleteMany();
+}
 
 async function seedUsers() {
   const seeded = new Map<string, string>();
@@ -61,126 +72,119 @@ async function seedCategories() {
   return seeded;
 }
 
-async function seedRestaurants(categoryIds: Map<string, string>) {
+async function seedProjects(categoryIds: Map<string, string>) {
   const seeded = new Map<string, string>();
 
-  for (const restaurant of restaurants) {
-    const categoryId = categoryIds.get(restaurant.categorySlug);
+  for (const project of projects) {
+    const categoryId = categoryIds.get(project.categorySlug);
 
     if (!categoryId) {
-      throw new Error(`Missing category for restaurant: ${restaurant.slug}`);
+      throw new Error(`Missing category for project: ${project.slug}`);
     }
 
-    const record = await prisma.restaurant.upsert({
-      where: { slug: restaurant.slug },
+    const record = await prisma.project.upsert({
+      where: { slug: project.slug },
       update: {
-        name: restaurant.name,
-        descriptionUz: restaurant.descriptionUz,
-        descriptionEn: restaurant.descriptionEn,
-        descriptionRu: restaurant.descriptionRu,
-        descriptionJa: restaurant.descriptionJa,
-        address: restaurant.address,
-        city: restaurant.city,
-        phone: restaurant.phone,
-        website: restaurant.website ?? null,
-        openingHours: restaurant.openingHours,
-        latitude: restaurant.latitude,
-        longitude: restaurant.longitude,
-        mainImageUrl: restaurant.mainImageUrl,
-        priceLevel: restaurant.priceLevel,
-        cuisineType: restaurant.cuisineType,
-        isPublished: restaurant.isPublished,
+        title: project.title,
+        descriptionUz: project.descriptionUz,
+        descriptionEn: project.descriptionEn,
+        descriptionRu: project.descriptionRu,
+        descriptionJa: project.descriptionJa,
+        authorName: project.authorName,
+        department: project.department,
+        techStack: project.techStack ?? null,
+        demoUrl: project.demoUrl ?? null,
+        githubUrl: project.githubUrl ?? null,
+        mainImageUrl: project.mainImageUrl,
+        difficulty: project.difficulty ?? null,
+        isPublished: project.isPublished,
         categoryId,
       },
       create: {
-        name: restaurant.name,
-        slug: restaurant.slug,
-        descriptionUz: restaurant.descriptionUz,
-        descriptionEn: restaurant.descriptionEn,
-        descriptionRu: restaurant.descriptionRu,
-        descriptionJa: restaurant.descriptionJa,
-        address: restaurant.address,
-        city: restaurant.city,
-        phone: restaurant.phone,
-        website: restaurant.website,
-        openingHours: restaurant.openingHours,
-        latitude: restaurant.latitude,
-        longitude: restaurant.longitude,
-        mainImageUrl: restaurant.mainImageUrl,
-        priceLevel: restaurant.priceLevel,
-        cuisineType: restaurant.cuisineType,
-        isPublished: restaurant.isPublished,
+        title: project.title,
+        slug: project.slug,
+        descriptionUz: project.descriptionUz,
+        descriptionEn: project.descriptionEn,
+        descriptionRu: project.descriptionRu,
+        descriptionJa: project.descriptionJa,
+        authorName: project.authorName,
+        department: project.department,
+        techStack: project.techStack,
+        demoUrl: project.demoUrl,
+        githubUrl: project.githubUrl,
+        mainImageUrl: project.mainImageUrl,
+        difficulty: project.difficulty,
+        isPublished: project.isPublished,
         categoryId,
       },
     });
 
-    await prisma.restaurantImage.deleteMany({
-      where: { restaurantId: record.id },
+    await prisma.projectImage.deleteMany({
+      where: { projectId: record.id },
     });
 
-    if (restaurant.galleryImageUrls.length > 0) {
-      await prisma.restaurantImage.createMany({
-        data: restaurant.galleryImageUrls.map((imageUrl) => ({
-          restaurantId: record.id,
+    if (project.galleryImageUrls.length > 0) {
+      await prisma.projectImage.createMany({
+        data: project.galleryImageUrls.map((imageUrl) => ({
+          projectId: record.id,
           imageUrl,
         })),
       });
     }
 
-    seeded.set(restaurant.slug, record.id);
+    seeded.set(project.slug, record.id);
   }
 
   return seeded;
 }
 
-async function seedReviews(
+async function seedComments(
   userIds: Map<string, string>,
-  restaurantIds: Map<string, string>,
+  projectIds: Map<string, string>,
 ) {
-  for (const review of reviews) {
-    const userId = userIds.get(review.userEmail);
-    const restaurantId = restaurantIds.get(review.restaurantSlug);
+  for (const comment of comments) {
+    const userId = userIds.get(comment.userEmail);
+    const projectId = projectIds.get(comment.projectSlug);
 
-    if (!userId || !restaurantId) {
+    if (!userId || !projectId) {
       throw new Error(
-        `Missing user or restaurant for review: ${review.title}`,
+        `Missing user or project for comment: ${comment.title}`,
       );
     }
 
-    const existing = await prisma.review.findFirst({
+    const existing = await prisma.comment.findFirst({
       where: {
         userId,
-        restaurantId,
-        title: review.title,
+        projectId,
+        title: comment.title,
       },
     });
 
-    const reviewData = {
+    const commentData = {
       userId,
-      restaurantId,
-      rating: review.rating,
-      title: review.title,
-      content: review.content,
-      visitDate: review.visitDate ? new Date(review.visitDate) : null,
+      projectId,
+      rating: comment.rating,
+      title: comment.title,
+      content: comment.content,
     };
 
     const record = existing
-      ? await prisma.review.update({
+      ? await prisma.comment.update({
           where: { id: existing.id },
-          data: reviewData,
+          data: commentData,
         })
-      : await prisma.review.create({
-          data: reviewData,
+      : await prisma.comment.create({
+          data: commentData,
         });
 
-    await prisma.reviewImage.deleteMany({
-      where: { reviewId: record.id },
+    await prisma.commentImage.deleteMany({
+      where: { commentId: record.id },
     });
 
-    if (review.imageUrls?.length) {
-      await prisma.reviewImage.createMany({
-        data: review.imageUrls.map((imageUrl) => ({
-          reviewId: record.id,
+    if (comment.imageUrls?.length) {
+      await prisma.commentImage.createMany({
+        data: comment.imageUrls.map((imageUrl) => ({
+          commentId: record.id,
           imageUrl,
         })),
       });
@@ -189,23 +193,23 @@ async function seedReviews(
 }
 
 async function printSummary() {
-  const [userCount, categoryCount, restaurantCount, reviewCount, restaurantImageCount, reviewImageCount] =
+  const [userCount, categoryCount, projectCount, commentCount, projectImageCount, commentImageCount] =
     await Promise.all([
       prisma.user.count(),
       prisma.category.count(),
-      prisma.restaurant.count(),
-      prisma.review.count(),
-      prisma.restaurantImage.count(),
-      prisma.reviewImage.count(),
+      prisma.project.count(),
+      prisma.comment.count(),
+      prisma.projectImage.count(),
+      prisma.commentImage.count(),
     ]);
 
   console.log("\nSeed summary:");
-  console.log(`  Users:              ${userCount}`);
-  console.log(`  Categories:         ${categoryCount}`);
-  console.log(`  Restaurants:        ${restaurantCount}`);
-  console.log(`  Reviews:            ${reviewCount}`);
-  console.log(`  Restaurant images:  ${restaurantImageCount}`);
-  console.log(`  Review images:      ${reviewImageCount}`);
+  console.log(`  Users:            ${userCount}`);
+  console.log(`  Categories:       ${categoryCount}`);
+  console.log(`  Projects:         ${projectCount}`);
+  console.log(`  Comments:         ${commentCount}`);
+  console.log(`  Project images:   ${projectImageCount}`);
+  console.log(`  Comment images:   ${commentImageCount}`);
 }
 
 async function main() {
@@ -217,13 +221,15 @@ async function main() {
     process.exit(1);
   }
 
-  console.log("Seeding TasteGuide demo data...\n");
+  console.log("Cleaning existing data...");
+  await cleanDatabase();
+  console.log("Seeding JDU Showcase demo data...\n");
 
   const userIds = await seedUsers();
   const categoryIds = await seedCategories();
-  const restaurantIds = await seedRestaurants(categoryIds);
+  const projectIds = await seedProjects(categoryIds);
 
-  await seedReviews(userIds, restaurantIds);
+  await seedComments(userIds, projectIds);
   await printSummary();
 
   console.log("\nDemo credentials:");

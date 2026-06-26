@@ -59,7 +59,7 @@ export function MobileNav({
         type="button"
         variant="outline"
         size="icon"
-        className="relative lg:hidden"
+        className="relative border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white lg:hidden"
         aria-label={t("openMenu")}
         onClick={() => setOpen(true)}
       >

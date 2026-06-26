@@ -1,3 +1,4 @@
+import { PlusIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 import { auth } from "@/auth";
@@ -15,7 +16,7 @@ import { cn } from "@/lib/utils";
 function buildNavItems(isAdmin: boolean): HeaderNavItemConfig[] {
   const items: HeaderNavItemConfig[] = [
     { href: "/", labelKey: "home", exact: true },
-    { href: "/restaurants", labelKey: "postReview" },
+    { href: "/projects", labelKey: "projects" },
     { href: "/profile", labelKey: "profile" },
   ];
 
@@ -28,6 +29,7 @@ function buildNavItems(isAdmin: boolean): HeaderNavItemConfig[] {
 
 export async function Header() {
   const t = await getTranslations("Nav");
+  const tUpload = await getTranslations("Upload");
   const brand = await getTranslations("Common");
   const session = await auth();
   const isAuthenticated = Boolean(session?.user?.id);
@@ -42,28 +44,32 @@ export async function Header() {
   }));
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background">
-      <div className="mx-auto flex max-w-[1280px] items-center gap-2 px-4 py-2.5 sm:px-6 lg:gap-3 lg:py-3">
+    <header className="behance-header sticky top-0 z-50">
+      <div className="mx-auto flex max-w-[1400px] items-center gap-4 px-5 py-2.5 sm:px-8 lg:gap-6">
+        {/* Logo */}
         <Link
           href="/"
           aria-label={brand("brand")}
-          className="shrink-0 transition-opacity hover:opacity-90"
+          className="shrink-0 transition-opacity hover:opacity-80"
         >
           <BrandLogo label={brand("brand")} showLabel className="hidden sm:inline-flex" />
           <BrandLogo label={brand("brand")} showLabel={false} className="sm:hidden" />
         </Link>
 
+        {/* Nav Links */}
         <HeaderNavLinks
           items={navItems}
-          className="ml-4 hidden shrink-0 lg:ml-10 lg:flex xl:ml-12"
+          className="ml-8 hidden shrink-0 lg:flex"
         />
 
+        {/* Search Bar */}
         <HeaderSearchBar
           compact
-          className="mx-2 hidden min-w-0 max-w-[11rem] flex-1 lg:flex xl:max-w-[14rem]"
+          className="mx-4 hidden min-w-0 max-w-[16rem] flex-1 lg:flex xl:max-w-[20rem]"
         />
 
-        <div className="ml-auto flex shrink-0 items-center gap-1.5 sm:gap-2">
+        {/* Right side controls */}
+        <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-2.5">
           <div className="hidden lg:block">
             <LanguageSwitcher />
           </div>
@@ -77,7 +83,20 @@ export async function Header() {
             />
           ) : null}
 
-          <div className="hidden items-center gap-1.5 lg:flex">
+          {isAuthenticated && (
+            <Link
+              href="/upload"
+              className={cn(
+                buttonVariants({ size: "sm" }),
+                "hidden rounded-full bg-foreground px-3.5 font-medium text-background shadow-none hover:bg-foreground/90 lg:inline-flex",
+              )}
+            >
+              <PlusIcon className="mr-1 size-4" aria-hidden />
+              {tUpload("uploadButton")}
+            </Link>
+          )}
+
+          <div className="hidden items-center gap-2 lg:flex">
             {isAuthenticated ? (
               <LogoutButton compact />
             ) : (
@@ -86,7 +105,7 @@ export async function Header() {
                   href="/login"
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "sm" }),
-                    "rounded-full px-3.5 font-medium",
+                    "rounded-full border border-white/30 px-4 font-medium text-white hover:bg-white/10 hover:text-white",
                   )}
                 >
                   {t("login")}
@@ -94,8 +113,8 @@ export async function Header() {
                 <Link
                   href="/register"
                   className={cn(
-                    buttonVariants({ variant: "outline", size: "sm" }),
-                    "rounded-full border-border px-3.5 font-medium shadow-none hover:bg-muted",
+                    buttonVariants({ size: "sm" }),
+                    "rounded-full bg-[#0057ff] px-4 font-medium text-white shadow-none hover:bg-[#0046cc]",
                   )}
                 >
                   {t("register")}
@@ -114,8 +133,9 @@ export async function Header() {
         </div>
       </div>
 
-      <div className="border-t border-border px-4 pb-2.5 sm:px-6 lg:hidden">
-        <HeaderSearchBar compact className="pt-2.5" />
+      {/* Mobile search row */}
+      <div className="border-t border-white/10 px-4 pb-3 sm:px-6 lg:hidden">
+        <HeaderSearchBar compact className="pt-3" />
       </div>
     </header>
   );

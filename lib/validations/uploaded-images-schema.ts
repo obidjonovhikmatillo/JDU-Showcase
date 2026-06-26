@@ -1,8 +1,8 @@
 import { z } from "zod";
 
 import {
-  MAX_RESTAURANT_GALLERY_IMAGES,
-  MAX_REVIEW_IMAGES,
+  MAX_PROJECT_GALLERY_IMAGES,
+  MAX_COMMENT_IMAGES,
 } from "@/lib/uploads/image-upload-constants";
 import type { UploadedImage } from "@/lib/uploads/image-upload-types";
 import { isValidUploadedImageUrl } from "@/lib/uploads/uploaded-image-url";
@@ -53,16 +53,16 @@ export function parseUploadedImagesJson(raw: FormDataEntryValue | null): Uploade
   return z.array(uploadedImageSchema).parse(parsed);
 }
 
-export function createReviewImagesSchema(tv: (key: string) => string) {
+export function createCommentImagesSchema(tv: (key: string) => string) {
   return z
     .array(persistedImageSchema)
-    .max(MAX_REVIEW_IMAGES, tv("reviewImagesMax"));
+    .max(MAX_COMMENT_IMAGES, tv("commentImagesMax"));
 }
 
 export function createGalleryImagesSchema(tv: (key: string) => string) {
   return z
     .array(persistedImageSchema)
-    .max(MAX_RESTAURANT_GALLERY_IMAGES, tv("galleryImagesMax"));
+    .max(MAX_PROJECT_GALLERY_IMAGES, tv("galleryImagesMax"));
 }
 
 export function createMainImageSchema(tv: (key: string) => string) {

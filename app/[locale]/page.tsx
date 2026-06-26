@@ -20,10 +20,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function HomePage() {
   return (
-    <div className="space-y-12 pt-2 md:space-y-14">
-      <Suspense fallback={<HomePageSkeleton />}>
-        <HomePageContent />
-      </Suspense>
-    </div>
+    <Suspense fallback={<HomePageSkeleton />}>
+      <HomePageContent />
+    </Suspense>
   );
 }

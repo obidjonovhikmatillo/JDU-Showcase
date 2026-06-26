@@ -1,7 +1,7 @@
 {
   "Common": {
-    "brand": "Taomchi",
-    "tagline": "Yaqin atrofdagi restoranlarni toping va baholang",
+    "brand": "JDU Showcase",
+    "tagline": "JDU talabalarining loyiha va ijodiy ishlarini kashf eting",
     "loading": "Yuklanmoqda...",
     "close": "Yopish"
   },
@@ -11,20 +11,20 @@
     "retry": "Qayta urinish",
     "backHome": "Bosh sahifaga",
     "mustBeSignedIn": "Profilni yangilash uchun tizimga kirishingiz kerak.",
-    "mustBeSignedInToReview": "Sharh yuborish uchun tizimga kirishingiz kerak.",
-    "restaurantNotFound": "Restoran topilmadi.",
-    "reviewNotFound": "Sharh topilmadi.",
-    "reviewForbidden": "Bu sharhni boshqarish uchun ruxsatingiz yo'q.",
+    "mustBeSignedInToComment": "Izoh yuborish uchun tizimga kirishingiz kerak.",
+    "projectNotFound": "Loyiha topilmadi.",
+    "commentNotFound": "Izoh topilmadi.",
+    "commentForbidden": "Bu izohni boshqarish uchun ruxsatingiz yo'q.",
     "adminRequired": "Administrator huquqi talab qilinadi.",
     "categoryNotFound": "Kategoriya topilmadi.",
-    "categoryInUse": "Bu kategoriya restoranlar tomonidan ishlatilmoqda va o'chirib bo'lmaydi.",
+    "categoryInUse": "Bu kategoriya loyihalar tomonidan ishlatilmoqda va o'chirib bo'lmaydi.",
     "userNotFound": "Foydalanuvchi topilmadi.",
     "cannotDeactivateSelf": "O'z administrator hisobingizni faolsizlantira olmaysiz.",
     "cannotDemoteSelf": "O'zingizdan administrator rolini olib bo'lmaydi."
   },
   "Nav": {
     "home": "Bosh sahifa",
-    "restaurants": "Restoranlar",
+    "projects": "Loyihalar",
     "login": "Kirish",
     "register": "Roʻyxatdan oʻtish",
     "profile": "Profil",
@@ -34,19 +34,19 @@
     "openMenu": "Menyuni ochish",
     "closeMenu": "Menyuni yopish",
     "mobileNavLabel": "Mobil menyu",
-    "shareReview": "Sharhingizni joylang",
-    "postReview": "Sharh joylang",
+    "shareComment": "Izohingizni joylang",
+    "postComment": "Izoh joylang",
     "profileAvatarAlt": "{name} profil rasmi",
-    "addHeadlineHint": "Mehmon yoki kasb"
+    "addHeadlineHint": "Talaba yoki mutaxassislik"
   },
   "NotFound": {
     "title": "Sahifa topilmadi",
     "description": "Qidirayotgan sahifangiz mavjud emas yoki boshqa manzilga ko'chirilgan.",
     "backHome": "Bosh sahifaga qaytish",
-    "browseRestaurants": "Restoranlarni ko'rish"
+    "browseProjects": "Loyihalarni ko'rish"
   },
   "Footer": {
-    "description": "Cowork universitet loyihasi uchun ko'p tilli restoran sharhlari platformasi.",
+    "description": "JDU universiteti uchun ko'p tilli talaba loyihalari vitrinasi platformasi.",
     "rights": "Barcha huquqlar himoyalangan.",
     "navLabel": "Pastki menyu",
     "explore": "Ko'rish",
@@ -58,95 +58,96 @@
     "noCategories": "Kategoriyalar tez orada qo'shiladi"
   },
   "Home": {
-    "title": "Sevimli restoratingizni toping",
-    "subtitle": "Restoranlarni ko'ring, halol sharhlarni o'qing va tajribangizni to'rt tilda ulashing.",
+    "title": "Talaba loyihalari va ijodiy ishlarni kashf eting",
+    "subtitle": "Loyihalarni ko'ring, izohlarni o'qing va fikringizni to'rt tilda ulashing.",
     "hero": {
-      "eyebrow": "Toshkent restoranlari",
-      "headline": "Toshkentdagi eng yaxshi ovqatlanish joylarini toping",
-      "description": "Restoranlarni qidiring, taom turlarini o'rganing va haqiqiy mehmonlarning ishonchli sharhlarini o'qing.",
-      "searchPlaceholder": "Nom, taom turi yoki hudud bo'yicha qidiring...",
+      "eyebrow": "JDU talabalar vitrinasi",
+      "headline": "JDU talabalarining loyiha va ijodiy ishlarini kashf eting",
+      "description": "Talaba portfoliolarini ko'ring, innovatsion loyihalarni kashf eting va JDU jamoasining fikrlarini o'qing.",
+      "searchPlaceholder": "Nom, texnologiya yoki kategoriya bo'yicha qidiring...",
       "searchButton": "Qidirish",
-      "searchAriaLabel": "Restoran qidirish",
+      "searchAriaLabel": "Loyiha qidirish",
       "searchWhereLabel": "Qayerda",
-      "searchCategoryLabel": "Oshxona",
-      "searchCategoryValue": "Har qanday oshxona",
-      "cta": "Barcha restoranlar",
-      "imageAlt": "Toshkentdagi restoranda yangi taomlar"
+      "searchCategoryLabel": "Kategoriya",
+      "searchCategoryValue": "Har qanday kategoriya",
+      "cta": "Barcha loyihalar",
+      "ctaRegister": "Bepul hisob yarating",
+      "imageAlt": "JDU talaba loyihalari vitrinasi"
     },
     "categories": {
       "title": "Mashhur kategoriyalar",
-      "subtitle": "Toshkent restoranlarini taom turi va uslub bo'yicha ko'ring.",
-      "restaurantCount": "{count, plural, one {# ta restoran} other {# ta restoran}}",
+      "subtitle": "JDU loyihalarini o'quv yo'nalishi va loyiha turi bo'yicha ko'ring.",
+      "projectCount": "{count, plural, one {# ta loyiha} other {# ta loyiha}}",
       "viewAll": "Hammasini ko'rish",
       "empty": "Hozircha kategoriyalar mavjud emas."
     },
     "topRated": {
       "title": "Eng yuqori baholangan",
-      "subtitle": "Jamiyat sharhlariga asoslangan eng yaxshi restoranlar.",
-      "viewAll": "Barcha restoranlar",
-      "empty": "Hozircha baholangan restoranlar yo'q."
+      "subtitle": "Jamiyat fikrlariga asoslangan eng yaxshi loyihalar.",
+      "viewAll": "Barcha loyihalar",
+      "empty": "Hozircha baholangan loyihalar yo'q."
     },
     "recent": {
       "title": "Yaqinda qo'shilgan",
-      "subtitle": "Taomchi'ga yangi qo'shilgan restoranlar.",
-      "viewAll": "Ro'yxatni ko'rish",
-      "empty": "Hozircha restoranlar qo'shilmagan."
+      "subtitle": "JDU Showcase'ga yangi qo'shilgan loyihalar.",
+      "viewAll": "Loyihalarni ko'rish",
+      "empty": "Hozircha loyihalar qo'shilmagan."
     },
     "benefits": {
-      "title": "Nega Taomchi?",
-      "subtitle": "Ajoyib taom topish va halol fikr bildirish uchun kerakli hamma narsa.",
+      "title": "Nega JDU Showcase?",
+      "subtitle": "Talaba iste'dodini kashf etish va fikr bildirish uchun kerakli hamma narsa.",
       "discover": {
-        "title": "Restoranlarni kashf eting",
-        "description": "Kategoriyalar va qidiruv orqali Toshkent bo'ylab restoranlarni toping."
+        "title": "Loyihalarni kashf eting",
+        "description": "Kategoriyalar va qidiruv orqali talaba portfoliolarini toping."
       },
       "reviews": {
-        "title": "Ishonchli sharhlar",
-        "description": "Reyting, sharhlar soni va batafsil fikrlarni o'qing."
+        "title": "Ishonchli fikrlar",
+        "description": "Reyting, izohlar soni va batafsil fikrlarni o'qing."
       },
       "share": {
-        "title": "Tajribangizni ulashing",
-        "description": "Hisob ochib sharh yozing va boshqalarga yordam bering."
+        "title": "Fikringizni ulashing",
+        "description": "Hisob ochib izoh yozing va boshqa talabalarga yordam bering."
       },
       "locations": {
-        "title": "Manzillarni ko'ring",
-        "description": "Har bir restoran uchun manzil, xarita va ish vaqtini toping."
+        "title": "Loyiha tafsilotlarini ko'ring",
+        "description": "Har bir loyiha uchun tavsif, texnologiyalar va havolalarni toping."
       }
     },
     "cta": {
-      "title": "Taomchi jamoasiga qo'shiling",
-      "description": "Bepul hisob oching, sevimlilarni saqlang va o'z tilingizda yangi joylarni kashf eting.",
+      "title": "JDU Showcase jamoasiga qo'shiling",
+      "description": "Bepul hisob oching, sevimlilarni saqlang va o'z tilingizda yangi loyihalarni kashf eting.",
       "button": "Bepul hisob yaratish",
       "login": "Hisobingiz bormi? Kiring"
     },
-    "restaurantCard": {
-      "reviews": "{count, plural, one {# ta sharh} other {# ta sharh}}",
-      "noReviews": "Hozircha sharh yo'q"
+    "projectCard": {
+      "comments": "{count, plural, one {# ta izoh} other {# ta izoh}}",
+      "noComments": "Hozircha izoh yo'q"
     },
     "error": {
       "title": "Bosh sahifa yuklanmadi",
-      "description": "Restoran ma'lumotlarini hozir olib bo'lmadi. Birozdan keyin qayta urinib ko'ring.",
+      "description": "Loyiha ma'lumotlarini hozir olib bo'lmadi. Birozdan keyin qayta urinib ko'ring.",
       "retry": "Qayta urinish"
     }
   },
-  "Restaurants": {
-    "title": "Restoranlar",
-    "subtitle": "Toshkent bo'ylab ovqatlanish joylarini qidiring va ko'ring.",
-    "filteredTitle": "Filtrlangan restoranlar",
+  "Projects": {
+    "title": "Loyihalar",
+    "subtitle": "JDU talaba loyihalarini qidiring va ko'ring.",
+    "filteredTitle": "Filtrlangan loyihalar",
     "searchTitle": "Qidiruv: {query}",
-    "filteredSubtitle": "{category} kategoriyasidagi restoranlar.",
+    "filteredSubtitle": "{category} kategoriyasidagi loyihalar.",
     "searchSubtitle": "\"{query}\" bo'yicha natijalar.",
-    "citySubtitle": "{city} shahridagi restoranlar.",
-    "searchPlaceholder": "Nom, manzil, shahar, taom turi bo'yicha qidiring...",
+    "citySubtitle": "{city} shahridagi loyihalar.",
+    "searchPlaceholder": "Nom, texnologiya, kategoriya bo'yicha qidiring...",
     "searchButton": "Qidirish",
-    "searchAriaLabel": "Restoran qidirish",
+    "searchAriaLabel": "Loyiha qidirish",
     "allCategories": "Hammasi",
     "activeFilters": "Faol filtrlar:",
     "searchFilter": "Qidiruv: {query}",
     "clearFilters": "Filtrlarni tozalash",
-    "emptyTitle": "Restoran topilmadi",
+    "emptyTitle": "Loyiha topilmadi",
     "emptyDescription": "Boshqa qidiruv so'zini sinab ko'ring yoki filtrlarni o'zgartiring.",
     "backHome": "Bosh sahifaga qaytish",
-    "resultsCount": "{count, plural, one {# ta restoran topildi} other {# ta restoran topildi}}",
+    "resultsCount": "{count, plural, one {# ta loyiha topildi} other {# ta loyiha topildi}}",
     "loadMore": "Ko'proq yuklash",
     "showingCount": "{total} tadan {shown} tasi ko'rsatilmoqda",
     "filters": {
@@ -154,20 +155,18 @@
       "category": "Kategoriya",
       "city": "Shahar",
       "minRating": "Minimal reyting",
-      "priceLevel": "Narx darajasi",
       "sort": "Saralash",
       "allCategories": "Barcha kategoriyalar",
       "allCities": "Barcha shaharlar",
       "anyRating": "Har qanday reyting",
-      "anyPrice": "Har qanday narx",
       "ratingOption": "{rating}+ yulduz",
       "ratingChip": "{rating}+ yulduz"
     },
     "sort": {
       "rating": "Eng yuqori reyting",
-      "reviews": "Eng ko'p sharh",
+      "comments": "Eng ko'p izoh",
       "newest": "Eng yangi",
-      "name": "Nom A–Z"
+      "name": "Nom A-Z"
     },
     "view": {
       "ariaLabel": "Ko'rinish rejimi",
@@ -175,28 +174,33 @@
       "list": "Ro'yxat"
     },
     "card": {
-      "reviews": "{count, plural, one {# ta sharh} other {# ta sharh}}",
-      "noReviews": "Hozircha sharh yo'q",
+      "comments": "{count, plural, one {# ta izoh} other {# ta izoh}}",
+      "noComments": "Hozircha izoh yo'q",
       "viewDetails": "Batafsil",
-      "perVisit": "o'rtacha xarajat",
-      "guestFavorite": "Mehmon sevimlisi"
+      "guestFavorite": "Jamoa sevimlisi"
     },
     "error": {
-      "title": "Restoranlar yuklanmadi",
-      "description": "Restoran ma'lumotlarini olishda xatolik yuz berdi. Qayta urinib ko'ring.",
+      "title": "Loyihalar yuklanmadi",
+      "description": "Loyiha ma'lumotlarini olishda xatolik yuz berdi. Qayta urinib ko'ring.",
       "retry": "Qayta urinish"
     }
   },
-  "RestaurantDetail": {
-    "title": "Restoran tafsilotlari",
-    "subtitle": "Sharhlar, xarita va rasmlar keyingi bosqichlarda qo'shiladi.",
+  "ProjectDetail": {
+    "title": "Loyiha tafsilotlari",
+    "subtitle": "Izohlar, tafsilotlar va rasmlar keyingi bosqichlarda qo'shiladi.",
     "placeholder": "Tafsilotlar:",
-    "notFoundTitle": "Restoran topilmadi",
-    "aboutTitle": "Restoran haqida",
-    "reviewsTitle": "Sharhlar",
-    "reviewCount": "{count, plural, one {# ta sharh} other {# ta sharh}}",
-    "hours": "Ish vaqti",
-    "phone": "Telefon",
+    "notFoundTitle": "Loyiha topilmadi",
+    "techStack": "Texnologiyalar",
+    "difficulty": "Murakkablik",
+    "liveDemo": "Jonli demo",
+    "sourceCode": "Manba kodi",
+    "author": "Muallif",
+    "department": "Bo'lim",
+    "aboutTitle": "Loyiha haqida",
+    "commentsTitle": "Izohlar",
+    "commentCount": "{count, plural, one {# ta izoh} other {# ta izoh}}",
+    "hours": "Mavjudlik",
+    "phone": "Aloqa",
     "website": "Veb-saytga o'tish",
     "galleryTitle": "Foto galereya",
     "galleryPrevious": "Oldingi rasm",
@@ -204,21 +208,24 @@
     "galleryDotsLabel": "Galereya rasmlari",
     "galleryDotLabel": "{total} dan {index}-rasm",
     "galleryImageAlt": "{name} — {total} dan {index}-rasm",
-    "priceHint": "o'rtacha xarajat",
-    "browseMore": "Boshqa restoranlarni ko'rish",
+    "browseMore": "Boshqa loyihalarni ko'rish",
+    "moreByAuthor": "{author} dan boshqa loyihalar",
+    "closeModal": "Yopish",
+    "loadingProject": "Loyiha yuklanmoqda...",
+    "errorLoading": "Loyiha maʼlumotlarini yuklab boʻlmadi.",
     "ratingShowcase": {
-      "guestFavorite": "Mehmon sevimlisi",
-      "guestFavoriteDescription": "Bu restoran reyting, sharhlar va ishonchlilik bo'yicha eng yuqori 10% qatoriga kiradi.",
-      "basedOnReviews": "{count, plural, one {# ta sharh} other {# ta sharh}} asosida",
+      "guestFavorite": "Jamoa sevimlisi",
+      "guestFavoriteDescription": "Bu loyiha reyting, izohlar va sifat bo'yicha eng yuqori 10% qatoriga kiradi.",
+      "basedOnComments": "{count, plural, one {# ta izoh} other {# ta izoh}} asosida",
       "overall": "Umumiy reyting",
-      "food": "Taom",
-      "service": "Xizmat",
-      "location": "Joylashuv",
-      "value": "Narx",
+      "creativity": "Ijodkorlik",
+      "technical": "Texnik sifat",
+      "presentation": "Taqdimot",
+      "innovation": "Innovatsiya",
       "checkIn": "Kirish",
       "accuracy": "Aniqlik",
-      "tagAtmosphere": "Muhit",
-      "tagFood": "Taom sifati"
+      "tagCreativity": "Ijodkorlik",
+      "tagTechnical": "Texnik sifat"
     }
   },
   "ImageUpload": {
@@ -236,22 +243,22 @@
     "noImages": "Hali rasm tanlanmagan.",
     "maxReached": "Maksimum {max} ta rasmga yetildi."
   },
-  "AdminRestaurants": {
-    "title": "Restoranlarni boshqarish",
-    "subtitle": "Restoran ro'yxatlarini yaratish, tahrirlash, nashr qilish va boshqarish.",
-    "addRestaurant": "Restoran qo'shish",
+  "AdminProjects": {
+    "title": "Loyihalarni boshqarish",
+    "subtitle": "Loyiha ro'yxatlarini yaratish, tahrirlash, nashr qilish va boshqarish.",
+    "addProject": "Loyiha qo'shish",
     "edit": "Tahrirlash",
     "publish": "Nashr qilish",
     "unpublish": "Nashrdan olib tashlash",
-    "publishTitle": "Restoran nashr qilinsinmi?",
-    "publishDescription": "Bu restoran ochiq saytda ko'rinadi.",
-    "unpublishTitle": "Restoran nashrdan olib tashlansinmi?",
-    "unpublishDescription": "Bu restoran ochiq sahifalardan yashiriladi.",
+    "publishTitle": "Loyiha nashr qilinsinmi?",
+    "publishDescription": "Bu loyiha ochiq saytda ko'rinadi.",
+    "unpublishTitle": "Loyiha nashrdan olib tashlansinmi?",
+    "unpublishDescription": "Bu loyiha ochiq sahifalardan yashiriladi.",
     "delete": "O'chirish",
-    "deleteTitle": "Restoran o'chirilsinmi?",
-    "deleteDescription": "Bu restoran, uning galereyasi va barcha sharhlari butunlay o'chiriladi.",
-    "deleteConfirm": "Restoranni o'chirish",
-    "searchLabel": "Restoranlarni qidirish",
+    "deleteTitle": "Loyiha o'chirilsinmi?",
+    "deleteDescription": "Bu loyiha, uning galereyasi va barcha izohlari butunlay o'chiriladi.",
+    "deleteConfirm": "Loyihani o'chirish",
+    "searchLabel": "Loyihalarni qidirish",
     "searchPlaceholder": "Nom, shahar yoki slug bo'yicha qidiring...",
     "statusFilter": "Holat",
     "categoryFilter": "Kategoriya",
@@ -259,110 +266,110 @@
     "allCategories": "Barcha kategoriyalar",
     "published": "Nashr qilingan",
     "draft": "Qoralama",
-    "empty": "Filtrlaringizga mos restoran topilmadi.",
-    "meta": "{city} · {galleryCount, plural, one {# ta galereya rasmi} other {# ta galereya rasmi}} · {reviewCount, plural, one {# ta sharh} other {# ta sharh}} · {status}"
+    "empty": "Filtrlaringizga mos loyiha topilmadi.",
+    "meta": "{city} · {galleryCount, plural, one {# ta galereya rasmi} other {# ta galereya rasmi}} · {commentCount, plural, one {# ta izoh} other {# ta izoh}} · {status}"
   },
-  "AdminRestaurantForm": {
-    "createPageTitle": "Restoran qo'shish",
-    "createPageSubtitle": "Yangi restoran ro'yxatini yarating.",
+  "AdminProjectForm": {
+    "createPageTitle": "Loyiha qo'shish",
+    "createPageSubtitle": "Yangi loyiha ro'yxatini yarating.",
     "editPageTitle": "{name} ni tahrirlash",
-    "editPageSubtitle": "Restoran ma'lumotlari, tavsiflari va rasmlarini yangilang.",
-    "notFound": "Restoran topilmadi",
+    "editPageSubtitle": "Loyiha ma'lumotlari, tavsiflari va rasmlarini yangilang.",
+    "notFound": "Loyiha topilmadi",
     "basicsTitle": "Asosiy ma'lumotlar",
-    "basicsDescription": "Restoran kartochkalari va batafsil sahifalarda ko'rsatiladigan ma'lumotlar.",
+    "basicsDescription": "Loyiha kartochkalari va batafsil sahifalarda ko'rsatiladigan ma'lumotlar.",
     "descriptionsTitle": "Tavsiflar",
     "descriptionsDescription": "Tavsifni bir marta yozing. Xuddi shu matn o'zbek, ingliz, rus va yapon tillariga saqlanadi.",
     "imagesTitle": "Rasmlar",
     "imagesDescription": "Asosiy muqova va galereya rasmlarini yuklang.",
-    "imagesAfterCreate": "Avval restoranni saqlang, keyin tahrirlash sahifasida rasmlarni yuklashingiz mumkin.",
+    "imagesAfterCreate": "Avval loyihani saqlang, keyin tahrirlash sahifasida rasmlarni yuklashingiz mumkin.",
     "name": "Nom",
     "slug": "Slug",
     "category": "Kategoriya",
     "categoryPlaceholder": "Kategoriyani tanlang",
     "city": "Shahar",
-    "cuisineType": "Oshxona turi",
+    "cuisineType": "Loyiha turi",
     "address": "Manzil",
-    "phone": "Telefon",
+    "phone": "Aloqa",
     "website": "Veb-sayt",
-    "openingHours": "Ish vaqti",
+    "openingHours": "Mavjudlik",
     "latitude": "Kenglik",
     "longitude": "Uzunlik",
-    "priceLevel": "Narx darajasi (1–4)",
+    "priceLevel": "Qiyinlik darajasi (1-4)",
     "published": "Nashr qilingan",
     "description": "Tavsif",
     "mainImage": "Asosiy rasm",
     "galleryImages": "Galereya rasmlari",
-    "create": "Restoran yaratish",
+    "create": "Loyiha yaratish",
     "save": "O'zgarishlarni saqlash",
     "saving": "Saqlanmoqda..."
   },
-  "AdminRestaurantImages": {
-    "title": "Restoran rasmlari",
-    "description": "Bu restoran uchun asosiy va galereya rasmlarini yuklang.",
+  "AdminProjectImages": {
+    "title": "Loyiha rasmlari",
+    "description": "Bu loyiha uchun asosiy va galereya rasmlarini yuklang.",
     "pageTitle": "Rasmlar: {name}",
-    "pageSubtitle": "Saqlangandan so'ng o'zgarishlar ochiq restoran sahifasida ko'rinadi.",
-    "notFound": "Restoran topilmadi",
-    "backToList": "Restoranlar ro'yxatiga qaytish",
+    "pageSubtitle": "Saqlangandan so'ng o'zgarishlar ochiq loyiha sahifasida ko'rinadi.",
+    "notFound": "Loyiha topilmadi",
+    "backToList": "Loyihalar ro'yxatiga qaytish",
     "mainImageLabel": "Asosiy rasm",
-    "mainImageDescription": "Bu rasm kartochkalarda va restoran sahifasining yuqorisida ko'rinadi.",
+    "mainImageDescription": "Bu rasm kartochkalarda va loyiha sahifasining yuqorisida ko'rinadi.",
     "galleryLabel": "Galereya rasmlari",
-    "galleryDescription": "Restoran galereyasi uchun qo'shimcha 8 tagacha rasm yuklang.",
+    "galleryDescription": "Loyiha galereyasi uchun qo'shimcha 8 tagacha rasm yuklang.",
     "save": "Rasmlarni saqlash",
     "saving": "Saqlanmoqda..."
   },
-  "ReviewForm": {
-    "title": "Sharh yozish",
-    "description": "Boshqalarga tanlashda yordam berish uchun tajribangizni ulashing.",
+  "CommentForm": {
+    "title": "Izoh yozish",
+    "description": "Boshqa talabalarga yordam berish uchun fikringizni ulashing.",
     "ratingLabel": "Bahongiz",
     "ratingOption": "{rating} yulduz",
-    "titleLabel": "Sharh sarlavhasi",
-    "contentLabel": "Sharh matni",
-    "visitDateLabel": "Tashrif sanasi",
+    "titleLabel": "Izoh sarlavhasi",
+    "contentLabel": "Izoh matni",
+    "visitDateLabel": "Sana",
     "imagesLabel": "Rasmlar (ixtiyoriy)",
-    "imagesDescription": "Tashrifingizdan 4 tagacha rasm yuklang. Har biri JPG, PNG yoki WebP, maksimum 5 MB.",
-    "submit": "Sharhni yuborish",
+    "imagesDescription": "4 tagacha rasm yuklang. Har biri JPG, PNG yoki WebP, maksimum 5 MB.",
+    "submit": "Izohni yuborish",
     "submitting": "Yuborilmoqda...",
-    "signInTitle": "Sharh yozish uchun kiring",
-    "signInDescription": "Faqat ro'yxatdan o'tgan foydalanuvchilar bu restoran uchun sharh qoldira oladi.",
+    "signInTitle": "Izoh yozish uchun kiring",
+    "signInDescription": "Faqat ro'yxatdan o'tgan foydalanuvchilar bu loyiha uchun izoh qoldira oladi.",
     "signInButton": "Davom etish uchun kiring"
   },
-  "ReviewList": {
-    "title": "{count, plural, one {# ta sharh} other {# ta sharh}}",
-    "emptyTitle": "Hali sharh yo'q",
-    "emptyDescription": "Bu restoran haqida birinchi bo'lib tajribangizni ulashing.",
-    "visitedOn": "Tashrif sanasi: {date}"
+  "CommentList": {
+    "title": "{count, plural, one {# ta izoh} other {# ta izoh}}",
+    "emptyTitle": "Hali izoh yo'q",
+    "emptyDescription": "Bu loyiha haqida birinchi bo'lib fikringizni ulashing.",
+    "visitedOn": "Joylangan sana: {date}"
   },
-  "ReviewActions": {
+  "CommentActions": {
     "edit": "Tahrirlash",
     "delete": "O'chirish"
   },
-  "ReviewEdit": {
-    "title": "Sharhni tahrirlash",
-    "description": "Bahongiz va sharh ma'lumotlarini yangilang.",
+  "CommentEdit": {
+    "title": "Izohni tahrirlash",
+    "description": "Bahongiz va izoh ma'lumotlarini yangilang.",
     "ratingLabel": "Bahongiz",
-    "titleLabel": "Sharh sarlavhasi",
-    "contentLabel": "Sharh matni",
-    "visitDateLabel": "Tashrif sanasi",
+    "titleLabel": "Izoh sarlavhasi",
+    "contentLabel": "Izoh matni",
+    "visitDateLabel": "Sana",
     "imagesLabel": "Rasmlar",
-    "imagesDescription": "Tashrifingizdan 4 tagacha rasm qo'shing yoki olib tashlang.",
+    "imagesDescription": "4 tagacha rasm qo'shing yoki olib tashlang.",
     "cancel": "Bekor qilish",
     "save": "O'zgarishlarni saqlash",
     "saving": "Saqlanmoqda..."
   },
-  "ReviewDelete": {
-    "title": "Sharh o'chirilsinmi?",
-    "description": "Bu amalni ortga qaytarib bo'lmaydi. Sharh va uning rasmlari butunlay o'chiriladi.",
+  "CommentDelete": {
+    "title": "Izoh o'chirilsinmi?",
+    "description": "Bu amalni ortga qaytarib bo'lmaydi. Izoh va uning rasmlari butunlay o'chiriladi.",
     "cancel": "Bekor qilish",
-    "confirm": "Sharhni o'chirish",
+    "confirm": "Izohni o'chirish",
     "deleting": "O'chirilmoqda..."
   },
   "LoginPage": {
     "title": "Kirish",
-    "subtitle": "Profilingizni boshqarish va restoran sharhlari yozish uchun tizimga kiring."
+    "subtitle": "Profilingizni boshqarish va loyihalarga izoh yozish uchun tizimga kiring."
   },
   "RegisterPage": {
     "title": "Hisob yaratish",
-    "subtitle": "Restoranlarni saqlash va ovqatlanish tajribangizni ulashish uchun Taomchi'ga qo'shiling."
+    "subtitle": "Loyihalarni ko'rish va fikringizni ulashish uchun JDU Showcase'ga qo'shiling."
   },
   "LoginForm": {
     "title": "Kirish",
@@ -378,7 +385,7 @@
   },
   "RegisterForm": {
     "title": "Hisob yaratish",
-    "description": "Restoranlarni saqlash va sharh yozish uchun Taomchi'ga qo'shiling.",
+    "description": "Loyihalarni ko'rish va izoh yozish uchun JDU Showcase'ga qo'shiling.",
     "fullName": "To'liq ism",
     "email": "Email",
     "password": "Parol",
@@ -400,7 +407,7 @@
   },
   "ProfilePanel": {
     "overviewTitle": "Hisob ma'lumotlari",
-    "overviewDescription": "Hisobingiz va sharh faolligingiz haqida qisqacha ma'lumot.",
+    "overviewDescription": "Hisobingiz va izoh faolligingiz haqida qisqacha ma'lumot.",
     "editTitle": "Profilni tahrirlash",
     "editDescription": "Ism, til afzalligi yoki avatar rasmini yangilang.",
     "editButton": "Tahrirlash",
@@ -409,7 +416,7 @@
     "role": "Rol",
     "preferredLanguage": "Afzal til",
     "registered": "Ro'yxatdan o'tgan sana",
-    "totalReviews": "Jami sharhlar",
+    "totalComments": "Jami izohlar",
     "averageRatingGiven": "Berilgan o'rtacha baho",
     "avatarTitle": "Profil rasmi",
     "avatarDescription": "5 MB gacha JPG, PNG yoki WebP rasm yuklang.",
@@ -417,31 +424,31 @@
     "uploadAvatar": "Rasm yuklash",
     "changeAvatar": "Rasmni almashtirish",
     "removeAvatar": "Rasmni olib tashlash",
-    "profileHeadline": "Mehmon yoki kasbingiz",
-    "profileHeadlinePlaceholder": "Masalan: Mehmon, Oshpaz, Talaba",
+    "profileHeadline": "Talaba yoki mutaxassislik",
+    "profileHeadlinePlaceholder": "Masalan: Talaba, Dasturchi, Dizayner",
     "save": "O'zgarishlarni saqlash",
     "saving": "Saqlanmoqda..."
   },
-  "ProfileReviews": {
-    "title": "Sharhlaringiz",
+  "ProfileComments": {
+    "title": "Izohlaringiz",
     "submittedOn": "Yuborilgan sana: {date}",
-    "emptyTitle": "Hali sharh yo'q",
-    "emptyDescription": "Siz hali hech qanday restoran tajribasini ulashmadingiz. Restoran sahifasiga o'tib, birinchi sharhingizni yozing.",
-    "browseRestaurants": "Restoranlarni ko'rish",
+    "emptyTitle": "Hali izoh yo'q",
+    "emptyDescription": "Siz hali hech qanday loyiha haqida fikr bildirmagansiz. Loyiha sahifasiga o'tib, birinchi izohingizni yozing.",
+    "browseProjects": "Loyihalarni ko'rish",
     "previous": "Oldingi",
     "next": "Keyingi",
     "pageOf": "{totalPages} dan {page}-sahifa"
   },
   "Admin": {
     "title": "Admin panel",
-    "subtitle": "Restoranlar, foydalanuvchilar, sharhlar va kategoriyalarni boshqaring."
+    "subtitle": "Loyihalar, foydalanuvchilar, izohlar va kategoriyalarni boshqaring."
   },
   "AdminNav": {
     "label": "Admin navigatsiyasi",
     "dashboard": "Boshqaruv paneli",
-    "restaurants": "Restoranlar",
+    "projects": "Loyihalar",
     "categories": "Kategoriyalar",
-    "reviews": "Sharhlar",
+    "comments": "Izohlar",
     "users": "Foydalanuvchilar"
   },
   "AdminCommon": {
@@ -453,20 +460,20 @@
     "pageOf": "{totalPages} dan {page}-sahifa"
   },
   "AdminDashboard": {
-    "totalRestaurants": "Jami restoranlar",
-    "publishedRestaurants": "Nashr qilingan restoranlar",
+    "totalProjects": "Jami loyihalar",
+    "publishedProjects": "Nashr qilingan loyihalar",
     "totalUsers": "Jami foydalanuvchilar",
-    "totalReviews": "Jami sharhlar",
+    "totalComments": "Jami izohlar",
     "averageRating": "Platforma o'rtacha reytingi",
     "recentUsers": "So'nggi foydalanuvchilar",
-    "recentReviews": "So'nggi sharhlar",
-    "topRestaurants": "Eng ko'p sharhlangan restoranlar",
-    "reviewCount": "{count, plural, one {# ta sharh} other {# ta sharh}}",
+    "recentComments": "So'nggi izohlar",
+    "topProjects": "Eng ko'p izohlangan loyihalar",
+    "commentCount": "{count, plural, one {# ta izoh} other {# ta izoh}}",
     "empty": "Hozircha ko'rsatish uchun ma'lumot yo'q."
   },
   "AdminCategories": {
     "title": "Kategoriyalarni boshqarish",
-    "subtitle": "Restoran kategoriyalarini barcha tillarda qo'shing va tahrirlang.",
+    "subtitle": "Loyiha kategoriyalarini barcha tillarda qo'shing va tahrirlang.",
     "createTitle": "Kategoriya qo'shish",
     "editTitle": "Kategoriyani tahrirlash",
     "nameUz": "Nom (o'zbekcha)",
@@ -486,22 +493,22 @@
     "searchLabel": "Kategoriyalarni qidirish",
     "searchPlaceholder": "Nom yoki slug bo'yicha qidiring...",
     "empty": "Kategoriya topilmadi.",
-    "meta": "{slug} · {count, plural, one {# ta restoran} other {# ta restoran}}"
+    "meta": "{slug} · {count, plural, one {# ta loyiha} other {# ta loyiha}}"
   },
-  "AdminReviews": {
-    "title": "Sharhlarni boshqarish",
-    "subtitle": "Barcha restoranlar bo'yicha sharhlarni qidiring, tahrirlang va o'chiring.",
-    "searchLabel": "Sharhlarni qidirish",
-    "searchPlaceholder": "Sarlavha, muallif yoki restoran bo'yicha qidiring...",
-    "restaurantFilter": "Restoran",
+  "AdminComments": {
+    "title": "Izohlarni boshqarish",
+    "subtitle": "Barcha loyihalar bo'yicha izohlarni qidiring, tahrirlang va o'chiring.",
+    "searchLabel": "Izohlarni qidirish",
+    "searchPlaceholder": "Sarlavha, muallif yoki loyiha bo'yicha qidiring...",
+    "projectFilter": "Loyiha",
     "ratingFilter": "Baho",
-    "allRestaurants": "Barcha restoranlar",
+    "allProjects": "Barcha loyihalar",
     "allRatings": "Barcha baholar",
     "ratingOption": "{rating} yulduz",
     "edit": "Tahrirlash",
     "delete": "O'chirish",
-    "empty": "Filtrlaringizga mos sharh topilmadi.",
-    "meta": "{author} · {restaurant} · {rating}/5 · {images, plural, one {# ta rasm} other {# ta rasm}}"
+    "empty": "Filtrlaringizga mos izoh topilmadi.",
+    "meta": "{author} · {project} · {rating}/5 · {images, plural, one {# ta rasm} other {# ta rasm}}"
   },
   "AdminUsers": {
     "title": "Foydalanuvchilarni boshqarish",
@@ -519,7 +526,7 @@
     "makeAdmin": "Admin qilish",
     "makeUser": "Foydalanuvchi qilish",
     "empty": "Filtrlaringizga mos foydalanuvchi topilmadi.",
-    "meta": "{role} · {status} · {reviews, plural, one {# ta sharh} other {# ta sharh}}"
+    "meta": "{role} · {status} · {comments, plural, one {# ta izoh} other {# ta izoh}}"
   },
   "Roles": {
     "USER": "Foydalanuvchi",
@@ -549,17 +556,17 @@
     "emailExists": "Bu email bilan hisob allaqachon mavjud",
     "ratingRequired": "Baho kiritilishi shart",
     "ratingInvalid": "Baho 1 dan 5 gacha bo'lishi kerak",
-    "reviewTitleRequired": "Sharh sarlavhasi kiritilishi shart",
-    "reviewContentRequired": "Sharh matni kiritilishi shart",
-    "visitDateRequired": "Tashrif sanasi kiritilishi shart",
-    "visitDateFuture": "Tashrif sanasi kelajakda bo'lishi mumkin emas",
-    "restaurantRequired": "Restoran tanlanishi shart",
-    "reviewRequired": "Sharh tanlanishi shart",
+    "commentTitleRequired": "Izoh sarlavhasi kiritilishi shart",
+    "commentContentRequired": "Izoh matni kiritilishi shart",
+    "visitDateRequired": "Sana kiritilishi shart",
+    "visitDateFuture": "Sana kelajakda bo'lishi mumkin emas",
+    "projectRequired": "Loyiha tanlanishi shart",
+    "commentRequired": "Izoh tanlanishi shart",
     "imageRequired": "Iltimos, rasm faylini tanlang",
     "imageTooLarge": "Har bir rasm 5 MB yoki undan kichik bo'lishi kerak",
     "imageInvalidType": "Faqat JPG, JPEG, PNG va WebP rasmlar ruxsat etiladi",
-    "reviewImagesMax": "4 tagacha sharh rasmi yuklashingiz mumkin",
-    "reviewImagesInvalid": "Bir yoki bir nechta sharh rasmi noto'g'ri",
+    "commentImagesMax": "4 tagacha izoh rasmi yuklashingiz mumkin",
+    "commentImagesInvalid": "Bir yoki bir nechta izoh rasmi noto'g'ri",
     "galleryImagesMax": "8 tagacha galereya rasmi yuklashingiz mumkin",
     "galleryImagesInvalid": "Bir yoki bir nechta galereya rasmi noto'g'ri",
     "mainImageInvalid": "Asosiy rasm noto'g'ri",
@@ -569,16 +576,16 @@
     "categorySlugInvalid": "Faqat kichik harflar, raqamlar va defis ishlating",
     "categorySlugExists": "Bu kategoriya slug allaqachon ishlatilmoqda",
     "categoryRequired": "Kategoriya tanlanishi shart",
-    "restaurantNameRequired": "Restoran nomi kiritilishi shart",
-    "restaurantSlugRequired": "Restoran slug kiritilishi shart",
-    "restaurantSlugInvalid": "Faqat kichik harflar, raqamlar va defis ishlating",
-    "restaurantSlugExists": "Bu restoran slug allaqachon ishlatilmoqda",
+    "projectNameRequired": "Loyiha nomi kiritilishi shart",
+    "projectSlugRequired": "Loyiha slug kiritilishi shart",
+    "projectSlugInvalid": "Faqat kichik harflar, raqamlar va defis ishlating",
+    "projectSlugExists": "Bu loyiha slug allaqachon ishlatilmoqda",
     "descriptionRequired": "Tavsif kiritilishi shart",
     "addressRequired": "Manzil kiritilishi shart",
     "cityRequired": "Shahar kiritilishi shart",
     "latitudeInvalid": "Kenglik -90 dan 90 gacha bo'lishi kerak",
     "longitudeInvalid": "Uzunlik -180 dan 180 gacha bo'lishi kerak",
-    "priceLevelInvalid": "Narx darajasi 1 dan 4 gacha bo'lishi kerak",
+    "priceLevelInvalid": "Qiyinlik darajasi 1 dan 4 gacha bo'lishi kerak",
     "userRequired": "Foydalanuvchi tanlanishi shart",
     "roleInvalid": "Rol noto'g'ri"
   },
@@ -591,16 +598,16 @@
     "profileUpdated": "Profil yangilandi",
     "signedOut": "Muvaffaqiyatli chiqdingiz",
     "signOutFailed": "Chiqish amalga oshmadi. Qayta urinib ko'ring.",
-    "reviewCreated": "Sharhingiz muvaffaqiyatli yuborildi",
-    "reviewUpdated": "Sharh muvaffaqiyatli yangilandi",
-    "reviewDeleted": "Sharh muvaffaqiyatli o'chirildi",
-    "reviewForbidden": "Bu sharhni boshqarish uchun ruxsatingiz yo'q",
-    "restaurantImagesUpdated": "Restoran rasmlari muvaffaqiyatli yangilandi",
-    "restaurantCreated": "Restoran muvaffaqiyatli yaratildi",
-    "restaurantUpdated": "Restoran muvaffaqiyatli yangilandi",
-    "restaurantDeleted": "Restoran muvaffaqiyatli o'chirildi",
-    "restaurantPublished": "Restoran nashr qilindi",
-    "restaurantUnpublished": "Restoran nashrdan olib tashlandi",
+    "commentCreated": "Izohingiz muvaffaqiyatli yuborildi",
+    "commentUpdated": "Izoh muvaffaqiyatli yangilandi",
+    "commentDeleted": "Izoh muvaffaqiyatli o'chirildi",
+    "commentForbidden": "Bu izohni boshqarish uchun ruxsatingiz yo'q",
+    "projectImagesUpdated": "Loyiha rasmlari muvaffaqiyatli yangilandi",
+    "projectCreated": "Loyiha muvaffaqiyatli yaratildi",
+    "projectUpdated": "Loyiha muvaffaqiyatli yangilandi",
+    "projectDeleted": "Loyiha muvaffaqiyatli o'chirildi",
+    "projectPublished": "Loyiha nashr qilindi",
+    "projectUnpublished": "Loyiha nashrdan olib tashlandi",
     "categoryCreated": "Kategoriya muvaffaqiyatli yaratildi",
     "categoryUpdated": "Kategoriya muvaffaqiyatli yangilandi",
     "categoryDeleted": "Kategoriya muvaffaqiyatli o'chirildi",
@@ -610,5 +617,23 @@
   },
   "LoginFormShell": {
     "loading": "Kirish formasi yuklanmoqda..."
+  },
+  "Upload": {
+    "pageTitle": "Nima ustida ishladingiz?",
+    "dropTitle": "Rasmni torting yoki tanlang",
+    "dropHint": "Yuqori sifatli rasmlar (png, jpg, webp) - Maksimum 5MB",
+    "titlePlaceholder": "Nom bering",
+    "descriptionPlaceholder": "Loyihangiz haqida gapirib bering...",
+    "category": "Kategoriya",
+    "techStack": "Ishlatilgan texnologiyalar",
+    "department": "Bo'lim",
+    "difficulty": "Qiyinlik darajasi",
+    "cancel": "Bekor qilish",
+    "saveDraft": "Qoralama sifatida saqlash",
+    "publish": "Nashr qilish",
+    "continue": "Davom etish",
+    "publishing": "Nashr qilinmoqda...",
+    "saving": "Saqlanmoqda...",
+    "uploadButton": "Yuklash"
   }
 }

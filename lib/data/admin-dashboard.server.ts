@@ -5,20 +5,20 @@ import { parsePagination, type PaginationInput } from "@/lib/admin/pagination";
 
 export async function getAdminDashboardStats() {
   const [
-    totalRestaurants,
-    publishedRestaurants,
+    totalProjects,
+    publishedProjects,
     totalUsers,
-    totalReviews,
+    totalComments,
     ratingAggregate,
     recentUsers,
-    recentReviews,
-    mostReviewedRestaurants,
+    recentComments,
+    mostCommentedProjects,
   ] = await Promise.all([
-    prisma.restaurant.count(),
-    prisma.restaurant.count({ where: { isPublished: true } }),
+    prisma.project.count(),
+    prisma.project.count({ where: { isPublished: true } }),
     prisma.user.count(),
-    prisma.review.count(),
-    prisma.review.aggregate({ _avg: { rating: true } }),
+    prisma.comment.count(),
+    prisma.comment.aggregate({ _avg: { rating: true } }),
     prisma.user.findMany({
       orderBy: { createdAt: "desc" },
       take: 5,
@@ -30,7 +30,7 @@ export async function getAdminDashboardStats() {
         createdAt: true,
       },
     }),
-    prisma.review.findMany({
+    prisma.comment.findMany({
       orderBy: { createdAt: "desc" },
       take: 5,
       select: {
@@ -39,49 +39,49 @@ export async function getAdminDashboardStats() {
         rating: true,
         createdAt: true,
         user: { select: { fullName: true } },
-        restaurant: { select: { name: true, slug: true } },
+        project: { select: { title: true, slug: true } },
       },
     }),
-    prisma.restaurant.findMany({
-      orderBy: { reviews: { _count: "desc" } },
+    prisma.project.findMany({
+      orderBy: { comments: { _count: "desc" } },
       take: 5,
       select: {
         id: true,
-        name: true,
+        title: true,
         slug: true,
         isPublished: true,
-        _count: { select: { reviews: true } },
+        _count: { select: { comments: true } },
       },
     }),
   ]);
 
   return {
-    totalRestaurants,
-    publishedRestaurants,
+    totalProjects,
+    publishedProjects,
     totalUsers,
-    totalReviews,
+    totalComments,
     averagePlatformRating: ratingAggregate._avg.rating,
     recentUsers,
-    recentReviews,
-    mostReviewedRestaurants,
+    recentComments,
+    mostCommentedProjects,
   };
 }
 
-export type AdminRestaurantListFilters = PaginationInput & {
+export type AdminProjectListFilters = PaginationInput & {
   q?: string;
   published?: "all" | "published" | "draft";
   categoryId?: string;
 };
 
-export async function listAdminRestaurantsPaginated(filters: AdminRestaurantListFilters) {
+export async function listAdminProjectsPaginated(filters: AdminProjectListFilters) {
   const { page, pageSize, skip, totalPages } = parsePagination(filters);
 
   const where = {
     ...(filters.q
       ? {
           OR: [
-            { name: { contains: filters.q, mode: "insensitive" as const } },
-            { city: { contains: filters.q, mode: "insensitive" as const } },
+            { title: { contains: filters.q, mode: "insensitive" as const } },
+            { department: { contains: filters.q, mode: "insensitive" as const } },
             { slug: { contains: filters.q, mode: "insensitive" as const } },
           ],
         }
@@ -92,30 +92,30 @@ export async function listAdminRestaurantsPaginated(filters: AdminRestaurantList
   };
 
   const [items, total] = await Promise.all([
-    prisma.restaurant.findMany({
+    prisma.project.findMany({
       where,
       skip,
       take: pageSize,
       orderBy: { updatedAt: "desc" },
       select: {
         id: true,
-        name: true,
+        title: true,
         slug: true,
-        city: true,
+        department: true,
         isPublished: true,
         mainImageUrl: true,
         category: { select: { id: true, nameEn: true, slug: true } },
-        _count: { select: { images: true, reviews: true } },
+        _count: { select: { images: true, comments: true } },
       },
     }),
-    prisma.restaurant.count({ where }),
+    prisma.project.count({ where }),
   ]);
 
   return { items, total, page, pageSize, totalPages: totalPages(total) };
 }
 
-export async function getAdminRestaurantForEdit(slug: string) {
-  return prisma.restaurant.findUnique({
+export async function getAdminProjectForEdit(slug: string) {
+  return prisma.project.findUnique({
     where: { slug },
     include: {
       category: true,

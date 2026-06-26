@@ -29,10 +29,10 @@ export default async function AdminPage() {
       <PageHeader title={t("title")} subtitle={t("subtitle")} />
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        <AdminStatCard label={tDashboard("totalRestaurants")} value={stats.totalRestaurants} />
-        <AdminStatCard label={tDashboard("publishedRestaurants")} value={stats.publishedRestaurants} />
+        <AdminStatCard label={tDashboard("totalProjects")} value={stats.totalProjects} />
+        <AdminStatCard label={tDashboard("publishedProjects")} value={stats.publishedProjects} />
         <AdminStatCard label={tDashboard("totalUsers")} value={stats.totalUsers} />
-        <AdminStatCard label={tDashboard("totalReviews")} value={stats.totalReviews} />
+        <AdminStatCard label={tDashboard("totalComments")} value={stats.totalComments} />
       </div>
 
       <AdminStatCard
@@ -58,16 +58,16 @@ export default async function AdminPage() {
         </section>
 
         <section className="surface-card min-w-0 space-y-3 p-4">
-          <h2 className="font-semibold">{tDashboard("recentReviews")}</h2>
-          {stats.recentReviews.length === 0 ? (
+          <h2 className="font-semibold">{tDashboard("recentComments")}</h2>
+          {stats.recentComments.length === 0 ? (
             <p className="text-base/7 text-muted-foreground sm:text-sm/6">{tDashboard("empty")}</p>
           ) : (
             <ul className="space-y-2 text-base/7 sm:text-sm/6">
-              {stats.recentReviews.map((review) => (
-                <li key={review.id} className="min-w-0">
-                  <p className="truncate font-medium">{review.title}</p>
+              {stats.recentComments.map((comment) => (
+                <li key={comment.id} className="min-w-0">
+                  <p className="truncate font-medium">{comment.title}</p>
                   <p className="truncate text-muted-foreground">
-                    {review.user.fullName} · {review.restaurant.name} · {review.rating}/5
+                    {comment.user.fullName} · {comment.project.title} · {comment.rating}/5
                   </p>
                 </li>
               ))}
@@ -76,21 +76,21 @@ export default async function AdminPage() {
         </section>
 
         <section className="surface-card min-w-0 space-y-3 p-4">
-          <h2 className="font-semibold">{tDashboard("topRestaurants")}</h2>
-          {stats.mostReviewedRestaurants.length === 0 ? (
+          <h2 className="font-semibold">{tDashboard("topProjects")}</h2>
+          {stats.mostCommentedProjects.length === 0 ? (
             <p className="text-base/7 text-muted-foreground sm:text-sm/6">{tDashboard("empty")}</p>
           ) : (
             <ul className="space-y-2 text-base/7 sm:text-sm/6">
-              {stats.mostReviewedRestaurants.map((restaurant) => (
-                <li key={restaurant.id} className="flex min-w-0 justify-between gap-2">
+              {stats.mostCommentedProjects.map((project) => (
+                <li key={project.id} className="flex min-w-0 justify-between gap-2">
                   <Link
-                    href={`/admin/restaurants/${restaurant.slug}/edit`}
+                    href={`/admin/projects/${project.slug}/edit`}
                     className="truncate font-medium hover:underline focus-visible:underline"
                   >
-                    {restaurant.name}
+                    {project.title}
                   </Link>
                   <span className="shrink-0 text-muted-foreground">
-                    {tDashboard("reviewCount", { count: restaurant._count.reviews })}
+                    {tDashboard("commentCount", { count: project._count.comments })}
                   </span>
                 </li>
               ))}

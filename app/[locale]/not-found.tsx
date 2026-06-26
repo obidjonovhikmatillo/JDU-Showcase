@@ -20,10 +20,10 @@ export default async function NotFoundPage() {
             {t("backHome")}
           </Link>
           <Link
-            href="/restaurants"
+            href="/projects"
             className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
           >
-            {t("browseRestaurants")}
+            {t("browseProjects")}
           </Link>
         </div>
       }
