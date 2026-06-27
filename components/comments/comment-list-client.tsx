@@ -34,9 +34,7 @@ export function CommentItem({ comment, projectSlug, viewer }: CommentItemProps) 
 
   const canManage = canManageComment(viewer, comment.user.id);
 
-  const createdAt = new Intl.DateTimeFormat(locale, {
-    dateStyle: "medium",
-  }).format(new Date(comment.createdAt));
+  const createdAt = new Date(comment.createdAt).toLocaleDateString("en-CA");
 
   return (
     <>

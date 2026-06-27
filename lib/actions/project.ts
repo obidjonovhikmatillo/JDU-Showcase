@@ -160,10 +160,7 @@ export async function updateProjectImages(
     await deleteUploadedImages(removedPublicIds);
   }
 
-  const locale = await getLocale();
-  revalidatePath(`/${locale}/projects/${project.slug}`);
-  revalidatePath(`/${locale}/admin/projects`);
-  revalidatePath(`/${locale}/admin/projects/${project.slug}/edit`);
+  revalidatePath("/", "layout");
 
   return { success: true };
 }

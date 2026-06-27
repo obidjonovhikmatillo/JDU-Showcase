@@ -117,7 +117,11 @@
       "title": "JDU Showcaseコミュニティに参加",
       "description": "無料アカウントでお気に入り保存、コメント投稿、母語での探索が可能。",
       "button": "無料アカウント作成",
-      "login": "すでにアカウントをお持ちですか？ログイン"
+      "login": "すでにアカウントをお持ちですか？ログイン",
+      "loggedInTitle": "プロジェクトを投稿しよう",
+      "loggedInDescription": "JDUコミュニティに作品を公開し、フィードバックを受け、コラボレーターを見つけましょう。",
+      "uploadButton": "プロジェクトを投稿",
+      "browseButton": "プロジェクトを見る"
     },
     "projectCard": {
       "comments": "{count, plural, one {コメント # 件} other {コメント # 件}}",
@@ -158,6 +162,7 @@
       "sort": "並び替え",
       "allCategories": "すべてのカテゴリ",
       "allCities": "すべての都市",
+      "allDepartments": "すべての部門",
       "anyRating": "評価指定なし",
       "ratingOption": "{rating}つ星以上",
       "ratingChip": "{rating}つ星以上"
@@ -197,6 +202,7 @@
     "author": "制作者",
     "department": "学部",
     "aboutTitle": "このプロジェクトについて",
+    "aboutDescription": "このプロジェクトは、JDU（Japan Digital University）の学生ショーケースの一環として制作されました。学生たちはデザイン、開発、テクノロジー分野における最高の作品を発表します。各プロジェクトは、学生のクリエイティブなビジョン、技術スキル、そして実用的なデジタルプロダクトを構築する情熱を反映しています。初期コンセプトとワイヤーフレームから最終実装まで、洗練されたプロフェッショナルな成果を届けるために、すべてのディテールが慎重に検討されました。このショーケースは、学生が能力を発揮し、コミュニティからフィードバックを受け、潜在的な協力者や雇用主とつながるためのプラットフォームです。",
     "commentsTitle": "コメント",
     "commentCount": "{count, plural, other {# 件のコメント}}",
     "hours": "利用可能時間",
@@ -210,6 +216,9 @@
     "galleryImageAlt": "{name} — {total}枚中{index}枚目",
     "browseMore": "他のプロジェクトを見る",
     "moreByAuthor": "{author}の他のプロジェクト",
+    "viewAll": "すべて見る",
+    "getInTouch": "お問い合わせ",
+    "viewProfile": "プロフィールを見る",
     "closeModal": "閉じる",
     "loadingProject": "プロジェクトを読み込み中...",
     "errorLoading": "プロジェクトの詳細を読み込めませんでした。",

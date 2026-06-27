@@ -1,4 +1,4 @@
-import { ExternalLinkIcon, CodeIcon, HeartIcon, BookmarkIcon, UserIcon } from "lucide-react";
+import { ExternalLinkIcon, CodeIcon, HeartIcon, BookmarkIcon, UserIcon, MailIcon } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 
 import { formatRating, StarRating } from "@/components/projects/star-rating";
@@ -7,6 +7,93 @@ import { Link } from "@/i18n/navigation";
 import { getCategoryLabel } from "@/lib/categories";
 import type { ProjectDetailRecord } from "@/lib/data/comment-types";
 import { cn } from "@/lib/utils";
+
+type ProjectDetailHeaderProps = {
+  project: ProjectDetailRecord;
+};
+
+export async function ProjectDetailHeader({ project }: ProjectDetailHeaderProps) {
+  const locale = await getLocale();
+  const t = await getTranslations("ProjectDetail");
+  const categoryLabel = getCategoryLabel(project.category, locale);
+
+  return (
+    <header className="space-y-5">
+      <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+        {project.title}
+      </h1>
+
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <div className="flex size-10 items-center justify-center rounded-full bg-primary/10">
+            <UserIcon className="size-5 text-primary" aria-hidden />
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-foreground">{project.authorName}</p>
+            <p className="text-xs text-muted-foreground">{categoryLabel} · {project.department}</p>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm font-medium text-foreground transition hover:bg-muted"
+          >
+            <HeartIcon className="size-4" aria-hidden />
+          </button>
+          <button
+            type="button"
+            className="inline-flex items-center justify-center rounded-full border border-border p-2 text-foreground transition hover:bg-muted"
+          >
+            <BookmarkIcon className="size-4" aria-hidden />
+          </button>
+          <button
+            type="button"
+            className={cn(
+              buttonVariants({ size: "sm" }),
+              "rounded-full",
+            )}
+          >
+            <MailIcon className="mr-1.5 size-4" aria-hidden />
+            {t("getInTouch")}
+          </button>
+        </div>
+      </div>
+
+      {project.techStack ? (
+        <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+          {project.techStack.split(",").map((tech) => (
+            <span key={tech.trim()} className="inline-block rounded-full bg-muted px-3 py-1 text-xs font-medium text-foreground">
+              {tech.trim()}
+            </span>
+          ))}
+          {project.demoUrl ? (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
+            >
+              <ExternalLinkIcon className="size-3" aria-hidden />
+              {t("liveDemo")}
+            </a>
+          ) : null}
+          {project.githubUrl ? (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
+            >
+              <CodeIcon className="size-3" aria-hidden />
+              {t("sourceCode")}
+            </a>
+          ) : null}
+        </div>
+      ) : null}
+    </header>
+  );
+}
 
 type ProjectInfoCardProps = {
   project: ProjectDetailRecord;
@@ -95,49 +182,5 @@ export async function ProjectInfoCard({ project }: ProjectInfoCardProps) {
         </div>
       </div>
     </aside>
-  );
-}
-
-type ProjectDetailHeaderProps = {
-  project: ProjectDetailRecord;
-};
-
-export async function ProjectDetailHeader({ project }: ProjectDetailHeaderProps) {
-  const locale = await getLocale();
-  const t = await getTranslations("ProjectDetail");
-  const categoryLabel = getCategoryLabel(project.category, locale);
-
-  return (
-    <header className="space-y-4">
-      <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
-        {project.title}
-      </h1>
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-full bg-primary/10">
-            <UserIcon className="size-5 text-primary" aria-hidden />
-          </div>
-          <div>
-            <p className="text-sm font-semibold text-foreground">{project.authorName}</p>
-            <p className="text-xs text-muted-foreground">{categoryLabel}</p>
-          </div>
-        </div>
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm font-medium text-foreground transition hover:bg-muted"
-          >
-            <HeartIcon className="size-4" aria-hidden />
-            {project.commentCount}
-          </button>
-          <button
-            type="button"
-            className="inline-flex items-center justify-center rounded-full border border-border p-2 text-foreground transition hover:bg-muted"
-          >
-            <BookmarkIcon className="size-4" aria-hidden />
-          </button>
-        </div>
-      </div>
-    </header>
   );
 }

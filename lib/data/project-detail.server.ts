@@ -82,6 +82,36 @@ export async function getProjectDetailBySlug(
   };
 }
 
+export async function getMoreProjectsByAuthor(
+  authorName: string,
+  excludeSlug: string,
+  locale: string,
+): Promise<
+  {
+    slug: string;
+    title: string;
+    mainImageUrl: string | null;
+    authorName: string;
+  }[]
+> {
+  const projects = await prisma.project.findMany({
+    where: {
+      authorName,
+      slug: { not: excludeSlug },
+      isPublished: true,
+    },
+    orderBy: { createdAt: "desc" },
+    select: {
+      slug: true,
+      title: true,
+      mainImageUrl: true,
+      authorName: true,
+    },
+  });
+
+  return projects;
+}
+
 export async function getProjectAverageRating(
   projectId: string,
 ): Promise<{ averageRating: number | null; commentCount: number }> {

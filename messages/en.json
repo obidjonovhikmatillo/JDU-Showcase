@@ -117,7 +117,11 @@
       "title": "Join the JDU Showcase community",
       "description": "Create a free account to save favorites, write comments, and discover new projects in your language.",
       "button": "Create free account",
-      "login": "Already have an account? Log in"
+      "login": "Already have an account? Log in",
+      "loggedInTitle": "Share your project",
+      "loggedInDescription": "Showcase your work to the JDU community, get feedback, and connect with collaborators.",
+      "uploadButton": "Upload project",
+      "browseButton": "Browse projects"
     },
     "projectCard": {
       "comments": "{count, plural, one {# comment} other {# comments}}",
@@ -158,6 +162,7 @@
       "sort": "Sort by",
       "allCategories": "All categories",
       "allCities": "All cities",
+      "allDepartments": "All departments",
       "anyRating": "Any rating",
       "ratingOption": "{rating}+ stars",
       "ratingChip": "{rating}+ stars"
@@ -197,6 +202,7 @@
     "author": "Author",
     "department": "Department",
     "aboutTitle": "About this project",
+    "aboutDescription": "This project was created as part of the JDU (Japan Digital University) student showcase, where students present their best work across design, development, and technology. Each project reflects the student's creative vision, technical skills, and dedication to building real-world digital products. From initial concept and wireframing through to final implementation, every detail was carefully considered to deliver a polished, professional result. The showcase serves as a platform for students to demonstrate their abilities, receive feedback from the community, and connect with potential collaborators and employers.",
     "commentsTitle": "Comments",
     "commentCount": "{count, plural, one {# comment} other {# comments}}",
     "hours": "Availability",
@@ -210,6 +216,9 @@
     "galleryImageAlt": "{name} photo {index} of {total}",
     "browseMore": "Browse more projects",
     "moreByAuthor": "More by {author}",
+    "viewAll": "View all",
+    "getInTouch": "Get in touch",
+    "viewProfile": "View profile",
     "closeModal": "Close",
     "loadingProject": "Loading project...",
     "errorLoading": "Could not load project details.",

@@ -117,7 +117,11 @@
       "title": "JDU Showcase jamoasiga qo'shiling",
       "description": "Bepul hisob oching, sevimlilarni saqlang va o'z tilingizda yangi loyihalarni kashf eting.",
       "button": "Bepul hisob yaratish",
-      "login": "Hisobingiz bormi? Kiring"
+      "login": "Hisobingiz bormi? Kiring",
+      "loggedInTitle": "O'z loyihangizni joylang",
+      "loggedInDescription": "O'z ishlaringizni JDU jamoasiga ko'rsating, fikr-mulohaza oling va hamkorlar toping.",
+      "uploadButton": "Loyiha joylash",
+      "browseButton": "Loyihalarni ko'rish"
     },
     "projectCard": {
       "comments": "{count, plural, one {# ta izoh} other {# ta izoh}}",
@@ -158,6 +162,7 @@
       "sort": "Saralash",
       "allCategories": "Barcha kategoriyalar",
       "allCities": "Barcha shaharlar",
+      "allDepartments": "Barcha bo'limlar",
       "anyRating": "Har qanday reyting",
       "ratingOption": "{rating}+ yulduz",
       "ratingChip": "{rating}+ yulduz"
@@ -197,6 +202,7 @@
     "author": "Muallif",
     "department": "Bo'lim",
     "aboutTitle": "Loyiha haqida",
+    "aboutDescription": "Ushbu loyiha JDU (Japan Digital University) talabalar ko'rgazmasi doirasida yaratilgan bo'lib, talabalar o'zlarining dizayn, dasturlash va texnologiya sohasidagi eng yaxshi ishlarini namoyish etadilar. Har bir loyiha talabaning ijodiy ko'rashi, texnik mahorati va real raqamli mahsulotlar yaratishga bo'lgan sadoqatini aks ettiradi. Dastlabki kontseptsiya va wireframingdan tortib yakuniy amalga oshirishgacha, har bir detal professional natijaga erishish uchun sinchiklab o'ylab chiqilgan. Ko'rgazma talabalar uchun o'z qobiliyatlarini namoyish etish, jamoadan fikr-mulohaza olish va potentsial hamkorlar bilan bog'lanish platformasi vazifasini bajaradi.",
     "commentsTitle": "Izohlar",
     "commentCount": "{count, plural, one {# ta izoh} other {# ta izoh}}",
     "hours": "Mavjudlik",
@@ -210,6 +216,9 @@
     "galleryImageAlt": "{name} — {total} dan {index}-rasm",
     "browseMore": "Boshqa loyihalarni ko'rish",
     "moreByAuthor": "{author} dan boshqa loyihalar",
+    "viewAll": "Hammasini ko'rish",
+    "getInTouch": "Bog'lanish",
+    "viewProfile": "Profilni ko'rish",
     "closeModal": "Yopish",
     "loadingProject": "Loyiha yuklanmoqda...",
     "errorLoading": "Loyiha maʼlumotlarini yuklab boʻlmadi.",

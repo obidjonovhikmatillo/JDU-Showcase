@@ -3,16 +3,18 @@ import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 
 import { ProjectGalleryCarousel } from "@/components/projects/project-gallery-carousel";
-import {
-  ProjectDetailHeader,
-  ProjectInfoCard,
-} from "@/components/projects/project-detail-header";
+import { ProjectDetailHeader } from "@/components/projects/project-detail-header";
 import { CommentForm } from "@/components/comments/comment-form";
 import { CommentList } from "@/components/comments/comment-list";
 import { CommentSignInPrompt } from "@/components/comments/comment-sign-in-prompt";
+import { AuthorCard } from "@/components/projects/author-card";
+import { MoreByAuthor } from "@/components/projects/more-by-author";
 import { auth } from "@/auth";
 import { buildPageMetadata } from "@/lib/metadata";
-import { getProjectDetailBySlug } from "@/lib/data/project-detail.server";
+import {
+  getProjectDetailBySlug,
+  getMoreProjectsByAuthor,
+} from "@/lib/data/project-detail.server";
 
 type ProjectDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -54,8 +56,14 @@ export default async function ProjectDetailPage({
     notFound();
   }
 
+  const moreProjects = await getMoreProjectsByAuthor(
+    project.authorName,
+    project.slug,
+    locale,
+  );
+
   return (
-    <div className="mx-auto max-w-[1100px] space-y-8 px-4 py-8">
+    <div className="mx-auto max-w-[900px] space-y-10 px-4 py-8">
       <ProjectDetailHeader project={project} />
 
       <ProjectGalleryCarousel
@@ -64,36 +72,48 @@ export default async function ProjectDetailPage({
         projectTitle={project.title}
       />
 
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_340px]">
-        <div className="min-w-0 space-y-8">
-          <section className="space-y-4">
-            <h2 className="text-xl font-semibold text-foreground">{t("aboutTitle")}</h2>
-            <p className="max-w-3xl text-base leading-relaxed text-muted-foreground">
-              {project.description}
-            </p>
-          </section>
+      <section className="space-y-4">
+        <p className="text-base leading-relaxed text-foreground/80 sm:text-lg sm:leading-8">
+          {project.description}
+        </p>
+      </section>
 
-          <section className="space-y-6 border-t border-border pt-8">
-            <h2 className="text-xl font-semibold text-foreground">{t("commentsTitle")}</h2>
-            {session?.user?.id ? (
-              <CommentForm projectSlug={project.slug} />
-            ) : (
-              <CommentSignInPrompt projectSlug={project.slug} />
-            )}
-            <CommentList
-              comments={project.comments}
-              projectSlug={project.slug}
-              viewer={
-                session?.user?.id
-                  ? { id: session.user.id, role: session.user.role }
-                  : null
-              }
-            />
-          </section>
-        </div>
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold text-foreground">{t("aboutTitle")}</h2>
+        <p className="text-base leading-relaxed text-muted-foreground">
+          {t("aboutDescription")}
+        </p>
+      </section>
 
-        <ProjectInfoCard project={project} />
-      </div>
+      <section className="space-y-6 border-t border-border pt-8">
+        <h2 className="text-xl font-semibold text-foreground">
+          {t("commentsTitle")} ({project.commentCount})
+        </h2>
+        {session?.user?.id ? (
+          <CommentForm projectSlug={project.slug} />
+        ) : (
+          <CommentSignInPrompt projectSlug={project.slug} />
+        )}
+        <CommentList
+          comments={project.comments}
+          projectSlug={project.slug}
+          viewer={
+            session?.user?.id
+              ? { id: session.user.id, role: session.user.role }
+              : null
+          }
+        />
+      </section>
+
+      <AuthorCard
+        authorName={project.authorName}
+        department={project.department}
+      />
+
+      <MoreByAuthor
+        authorName={project.authorName}
+        projects={moreProjects}
+      />
     </div>
   );
 }

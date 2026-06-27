@@ -1,5 +1,6 @@
 "use server";
 
+import { auth } from "@/auth";
 import prisma from "@/lib/prisma";
 import { getProjectDescription } from "@/lib/projects/localized";
 import { computeAverageRating } from "@/lib/projects/compute-average-rating";
@@ -36,6 +37,9 @@ export type ProjectModalData = {
     slug: string;
     mainImageUrl: string | null;
   }[];
+  likeCount: number;
+  isLiked: boolean;
+  isSaved: boolean;
 };
 
 export async function getProjectModalData(
@@ -88,6 +92,23 @@ export async function getProjectModalData(
     orderBy: { createdAt: "desc" },
   });
 
+  const session = await auth();
+  const userId = session?.user?.id;
+
+  const [likeCount, isLikedResult, isSavedResult] = await Promise.all([
+    prisma.projectLike.count({ where: { projectId: project.id } }),
+    userId
+      ? prisma.projectLike.findUnique({
+          where: { userId_projectId: { userId, projectId: project.id } },
+        })
+      : null,
+    userId
+      ? prisma.projectSave.findUnique({
+          where: { userId_projectId: { userId, projectId: project.id } },
+        })
+      : null,
+  ]);
+
   const comments = project.comments.map((comment) => ({
     id: comment.id,
     rating: comment.rating,
@@ -116,5 +137,8 @@ export async function getProjectModalData(
     commentCount: comments.length,
     comments: comments.map(serializeCommentForClient),
     moreByAuthor,
+    likeCount,
+    isLiked: !!isLikedResult,
+    isSaved: !!isSavedResult,
   };
 }

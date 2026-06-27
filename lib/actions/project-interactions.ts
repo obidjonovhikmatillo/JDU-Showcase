@@ -9,20 +9,22 @@ export async function toggleLike(projectId: string) {
   const session = await auth();
   if (!session?.user?.id) return { error: "unauthorized" };
 
+  const user = await prisma.user.findUnique({ where: { id: session.user.id } });
+  if (!user) return { error: "unauthorized" };
+
   const existing = await prisma.projectLike.findUnique({
-    where: { userId_projectId: { userId: session.user.id, projectId } },
+    where: { userId_projectId: { userId: user.id, projectId } },
   });
 
   if (existing) {
     await prisma.projectLike.delete({ where: { id: existing.id } });
   } else {
     await prisma.projectLike.create({
-      data: { userId: session.user.id, projectId },
+      data: { userId: user.id, projectId },
     });
   }
 
-  revalidatePath("/projects");
-  revalidatePath("/profile");
+  revalidatePath("/", "layout");
   return { success: true, liked: !existing };
 }
 
@@ -30,20 +32,22 @@ export async function toggleSave(projectId: string) {
   const session = await auth();
   if (!session?.user?.id) return { error: "unauthorized" };
 
+  const user = await prisma.user.findUnique({ where: { id: session.user.id } });
+  if (!user) return { error: "unauthorized" };
+
   const existing = await prisma.projectSave.findUnique({
-    where: { userId_projectId: { userId: session.user.id, projectId } },
+    where: { userId_projectId: { userId: user.id, projectId } },
   });
 
   if (existing) {
     await prisma.projectSave.delete({ where: { id: existing.id } });
   } else {
     await prisma.projectSave.create({
-      data: { userId: session.user.id, projectId },
+      data: { userId: user.id, projectId },
     });
   }
 
-  revalidatePath("/projects");
-  revalidatePath("/profile");
+  revalidatePath("/", "layout");
   return { success: true, saved: !existing };
 }
 

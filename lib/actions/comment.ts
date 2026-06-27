@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 import { auth } from "@/auth";
 import {
@@ -30,14 +30,12 @@ export type CommentActionState = {
 
 export type CreateCommentActionState = CommentActionState;
 
-async function revalidateProjectDetail(slug: string) {
-  const locale = await getLocale();
-  revalidatePath(`/${locale}/projects/${slug}`);
+async function revalidateProjectDetail(_slug: string) {
+  revalidatePath("/", "layout");
 }
 
 async function revalidateProfilePage() {
-  const locale = await getLocale();
-  revalidatePath(`/${locale}/profile`);
+  revalidatePath("/", "layout");
 }
 
 async function buildRatingResult(projectId: string) {

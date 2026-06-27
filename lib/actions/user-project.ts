@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { z } from "zod";
 
 import { auth } from "@/auth";
@@ -103,9 +103,7 @@ export async function createUserProject(
     select: { id: true },
   });
 
-  const locale = await getLocale();
-  revalidatePath(`/${locale}/projects`);
-  revalidatePath(`/${locale}/profile`);
+  revalidatePath("/", "layout");
 
   return { success: true };
 }
