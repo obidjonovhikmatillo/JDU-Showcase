@@ -124,7 +124,7 @@ export function ProjectDiscovery({
             <option value="rating">{t("sort.rating")}</option>
             <option value="comments">{t("sort.comments")}</option>
             <option value="newest">{t("sort.newest")}</option>
-            <option value="title">{t("sort.title")}</option>
+            <option value="title">{t("sort.name")}</option>
           </select>
 
           <Button type="submit" className="h-10 rounded-full px-6">
