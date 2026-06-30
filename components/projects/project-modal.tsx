@@ -44,12 +44,11 @@ export function ProjectModal({ slug, onClose }: ProjectModalProps) {
 
   useEffect(() => {
     if (!slug) {
-      setProject(null);
-      setError(false);
       return;
     }
 
     let cancelled = false;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- synchronizes loading/error UI with the in-flight fetch keyed on slug
     setLoading(true);
     setError(false);
 

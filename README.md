@@ -1,9 +1,9 @@
 # JDU Showcase — Student Project Portfolio
 
-Multilingual student project showcase platform built for JDU university.  
-Supported languages: **English**, **Uzbek**, **Russian**, and **Japanese**.
+Multilingual, Dribbble-style student project showcase platform built for JDU university.
+Supported languages: **English**, **Uzbek**, **Russian**, and **Japanese** (locale-prefixed routes, e.g. `/en`, `/uz`).
 
-This repository includes **Phase 1** (UI shell), **Phase 2** (PostgreSQL + Prisma), and **Phase 3** (Auth.js authentication). Project CRUD, maps, and image uploads are planned for later phases.
+Users can browse and search student projects, view project detail pages with image galleries, like/save projects, and leave comments. Authenticated users can upload their own projects; administrators get a full admin panel for projects, categories, comments, and users.
 
 ## Tech stack
 
@@ -13,11 +13,10 @@ This repository includes **Phase 1** (UI shell), **Phase 2** (PostgreSQL + Prism
 | Language | TypeScript |
 | Styling | Tailwind CSS v4 |
 | UI | shadcn/ui |
-| i18n | next-intl |
+| i18n | next-intl (URL locale prefix) |
 | Database | PostgreSQL + Prisma |
 | Auth | Auth.js (credentials) |
 | Forms | React Hook Form + Zod |
-| Maps (planned) | Leaflet + OpenStreetMap |
 | Images | Vercel Blob (production) / local `public/uploads/` (dev) |
 
 ## Prerequisites
@@ -31,7 +30,6 @@ This repository includes **Phase 1** (UI shell), **Phase 2** (PostgreSQL + Prism
 ### 1. Clone and install
 
 ```bash
-cd web-app
 npm install
 ```
 
@@ -117,15 +115,19 @@ npm run build
 
 ```
 app/                 # Next.js App Router pages and layout
+  [locale]/           # Locale-prefixed pages (en, uz, ru, ja)
+  api/                 # Route handlers (auth, categories, uploads)
 components/          # Shared UI and layout components
   layout/            # Header, footer, page shell
+  projects/          # Project cards, modal, gallery, like/save buttons
+  comments/          # Comment list and form
   ui/                # shadcn/ui primitives
 hooks/               # Custom React hooks
-i18n/                # next-intl request configuration
-lib/                 # Utilities and shared helpers
+i18n/                # next-intl routing/navigation/request configuration
+lib/                 # Utilities, server actions, and shared helpers
 messages/            # Translation JSON (en, uz, ru, ja)
 prisma/              # Prisma schema and migrations
-  schema.prisma      # User, Category, Project, Comment models
+  schema.prisma      # User, Category, Project, ProjectImage, Comment, CommentImage, ProjectLike, ProjectSave
 public/              # Static assets
 types/               # Shared TypeScript types
 ```
@@ -134,17 +136,24 @@ types/               # Shared TypeScript types
 
 | Route | Description |
 | --- | --- |
-| `/` | Home |
-| `/projects` | Project listing |
-| `/projects/[slug]` | Project detail |
-| `/login` | Login |
-| `/register` | Registration |
-| `/profile` | User profile |
-| `/admin` | Admin dashboard |
+| `/[locale]` | Home |
+| `/[locale]/projects` | Project discovery — search, category/department filters, pagination |
+| `/[locale]/projects/[slug]` | Project detail — gallery, comments, like/save, author card |
+| `/[locale]/upload` | Authenticated project upload |
+| `/[locale]/login` | Login |
+| `/[locale]/register` | Registration |
+| `/[locale]/profile` | User profile — own projects, likes, saves, comments |
+| `/[locale]/admin` | Admin dashboard |
+| `/[locale]/admin/projects` | Admin project management |
+| `/[locale]/admin/categories` | Admin category management |
+| `/[locale]/admin/comments` | Admin comment moderation |
+| `/[locale]/admin/users` | Admin user management |
+
+**API routes:** `/api/auth/[...nextauth]`, `/api/categories`, `/api/uploads`
 
 ## Internationalization
 
-Locale is stored in a `locale` cookie (`en`, `uz`, `ru`, `ja`). Use the language switcher in the header to change languages. URL paths stay the same in Phase 1; locale-prefixed routing may be added later.
+Locale is part of the URL path (`/en`, `/uz`, `/ru`, `/ja`) via `next-intl` with `localePrefix: "always"` (see `i18n/routing.ts`). The language switcher in the header navigates between locale-prefixed paths.
 
 ## Scripts
 
@@ -168,7 +177,7 @@ Locale is stored in a `locale` cookie (`en`, `uz`, `ru`, `ja`). Use the language
 | `npm run db:seed` | Seed demo users, categories, projects, comments, and images |
 | `npm run db:seed:verify` | Verify seeded record counts |
 
-## Authentication (Phase 3)
+## Authentication
 
 Auth.js credentials provider with bcrypt password hashing.
 
@@ -198,12 +207,11 @@ The seed is **safe to rerun** — it upserts users, categories, and projects by 
 
 ### Protected routes
 
-| Route | Access |
-| --- | --- |
-| `/profile` | Authenticated users only |
-| `/admin` | `ADMIN` role only |
-
-Protection is enforced in **middleware** and **server page guards** — not just in the UI.
+| Route | Access | Enforcement |
+| --- | --- | --- |
+| `/[locale]/profile` | Authenticated users only | Middleware (`proxy.ts`) redirects guests |
+| `/[locale]/admin/*` | `ADMIN` role only | Middleware (`proxy.ts`) redirects non-admins |
+| `/[locale]/upload` | Authenticated users only | Client-side redirect for UX; `createUserProject` server action rejects unauthenticated requests server-side |
 
 ### Auth environment variables
 
@@ -223,9 +231,9 @@ openssl rand -base64 32
 `npm run db:seed` loads realistic demo content:
 
 - 1 administrator and 3 users
-- 8 multilingual categories
-- 12 projects with geo coordinates, details, and gallery images
-- 20 comments with optional photos
+- 5 multilingual categories
+- 20 projects with author, department, tech stack, and gallery images
+- 28 comments with ratings and optional photos
 
 Rerun the command any time to refresh demo content without duplicating records.
 
@@ -237,6 +245,8 @@ Rerun the command any time to refresh demo content without duplicating records.
 | `ProjectImage` | Gallery images for a project |
 | `Comment` | User comments (rating 1-5 validated in app code) |
 | `CommentImage` | Images attached to comments |
+| `ProjectLike` | Tracks which users liked which projects |
+| `ProjectSave` | Tracks which users saved (bookmarked) which projects |
 
 **Cascade rules**
 
@@ -250,11 +260,11 @@ Rerun the command any time to refresh demo content without duplicating records.
 - Import `prisma` from `@/lib/prisma` for normal queries — `passwordHash` is omitted automatically.
 - Use `@/lib/prisma-auth` only inside authentication logic when the password hash is required.
 
-## Next phases
+## Remaining work
 
-- Project CRUD, comments, and image uploads
-- Leaflet maps and admin panel
-- Production deployment configuration
+- Clean up ~20 `no-unused-vars` ESLint warnings across `components/projects/` and `lib/actions/`
+- `tests/e2e/*.spec.ts` and `tests/output/*-results.json` still test/describe an earlier restaurant-review template (`restaurants.spec.ts`, `reviews.spec.ts`, `admin-restaurants.spec.ts`) — these need to be rewritten for the actual Project/Comment/Like/Save model, or removed
+- Unit tests (`npm run test:unit`) pass (21/21) and are current; `npm run typecheck` and `npm run lint` are clean
 
 ## License
 
